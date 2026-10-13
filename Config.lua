@@ -14,17 +14,37 @@ Config = Config or {}
 Config.VirtualizePrefix = "vm_" --Top-level functions whose name starts with this are compiled to the bytecode VM (set to nil/"" to disable)
 Config.VirtualizeAll = false --When true, virtualize EVERY eligible top-level function (prefix ignored). Maximum coverage; ineligible functions safely stay native.
 
--- Per-pass toggles. Each defaults to ON; set to false to skip that pass.
-Config.Passes = {
-    CommentRemoval = true, -- strip comments
-    DeadCode       = true, -- inject junk / opaque-predicate dead blocks
-    Rename         = true, -- scope-aware local renaming (both passes)
-    Flatten        = true, -- control-flow flattening
-    NumberObf      = true, -- numeric-literal obfuscation
-    StringObf      = true, -- string-literal XOR encoding
-    StringSplit    = true, -- split string literals into fragments
-    ConstantPool   = true, -- collect constants into a shuffled pool
-    Minify         = true, -- collapse to a single line
-    AntiTamper     = true, -- env check + integrity checksum wrapper
+-- Obfuscation strength preset. Picks a base set of passes:
+--   "max"  — maximum strength (every pass on). Highest runtime cost. (default)
+--   "fast" — performance mode: weaker but much faster output. Drops the heaviest
+--            runtime passes (control-flow flattening, dead-code injection, string
+--            splitting) and virtualizes only prefix-selected functions, while
+--            keeping cheap baseline obfuscation (rename, number/string, pool,
+--            minify, anti-tamper). Protect sensitive functions with the
+--            VirtualizePrefix so they still get the VM in this mode.
+Config.Preset = "max"
+
+local PRESETS = {
+    max = {
+        CommentRemoval = true, DeadCode = true, Rename = true, Flatten = true,
+        NumberObf = true, StringObf = true, StringSplit = true,
+        ConstantPool = true, Minify = true, AntiTamper = true,
+    },
+    fast = {
+        CommentRemoval = true, DeadCode = false, Rename = true, Flatten = false,
+        NumberObf = true, StringObf = true, StringSplit = false,
+        ConstantPool = true, Minify = true, AntiTamper = true,
+    },
 }
--- (Virtualization is toggled via Config.VirtualizePrefix above.)
+
+Config.PRESETS = PRESETS -- exposed so tooling can select a preset by name
+
+-- Per-pass toggles, seeded from the preset above. After this line you can still
+-- override any individual pass (e.g. `Config.Passes.Flatten = true`) regardless
+-- of the preset; the preset only chooses the starting point.
+Config.Passes = PRESETS[Config.Preset] or PRESETS.max
+
+-- The "fast" preset also turns off whole-program virtualization (virtualize only
+-- the functions you prefix), since the VM interpreter is the dominant runtime cost.
+if Config.Preset == "fast" then Config.VirtualizeAll = false end
+-- (Selective virtualization is still driven by Config.VirtualizePrefix above.)

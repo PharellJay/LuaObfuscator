@@ -26,6 +26,20 @@ if os.getenv("VIRTUALIZE_ALL") == "1" then
     print("[harness] VIRTUALIZE_ALL enabled: virtualizing all eligible functions")
 end
 
+-- Opt-in: validate a strength preset ("fast"/"max") across the whole suite.
+if os.getenv("PRESET") then
+    Config = Config or {}
+    local name = os.getenv("PRESET")
+    if Config.PRESETS and Config.PRESETS[name] then
+        Config.Preset = name
+        Config.Passes = Config.PRESETS[name]
+        if name == "fast" then Config.VirtualizeAll = false end
+        print("[harness] PRESET=" .. name .. " enabled")
+    else
+        print("[harness] unknown PRESET '" .. tostring(name) .. "', ignoring")
+    end
+end
+
 local LUA_BIN = os.getenv("LUA_BIN") or "lua"
 
 -- Fixtures: the comprehensive suite plus the targeted feature fixtures.

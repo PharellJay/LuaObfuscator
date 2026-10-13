@@ -12,11 +12,36 @@
 
 function GenerateInterpreter(vmName, perm, seed)
     local runName = GenerateRandomName(VariableLength or 12)
+
+    -- Alias every opcode's (permuted) number to a local computed ONCE per closure,
+    -- so the hot dispatch chain compares `o == <local>` instead of `o == <literal>`.
+    -- The later number-obfuscation text pass would otherwise rewrite each literal
+    -- into an arithmetic expression recomputed on every comparison (~once per
+    -- opcode per VM instruction) — crippling runtime. With aliases it only
+    -- obfuscates the one-time initializer list, and the opcode values stay hidden.
+    local opAlias, aliasNames, aliasVals, used = {}, {}, {}, {}
+    for name, c in pairs(VM_OP) do
+        local a
+        repeat a = GenerateRandomName(VariableLength or 12) until not used[a]
+        used[a] = true
+        opAlias[name] = a
+        aliasNames[#aliasNames + 1] = a
+        aliasVals[#aliasVals + 1] = tostring(perm and perm[c] or c)
+    end
+    local aliasDecl = "local " .. table.concat(aliasNames, ",") ..
+        " = " .. table.concat(aliasVals, ",")
+
     local function op(name)
-        local c = assert(VM_OP[name], "unknown opcode " .. name)
-        return tostring(perm and perm[c] or c)
+        assert(VM_OP[name], "unknown opcode " .. name)
+        return opAlias[name]
     end
     -- Build the dispatch body. Using a long if/elseif chain keyed on the opcode.
+    -- Hot opcodes come first; the rare ones (cell/upvalue access, used only by
+    -- closures, and the bitwise operators) are placed last so common operations
+    -- fall through fewer comparisons. The textual branch order is independent of
+    -- the per-build opcode permutation, so this only affects dispatch speed.
+    -- NOTE: the template string below must contain no `--` comments — they can
+    -- survive into the emitted/minified output and comment out real code.
     -- Defined as a global (not a local) so that if control-flow flattening later
     -- relocates this definition into a dispatch sub-closure, the virtualized
     -- function assignments in sibling blocks can still reach it. The dispatcher
@@ -35,6 +60,7 @@ function %VMNAME%(proto, upvals)
     end
     proto.dec = true
   end
+  %ALIASDECL%
   local function %RUN%(...)
     local args = table.pack(...)
     local nargs = args.n
@@ -52,11 +78,6 @@ function %VMNAME%(proto, upvals)
       elseif o == %PUSHBOOL% then top = top + 1; S[top] = (code[pc] ~= 0); pc = pc + 1
       elseif o == %GETLOCAL% then top = top + 1; S[top] = slots[code[pc]]; pc = pc + 1
       elseif o == %SETLOCAL% then slots[code[pc]] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
-      elseif o == %NEWCELL% then cells[code[pc]] = {}; pc = pc + 1
-      elseif o == %GETCELL% then top = top + 1; S[top] = cells[code[pc]][1]; pc = pc + 1
-      elseif o == %SETCELL% then cells[code[pc]][1] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
-      elseif o == %GETUPVAL% then top = top + 1; S[top] = upvals[code[pc]][1]; pc = pc + 1
-      elseif o == %SETUPVAL% then upvals[code[pc]][1] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
       elseif o == %GETGLOBAL% then top = top + 1; S[top] = _ENV[K[code[pc]]]; pc = pc + 1
       elseif o == %SETGLOBAL% then _ENV[K[code[pc]]] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
       elseif o == %GETINDEX% then local key = S[top]; local obj = S[top - 1]; S[top] = nil; top = top - 1; S[top] = obj[key]
@@ -69,12 +90,6 @@ function %VMNAME%(proto, upvals)
       elseif o == %MOD% then local b = S[top]; top = top - 1; S[top] = S[top] % b
       elseif o == %POW% then local b = S[top]; top = top - 1; S[top] = S[top] ^ b
       elseif o == %CONCAT% then local b = S[top]; top = top - 1; S[top] = S[top] .. b
-      elseif o == %BOR% then local b = S[top]; top = top - 1; S[top] = S[top] | b
-      elseif o == %BXOR% then local b = S[top]; top = top - 1; S[top] = S[top] ~ b
-      elseif o == %BAND% then local b = S[top]; top = top - 1; S[top] = S[top] & b
-      elseif o == %SHL% then local b = S[top]; top = top - 1; S[top] = S[top] << b
-      elseif o == %SHR% then local b = S[top]; top = top - 1; S[top] = S[top] >> b
-      elseif o == %IDIV% then local b = S[top]; top = top - 1; S[top] = S[top] // b
       elseif o == %EQ% then local b = S[top]; top = top - 1; S[top] = (S[top] == b)
       elseif o == %NE% then local b = S[top]; top = top - 1; S[top] = (S[top] ~= b)
       elseif o == %LT% then local b = S[top]; top = top - 1; S[top] = (S[top] < b)
@@ -84,7 +99,6 @@ function %VMNAME%(proto, upvals)
       elseif o == %UNM% then S[top] = -S[top]
       elseif o == %NOT% then S[top] = not S[top]
       elseif o == %LEN% then S[top] = #S[top]
-      elseif o == %BNOT% then S[top] = ~S[top]
       elseif o == %MARK% then mtop = mtop + 1; marks[mtop] = top
       elseif o == %ADJUST% then
         local base = marks[mtop]; mtop = mtop - 1; local target = base + code[pc]; pc = pc + 1
@@ -147,6 +161,18 @@ function %VMNAME%(proto, upvals)
         for i = 1, top - base do tbl[start + i - 1] = S[base + i] end
         for i = base, top do S[i] = nil end
         top = base - 1
+      elseif o == %NEWCELL% then cells[code[pc]] = {}; pc = pc + 1
+      elseif o == %GETCELL% then top = top + 1; S[top] = cells[code[pc]][1]; pc = pc + 1
+      elseif o == %SETCELL% then cells[code[pc]][1] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
+      elseif o == %GETUPVAL% then top = top + 1; S[top] = upvals[code[pc]][1]; pc = pc + 1
+      elseif o == %SETUPVAL% then upvals[code[pc]][1] = S[top]; S[top] = nil; top = top - 1; pc = pc + 1
+      elseif o == %BOR% then local b = S[top]; top = top - 1; S[top] = S[top] | b
+      elseif o == %BXOR% then local b = S[top]; top = top - 1; S[top] = S[top] ~ b
+      elseif o == %BAND% then local b = S[top]; top = top - 1; S[top] = S[top] & b
+      elseif o == %SHL% then local b = S[top]; top = top - 1; S[top] = S[top] << b
+      elseif o == %SHR% then local b = S[top]; top = top - 1; S[top] = S[top] >> b
+      elseif o == %IDIV% then local b = S[top]; top = top - 1; S[top] = S[top] // b
+      elseif o == %BNOT% then S[top] = ~S[top]
       end
     end
   end
@@ -156,6 +182,7 @@ end
         if name == "VMNAME" then return vmName end
         if name == "RUN" then return runName end
         if name == "SEED" then return tostring(seed or 0) end
+        if name == "ALIASDECL" then return aliasDecl end
         return op(name)
     end)
     return src

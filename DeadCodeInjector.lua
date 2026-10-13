@@ -154,11 +154,46 @@ local function predStringLength(invert)
     return result
 end
 
+-- Cheap, pure-arithmetic opaque predicates (no function calls). Always true by
+-- an algebraic identity, so they resist trivial folding as well as the
+-- function-call predicates do, but cost only a couple of native arithmetic ops
+-- when their dead block is reached (important when one lands in a hot loop).
+-- The baked-in constants get number-obfuscated by the later pass, like any other.
+local function numTok(v) return { type = "NUMBER", value = tostring(v) } end
+local function sym(v) return { type = "SYMBOL", value = v } end
+
+local function predArithSquare(_, _, invert)
+    -- (N*N) % 4 ~= 2   (a perfect square mod 4 is always 0 or 1 — never 2)
+    local N = math.random(2, 9999)
+    local result = {
+        sym("("), numTok(N), sym("*"), numTok(N), sym(")"),
+        sym("%"), numTok(4), sym("~="), numTok(2),
+    }
+    if invert then result = wrapInvert(result) end
+    return result
+end
+
+local function predArithDiffSquares(_, _, invert)
+    -- (N+1)*(N-1) == N*N - 1   (difference-of-squares identity, always true)
+    local N = math.random(2, 9999)
+    local result = {
+        sym("("), numTok(N), sym("+"), numTok(1), sym(")"),
+        sym("*"),
+        sym("("), numTok(N), sym("-"), numTok(1), sym(")"),
+        sym("=="),
+        sym("("), numTok(N), sym("*"), numTok(N), sym("-"), numTok(1), sym(")"),
+    }
+    if invert then result = wrapInvert(result) end
+    return result
+end
+
 local predicateBuilders = {
     predGlobalMath,
     predGlobalType,
     predGlobalLen,
     predGlobalString,
+    predArithSquare,
+    predArithDiffSquares,
 }
 
 -- ─── Junk body generators ──────────────────────

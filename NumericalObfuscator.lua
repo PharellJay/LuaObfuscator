@@ -1,23 +1,5 @@
-local function xor(a, b)
-    local r, p = 0, 1
-    while a > 0 or b > 0 do
-        if a % 2 ~= b % 2 then r = r + p end
-        a = math.floor(a / 2)
-        b = math.floor(b / 2)
-        p = p * 2
-    end
-    return r
-end
-
 local function NumHex(num)
     return string.format("0x%x", num)
-end
-
-local function NumXor(num)
-    if num == 0 then return nil end
-    local key = math.random(100000, 999999999)
-    local enc = xor(num, key)
-    return '(function(k,e)local function x(a,b)local r,p=0,1 while a>0 or b>0 do if a%2~=b%2 then r=r+p end a=math.floor(a/2)b=math.floor(b/2)p=p*2 end return r end;return x(e,k)end)(' .. key .. ',' .. enc .. ')'
 end
 
 local function NumMultiChain(num)
@@ -64,15 +46,6 @@ local function NumMultiChain(num)
     return expr .. ")"
 end
 
-local function NumLoadString(num)
-    local s = "return " .. tostring(num)
-    local bytes = {}
-    for i = 1, #s do
-        table.insert(bytes, string.byte(s, i))
-    end
-    return string.format("(load(string.char(%s))())", table.concat(bytes, ","))
-end
-
 -- Mixed boolean-arithmetic: encode `num` using an algebraic identity over native
 -- Lua 5.3+ bitwise operators, so the constant never appears literally. The output
 -- is final Lua (this is a text pass), so it may use `~ & |` directly.
@@ -99,9 +72,7 @@ local function NumXorId(num)
 end
 
 local intStrategies = {
-    { name = "xor",        fn = NumXor },
     { name = "multiChain", fn = NumMultiChain },
-    { name = "loadString", fn = NumLoadString },
     { name = "mba",        fn = NumMBA },
     { name = "xorId",      fn = NumXorId },
 }

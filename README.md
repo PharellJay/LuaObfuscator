@@ -138,7 +138,31 @@ All knobs live in `Config.lua`:
 | `RandomSeed` | `nil` | Set a number to force a fixed seed for reproducible output. |
 | `Config.VirtualizePrefix` | `"vm_"` | Name prefix selecting top-level functions to virtualize; `nil`/`""` disables prefix-based selection. |
 | `Config.VirtualizeAll` | `false` | When `true`, virtualize **every** eligible top-level function (prefix ignored); ineligible functions safely stay native. Maximum coverage, higher runtime cost. |
-| `Config.Passes.*` | all `true` | Per-pass on/off switches (CommentRemoval, DeadCode, Rename, Flatten, NumberObf, StringObf, StringSplit, ConstantPool, Minify, AntiTamper). |
+| `Config.Preset` | `"max"` | Strength preset that seeds `Config.Passes`: `"max"` (every pass on, strongest, slowest) or `"fast"` (performance mode — see below). |
+| `Config.Passes.*` | from preset | Per-pass on/off switches (CommentRemoval, DeadCode, Rename, Flatten, NumberObf, StringObf, StringSplit, ConstantPool, Minify, AntiTamper). Seeded from `Config.Preset`; override any individual pass after the preset line. |
+
+## Performance modes
+
+Virtualized code runs under an interpreter, so it is inherently slower than
+native Lua — the VM is the right tool for the handful of functions that are
+worth protecting, not for hot loops. Two presets trade strength against speed:
+
+- **`Config.Preset = "max"` (default):** every pass on. Strongest output;
+  highest runtime cost. Use `VirtualizeAll` here only when you want maximum
+  coverage and can accept the interpreter overhead everywhere.
+- **`Config.Preset = "fast"`:** performance mode. Keeps cheap, effective layers
+  (renaming, number/string obfuscation, constant pool, minify, anti-tamper) but
+  drops the heaviest runtime passes (**control-flow flattening**, **dead-code
+  injection**, **string splitting**) and virtualizes only the functions you
+  mark with `VirtualizePrefix`. Markedly faster output that is weaker overall
+  but still VM-protects your sensitive functions.
+
+**Best practice for speed without losing protection:** keep the default `"max"`
+preset but virtualize *selectively* — give only your license checks, key
+routines, and anti-cheat logic the `vm_` prefix, and leave hot paths native.
+That concentrates the expensive VM where it matters. (The interpreter itself is
+tuned so the per-build number-obfuscation pass no longer rewrites its hot-path
+constants — a large speedup over naive virtualization with no loss of strength.)
 
 ## Testing
 
@@ -154,6 +178,8 @@ LUA_BIN=/path/to/lua lua run_tests.lua
 USE_EXPR_AST=1 lua run_tests.lua
 # stress mode: virtualize every eligible function in every fixture:
 VIRTUALIZE_ALL=1 lua run_tests.lua
+# validate a strength preset across the suite:
+PRESET=fast lua run_tests.lua
 ```
 
 Fixtures live in `test/fixtures/` and cover closures, varargs, metatables,
