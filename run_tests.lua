@@ -35,6 +35,7 @@ local FIXTURES = {
     "test/fixtures/vm_basic.lua",
     "test/fixtures/vm_genfor.lua",
     "test/fixtures/vm_vararg.lua",
+    "test/fixtures/vm_bitwise.lua",
     "test/fixtures/vm_closure.lua",
     "test/fixtures/vm_upval.lua",
     "test/fixtures/vm_coro.lua",

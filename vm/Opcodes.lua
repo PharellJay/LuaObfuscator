@@ -27,8 +27,9 @@ VM_OPCODES = {
     "SETINDEX",   -- val=pop, key=pop, obj=pop, obj[key]=val
     "NEWTABLE",   -- push {}
     "ADD", "SUB", "MUL", "DIV", "MOD", "POW", "CONCAT",
+    "BOR", "BXOR", "BAND", "SHL", "SHR", "IDIV", -- bitwise/floor-div (Lua 5.3+)
     "EQ", "NE", "LT", "LE", "GT", "GE",
-    "UNM", "NOT", "LEN",
+    "UNM", "NOT", "LEN", "BNOT",
     "MARK",       -- push current stack top onto the marks stack
     "ADJUST",     -- a=n: force exactly n values between last mark and top (pad nil / drop)
     "CALL",       -- a=nres (255 = all); fn/args taken from last mark
@@ -73,8 +74,9 @@ VM_OPARITY = {
     NEWCELL = 1, GETCELL = 1, SETCELL = 1, GETUPVAL = 1, SETUPVAL = 1,
     GETINDEX = 0, SETINDEX = 0, NEWTABLE = 0,
     ADD = 0, SUB = 0, MUL = 0, DIV = 0, MOD = 0, POW = 0, CONCAT = 0,
+    BOR = 0, BXOR = 0, BAND = 0, SHL = 0, SHR = 0, IDIV = 0,
     EQ = 0, NE = 0, LT = 0, LE = 0, GT = 0, GE = 0,
-    UNM = 0, NOT = 0, LEN = 0,
+    UNM = 0, NOT = 0, LEN = 0, BNOT = 0,
     MARK = 0, ADJUST = 1, CALL = 1, RET = 0,
     JMP = 1, JMPIFFALSE = 1, JMPIFTRUE = 1,
     POP = 0, DUP = 0,

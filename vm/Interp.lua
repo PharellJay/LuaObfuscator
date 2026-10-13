@@ -68,6 +68,12 @@ function %VMNAME%(proto, upvals)
       elseif o == %MOD% then local b = S[top]; top = top - 1; S[top] = S[top] % b
       elseif o == %POW% then local b = S[top]; top = top - 1; S[top] = S[top] ^ b
       elseif o == %CONCAT% then local b = S[top]; top = top - 1; S[top] = S[top] .. b
+      elseif o == %BOR% then local b = S[top]; top = top - 1; S[top] = S[top] | b
+      elseif o == %BXOR% then local b = S[top]; top = top - 1; S[top] = S[top] ~ b
+      elseif o == %BAND% then local b = S[top]; top = top - 1; S[top] = S[top] & b
+      elseif o == %SHL% then local b = S[top]; top = top - 1; S[top] = S[top] << b
+      elseif o == %SHR% then local b = S[top]; top = top - 1; S[top] = S[top] >> b
+      elseif o == %IDIV% then local b = S[top]; top = top - 1; S[top] = S[top] // b
       elseif o == %EQ% then local b = S[top]; top = top - 1; S[top] = (S[top] == b)
       elseif o == %NE% then local b = S[top]; top = top - 1; S[top] = (S[top] ~= b)
       elseif o == %LT% then local b = S[top]; top = top - 1; S[top] = (S[top] < b)
@@ -77,6 +83,7 @@ function %VMNAME%(proto, upvals)
       elseif o == %UNM% then S[top] = -S[top]
       elseif o == %NOT% then S[top] = not S[top]
       elseif o == %LEN% then S[top] = #S[top]
+      elseif o == %BNOT% then S[top] = ~S[top]
       elseif o == %MARK% then mtop = mtop + 1; marks[mtop] = top
       elseif o == %ADJUST% then
         local base = marks[mtop]; mtop = mtop - 1; local target = base + code[pc]; pc = pc + 1

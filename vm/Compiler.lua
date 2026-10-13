@@ -19,8 +19,10 @@ local BINOP = {
     ["%"] = "MOD", ["^"] = "POW", [".."] = "CONCAT",
     ["=="] = "EQ", ["~="] = "NE", ["<"] = "LT", ["<="] = "LE",
     [">"] = "GT", [">="] = "GE",
+    ["|"] = "BOR", ["~"] = "BXOR", ["&"] = "BAND",
+    ["<<"] = "SHL", [">>"] = "SHR", ["//"] = "IDIV",
 }
-local UNOP = { ["-"] = "UNM", ["not"] = "NOT", ["#"] = "LEN" }
+local UNOP = { ["-"] = "UNM", ["not"] = "NOT", ["#"] = "LEN", ["~"] = "BNOT" }
 
 -- ─── Eligibility ───────────────────────────────────────────────────────────
 -- Conservative token scan over a function body: reject anything the step-1 VM

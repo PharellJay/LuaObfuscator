@@ -170,31 +170,52 @@ function GenerateSecureSeed()
         return nil
     end
 
-    -- Method 1: PowerShell crypto RNG (Windows CNG) - 32-bit fits Lua integer exactly
-    local ok, result = pcall(function()
-        local cmd = 'powershell -Command "$buf = New-Object byte[] 4; [Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($buf); [BitConverter]::ToUInt32($buf, 0)"'
-        local f = io.popen(cmd, "r")
-        if not f then return nil end
-        local output = f:read("*a")
-        f:close()
-        return tonumber(output:match("%d+"))
-    end)
-    if ok then
-        local n = toInt(result)
-        if n then return n % 2147483647 + 1 end
-    end
+    local isWindows = package.config:sub(1, 1) == "\\"
 
-    -- Method 2: PowerShell Get-Random (uses Windows crypto as backing)
-    ok, result = pcall(function()
-        local f = io.popen('powershell -Command "Get-Random -Minimum 0 -Maximum 2147483647"', "r")
-        if not f then return nil end
-        local output = f:read("*a")
-        f:close()
-        return tonumber(output:match("%d+"))
-    end)
-    if ok then
-        local n = toInt(result)
-        if n then return n end
+    if not isWindows then
+        -- Unix/macOS: read 4 bytes from the OS crypto RNG. This also avoids
+        -- shelling out to powershell/wmic (which don't exist here and would print
+        -- "not found" to stderr on every run).
+        local ok, result = pcall(function()
+            local f = io.open("/dev/urandom", "rb")
+            if not f then return nil end
+            local bytes = f:read(4)
+            f:close()
+            if not bytes or #bytes < 4 then return nil end
+            local b1, b2, b3, b4 = bytes:byte(1, 4)
+            return ((b1 * 256 + b2) * 256 + b3) * 256 + b4
+        end)
+        if ok then
+            local n = toInt(result)
+            if n then return n % 2147483647 + 1 end
+        end
+    else
+        -- Method 1: PowerShell crypto RNG (Windows CNG) - 32-bit fits Lua integer exactly
+        local ok, result = pcall(function()
+            local cmd = 'powershell -Command "$buf = New-Object byte[] 4; [Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($buf); [BitConverter]::ToUInt32($buf, 0)"'
+            local f = io.popen(cmd, "r")
+            if not f then return nil end
+            local output = f:read("*a")
+            f:close()
+            return tonumber(output:match("%d+"))
+        end)
+        if ok then
+            local n = toInt(result)
+            if n then return n % 2147483647 + 1 end
+        end
+
+        -- Method 2: PowerShell Get-Random (uses Windows crypto as backing)
+        ok, result = pcall(function()
+            local f = io.popen('powershell -Command "Get-Random -Minimum 0 -Maximum 2147483647"', "r")
+            if not f then return nil end
+            local output = f:read("*a")
+            f:close()
+            return tonumber(output:match("%d+"))
+        end)
+        if ok then
+            local n = toInt(result)
+            if n then return n end
+        end
     end
 
     -- Method 3: Fallback - mix all available low-entropy sources
@@ -211,13 +232,15 @@ function GenerateSecureSeed()
         end
     end
 
-    local f = io.popen("wmic os get localdatetime", "r")
-    if f then
-        local dt = f:read("*a")
-        f:close()
-        local ms = dt:match("(%d%d%d%d%d%d%d%d%d%d%d%d%d%d)")
-        if ms then
-            seed = seed * 31337 + tonumber(ms) % 1000000
+    if isWindows then
+        local f = io.popen("wmic os get localdatetime", "r")
+        if f then
+            local dt = f:read("*a")
+            f:close()
+            local ms = dt:match("(%d%d%d%d%d%d%d%d%d%d%d%d%d%d)")
+            if ms then
+                seed = seed * 31337 + tonumber(ms) % 1000000
+            end
         end
     end
 
