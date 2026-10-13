@@ -5,37 +5,59 @@ function Obfuscate(code)
     math.randomseed(seed)
     for _ = 1, 5 do math.random() end
 
+    -- Per-pass toggles (default ON unless explicitly set to false in Config.Passes).
+    local P = (Config and Config.Passes) or {}
+    local function on(name) return P[name] ~= false end
+
     local obfuscatedCode = code
 
-    obfuscatedCode = RemoveAllComments(obfuscatedCode)
+    if on("CommentRemoval") then obfuscatedCode = RemoveAllComments(obfuscatedCode) end
     print("[*] Tokenizing...")
     local tokens = Tokenize(obfuscatedCode)
     print("[*] Parsing...")
     local ast = Parse(tokens)
     print("[*] Virtualizing functions...")
-    ast.body = VirtualizeAST(ast.body)
-    print("[*] Injecting dead code...")
-    ast.body = InjectDeadCode(ast.body)
-    print("[*] Renaming variables (pass 1)...")
-    RenameVariablesInAST(ast)
-    print("[*] Flattening AST...")
-    ast.body = FlattenAST(ast.body)
-    print("[*] Renaming variables (pass 2)...")
-    RenameVariablesInAST(ast)
+    ast.body = VirtualizeAST(ast.body) -- a no-op when Config.VirtualizePrefix is unset
+    if on("DeadCode") then
+        print("[*] Injecting dead code...")
+        ast.body = InjectDeadCode(ast.body)
+    end
+    if on("Rename") then
+        print("[*] Renaming variables (pass 1)...")
+        RenameVariablesInAST(ast)
+    end
+    if on("Flatten") then
+        print("[*] Flattening AST...")
+        ast.body = FlattenAST(ast.body)
+    end
+    if on("Rename") then
+        print("[*] Renaming variables (pass 2)...")
+        RenameVariablesInAST(ast)
+    end
     print("[*] Emitting...")
     obfuscatedCode = Emit(ast)
     do local f = io.open("Output/after_emit.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
-    print("[*] Obfuscating integers...")
-    obfuscatedCode = ObfuscateAllIntegers(obfuscatedCode)
-    print("[*] Obfuscating strings...")
-    obfuscatedCode = ObfuscateAllStrings(obfuscatedCode)
-    print("[*] Splitting strings...")
-    obfuscatedCode = SplitStrings(obfuscatedCode)
-    print("[*] Creating constant pool...")
-    obfuscatedCode = CreateConstantPool(obfuscatedCode)
+    if on("NumberObf") then
+        print("[*] Obfuscating integers...")
+        obfuscatedCode = ObfuscateAllIntegers(obfuscatedCode)
+    end
+    if on("StringObf") then
+        print("[*] Obfuscating strings...")
+        obfuscatedCode = ObfuscateAllStrings(obfuscatedCode)
+    end
+    if on("StringSplit") then
+        print("[*] Splitting strings...")
+        obfuscatedCode = SplitStrings(obfuscatedCode)
+    end
+    if on("ConstantPool") then
+        print("[*] Creating constant pool...")
+        obfuscatedCode = CreateConstantPool(obfuscatedCode)
+    end
     do local f = io.open("Output/preminify.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
-    print("[*] Minifying...")
-    obfuscatedCode = Minify(obfuscatedCode)
+    if on("Minify") then
+        print("[*] Minifying...")
+        obfuscatedCode = Minify(obfuscatedCode)
+    end
     obfuscatedCode = [=[
 --[[
 ██████╗ ███████╗ █████╗ ██████╗ ███████╗██╗   ██╗███████╗
@@ -49,7 +71,9 @@ Deadeye Obfuscator | Advanced Lua Obfuscation | https://github.com/PharellJay
 ]]
 ]=] .. obfuscatedCode
 
-    obfuscatedCode = AddAntiTamper(obfuscatedCode)
+    if on("AntiTamper") then
+        obfuscatedCode = AddAntiTamper(obfuscatedCode)
+    end
 
     return obfuscatedCode
 end

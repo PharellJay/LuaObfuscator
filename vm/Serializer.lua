@@ -25,12 +25,17 @@ function VMXorCrypt(s, seed)
     return table.concat(t)
 end
 
+-- String and number constants are both stored XOR-encrypted, with a one-byte
+-- type tag so the interpreter can reconstruct them at load: "\0" = string,
+-- "\1" = number (its exact %q literal, recovered via tonumber). This keeps a
+-- virtualized function's literal secrets out of the blob even with no downstream
+-- number/string passes. Booleans/nil aren't secrets and are left plain.
 local function serializeConst(v, seed)
     local t = type(v)
     if t == "string" then
-        return string.format("%q", VMXorCrypt(v, seed))
+        return string.format("%q", VMXorCrypt("\0" .. v, seed))
     elseif t == "number" then
-        return string.format("%q", v)
+        return string.format("%q", VMXorCrypt("\1" .. string.format("%q", v), seed))
     elseif t == "boolean" then
         return tostring(v)
     elseif t == "nil" then

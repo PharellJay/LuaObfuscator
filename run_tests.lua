@@ -19,6 +19,13 @@ if os.getenv("USE_EXPR_AST") == "1" then
     print("[harness] USE_EXPR_AST enabled: emitting expressions via ExprAST IR")
 end
 
+-- Opt-in: virtualize EVERY eligible function (stress test), not just vm_-prefixed.
+if os.getenv("VIRTUALIZE_ALL") == "1" then
+    Config = Config or {}
+    Config.VirtualizeAll = true
+    print("[harness] VIRTUALIZE_ALL enabled: virtualizing all eligible functions")
+end
+
 local LUA_BIN = os.getenv("LUA_BIN") or "lua"
 
 -- Fixtures: the comprehensive suite plus the targeted feature fixtures.
@@ -36,6 +43,10 @@ local FIXTURES = {
     "test/fixtures/vm_genfor.lua",
     "test/fixtures/vm_vararg.lua",
     "test/fixtures/vm_bitwise.lua",
+    "test/fixtures/vm_nested_method.lua",
+    "test/fixtures/vm_localfn.lua",
+    "test/fixtures/vm_method_top.lua",
+    "test/fixtures/vm_upvalref.lua",
     "test/fixtures/vm_closure.lua",
     "test/fixtures/vm_upval.lua",
     "test/fixtures/vm_coro.lua",

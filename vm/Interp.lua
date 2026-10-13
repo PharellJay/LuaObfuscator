@@ -29,7 +29,8 @@ function %VMNAME%(proto, upvals)
       if type(kk[ci]) == "string" then
         local s = kk[ci]; local k = %SEED% % 256; local t = {}
         for j = 1, #s do k = (k * 31 + 7) % 256; t[j] = string.char(string.byte(s, j) ~ k) end
-        kk[ci] = table.concat(t)
+        local dec = table.concat(t)
+        if dec:sub(1, 1) == "\1" then kk[ci] = tonumber(dec:sub(2)) else kk[ci] = dec:sub(2) end
       end
     end
     proto.dec = true

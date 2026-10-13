@@ -46,38 +46,91 @@ local function stmtListEligible(stmts)
     return true
 end
 
--- Extract parameter names from a FunctionStatement head: NAME ( p1 , p2 ... )
--- Returns {names}, or nil if the head is not a plain `name(params)` (e.g. has
--- `.`/`:` or a vararg), which step 1 does not virtualize.
-local function parseHead(head)
-    local names = {}
-    local isVararg = false
+-- Analyze a FunctionStatement head `NAME(.F)*(:M)? ( p1, p2, ... )`.
+-- Returns a table { base, name, isMethod, isDotted, params, isVararg } or nil if
+-- the head isn't a well-formed function name + param list.
+--   base    = first identifier (the object for dotted/colon names)
+--   name    = last identifier before `(` (the selectable field / sole name)
+--   isMethod= the last separator was `:` (adds an implicit `self` param)
+--   isDotted= any `.`/`:` separator was present
+function analyzeHead(head)
     local i = 1
-    -- function name token(s)
     if not (head[i] and head[i].type == "IDENTIFIER") then return nil end
+    local base = head[i].value
+    local name = base
+    local isMethod, isDotted = false, false
     i = i + 1
-    if head[i] and head[i].type == "SYMBOL" and (head[i].value == "." or head[i].value == ":") then
-        return nil -- method/field function, not a simple global name
+    while head[i] and head[i].value ~= "(" do
+        local t = head[i]
+        if t.type == "SYMBOL" and (t.value == "." or t.value == ":") then
+            isDotted = true
+            isMethod = (t.value == ":")
+            i = i + 1
+            if not (head[i] and head[i].type == "IDENTIFIER") then return nil end
+            name = head[i].value
+            i = i + 1
+        else
+            return nil
+        end
     end
     if not (head[i] and head[i].value == "(") then return nil end
     i = i + 1
+    local params, isVararg = {}, false
     while head[i] and head[i].value ~= ")" do
         local t = head[i]
-        if t.type == "IDENTIFIER" then
-            names[#names + 1] = t.value
-        elseif t.value == "..." then
-            isVararg = true
-        end
+        if t.type == "IDENTIFIER" then params[#params + 1] = t.value
+        elseif t.value == "..." then isVararg = true end
         i = i + 1
     end
-    return names, head[1].value, isVararg
+    return { base = base, name = name, isMethod = isMethod, isDotted = isDotted,
+        params = params, isVararg = isVararg }
+end
+
+-- Does any statement in `body` reference the identifier `name` (recursing into
+-- nested blocks and function definitions, and scanning token lists)? Used to
+-- detect self-recursion of a top-level `local function`.
+local function tokenListHasIdent(toks, name)
+    for _, t in ipairs(toks or {}) do
+        if t.type == "IDENTIFIER" and t.value == name then return true end
+    end
+    return false
+end
+local function stmtRefsName(stmt, name)
+    if tokenListHasIdent(stmt.tokens, name) or tokenListHasIdent(stmt.head, name) then return true end
+    for _, fld in ipairs({ "vars", "values", "condition", "exps", "call" }) do
+        if stmt[fld] and stmt[fld].tokens and tokenListHasIdent(stmt[fld].tokens, name) then return true end
+    end
+    if stmt.body then
+        for _, s in ipairs(stmt.body) do if stmtRefsName(s, name) then return true end end
+    end
+    if stmt.clauses then
+        for _, c in ipairs(stmt.clauses) do
+            if c.condition and c.condition.tokens and tokenListHasIdent(c.condition.tokens, name) then return true end
+            if c.body then for _, s in ipairs(c.body) do if stmtRefsName(s, name) then return true end end end
+        end
+    end
+    if stmt.elseBody then
+        for _, s in ipairs(stmt.elseBody) do if stmtRefsName(s, name) then return true end end
+    end
+    return false
+end
+local function bodyReferencesName(body, name)
+    for _, s in ipairs(body) do if stmtRefsName(s, name) then return true end end
+    return false
 end
 
 function CanCompileFunction(funcNode)
     if funcNode.type ~= "FunctionStatement" then return false end
-    if funcNode.isLocal then return false end -- step 1: global-name functions only
-    local params, name = parseHead(funcNode.head)
-    if not params or not name then return false end
+    local h = analyzeHead(funcNode.head)
+    if not h then return false end
+    -- A top-level `local function f` is virtualized as `local f = <vm>(...)`, and
+    -- the compiled body resolves a free `f` as a GLOBAL — so a self-recursive one
+    -- would break. Bail (stay native) if the body references its own name. (Only
+    -- for simple local names; dotted/colon names are gated on a global base in
+    -- VirtualizeAST, where recursion via the global object works.)
+    if funcNode.isLocal and not h.isDotted and bodyReferencesName(funcNode.body, h.name) then
+        return false
+    end
     return stmtListEligible(funcNode.body)
 end
 
@@ -467,10 +520,8 @@ function compileNestedFunction(C, s)
     local hi = 1
     local nameToks = {}
     while head[hi] and head[hi].value ~= "(" do nameToks[#nameToks + 1] = head[hi]; hi = hi + 1 end
-    if #nameToks ~= 1 or nameToks[1].type ~= "IDENTIFIER" then
-        error("VM compiler: only simple-name nested functions supported")
-    end
-    local name = nameToks[1].value
+
+    -- parse params (hi points at '(')
     local params, va = {}, false
     hi = hi + 1 -- skip '('
     while head[hi] and head[hi].value ~= ")" do
@@ -479,19 +530,50 @@ function compileNestedFunction(C, s)
         elseif tk.value == "..." then va = true end
         hi = hi + 1
     end
-    if s.isLocal then
-        local id = declareLocal(C, name) -- declare before body for recursion visibility
-        emit(C, "NEWCELL", id)           -- cell must exist before CLOSURE captures it
-        local proto = compileProtoCore(params, va, s.body, C)
-        C.protos[#C.protos + 1] = proto
-        emit(C, "CLOSURE", #C.protos)
-        emit(C, "SETCELL", id)
-    else
-        local proto = compileProtoCore(params, va, s.body, C)
-        C.protos[#C.protos + 1] = proto
-        emit(C, "CLOSURE", #C.protos)
-        emit(C, "SETGLOBAL", addConst(C, name))
+
+    -- Simple name: `function f` (global) / `local function f`
+    if #nameToks == 1 and nameToks[1].type == "IDENTIFIER" then
+        local name = nameToks[1].value
+        if s.isLocal then
+            local id = declareLocal(C, name) -- declare before body for recursion visibility
+            emit(C, "NEWCELL", id)           -- cell must exist before CLOSURE captures it
+            local proto = compileProtoCore(params, va, s.body, C)
+            C.protos[#C.protos + 1] = proto
+            emit(C, "CLOSURE", #C.protos)
+            emit(C, "SETCELL", id)
+        else
+            local proto = compileProtoCore(params, va, s.body, C)
+            C.protos[#C.protos + 1] = proto
+            emit(C, "CLOSURE", #C.protos)
+            emit(C, "SETGLOBAL", addConst(C, name))
+        end
+        return
     end
+
+    -- Dotted / method name: `function a.b.m(...)` or `function a:m(...)`.
+    -- Compile to obj[key] = <closure>, where `:` adds an implicit `self` param.
+    local lastSep
+    for i = #nameToks, 1, -1 do
+        if nameToks[i].type == "SYMBOL" and (nameToks[i].value == "." or nameToks[i].value == ":") then
+            lastSep = i; break
+        end
+    end
+    if not lastSep or not (nameToks[lastSep + 1] and nameToks[lastSep + 1].type == "IDENTIFIER") then
+        error("VM compiler: unsupported function name form")
+    end
+    local isMethod = nameToks[lastSep].value == ":"
+    local fieldName = nameToks[lastSep + 1].value
+    local objToks = {}
+    for i = 1, lastSep - 1 do objToks[i] = nameToks[i] end
+    if #objToks == 0 then error("VM compiler: unsupported function name form") end
+    if isMethod then table.insert(params, 1, "self") end
+
+    compileExpr(C, BuildExprAST(objToks)) -- push the object
+    emit(C, "PUSHK", addConst(C, fieldName))
+    local proto = compileProtoCore(params, va, s.body, C)
+    C.protos[#C.protos + 1] = proto
+    emit(C, "CLOSURE", #C.protos)
+    emit(C, "SETINDEX") -- obj[fieldName] = closure
 end
 
 -- Store the value on top of stack into a named variable (local cell, captured
@@ -633,6 +715,13 @@ function compileProtoCore(params, isVararg, body, parent)
 end
 
 function CompileFunction(funcNode)
-    local params, _, isVararg = parseHead(funcNode.head)
-    return compileProtoCore(params, isVararg, funcNode.body, nil)
+    local h = analyzeHead(funcNode.head)
+    local params = h.params
+    if h.isMethod then
+        -- colon method: implicit `self` as the first parameter
+        local p = { "self" }
+        for _, name in ipairs(params) do p[#p + 1] = name end
+        params = p
+    end
+    return compileProtoCore(params, h.isVararg, funcNode.body, nil)
 end
