@@ -1,2679 +1,3349 @@
+function _hup0xjr8s9wo(_lmqol1teyb75,_uii55iskj0at)
+if not _lmqol1teyb75["dec"] then
 do
-local _gmz6psmj7srj,_h8rwtcerbkyk;
-local _5wrxru9jqwcf={};
-local function _tiu5ejhw2m0j(...)
-_gmz6psmj7srj=78356;
-return 6477967;
+local _euukp27kv2f7;
+local _sl1n4p1wkez7={[33]=85724958};
+local _g328t0wci2o4,_881e528f1as0=22727942,97647;
+while _g328t0wci2o4 + _881e528f1as0 ~= 0 and _sl1n4p1wkez7[33] do
+if _g328t0wci2o4 + _881e528f1as0 == 96101220 then
+_g328t0wci2o4,_881e528f1as0=6897822,43362415;
+elseif (_g328t0wci2o4 + _881e528f1as0) % 48566745 == 22825589 then
+_euukp27kv2f7=24535;
+_g328t0wci2o4,_881e528f1as0=97828432,-4211675;
+elseif _881e528f1as0 + _g328t0wci2o4 == 33886916 then
+_g328t0wci2o4,_881e528f1as0=23559929,80497687;
+elseif (_g328t0wci2o4 + _881e528f1as0) % 158910120 == 93616757 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _5zgxuq3lgd71;
+local _r0ivys47opjj={[43]=52194442};
+local _6yw9p5k6sfue,_ri40f6eql5g3=25740810,842985;
+while _6yw9p5k6sfue + _ri40f6eql5g3 ~= 0 and _r0ivys47opjj[43] ~= nil do
+if _ri40f6eql5g3 + _6yw9p5k6sfue == 26583795 then
+_5zgxuq3lgd71=72;
+_6yw9p5k6sfue,_ri40f6eql5g3=6559417,-6390539;
+elseif _ri40f6eql5g3 + _6yw9p5k6sfue == 15268626 then
+_6yw9p5k6sfue,_ri40f6eql5g3=67387759,52708037;
+elseif (_6yw9p5k6sfue + _ri40f6eql5g3) % 41180630 == 168878 then
+_sb8ptitbafks=48844;
+_6yw9p5k6sfue,_ri40f6eql5g3=91925070,-91925070;
 end;
-_5wrxru9jqwcf[58138393]=_tiu5ejhw2m0j;
-local function _pr974uzf7420(...)
-_h8rwtcerbkyk=71592;
-return 24082158;
 end;
-_5wrxru9jqwcf[6477967]=_pr974uzf7420;
-local function _74jevh1i4265(...)
-if not(#tostring(math.random())>0) then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _e526tyd2sdtn;
-local _61vw3wd65g8g={};
-local function _42785hmcvhfh(...)
-_e526tyd2sdtn={};
-return 82000865;
 end;
-_61vw3wd65g8g[51444790]=_42785hmcvhfh;
-local function _2yydp92uif4n(...)
-_e526tyd2sdtn=40051;
+_g328t0wci2o4,_881e528f1as0=37983008,-37983008;
+end;
+end;
+end;
+while true do
+local _7tn40ledp47l=55717;
+break;
+end;
+local _im942y4d1c91=_lmqol1teyb75["k"];
+for _uymhd0wxdjqo=1,#_im942y4d1c91 do
+if type(_im942y4d1c91[_uymhd0wxdjqo]) == "string" then
+do
+local _kxvx8pk23rzg;
+local _dc8ftxhnhpv5={[74]=19677629};
+local _6fz6mu8n00rv,_jyh2pou3omdc=70158276,455455;
+while _6fz6mu8n00rv - _jyh2pou3omdc ~= 0 and (_6fz6mu8n00rv + 25674 - 25674 == _6fz6mu8n00rv) do
+if _jyh2pou3omdc - _6fz6mu8n00rv == 78265978 then
+_6fz6mu8n00rv,_jyh2pou3omdc=7834760,14111063;
+elseif _6fz6mu8n00rv - _jyh2pou3omdc == 19249213 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _uc3vb72eh110;
+local _tb5cbgeigm6u={};
+local function _rtmbsqh5wbcg(...)
+_uc3vb72eh110=984;
+return 63728558;
+end;
+_tb5cbgeigm6u[57037876]=_rtmbsqh5wbcg;
+local function _cm3cy718w61p(...)
+_ue0aqgcbpk2q=39898;
 return 0;
 end;
-_61vw3wd65g8g[82000865]=_2yydp92uif4n;
-local function _xs82zsr2uz4n(...)
-local _yuz2vp1hqfu6=70864;
-return 88940321;
+_tb5cbgeigm6u[63728558]=_cm3cy718w61p;
+local function _hgmx9hlmq8qt(...)
+local _97hlacvoyrfq=23580;
+return 14663826;
 end;
-_61vw3wd65g8g[57108736]=_xs82zsr2uz4n;
-local function _au8snrll76gs(...)
-local _vwd9ai8pwlqc=51434;
-return 42318290;
+_tb5cbgeigm6u[71592771]=_hgmx9hlmq8qt;
+local function _vl3848pk3rp6(...)
+local _pgdtakhln0bl=13310;
+return 8844325;
 end;
-_61vw3wd65g8g[72284147]=_au8snrll76gs;
-local function _5bldzxmmqj36(...)
-local _n2xa3utosku4=3038;
-return 48544200;
-end;
-_61vw3wd65g8g[36855994]=_5bldzxmmqj36;
-local _2ub8gek6tvx5={[39513]=true};
-local _pnri0bi6t0ij=51444790;
-while _pnri0bi6t0ij~=0 and _2ub8gek6tvx5[39513] do
-_pnri0bi6t0ij=_61vw3wd65g8g[_pnri0bi6t0ij]();
+_tb5cbgeigm6u[72721731]=_vl3848pk3rp6;
+local _yfdehjkqqc38={[50681]=true};
+local _mlx41f9qj38i=57037876;
+while _mlx41f9qj38i ~= 0 and _yfdehjkqqc38[50681] do
+_mlx41f9qj38i=_tb5cbgeigm6u[_mlx41f9qj38i]();
 end;
 end;
+_6fz6mu8n00rv,_jyh2pou3omdc=90276542,90276542;
+elseif _jyh2pou3omdc - _6fz6mu8n00rv == 83224699 then
+_6fz6mu8n00rv,_jyh2pou3omdc=50162718,14975808;
+elseif (_6fz6mu8n00rv - _jyh2pou3omdc) % 154856561 == 69702821 then
+_kxvx8pk23rzg=13109;
+_6fz6mu8n00rv,_jyh2pou3omdc=32589984,13340771;
+elseif _6fz6mu8n00rv - _jyh2pou3omdc == 89135666 then
+_6fz6mu8n00rv,_jyh2pou3omdc=65792259,12574763;
 end;
-return 0;
 end;
-_5wrxru9jqwcf[24082158]=_74jevh1i4265;
-local function _dw2vacc26x2b(...)
-local _sofaqjd9tnmr=580;
-return 78861831;
 end;
-_5wrxru9jqwcf[37721565]=_dw2vacc26x2b;
-local function _s2ya9uyiy0e2(...)
-local _vjpz1z6m0izy=27758;
-return 17604672;
+local _p6l5l3x1mmyx=_im942y4d1c91[_uymhd0wxdjqo];
+local _zbrjgkwx3oyd=162 % 256;
+do
+local _n2ft1ybbxift;
+local _gixh9mf5ykjq={[43]=65107827};
+local _m00q1is7jxod,_hg2028jz4fh2=62318289,531758;
+while _m00q1is7jxod + _hg2028jz4fh2 ~= 0 and (_m00q1is7jxod + 51902 - 51902 == _m00q1is7jxod) do
+if _hg2028jz4fh2 + _m00q1is7jxod == 18929528 then
+_m00q1is7jxod,_hg2028jz4fh2=39848456,70863445;
+elseif _m00q1is7jxod + _hg2028jz4fh2 == 62850047 then
+_n2ft1ybbxift=60406;
+_m00q1is7jxod,_hg2028jz4fh2=93749014,-67242094;
+elseif _m00q1is7jxod + _hg2028jz4fh2 == 1118929 then
+_m00q1is7jxod,_hg2028jz4fh2=23578627,83545250;
+elseif _m00q1is7jxod + _hg2028jz4fh2 == 96183593 then
+_m00q1is7jxod,_hg2028jz4fh2=9442523,46914839;
+elseif _hg2028jz4fh2 + _m00q1is7jxod == 26506920 then
+if math["abs"](-1) == 1 and math["floor"](3.14) == 3 then
+local _ltkzkk1kbece=328;
+else
+local _74ofri6p55q3=615;
 end;
-_5wrxru9jqwcf[2251829]=_s2ya9uyiy0e2;
-local _hadssejl0zdb={[65064]=true};
-local _vhrp3x095nuc=58138393;
-while _vhrp3x095nuc~=0 and _hadssejl0zdb[65064] do
-_vhrp3x095nuc=_5wrxru9jqwcf[_vhrp3x095nuc]();
+_m00q1is7jxod,_hg2028jz4fh2=85268289,-85268289;
+end;
+end;
+end;
+local _0cgvhzsuoa58={};
+for _m7p9u3m4e7mp=1,#_p6l5l3x1mmyx do
+_zbrjgkwx3oyd=(_zbrjgkwx3oyd * 31 + 7) % 256;
+do
+local _i8qp84q3v6qv=27088;
+end;
+while true do
+local _bu2gj5cfhxnp=23052;
+break;
+end;
+_0cgvhzsuoa58[_m7p9u3m4e7mp]=string["char"](string["byte"](_p6l5l3x1mmyx,_m7p9u3m4e7mp) ~ _zbrjgkwx3oyd);
+end;
+do
+local _j8uq449pzau1;
+local _pukfxbz23v06={[56]=82714152};
+local _79d1ti4gyfp3,_immwr1avcl00=72499090,367375;
+while _79d1ti4gyfp3 - _immwr1avcl00 ~= 0 and (_79d1ti4gyfp3 + 36430 - 36430 == _79d1ti4gyfp3) do
+if (_79d1ti4gyfp3 - _immwr1avcl00) % 158024864 == 72131715 then
+_j8uq449pzau1=13080;
+_79d1ti4gyfp3,_immwr1avcl00=75965712,69108823;
+elseif _immwr1avcl00 - _79d1ti4gyfp3 == 44380388 then
+_79d1ti4gyfp3,_immwr1avcl00=76918929,49504658;
+elseif _79d1ti4gyfp3 - _immwr1avcl00 == 6856889 then
+if string["find"]("abc","a") == 1 then
+local _0et3c6nzkjal=938;
+else
+local _djqy9ewav85c=369;
+end;
+_79d1ti4gyfp3,_immwr1avcl00=48737546,48737546;
+elseif _79d1ti4gyfp3 - _immwr1avcl00 == 61665707 then
+_79d1ti4gyfp3,_immwr1avcl00=64828748,11153448;
+end;
+end;
+end;
+_im942y4d1c91[_uymhd0wxdjqo]=table["concat"](_0cgvhzsuoa58);
 end;
 end;
 do
-local _nydnn85aa2g3;
-local _h8si24vjypdj={};
-local function _nhha3chde7hh(...)
-_nydnn85aa2g3=17271;
-return 95645591;
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) and string["find"]("abc","a") == 1 then
+local _um1hnk90omgu=468;
 end;
-_h8si24vjypdj[57201152]=_nhha3chde7hh;
-local function _ihnmlhu2s9qb(...)
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _w9hv40x9jqb5;
-local _twl9526x64e6={};
-local function _z7lf26v3qv4e(...)
-_w9hv40x9jqb5=394;
-return 75756329;
 end;
-_twl9526x64e6[24890728]=_z7lf26v3qv4e;
-local function _4czdnh0jdvf0(...)
-_w8t58c85yvzj=57884;
+_lmqol1teyb75["dec"]=true;
+end;
+do
+local _p2bj3t59pbqa,_dawrw9a33tjn;
+local _r339jpt99884={};
+local function _0igkepj8wghz(...)
+_p2bj3t59pbqa=37045;
+return 69458219;
+end;
+_r339jpt99884[24047727]=_0igkepj8wghz;
+local function _t6bdtppw6azu(...)
+_dawrw9a33tjn=57920;
+return 8141707;
+end;
+_r339jpt99884[69458219]=_t6bdtppw6azu;
+local function _dt5ghnhxk1w0(...)
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _de40ov04lryk;
+local _pnuao4pxkxh3={};
+local function _z57ioz3vpwrd(...)
+_de40ov04lryk={};
+return 36169121;
+end;
+_pnuao4pxkxh3[44458780]=_z57ioz3vpwrd;
+local function _64neuwnhx41w(...)
+_de40ov04lryk=27399;
 return 0;
 end;
-_twl9526x64e6[75756329]=_4czdnh0jdvf0;
-local function _4hxtxv4imjw3(...)
-local _ccpug75b5xwn=49225;
-return 31634194;
+_pnuao4pxkxh3[36169121]=_64neuwnhx41w;
+local function _ielo2n98oac1(...)
+local _ncbgoklk3u7k=79688;
+return 4004069;
 end;
-_twl9526x64e6[26890218]=_4hxtxv4imjw3;
-local _ke3mi0ghd2xf={[2770]=true};
-local _g6h6ji23mi3i=24890728;
-while _g6h6ji23mi3i~=0 and(_g6h6ji23mi3i+69107-69107==_g6h6ji23mi3i) do
-_g6h6ji23mi3i=_twl9526x64e6[_g6h6ji23mi3i]();
+_pnuao4pxkxh3[58766880]=_ielo2n98oac1;
+local _evspjvacw6ai={[98875]=true};
+local _sfy3p5disig9=44458780;
+while _sfy3p5disig9 ~= 0 and _evspjvacw6ai[98875] do
+_sfy3p5disig9=_pnuao4pxkxh3[_sfy3p5disig9]();
+end;
 end;
 end;
 return 0;
 end;
-_h8si24vjypdj[95645591]=_ihnmlhu2s9qb;
-local function _zbwjr4r3mdhy(...)
-local _xdwntmnv5m4t=52010;
-return 99397004;
+_r339jpt99884[8141707]=_dt5ghnhxk1w0;
+local function _tjvsl8ooftwz(...)
+local _2xq9nluq0572=94339;
+return 21519258;
 end;
-_h8si24vjypdj[16506282]=_zbwjr4r3mdhy;
-local function _4abbzour60he(...)
-local _483hip725q29=96494;
-return 63827142;
+_r339jpt99884[86323543]=_tjvsl8ooftwz;
+local function _5b53vk9mpa97(...)
+local _kt2yluin9mmu=62935;
+return 99235440;
 end;
-_h8si24vjypdj[22448290]=_4abbzour60he;
-local _49ttjhbzenf0={[3719]=true};
-local _l5cdhxjb1wb2=57201152;
-while _l5cdhxjb1wb2~=0 and(_l5cdhxjb1wb2+59553-59553==_l5cdhxjb1wb2) do
-_l5cdhxjb1wb2=_h8si24vjypdj[_l5cdhxjb1wb2]();
+_r339jpt99884[90997298]=_5b53vk9mpa97;
+local function _orzbltywhllc(...)
+local _vs6odxv177ow=14293;
+return 78841600;
+end;
+_r339jpt99884[25302611]=_orzbltywhllc;
+local _qlqnmt36jvaj={[87037]=true};
+local _86igtl4swa2v=24047727;
+while _86igtl4swa2v ~= 0 and (_86igtl4swa2v + 20508 - 20508 == _86igtl4swa2v) do
+_86igtl4swa2v=_r339jpt99884[_86igtl4swa2v]();
 end;
 end;
-local _xhrdzu0cnp65=0;
-local _elt9bwx5jpyv=0;
-local function _743arxqb2trm(_jgk1ug9o5ebc,_oum7y3m7fqda)
-if _jgk1ug9o5ebc then
-local _mfopeqmflfdf={[28]=76709625};
-local _p2454sbgrzo1,_y2ybcrl0cjcp=71382955,28485;
-while _p2454sbgrzo1+_y2ybcrl0cjcp~=0 and _mfopeqmflfdf[28] do
-if _y2ybcrl0cjcp+_p2454sbgrzo1==21055929 then
-_p2454sbgrzo1,_y2ybcrl0cjcp=88167118,10943342;
-elseif _y2ybcrl0cjcp+_p2454sbgrzo1==55484675 then
-print("PASS: ".._oum7y3m7fqda);
-_p2454sbgrzo1,_y2ybcrl0cjcp=48976142,-48976142;
-elseif _y2ybcrl0cjcp+_p2454sbgrzo1==24881829 then
-_p2454sbgrzo1,_y2ybcrl0cjcp=20867863,41330053;
-elseif _p2454sbgrzo1+_y2ybcrl0cjcp==71411440 then
-_xhrdzu0cnp65=_xhrdzu0cnp65+1;
-_p2454sbgrzo1,_y2ybcrl0cjcp=66824755,-11340080;
+do
+local _ybzil7ytf5br=20670;
+end;
+local function _u661n2xlfxnx(...)
+local _88uhx0qlcj4v=table["pack"](...);
+do
+local _y4tb48l9x5tg,_rlttonc2unre;
+local _abls0mtkr993={[6]=18072467};
+local _kz5ezi4n9abm,_mjsybgzkxgfj=85306666,871604;
+while _kz5ezi4n9abm - _mjsybgzkxgfj ~= 0 and _abls0mtkr993[6] ~= nil do
+if _kz5ezi4n9abm - _mjsybgzkxgfj == 12500970 then
+_kz5ezi4n9abm,_mjsybgzkxgfj=63943806,58980076;
+elseif (_kz5ezi4n9abm - _mjsybgzkxgfj) % 112481055 == 80146503 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _32qi33rjhelw;
+local _tt1q20gegzfd={};
+local function _g4506u9vc5fi(...)
+_32qi33rjhelw={};
+return 8446167;
+end;
+_tt1q20gegzfd[37384389]=_g4506u9vc5fi;
+local function _cyfsz20iekbs(...)
+_32qi33rjhelw=26804;
+return 0;
+end;
+_tt1q20gegzfd[8446167]=_cyfsz20iekbs;
+local function _k62kre9srdd3(...)
+local _kar089endswe=72128;
+return 83266824;
+end;
+_tt1q20gegzfd[72905307]=_k62kre9srdd3;
+local function _gbj6p1t0gmp9(...)
+local _k9s9w2uhsc1v=88247;
+return 72678867;
+end;
+_tt1q20gegzfd[98537598]=_gbj6p1t0gmp9;
+local _tq6userflskx={[34878]=true};
+local _wzz85z2pbwer=37384389;
+while _wzz85z2pbwer ~= 0 and _tq6userflskx[34878] do
+_wzz85z2pbwer=_tt1q20gegzfd[_wzz85z2pbwer]();
+end;
+end;
+end;
+_kz5ezi4n9abm,_mjsybgzkxgfj=2268089,2268089;
+elseif _mjsybgzkxgfj - _kz5ezi4n9abm == 2058270 then
+_kz5ezi4n9abm,_mjsybgzkxgfj=50665439,4940962;
+elseif (_kz5ezi4n9abm - _mjsybgzkxgfj) % 81863933 == 78116267 then
+_rlttonc2unre=73116;
+_kz5ezi4n9abm,_mjsybgzkxgfj=43800050,-36346453;
+elseif (_kz5ezi4n9abm - _mjsybgzkxgfj) % 128897010 == 84435062 then
+_y4tb48l9x5tg=14381;
+_kz5ezi4n9abm,_mjsybgzkxgfj=35419898,-42696369;
+elseif _mjsybgzkxgfj - _kz5ezi4n9abm == 26854006 then
+_kz5ezi4n9abm,_mjsybgzkxgfj=30563216,61958242;
+end;
+end;
+end;
+local _sq9ukoy2pf8r=_88uhx0qlcj4v["n"];
+local _6tv5vhgky8jq,_euesysk28f55={},0;
+local _slkwbhk803j3,_st4navigdoek={},0;
+do
+local _t15rc2sy4qw9=53171;
+end;
+do
+local _hgf3qbj5hg45;
+local _l5chndec3i4c={[17]=16030657};
+local _3ah7v83677by,_9hl9dxm9wyuy=30192767,859031;
+while _3ah7v83677by - _9hl9dxm9wyuy ~= 0 and (_3ah7v83677by + 35440 - 35440 == _3ah7v83677by) do
+if _3ah7v83677by - _9hl9dxm9wyuy == 66876876 then
+_3ah7v83677by,_9hl9dxm9wyuy=57007908,46258783;
+elseif _9hl9dxm9wyuy - _3ah7v83677by == 49864839 then
+_3ah7v83677by,_9hl9dxm9wyuy=19878994,83269288;
+elseif _3ah7v83677by - _9hl9dxm9wyuy == 58080462 then
+_3ah7v83677by,_9hl9dxm9wyuy=56148855,8166126;
+elseif (_3ah7v83677by - _9hl9dxm9wyuy) % 92854686 == 29333736 then
+_hgf3qbj5hg45=74596;
+_3ah7v83677by,_9hl9dxm9wyuy=61140434,-18177564;
+elseif (_3ah7v83677by - _9hl9dxm9wyuy) % 145407171 == 79317998 then
+if not (#tostring(math["random"]()) > 0) then
+local _wl0pkbfz9rgg=127;
+end;
+_3ah7v83677by,_9hl9dxm9wyuy=43816960,43816960;
+end;
+end;
+end;
+local _bzddnyxf6vln={};
+do
+local _awnzu6i19jtj;
+local _67d7uiernhzp={};
+local function _8zf3g036z50z(...)
+_awnzu6i19jtj=38231;
+return 13473250;
+end;
+_67d7uiernhzp[96238012]=_8zf3g036z50z;
+local function _chbugq9d1qf8(...)
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _2h6mdmz9wbr3=195;
+else
+local _qve6y2krglei;
+local _vsi71o17aazi={[53]=76601810};
+local _z3pih8ogr4e2,_bei4vbmoeoa0=89653903,956003;
+while _z3pih8ogr4e2 + _bei4vbmoeoa0 ~= 0 and _vsi71o17aazi[53] do
+if _bei4vbmoeoa0 + _z3pih8ogr4e2 == 21740901 then
+_z3pih8ogr4e2,_bei4vbmoeoa0=84037246,5463053;
+elseif _z3pih8ogr4e2 + _bei4vbmoeoa0 == 90609906 then
+_qve6y2krglei=605;
+_z3pih8ogr4e2,_bei4vbmoeoa0=23457229,-16761022;
+elseif _bei4vbmoeoa0 + _z3pih8ogr4e2 == 67972466 then
+_z3pih8ogr4e2,_bei4vbmoeoa0=87916863,68562640;
+elseif (_z3pih8ogr4e2 + _bei4vbmoeoa0) % 86033736 == 6696207 then
+if true then
+local _c2bxyq6xwh0d=144;
+end;
+_z3pih8ogr4e2,_bei4vbmoeoa0=65435420,-65435420;
+end;
+end;
+end;
+return 0;
+end;
+_67d7uiernhzp[13473250]=_chbugq9d1qf8;
+local function _fned7ahsuiry(...)
+local _36mvqhswvvqz=16678;
+return 45288613;
+end;
+_67d7uiernhzp[18987756]=_fned7ahsuiry;
+local _v5iwzff1bkh6={[2147]=true};
+local _wwjz6lbw4dzk=96238012;
+while _wwjz6lbw4dzk ~= 0 and _v5iwzff1bkh6[2147] do
+_wwjz6lbw4dzk=_67d7uiernhzp[_wwjz6lbw4dzk]();
+end;
+end;
+do
+if not (type(string) == "table" and type(string["byte"]) == "function") and math["abs"](-1) == 1 and math["floor"](3.14) == 3 then
+local _s70v0j71pwaj;
+local _494ji6zmq4ey={};
+local function _axn2vbe0bi9n(...)
+_s70v0j71pwaj=350;
+return 59070809;
+end;
+_494ji6zmq4ey[96707686]=_axn2vbe0bi9n;
+local function _nxn696jtecgr(...)
+_jr7j6cx3lzj6=65930;
+return 0;
+end;
+_494ji6zmq4ey[59070809]=_nxn696jtecgr;
+local function _1loei34m0erg(...)
+local _dfa1m3yjronr=10982;
+return 83104720;
+end;
+_494ji6zmq4ey[102682]=_1loei34m0erg;
+local function _kveq7ewfft2c(...)
+local _8cv50byhefa8=97107;
+return 96404183;
+end;
+_494ji6zmq4ey[58496648]=_kveq7ewfft2c;
+local _gc6ls2woswrk={[65411]=true};
+local _7w7smjgewevm=96707686;
+while _7w7smjgewevm ~= 0 and (_7w7smjgewevm + 35518 - 35518 == _7w7smjgewevm) do
+_7w7smjgewevm=_494ji6zmq4ey[_7w7smjgewevm]();
+end;
+end;
+end;
+local _5iaamxsaioy3={};
+do
+if not (type(string) == "table" and type(string["byte"]) == "function") and math["abs"](-1) == 1 and math["floor"](3.14) == 3 then
+local _ypgfvpdgxz5b;
+local _f7wpr0f8l6xf={[23]=94876698};
+local _r29q28odeac2,_21f5lwzrdxze=45342758,295958;
+while _r29q28odeac2 + _21f5lwzrdxze ~= 0 and _f7wpr0f8l6xf[23] do
+if (_r29q28odeac2 + _21f5lwzrdxze) % 82772443 == 7995243 then
+if true then
+local _fgkve0udg8xn=265;
+end;
+_r29q28odeac2,_21f5lwzrdxze=82404948,-82404948;
+elseif _21f5lwzrdxze + _r29q28odeac2 == 97117343 then
+_r29q28odeac2,_21f5lwzrdxze=70038243,12639656;
+elseif _21f5lwzrdxze + _r29q28odeac2 == 994911 then
+_r29q28odeac2,_21f5lwzrdxze=60513991,70852410;
+elseif _r29q28odeac2 + _21f5lwzrdxze == 45638716 then
+_ypgfvpdgxz5b=752;
+_r29q28odeac2,_21f5lwzrdxze=98516070,-90520827;
+end;
+end;
+end;
+end;
+local _lc7v9m7h2fu3,_jfeidnz1cv8y,_jvaqj3602lkl=_lmqol1teyb75["code"],_lmqol1teyb75["k"],_lmqol1teyb75["np"];
+for _8f60wh1cj4ke=1,_jvaqj3602lkl do
+local _emxisz2f4ym7={};
+local function _v3cibgneha1y(...)
+do
+local _wtmtjbll60e5=32300;
+end;
+return 70162532;
+end;
+_emxisz2f4ym7[59534724]=_v3cibgneha1y;
+local function _l385oi4xmfek(...)
+_5iaamxsaioy3[_8f60wh1cj4ke - 1]={_88uhx0qlcj4v[_8f60wh1cj4ke]};
+return 0;
+end;
+_emxisz2f4ym7[70162532]=_l385oi4xmfek;
+local function _oquxhaey06jj(...)
+local _w8cfokrtbws5=57301;
+return 41730225;
+end;
+_emxisz2f4ym7[80941822]=_oquxhaey06jj;
+local function _xq4088gbgbnh(...)
+local _maquf75jswly=46888;
+return 81529382;
+end;
+_emxisz2f4ym7[54272839]=_xq4088gbgbnh;
+local _1xw7tmjf1glo={[10928]=true};
+local _dz44imk9iwck=59534724;
+while _dz44imk9iwck ~= 0 and _1xw7tmjf1glo[10928] do
+_dz44imk9iwck=_emxisz2f4ym7[_dz44imk9iwck]();
+end;
+end;
+local _48b0cfo1a1cn=1;
+while true do
+local _6zec03r4esex=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+do
+local _ta31urmx4ijl,_c8eocbs64s14;
+local _zjdmq10zzcrg={[65]=18768618};
+local _tc6qei7he6u0,_h667hr2bn4aq=30226696,809694;
+while _tc6qei7he6u0 + _h667hr2bn4aq ~= 0 and _zjdmq10zzcrg[65] ~= nil do
+if _tc6qei7he6u0 + _h667hr2bn4aq == 90739139 then
+_tc6qei7he6u0,_h667hr2bn4aq=46885454,81861493;
+elseif _tc6qei7he6u0 + _h667hr2bn4aq == 31036390 then
+_ta31urmx4ijl=64234;
+_tc6qei7he6u0,_h667hr2bn4aq=30813498,44595367;
+elseif _tc6qei7he6u0 + _h667hr2bn4aq == 89911970 then
+if not (#tostring(math["random"]()) > 0) then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _s1v6m2c3j2xj;
+local _m9damctx8c9m={[68]=17064855};
+local _g92r3wldeerr,_4ozd0uvz70rk=55324718,297272;
+while _g92r3wldeerr + _4ozd0uvz70rk ~= 0 and (_g92r3wldeerr + 76238 - 76238 == _g92r3wldeerr) do
+if _g92r3wldeerr + _4ozd0uvz70rk == 23720476 then
+_g92r3wldeerr,_4ozd0uvz70rk=95932397,86411471;
+elseif _g92r3wldeerr + _4ozd0uvz70rk == 33649501 then
+if true then
+local _35kdms2lrolz=790;
+end;
+_g92r3wldeerr,_4ozd0uvz70rk=95070541,-95070541;
+elseif _g92r3wldeerr + _4ozd0uvz70rk == 55621990 then
+_s1v6m2c3j2xj=385;
+_g92r3wldeerr,_4ozd0uvz70rk=74289528,-40640027;
+end;
+end;
+end;
+end;
+_tc6qei7he6u0,_h667hr2bn4aq=6349215,-6349215;
+elseif _h667hr2bn4aq + _tc6qei7he6u0 == 75408865 then
+_c8eocbs64s14=39352;
+_tc6qei7he6u0,_h667hr2bn4aq=64357788,25554182;
+end;
+end;
+end;
+do
+local _kuvxdfmovx32=78351;
+end;
+if _6zec03r4esex == 7 then
+local _8pv9knogp1jw={[20]=93050838};
+local _4a26vtidguxk,_53e2lhp5o2u4=51241222,789820;
+while _4a26vtidguxk - _53e2lhp5o2u4 ~= 0 and (_4a26vtidguxk + 29900 - 29900 == _4a26vtidguxk) do
+if _4a26vtidguxk - _53e2lhp5o2u4 == 50451402 then
+_euesysk28f55=_euesysk28f55 + 1;
+_4a26vtidguxk,_53e2lhp5o2u4=65771490,27516813;
+elseif _4a26vtidguxk - _53e2lhp5o2u4 == 74308193 then
+_4a26vtidguxk,_53e2lhp5o2u4=12497781,15023949;
+elseif (_4a26vtidguxk - _53e2lhp5o2u4) % 42059168 == 38254677 then
+_6tv5vhgky8jq[_euesysk28f55]=_jfeidnz1cv8y[_lc7v9m7h2fu3[_48b0cfo1a1cn]];
+_4a26vtidguxk,_53e2lhp5o2u4=23384683,10021358;
+elseif _53e2lhp5o2u4 - _4a26vtidguxk == 72702428 then
+_4a26vtidguxk,_53e2lhp5o2u4=32765311,80362041;
+elseif (_4a26vtidguxk - _53e2lhp5o2u4) % 14048240 == 13363325 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_4a26vtidguxk,_53e2lhp5o2u4=85837804,85837804;
+end;
+end;
+elseif _6zec03r4esex == 32 then
+local _377dkm7hzjoc={[1]=81458274};
+local _tm3xlo2g3iwe,_kzdh2e2ewqj6=79300918,35679;
+while _tm3xlo2g3iwe - _kzdh2e2ewqj6 ~= 0 and _377dkm7hzjoc[1] do
+if _kzdh2e2ewqj6 - _tm3xlo2g3iwe == 52935712 then
+_tm3xlo2g3iwe,_kzdh2e2ewqj6=84867571,43981014;
+elseif (_tm3xlo2g3iwe - _kzdh2e2ewqj6) % 125269382 == 79265239 then
+_euesysk28f55=_euesysk28f55 + 1;
+_tm3xlo2g3iwe,_kzdh2e2ewqj6=787372,-27595234;
+elseif (_tm3xlo2g3iwe - _kzdh2e2ewqj6) % 73984199 == 28382606 then
+do
+local _pv6sntlp0jkg;
+local _5swpe4ipds46={[17]=62988554};
+local _qngl87sq4crr,_6d5212sl8acg=84172907,242681;
+while _qngl87sq4crr + _6d5212sl8acg ~= 0 and _5swpe4ipds46[17] ~= nil do
+if _6d5212sl8acg + _qngl87sq4crr == 82393601 then
+_qngl87sq4crr,_6d5212sl8acg=70961423,55151630;
+elseif _6d5212sl8acg + _qngl87sq4crr == 73260185 then
+if not (string["find"]("abc","a") == 1) then
+local _yik0xnqwjgdr;
+local _586cbx8mfjza={};
+local function _l1u31qibuiwm(...)
+_yik0xnqwjgdr=919;
+return 48617577;
+end;
+_586cbx8mfjza[36115603]=_l1u31qibuiwm;
+local function _eijdkp0zyi96(...)
+_hq0ne7p3hda4=92523;
+return 0;
+end;
+_586cbx8mfjza[48617577]=_eijdkp0zyi96;
+local function _ga3e4dv12dsg(...)
+local _ejdn4ohr6n74=90269;
+return 78888411;
+end;
+_586cbx8mfjza[34211409]=_ga3e4dv12dsg;
+local function _yvnlg8ts8fvk(...)
+local _sjhlkaw73uqu=5793;
+return 37002015;
+end;
+_586cbx8mfjza[83760123]=_yvnlg8ts8fvk;
+local _7gsfodqfn1ws={[65813]=true};
+local _pceto7m6807t=36115603;
+while _pceto7m6807t ~= 0 and (_pceto7m6807t + 35607 - 35607 == _pceto7m6807t) do
+_pceto7m6807t=_586cbx8mfjza[_pceto7m6807t]();
+end;
+end;
+_qngl87sq4crr,_6d5212sl8acg=73193895,-73193895;
+elseif _6d5212sl8acg + _qngl87sq4crr == 84415588 then
+_pv6sntlp0jkg=32352;
+_qngl87sq4crr,_6d5212sl8acg=61878917,11381268;
+elseif _6d5212sl8acg + _qngl87sq4crr == 1978344 then
+_qngl87sq4crr,_6d5212sl8acg=79579158,66053018;
+end;
+end;
+end;
+_tm3xlo2g3iwe,_kzdh2e2ewqj6=43879625,-52565864;
+elseif _tm3xlo2g3iwe - _kzdh2e2ewqj6 == 96445489 then
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_tm3xlo2g3iwe,_kzdh2e2ewqj6=15374368,15374368;
+end;
+end;
+elseif _6zec03r4esex == 22 then
+local _afudiugoaxjy={[55]=98143486};
+local _gzggd5eo5hwx,_sfrew3bo4fi9=68712166,259032;
+while _gzggd5eo5hwx + _sfrew3bo4fi9 ~= 0 and _afudiugoaxjy[55] do
+if _sfrew3bo4fi9 + _gzggd5eo5hwx == 93987052 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_gzggd5eo5hwx,_sfrew3bo4fi9=31707137,-31707137;
+elseif _gzggd5eo5hwx + _sfrew3bo4fi9 == 10299700 then
+_gzggd5eo5hwx,_sfrew3bo4fi9=39545985,45794479;
+elseif _sfrew3bo4fi9 + _gzggd5eo5hwx == 68971198 then
+do
+local _o61j4fo2zpn6;
+local _nfun3tc8ir8u={};
+local function _jql5d7i9qcqa(...)
+_o61j4fo2zpn6=98994;
+return 22359731;
+end;
+_nfun3tc8ir8u[97469003]=_jql5d7i9qcqa;
+local function _rnj22flrzkwz(...)
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _o5l4wvpu5vnh;
+local _2g6ksmt2yl6z={[53]=49068271};
+local _a6s7ivcspbqo,_9l325mkw8hmo=45041799,337636;
+while _a6s7ivcspbqo + _9l325mkw8hmo ~= 0 and _2g6ksmt2yl6z[53] do
+if _a6s7ivcspbqo + _9l325mkw8hmo == 82413682 then
+_o5l4wvpu5vnh=53787;
+_a6s7ivcspbqo,_9l325mkw8hmo=25043066,-25043066;
+elseif _9l325mkw8hmo + _a6s7ivcspbqo == 96875985 then
+_a6s7ivcspbqo,_9l325mkw8hmo=47787372,4957362;
+elseif _9l325mkw8hmo + _a6s7ivcspbqo == 45379435 then
+_o5l4wvpu5vnh={};
+_a6s7ivcspbqo,_9l325mkw8hmo=39385295,43028387;
+elseif _9l325mkw8hmo + _a6s7ivcspbqo == 40730467 then
+_a6s7ivcspbqo,_9l325mkw8hmo=62806659,10869670;
+elseif _9l325mkw8hmo + _a6s7ivcspbqo == 33878750 then
+_a6s7ivcspbqo,_9l325mkw8hmo=30951305,236749;
+end;
+end;
+end;
+return 0;
+end;
+_nfun3tc8ir8u[22359731]=_rnj22flrzkwz;
+local function _f5reraas3g5u(...)
+local _e9gjb2j3f25f=87580;
+return 68885115;
+end;
+_nfun3tc8ir8u[7400675]=_f5reraas3g5u;
+local _pok6bc6s7yn7={[52482]=true};
+local _st444z63tj5w=97469003;
+while _st444z63tj5w ~= 0 and _pok6bc6s7yn7[52482] do
+_st444z63tj5w=_nfun3tc8ir8u[_st444z63tj5w]();
+end;
+end;
+_gzggd5eo5hwx,_sfrew3bo4fi9=76244733,-24565889;
+elseif (_gzggd5eo5hwx + _sfrew3bo4fi9) % 25829397 == 19723442 then
+_6tv5vhgky8jq[_euesysk28f55]=(_lc7v9m7h2fu3[_48b0cfo1a1cn] ~= 0);
+_gzggd5eo5hwx,_sfrew3bo4fi9=97586925,-3599873;
+elseif _gzggd5eo5hwx + _sfrew3bo4fi9 == 53310878 then
+_gzggd5eo5hwx,_sfrew3bo4fi9=73306658,93563638;
+elseif _sfrew3bo4fi9 + _gzggd5eo5hwx == 70073764 then
+_euesysk28f55=_euesysk28f55 + 1;
+_gzggd5eo5hwx,_sfrew3bo4fi9=15139278,4584164;
+elseif (_gzggd5eo5hwx + _sfrew3bo4fi9) % 124849655 == 51678844 then
+do
+local _fgwymttiyngc;
+local _kuuzlrkd0x2v={};
+local function _3vlgktmf3yf4(...)
+_fgwymttiyngc=38257;
+return 18374872;
+end;
+_kuuzlrkd0x2v[37958892]=_3vlgktmf3yf4;
+local function _g3h0nach7wt7(...)
+if math["abs"](-1) == 1 and math["floor"](3.14) == 3 then
+local _5lstuv9d7ogy=929;
+else
+local _r0nx3cviqwtm;
+local _5fbnmv5u3vox={[31]=69120422};
+local _mg01s0sdi16n,_mf6abaswd93w=42778194,723240;
+while _mg01s0sdi16n + _mf6abaswd93w ~= 0 and (_mg01s0sdi16n + 66895 - 66895 == _mg01s0sdi16n) do
+if _mf6abaswd93w + _mg01s0sdi16n == 43501434 then
+_r0nx3cviqwtm={};
+_mg01s0sdi16n,_mf6abaswd93w=43987534,-11534055;
+elseif (_mg01s0sdi16n + _mf6abaswd93w) % 126957419 == 32453479 then
+_r0nx3cviqwtm=24295;
+_mg01s0sdi16n,_mf6abaswd93w=56272084,-56272084;
+elseif _mg01s0sdi16n + _mf6abaswd93w == 83446162 then
+_mg01s0sdi16n,_mf6abaswd93w=11711650,55297837;
+end;
+end;
+end;
+return 0;
+end;
+_kuuzlrkd0x2v[18374872]=_g3h0nach7wt7;
+local function _rm4ewh87xrwk(...)
+local _mjcwj5v0sxq2=76497;
+return 33443719;
+end;
+_kuuzlrkd0x2v[43308907]=_rm4ewh87xrwk;
+local function _idpkjah09691(...)
+local _8p93aqce2109=19256;
+return 34957009;
+end;
+_kuuzlrkd0x2v[20654270]=_idpkjah09691;
+local _pwe6do9zsmgm={[5405]=true};
+local _izzsegezlhj0=37958892;
+while _izzsegezlhj0 ~= 0 and (_izzsegezlhj0 + 44815 - 44815 == _izzsegezlhj0) do
+_izzsegezlhj0=_kuuzlrkd0x2v[_izzsegezlhj0]();
+end;
+end;
+_gzggd5eo5hwx,_sfrew3bo4fi9=55895072,14178692;
+end;
+end;
+elseif _6zec03r4esex == 45 then
+local _vl2wsd1o9qg6={[4]=56769690};
+local _fppzpoeovslf,_vlr25tgskvkg=54714761,500394;
+while _fppzpoeovslf + _vlr25tgskvkg ~= 0 and _vl2wsd1o9qg6[4] ~= nil do
+if _fppzpoeovslf + _vlr25tgskvkg == 69271455 then
+do
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) and math["abs"](-1) == 1 and math["floor"](3.14) == 3 then
+local _84ggtdt9oty0;
+local _te30lnliaazp={[41]=97556689};
+local _4gwge8wbo93g,_vblns938ohj9=88147126,208574;
+while _4gwge8wbo93g + _vblns938ohj9 ~= 0 and _te30lnliaazp[41] do
+if _vblns938ohj9 + _4gwge8wbo93g == 74374504 then
+_4gwge8wbo93g,_vblns938ohj9=21023137,16714854;
+elseif _4gwge8wbo93g + _vblns938ohj9 == 88355700 then
+_84ggtdt9oty0=831;
+_4gwge8wbo93g,_vblns938ohj9=36144686,28290927;
+elseif (_4gwge8wbo93g + _vblns938ohj9) % 70892362 == 64435613 then
+if true then
+local _1odniog2muoe=284;
+end;
+_4gwge8wbo93g,_vblns938ohj9=79371807,-79371807;
+end;
+end;
+end;
+end;
+_fppzpoeovslf,_vlr25tgskvkg=71439136,1972338;
+elseif _vlr25tgskvkg + _fppzpoeovslf == 5961745 then
+do
+local _eza66wpmqw29;
+local _swi2msh9wifh={[5]=43753957};
+local _42z1hqxenr35,_9aev8ndadert=19502642,184900;
+while _42z1hqxenr35 - _9aev8ndadert ~= 0 and _swi2msh9wifh[5] ~= nil do
+if _42z1hqxenr35 - _9aev8ndadert == 58232003 then
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _ezaoibfxdm32=374;
+else
+local _649sy3vyp87s;
+local _rybui4nfxidq={[63]=37076340};
+local _ocmm5ixbijby,_gltr7ay7comp=7306035,172536;
+while _ocmm5ixbijby + _gltr7ay7comp ~= 0 and _rybui4nfxidq[63] do
+if _gltr7ay7comp + _ocmm5ixbijby == 35280342 then
+_ocmm5ixbijby,_gltr7ay7comp=56646043,28324245;
+elseif _gltr7ay7comp + _ocmm5ixbijby == 84941649 then
+_ocmm5ixbijby,_gltr7ay7comp=10933671,95419289;
+elseif _ocmm5ixbijby + _gltr7ay7comp == 38756219 then
+_ij4o8oh0ipjt=48818;
+_ocmm5ixbijby,_gltr7ay7comp=48530178,-48530178;
+elseif _ocmm5ixbijby + _gltr7ay7comp == 7478571 then
+_649sy3vyp87s=245;
+_ocmm5ixbijby,_gltr7ay7comp=83241351,-44485132;
+end;
+end;
+end;
+_42z1hqxenr35,_9aev8ndadert=82681658,82681658;
+elseif _42z1hqxenr35 - _9aev8ndadert == 57029908 then
+_42z1hqxenr35,_9aev8ndadert=75829518,32399209;
+elseif (_42z1hqxenr35 - _9aev8ndadert) % 84947968 == 19317742 then
+_eza66wpmqw29=98898;
+_42z1hqxenr35,_9aev8ndadert=23760007,-34471996;
+elseif _9aev8ndadert - _42z1hqxenr35 == 79056139 then
+_42z1hqxenr35,_9aev8ndadert=26950524,59964339;
+end;
+end;
+end;
+_fppzpoeovslf,_vlr25tgskvkg=85056950,-32414078;
+elseif _vlr25tgskvkg + _fppzpoeovslf == 73411474 then
+_euesysk28f55=_euesysk28f55 + 1;
+_fppzpoeovslf,_vlr25tgskvkg=88230901,-72467773;
+elseif _vlr25tgskvkg + _fppzpoeovslf == 92276921 then
+_fppzpoeovslf,_vlr25tgskvkg=44097685,38028704;
+elseif _vlr25tgskvkg + _fppzpoeovslf == 15763128 then
+do
+local _ucjq0vlx1vvt;
+local _6uj3oskknc07={};
+local function _arr8syyr49a2(...)
+_ucjq0vlx1vvt=10379;
+return 33396043;
+end;
+_6uj3oskknc07[11333827]=_arr8syyr49a2;
+local function _ek72noyter8b(...)
+if #tostring(math["random"]()) > 0 then
+local _9585mcg4or8t=91;
+else
+local _y1l8dty3xiuj;
+local _uo6axsyriio8={[47]=43434171};
+local _9kok8b1kkfeo,_72nlv42bs96g=48017012,345185;
+while _9kok8b1kkfeo + _72nlv42bs96g ~= 0 and _uo6axsyriio8[47] ~= nil do
+if _9kok8b1kkfeo + _72nlv42bs96g == 48362197 then
+_y1l8dty3xiuj={};
+_9kok8b1kkfeo,_72nlv42bs96g=10909640,46052408;
+elseif _72nlv42bs96g + _9kok8b1kkfeo == 1599327 then
+_9kok8b1kkfeo,_72nlv42bs96g=1532591,42892639;
+elseif _9kok8b1kkfeo + _72nlv42bs96g == 75885260 then
+_9kok8b1kkfeo,_72nlv42bs96g=89814692,20461120;
+elseif _9kok8b1kkfeo + _72nlv42bs96g == 56962048 then
+_y1l8dty3xiuj=78563;
+_9kok8b1kkfeo,_72nlv42bs96g=52788165,-52788165;
+end;
+end;
+end;
+return 0;
+end;
+_6uj3oskknc07[33396043]=_ek72noyter8b;
+local function _w66ep5qtcaqs(...)
+local _kksmrfcmvgmb=25681;
+return 47251213;
+end;
+_6uj3oskknc07[47684357]=_w66ep5qtcaqs;
+local _g1cumoudice4={[76934]=true};
+local _cok3m70qn9ab=11333827;
+while _cok3m70qn9ab ~= 0 and _g1cumoudice4[76934] do
+_cok3m70qn9ab=_6uj3oskknc07[_cok3m70qn9ab]();
+end;
+end;
+_fppzpoeovslf,_vlr25tgskvkg=99239212,-82309143;
+elseif _fppzpoeovslf + _vlr25tgskvkg == 52642872 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_fppzpoeovslf,_vlr25tgskvkg=56760464,-56760464;
+elseif _fppzpoeovslf + _vlr25tgskvkg == 17225155 then
+_fppzpoeovslf,_vlr25tgskvkg=32963230,25279918;
+elseif _fppzpoeovslf + _vlr25tgskvkg == 55215155 then
+do
+if not (string["find"]("abc","a") == 1) and type(string) == "table" and type(string["byte"]) == "function" then
+local _pcippbuwz5uv;
+local _hif9lmi6rql2={};
+local function _etadea4maeba(...)
+_pcippbuwz5uv={};
+return 81396388;
+end;
+_hif9lmi6rql2[73956495]=_etadea4maeba;
+local function _1r2kxpwb442v(...)
+_pcippbuwz5uv=59779;
+return 0;
+end;
+_hif9lmi6rql2[81396388]=_1r2kxpwb442v;
+local function _n42k4szc5i3d(...)
+local _ndtpb7srsvhb=17363;
+return 39926955;
+end;
+_hif9lmi6rql2[29931056]=_n42k4szc5i3d;
+local function _w19mghrdwilw(...)
+local _uqus646o1ngk=57422;
+return 66756359;
+end;
+_hif9lmi6rql2[63911873]=_w19mghrdwilw;
+local _lvibzb171vvd={[89325]=true};
+local _huc7jkqyd1a9=73956495;
+while _huc7jkqyd1a9 ~= 0 and _lvibzb171vvd[89325] do
+_huc7jkqyd1a9=_hif9lmi6rql2[_huc7jkqyd1a9]();
+end;
+end;
+end;
+_fppzpoeovslf,_vlr25tgskvkg=75483872,-6212417;
+elseif _fppzpoeovslf + _vlr25tgskvkg == 16930069 then
+_6tv5vhgky8jq[_euesysk28f55]=_bzddnyxf6vln[_lc7v9m7h2fu3[_48b0cfo1a1cn]];
+_fppzpoeovslf,_vlr25tgskvkg=68887036,-62925291;
+end;
+end;
+elseif _6zec03r4esex == 40 then
+local _al1u03eogh07={[58]=76484014};
+local _5m6j07u95fbs,_b9b2i958pezx=40777611,834801;
+while _5m6j07u95fbs - _b9b2i958pezx ~= 0 and (_5m6j07u95fbs + 38923 - 38923 == _5m6j07u95fbs) do
+if (_5m6j07u95fbs - _b9b2i958pezx) % 117216336 == 39942810 then
+do
+local _siwpjn72xffo=16189;
+end;
+_5m6j07u95fbs,_b9b2i958pezx=99026472,71956800;
+elseif _5m6j07u95fbs - _b9b2i958pezx == 27069672 then
+_bzddnyxf6vln[_lc7v9m7h2fu3[_48b0cfo1a1cn]]=_6tv5vhgky8jq[_euesysk28f55];
+_5m6j07u95fbs,_b9b2i958pezx=23254846,-5330749;
+elseif _5m6j07u95fbs - _b9b2i958pezx == 70641983 then
+_5m6j07u95fbs,_b9b2i958pezx=98236228,50671758;
+elseif _5m6j07u95fbs - _b9b2i958pezx == 47651460 then
+_5m6j07u95fbs,_b9b2i958pezx=61763294,66813281;
+elseif _5m6j07u95fbs - _b9b2i958pezx == 66423210 then
+do
+local _avrvabf9sdgq,_l7yj6jecnm3p;
+local _fq1fg18l9qon={[42]=49700523};
+local _cee9x9hhjaru,_94b1uqxoc2xl=5240422,493303;
+while _cee9x9hhjaru + _94b1uqxoc2xl ~= 0 and _fq1fg18l9qon[42] do
+if _cee9x9hhjaru + _94b1uqxoc2xl == 4985683 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+if not (#tostring(math["random"]()) > 0) then
+local _uw10hna883cl;
+local _j4kw0pvyrq0n={[87]=94469870};
+local _qdj2jba0jzdw,_alx691ixmfqi=74619313,783037;
+while _qdj2jba0jzdw + _alx691ixmfqi ~= 0 and _j4kw0pvyrq0n[87] do
+if _alx691ixmfqi + _qdj2jba0jzdw == 73432931 then
+_qdj2jba0jzdw,_alx691ixmfqi=78379223,32979779;
+elseif _qdj2jba0jzdw + _alx691ixmfqi == 84091580 then
+_8kfidqkt24cb=52883;
+_qdj2jba0jzdw,_alx691ixmfqi=69459483,-69459483;
+elseif _qdj2jba0jzdw + _alx691ixmfqi == 75402350 then
+_uw10hna883cl=451;
+_qdj2jba0jzdw,_alx691ixmfqi=60687336,23404244;
+end;
+end;
+end;
+end;
+_cee9x9hhjaru,_94b1uqxoc2xl=6474972,-6474972;
+elseif (_cee9x9hhjaru + _94b1uqxoc2xl) % 91334911 == 5733725 then
+_avrvabf9sdgq=94162;
+_cee9x9hhjaru,_94b1uqxoc2xl=60141392,-48659154;
+elseif _94b1uqxoc2xl + _cee9x9hhjaru == 16320446 then
+_cee9x9hhjaru,_94b1uqxoc2xl=85418921,11417391;
+elseif (_cee9x9hhjaru + _94b1uqxoc2xl) % 28078451 == 11482238 then
+_l7yj6jecnm3p=20508;
+_cee9x9hhjaru,_94b1uqxoc2xl=80888406,-75902723;
+end;
+end;
+end;
+_5m6j07u95fbs,_b9b2i958pezx=22860552,-16378214;
+elseif (_5m6j07u95fbs - _b9b2i958pezx) % 59504804 == 39238766 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_5m6j07u95fbs,_b9b2i958pezx=14341475,14341475;
+elseif (_5m6j07u95fbs - _b9b2i958pezx) % 100796816 == 85704319 then
+_euesysk28f55=_euesysk28f55 - 1;
+_5m6j07u95fbs,_b9b2i958pezx=72792363,6369153;
+elseif (_5m6j07u95fbs - _b9b2i958pezx) % 111214093 == 28585595 then
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_5m6j07u95fbs,_b9b2i958pezx=58733435,-26970884;
+elseif _b9b2i958pezx - _5m6j07u95fbs == 95839439 then
+_5m6j07u95fbs,_b9b2i958pezx=14397664,94505545;
+end;
+end;
+elseif _6zec03r4esex == 38 then
+local _k1w0foox252x={[9]=75964639};
+local _4ssm4zubgfwa,_9o4x82nw0h3n=98450254,227546;
+while _4ssm4zubgfwa - _9o4x82nw0h3n ~= 0 and (_4ssm4zubgfwa + 82576 - 82576 == _4ssm4zubgfwa) do
+if _4ssm4zubgfwa - _9o4x82nw0h3n == 39876989 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_4ssm4zubgfwa,_9o4x82nw0h3n=22357869,22357869;
+elseif _4ssm4zubgfwa - _9o4x82nw0h3n == 33816280 then
+_4ssm4zubgfwa,_9o4x82nw0h3n=23943787,59574441;
+elseif _9o4x82nw0h3n - _4ssm4zubgfwa == 89882151 then
+_4ssm4zubgfwa,_9o4x82nw0h3n=83845895,20219938;
+elseif _4ssm4zubgfwa - _9o4x82nw0h3n == 98222708 then
+_5iaamxsaioy3[_lc7v9m7h2fu3[_48b0cfo1a1cn]]={};
+_4ssm4zubgfwa,_9o4x82nw0h3n=30222854,-66546109;
+elseif (_4ssm4zubgfwa - _9o4x82nw0h3n) % 140579583 == 96768963 then
+do
+local _0xzz1d0r74ud;
+local _ug9lng2rko7l={};
+local function _pg6sgqwtrj5z(...)
+_0xzz1d0r74ud=35605;
+return 52365865;
+end;
+_ug9lng2rko7l[74034158]=_pg6sgqwtrj5z;
+local function _rgd3nlgl7kv4(...)
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _7s4mhxfjpgv2=378;
+else
+local _38exr07o944w;
+local _me43p2f5hfg5={[1]=78183187};
+local _vkl0w6p57ezo,_afnx8sdj12fj=57071217,323491;
+while _vkl0w6p57ezo - _afnx8sdj12fj ~= 0 and _me43p2f5hfg5[1] ~= nil do
+if _vkl0w6p57ezo - _afnx8sdj12fj == 46643418 then
+_vkl0w6p57ezo,_afnx8sdj12fj=33121923,49929299;
+elseif _vkl0w6p57ezo - _afnx8sdj12fj == 56747726 then
+_38exr07o944w=739;
+_vkl0w6p57ezo,_afnx8sdj12fj=89069868,76198309;
+elseif _vkl0w6p57ezo - _afnx8sdj12fj == 22229300 then
+_vkl0w6p57ezo,_afnx8sdj12fj=46198767,73438377;
+elseif (_vkl0w6p57ezo - _afnx8sdj12fj) % 92069459 == 12871559 then
+_rw6e3yfbfzgu=95191;
+_vkl0w6p57ezo,_afnx8sdj12fj=16845199,16845199;
+end;
+end;
+end;
+return 0;
+end;
+_ug9lng2rko7l[52365865]=_rgd3nlgl7kv4;
+local function _58cdzrozhyr4(...)
+local _jgockpznw6wx=82878;
+return 62458223;
+end;
+_ug9lng2rko7l[70926601]=_58cdzrozhyr4;
+local function _m7ax45irbdc7(...)
+local _e4zouz7qfain=45026;
+return 87174060;
+end;
+_ug9lng2rko7l[44039386]=_m7ax45irbdc7;
+local _3prralavhsao={[40931]=true};
+local _ffhbct7yx9ua=74034158;
+while _ffhbct7yx9ua ~= 0 and (_ffhbct7yx9ua + 20127 - 20127 == _ffhbct7yx9ua) do
+_ffhbct7yx9ua=_ug9lng2rko7l[_ffhbct7yx9ua]();
+end;
+end;
+_4ssm4zubgfwa,_9o4x82nw0h3n=47912356,8035367;
+elseif _4ssm4zubgfwa - _9o4x82nw0h3n == 95273547 then
+_4ssm4zubgfwa,_9o4x82nw0h3n=8569142,43596566;
+end;
+end;
+elseif _6zec03r4esex == 26 then
+local _44n7ch8qz5kr={[48]=15300944};
+local _7azboj50yci2,_d1fjfyvn5yd5=57950181,904266;
+while _7azboj50yci2 - _d1fjfyvn5yd5 ~= 0 and (_7azboj50yci2 + 22930 - 22930 == _7azboj50yci2) do
+if _7azboj50yci2 - _d1fjfyvn5yd5 == 57045915 then
+_euesysk28f55=_euesysk28f55 + 1;
+_7azboj50yci2,_d1fjfyvn5yd5=75067853,67541722;
+elseif _7azboj50yci2 - _d1fjfyvn5yd5 == 84217947 then
+_7azboj50yci2,_d1fjfyvn5yd5=92962154,47841780;
+elseif (_7azboj50yci2 - _d1fjfyvn5yd5) % 71739335 == 32995687 then
+_6tv5vhgky8jq[_euesysk28f55]=_5iaamxsaioy3[_lc7v9m7h2fu3[_48b0cfo1a1cn]][1];
+_7azboj50yci2,_d1fjfyvn5yd5=74631769,41744178;
+elseif (_7azboj50yci2 - _d1fjfyvn5yd5) % 25489771 == 7526131 then
+do
+local _8fyc2g5f2sgd;
+local _wscvj47jqxoa={[69]=12456299};
+local _33yook9s27yz,_c0fv78k9fd8i=23884703,489175;
+while _33yook9s27yz + _c0fv78k9fd8i ~= 0 and (_33yook9s27yz + 16314 - 16314 == _33yook9s27yz) do
+if _33yook9s27yz + _c0fv78k9fd8i == 77640852 then
+if not (#tostring(math["random"]()) > 0) then
+local _9gny1450fw5x;
+local _q4lpvbj5a8wh={};
+local function _rl2rv6g405q8(...)
+_9gny1450fw5x=63;
+return 7493673;
+end;
+_q4lpvbj5a8wh[14204761]=_rl2rv6g405q8;
+local function _yglwbm2xx96n(...)
+_kz3kbicxa4fr=30694;
+return 0;
+end;
+_q4lpvbj5a8wh[7493673]=_yglwbm2xx96n;
+local function _spawzy6ajr9g(...)
+local _ds31bliw1a2j=79951;
+return 5011498;
+end;
+_q4lpvbj5a8wh[17864680]=_spawzy6ajr9g;
+local function _ujydas5nkmly(...)
+local _mazlux9go9qu=25172;
+return 61751584;
+end;
+_q4lpvbj5a8wh[920881]=_ujydas5nkmly;
+local function _qhnghji8zcmf(...)
+local _bt9ucvmv3qlt=23615;
+return 4211079;
+end;
+_q4lpvbj5a8wh[24442816]=_qhnghji8zcmf;
+local _sk3rh78aaimr={[67102]=true};
+local _mml9dpwshtph=14204761;
+while _mml9dpwshtph ~= 0 and _sk3rh78aaimr[67102] do
+_mml9dpwshtph=_q4lpvbj5a8wh[_mml9dpwshtph]();
+end;
+end;
+_33yook9s27yz,_c0fv78k9fd8i=26195247,-26195247;
+elseif _c0fv78k9fd8i + _33yook9s27yz == 21695714 then
+_33yook9s27yz,_c0fv78k9fd8i=59816463,29998930;
+elseif _c0fv78k9fd8i + _33yook9s27yz == 70457464 then
+_33yook9s27yz,_c0fv78k9fd8i=21887870,18516486;
+elseif (_33yook9s27yz + _c0fv78k9fd8i) % 36167219 == 24373878 then
+_8fyc2g5f2sgd=49952;
+_33yook9s27yz,_c0fv78k9fd8i=54732007,22908845;
+end;
+end;
+end;
+_7azboj50yci2,_d1fjfyvn5yd5=81984047,48988360;
+elseif _7azboj50yci2 - _d1fjfyvn5yd5 == 98570341 then
+_7azboj50yci2,_d1fjfyvn5yd5=58730294,6429322;
+elseif _7azboj50yci2 - _d1fjfyvn5yd5 == 32887591 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_7azboj50yci2,_d1fjfyvn5yd5=66773892,66773892;
+end;
+end;
+elseif _6zec03r4esex == 15 then
+local _dhkb9zmmr7k4={[37]=26292021};
+local _ui9gmvrfmuby,_ytbbc72296oi=97416530,728395;
+while _ui9gmvrfmuby + _ytbbc72296oi ~= 0 and _dhkb9zmmr7k4[37] do
+if _ytbbc72296oi + _ui9gmvrfmuby == 89914018 then
+_5iaamxsaioy3[_lc7v9m7h2fu3[_48b0cfo1a1cn]][1]=_6tv5vhgky8jq[_euesysk28f55];
+_ui9gmvrfmuby,_ytbbc72296oi=83802909,-18028478;
+elseif _ytbbc72296oi + _ui9gmvrfmuby == 98144925 then
+do
+local _8ggqhyzww4mw;
+local _rg21nfs3vdpk={};
+local function _v7bt3kdcnquh(...)
+_8ggqhyzww4mw=58489;
+return 82488453;
+end;
+_rg21nfs3vdpk[96958088]=_v7bt3kdcnquh;
+local function _jq7148kzp2hh(...)
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _xhkljlo4mt32;
+local _dlzz50jsmxnz={};
+local function _smq7qdb844y1(...)
+_xhkljlo4mt32=813;
+return 30756447;
+end;
+_dlzz50jsmxnz[32296389]=_smq7qdb844y1;
+local function _ss9w0fg544pk(...)
+_9h9row9a1m77=97460;
+return 0;
+end;
+_dlzz50jsmxnz[30756447]=_ss9w0fg544pk;
+local function _j3y72s4t3vhs(...)
+local _u7pmea71cd2b=63988;
+return 17211622;
+end;
+_dlzz50jsmxnz[33267967]=_j3y72s4t3vhs;
+local _nuc6p6p9e6g5={[80422]=true};
+local _a6s1vgsqhaff=32296389;
+while _a6s1vgsqhaff ~= 0 and _nuc6p6p9e6g5[80422] do
+_a6s1vgsqhaff=_dlzz50jsmxnz[_a6s1vgsqhaff]();
+end;
+end;
+return 0;
+end;
+_rg21nfs3vdpk[82488453]=_jq7148kzp2hh;
+local function _bglf4m3jsig0(...)
+local _i5e3gac0ursl=77480;
+return 4129394;
+end;
+_rg21nfs3vdpk[79787881]=_bglf4m3jsig0;
+local _pj67kpm2xhcg={[92475]=true};
+local _7utfpducjvkh=96958088;
+while _7utfpducjvkh ~= 0 and _pj67kpm2xhcg[92475] do
+_7utfpducjvkh=_rg21nfs3vdpk[_7utfpducjvkh]();
+end;
+end;
+_ui9gmvrfmuby,_ytbbc72296oi=36149064,39862074;
+elseif _ui9gmvrfmuby + _ytbbc72296oi == 43088958 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_ui9gmvrfmuby,_ytbbc72296oi=75724460,-75724460;
+elseif _ytbbc72296oi + _ui9gmvrfmuby == 57053338 then
+_ui9gmvrfmuby,_ytbbc72296oi=52587153,18980324;
+elseif _ui9gmvrfmuby + _ytbbc72296oi == 59206624 then
+_ui9gmvrfmuby,_ytbbc72296oi=29687947,3671764;
+elseif _ytbbc72296oi + _ui9gmvrfmuby == 20004223 then
+_euesysk28f55=_euesysk28f55 - 1;
+_ui9gmvrfmuby,_ytbbc72296oi=97135225,-43721276;
+elseif _ui9gmvrfmuby + _ytbbc72296oi == 53413949 then
+do
+local _46wmb359wjer,_yi334sbaqjuu;
+local _toaxt19vq032={};
+local function _d7d40yzp2x63(...)
+_46wmb359wjer=64214;
+return 73366837;
+end;
+_toaxt19vq032[26889342]=_d7d40yzp2x63;
+local function _fq8gs7dujylj(...)
+_yi334sbaqjuu=75059;
+return 89783806;
+end;
+_toaxt19vq032[73366837]=_fq8gs7dujylj;
+local function _mdgtncjon64j(...)
+if not (#tostring(math["random"]()) > 0) then
+if not (string["find"]("abc","a") == 1) then
+local _0at5knxdi2oo;
+local _67fi4bmh9bgi={[97]=8962093};
+local _l12tpewhcj29,_n40v3fp3fipe=12242704,85168;
+while _l12tpewhcj29 - _n40v3fp3fipe ~= 0 and _67fi4bmh9bgi[97] ~= nil do
+if _n40v3fp3fipe - _l12tpewhcj29 == 18509176 then
+_l12tpewhcj29,_n40v3fp3fipe=52898928,47987539;
+elseif (_l12tpewhcj29 - _n40v3fp3fipe) % 141504019 == 93843936 then
+if true then
+local _94qbnl8qq5kk=121;
+end;
+_l12tpewhcj29,_n40v3fp3fipe=78238619,78238619;
+elseif _n40v3fp3fipe - _l12tpewhcj29 == 32432325 then
+_l12tpewhcj29,_n40v3fp3fipe=55651856,86845115;
+elseif _l12tpewhcj29 - _n40v3fp3fipe == 65446303 then
+_l12tpewhcj29,_n40v3fp3fipe=57316,6556601;
+elseif (_l12tpewhcj29 - _n40v3fp3fipe) % 95042570 == 12157536 then
+_0at5knxdi2oo=10;
+_l12tpewhcj29,_n40v3fp3fipe=11434709,-82409227;
+end;
+end;
+end;
+end;
+return 0;
+end;
+_toaxt19vq032[89783806]=_mdgtncjon64j;
+local function _bvo3uno0t4dr(...)
+local _yhnf1xa960uh=10767;
+return 35283973;
+end;
+_toaxt19vq032[48842248]=_bvo3uno0t4dr;
+local function _37ev5lprrvhr(...)
+local _da025opfr3gh=91174;
+return 57807871;
+end;
+_toaxt19vq032[45800588]=_37ev5lprrvhr;
+local _sdnu9sgwpqj2={[64469]=true};
+local _1bbv9sk6z5re=26889342;
+while _1bbv9sk6z5re ~= 0 and (_1bbv9sk6z5re + 37057 - 37057 == _1bbv9sk6z5re) do
+_1bbv9sk6z5re=_toaxt19vq032[_1bbv9sk6z5re]();
+end;
+end;
+_ui9gmvrfmuby,_ytbbc72296oi=4210866,38878092;
+elseif _ui9gmvrfmuby + _ytbbc72296oi == 65774431 then
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_ui9gmvrfmuby,_ytbbc72296oi=76607372,-56603149;
+elseif (_ui9gmvrfmuby + _ytbbc72296oi) % 99425042 == 76011138 then
+do
+local _jyg0ouq88h1w;
+local _u5novhbja8uq={};
+local function _uw8n1312l0a5(...)
+_jyg0ouq88h1w=94342;
+return 26126498;
+end;
+_u5novhbja8uq[26246716]=_uw8n1312l0a5;
+local function _htdyq4osnwjv(...)
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _u8z9fahmpntd;
+local _dh2egv86ej3t={};
+local function _2sp2ci9qv3hr(...)
+_u8z9fahmpntd={};
+return 58592270;
+end;
+_dh2egv86ej3t[62196502]=_2sp2ci9qv3hr;
+local function _59doav23bsnl(...)
+_u8z9fahmpntd=65663;
+return 0;
+end;
+_dh2egv86ej3t[58592270]=_59doav23bsnl;
+local function _fe9k28alxm61(...)
+local _qvxsskox62hk=60544;
+return 79690345;
+end;
+_dh2egv86ej3t[75758013]=_fe9k28alxm61;
+local function _e5e6hf8il000(...)
+local _m9ehey2i7md4=43214;
+return 86668368;
+end;
+_dh2egv86ej3t[70969546]=_e5e6hf8il000;
+local _pfgovedqnguu={[58974]=true};
+local _l3q6sivv575u=62196502;
+while _l3q6sivv575u ~= 0 and _pfgovedqnguu[58974] do
+_l3q6sivv575u=_dh2egv86ej3t[_l3q6sivv575u]();
+end;
+end;
+return 0;
+end;
+_u5novhbja8uq[26126498]=_htdyq4osnwjv;
+local function _hwy3rp6pb0ye(...)
+local _lasbg6glvg4q=89152;
+return 65157137;
+end;
+_u5novhbja8uq[9635605]=_hwy3rp6pb0ye;
+local _39qea7ku877y={[9466]=true};
+local _bhnbyzksblyl=26246716;
+while _bhnbyzksblyl ~= 0 and _39qea7ku877y[9466] do
+_bhnbyzksblyl=_u5novhbja8uq[_bhnbyzksblyl]();
+end;
+end;
+_ui9gmvrfmuby,_ytbbc72296oi=31165540,58748478;
+end;
+end;
+elseif _6zec03r4esex == 25 then
+local _beb5gd4r6vlq={[78]=75174338};
+local _qebcxcnc6g6r,_e5gmmaolk827=83716081,494749;
+while _qebcxcnc6g6r + _e5gmmaolk827 ~= 0 and (_qebcxcnc6g6r + 62067 - 62067 == _qebcxcnc6g6r) do
+if (_qebcxcnc6g6r + _e5gmmaolk827) % 55264218 == 3649128 then
+_6tv5vhgky8jq[_euesysk28f55]=_uii55iskj0at[_lc7v9m7h2fu3[_48b0cfo1a1cn]][1];
+_qebcxcnc6g6r,_e5gmmaolk827=40807052,39827227;
+elseif (_qebcxcnc6g6r + _e5gmmaolk827) % 101630792 == 90674718 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_qebcxcnc6g6r,_e5gmmaolk827=27209139,-27209139;
+elseif _qebcxcnc6g6r + _e5gmmaolk827 == 11608494 then
+_qebcxcnc6g6r,_e5gmmaolk827=11071850,39256067;
+elseif _e5gmmaolk827 + _qebcxcnc6g6r == 80634279 then
+do
+local _n75z1q0p4y0l;
+local _3011ekdlw28d={[44]=30673827};
+local _z41xp13et40u,_ogs9brxyg2xj=72161621,216325;
+while _z41xp13et40u - _ogs9brxyg2xj ~= 0 and _3011ekdlw28d[44] ~= nil do
+if _z41xp13et40u - _ogs9brxyg2xj == 10473873 then
+_z41xp13et40u,_ogs9brxyg2xj=2965318,15914165;
+elseif _z41xp13et40u - _ogs9brxyg2xj == 71945296 then
+_n75z1q0p4y0l=19377;
+_z41xp13et40u,_ogs9brxyg2xj=21585184,-24517501;
+elseif (_z41xp13et40u - _ogs9brxyg2xj) % 118258851 == 46102685 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _n93tkb5dcss1;
+local _yytkxlfhlijz={[45]=6489087};
+local _5njof0z4ukjc,_50spp00oavg5=25718790,365261;
+while _5njof0z4ukjc - _50spp00oavg5 ~= 0 and (_5njof0z4ukjc + 84827 - 84827 == _5njof0z4ukjc) do
+if _5njof0z4ukjc - _50spp00oavg5 == 25353529 then
+_n93tkb5dcss1=850;
+_5njof0z4ukjc,_50spp00oavg5=38005173,-1828209;
+elseif _5njof0z4ukjc - _50spp00oavg5 == 39833382 then
+if true then
+local _fenofihgiznz=363;
+end;
+_5njof0z4ukjc,_50spp00oavg5=44120255,44120255;
+elseif _5njof0z4ukjc - _50spp00oavg5 == 15053115 then
+_5njof0z4ukjc,_50spp00oavg5=23598458,82334490;
+elseif _5njof0z4ukjc - _50spp00oavg5 == 82026541 then
+_5njof0z4ukjc,_50spp00oavg5=10728080,65382618;
+end;
+end;
+end;
+_z41xp13et40u,_ogs9brxyg2xj=9111880,9111880;
+end;
+end;
+end;
+_qebcxcnc6g6r,_e5gmmaolk827=75870837,14803881;
+elseif _qebcxcnc6g6r + _e5gmmaolk827 == 10395536 then
+_qebcxcnc6g6r,_e5gmmaolk827=14858172,92643154;
+elseif _qebcxcnc6g6r + _e5gmmaolk827 == 84210830 then
+_euesysk28f55=_euesysk28f55 + 1;
+_qebcxcnc6g6r,_e5gmmaolk827=9150409,-5501281;
+elseif _qebcxcnc6g6r + _e5gmmaolk827 == 48404560 then
+_qebcxcnc6g6r,_e5gmmaolk827=42142683,23135308;
+end;
+end;
+elseif _6zec03r4esex == 3 then
+_uii55iskj0at[_lc7v9m7h2fu3[_48b0cfo1a1cn]][1]=_6tv5vhgky8jq[_euesysk28f55];
+while true do
+local _3c5urhzlw4v5=77747;
+break;
+end;
+do
+local _d8cx3zzo3nu7,_gy3ls57mprnv;
+local _jau5erpashff={[61]=34164618};
+local _jljapnasumrp,_yfvgw691t16m=57724779,984994;
+while _jljapnasumrp - _yfvgw691t16m ~= 0 and (_jljapnasumrp + 10488 - 10488 == _jljapnasumrp) do
+if _jljapnasumrp - _yfvgw691t16m == 56739785 then
+_d8cx3zzo3nu7=47615;
+_jljapnasumrp,_yfvgw691t16m=480812,-60874387;
+elseif _jljapnasumrp - _yfvgw691t16m == 61355199 then
+_gy3ls57mprnv=41511;
+_jljapnasumrp,_yfvgw691t16m=24576932,-63045081;
+elseif _jljapnasumrp - _yfvgw691t16m == 98176531 then
+_jljapnasumrp,_yfvgw691t16m=33260596,84886791;
+elseif _jljapnasumrp - _yfvgw691t16m == 87622013 then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+if not (#tostring(math["random"]()) > 0) then
+local _f2d8ndi40bbv;
+local _umq267b36wry={[89]=14022433};
+local _6nyv1alltf8u,_qhw9hmd8sjie=11009395,931546;
+while _6nyv1alltf8u - _qhw9hmd8sjie ~= 0 and _umq267b36wry[89] do
+if (_6nyv1alltf8u - _qhw9hmd8sjie) % 153305342 == 57630528 then
+_f2d8ndi40bbv=72902;
+_6nyv1alltf8u,_qhw9hmd8sjie=32294473,32294473;
+elseif _qhw9hmd8sjie - _6nyv1alltf8u == 28787090 then
+_6nyv1alltf8u,_qhw9hmd8sjie=66722893,98569366;
+elseif (_6nyv1alltf8u - _qhw9hmd8sjie) % 56086157 == 10077849 then
+_f2d8ndi40bbv={};
+_6nyv1alltf8u,_qhw9hmd8sjie=46353628,-11276900;
+elseif _qhw9hmd8sjie - _6nyv1alltf8u == 7824212 then
+_6nyv1alltf8u,_qhw9hmd8sjie=12757858,78693477;
+end;
+end;
+end;
+end;
+_jljapnasumrp,_yfvgw691t16m=66322089,66322089;
+end;
+end;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+do
+local _mjbskyvt1zpm;
+local _qo29at7m3765={[86]=120921};
+local _rox2ueqnuavk,_aq8km7qlwsgr=66204862,153623;
+while _rox2ueqnuavk - _aq8km7qlwsgr ~= 0 and (_rox2ueqnuavk + 63271 - 63271 == _rox2ueqnuavk) do
+if (_rox2ueqnuavk - _aq8km7qlwsgr) % 85960464 == 66051239 then
+_mjbskyvt1zpm=56568;
+_rox2ueqnuavk,_aq8km7qlwsgr=96321609,66353178;
+elseif _rox2ueqnuavk - _aq8km7qlwsgr == 29968431 then
+if #tostring(math["random"]()) > 0 then
+local _13057r1tk4ig=948;
+else
+local _g1tal30tvrny=792;
+end;
+_rox2ueqnuavk,_aq8km7qlwsgr=80080797,80080797;
+elseif _aq8km7qlwsgr - _rox2ueqnuavk == 56204935 then
+_rox2ueqnuavk,_aq8km7qlwsgr=58683794,33574096;
+end;
+end;
+end;
+_euesysk28f55=_euesysk28f55 - 1;
+do
+local _icfgn58iq5zf;
+local _5e9l3hcj1178={};
+local function _rkzprntdth2u(...)
+_icfgn58iq5zf=31494;
+return 88524975;
+end;
+_5e9l3hcj1178[18148509]=_rkzprntdth2u;
+local function _x8614r4c91t8(...)
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _dvz3tdtwnwuv=44;
+else
+local _bicc88ngq4yu;
+local _qhcbxmkiq8cw={};
+local function _4jrl13zvdizh(...)
+_bicc88ngq4yu=579;
+return 72149573;
+end;
+_qhcbxmkiq8cw[72889715]=_4jrl13zvdizh;
+local function _vqk80531p1sf(...)
+if true then
+local _83c4pu8zprxc=708;
+end;
+return 0;
+end;
+_qhcbxmkiq8cw[72149573]=_vqk80531p1sf;
+local function _oq108bb37bvr(...)
+local _31fxt02ul5oi=1349;
+return 80330375;
+end;
+_qhcbxmkiq8cw[21230355]=_oq108bb37bvr;
+local function _xcccton4ryda(...)
+local _gclh96wxlmwg=61330;
+return 96930555;
+end;
+_qhcbxmkiq8cw[45169032]=_xcccton4ryda;
+local _aopzyi3r8e4k={[24574]=true};
+local _hw3sosu3j5br=72889715;
+while _hw3sosu3j5br ~= 0 and (_hw3sosu3j5br + 58064 - 58064 == _hw3sosu3j5br) do
+_hw3sosu3j5br=_qhcbxmkiq8cw[_hw3sosu3j5br]();
+end;
+end;
+return 0;
+end;
+_5e9l3hcj1178[88524975]=_x8614r4c91t8;
+local function _pl833ead9f0p(...)
+local _tqpqw02ji8at=9099;
+return 62097896;
+end;
+_5e9l3hcj1178[8630952]=_pl833ead9f0p;
+local function _ktx6sccltnd9(...)
+local _x6b0p6x4u3nd=21613;
+return 96689440;
+end;
+_5e9l3hcj1178[6974085]=_ktx6sccltnd9;
+local function _pkrmedld56so(...)
+local _rtddeu0quuym=49363;
+return 94459386;
+end;
+_5e9l3hcj1178[59324914]=_pkrmedld56so;
+local _j2uexcw81cvo={[89423]=true};
+local _jzea0jn1d0cd=18148509;
+while _jzea0jn1d0cd ~= 0 and (_jzea0jn1d0cd + 43409 - 43409 == _jzea0jn1d0cd) do
+_jzea0jn1d0cd=_5e9l3hcj1178[_jzea0jn1d0cd]();
+end;
+end;
+do
+local _cdy84uhk6cw0=23406;
+end;
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+elseif _6zec03r4esex == 28 then
+local _gjm1sdrb25g9={[7]=36257703};
+local _690s3e8ff8xg,_epq1vrl7nkxk=94986108,701754;
+while _690s3e8ff8xg + _epq1vrl7nkxk ~= 0 and (_690s3e8ff8xg + 34417 - 34417 == _690s3e8ff8xg) do
+if (_690s3e8ff8xg + _epq1vrl7nkxk) % 75516279 == 58200009 then
+_euesysk28f55=_euesysk28f55 + 1;
+_690s3e8ff8xg,_epq1vrl7nkxk=70635360,-5054133;
+elseif _690s3e8ff8xg + _epq1vrl7nkxk == 15626428 then
+_690s3e8ff8xg,_epq1vrl7nkxk=93865638,34843827;
+elseif (_690s3e8ff8xg + _epq1vrl7nkxk) % 119672088 == 51575790 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_690s3e8ff8xg,_epq1vrl7nkxk=11394959,-11394959;
+elseif _epq1vrl7nkxk + _690s3e8ff8xg == 95687862 then
+do
+local _tbvqw7e3qwnu,_7dk9ovaalf8n;
+local _evyjees0agvl={[93]=78899545};
+local _6bkzf4x92rvt,_47rnaqd1le2b=73680293,268821;
+while _6bkzf4x92rvt + _47rnaqd1le2b ~= 0 and _evyjees0agvl[93] do
+if (_6bkzf4x92rvt + _47rnaqd1le2b) % 114680274 == 73949114 then
+_tbvqw7e3qwnu=55552;
+_6bkzf4x92rvt,_47rnaqd1le2b=22025917,52711828;
+elseif _47rnaqd1le2b + _6bkzf4x92rvt == 98969789 then
+_6bkzf4x92rvt,_47rnaqd1le2b=50249733,32381514;
+elseif _6bkzf4x92rvt + _47rnaqd1le2b == 55917700 then
+if not (#tostring(math["random"]()) > 0) then
+if not (#tostring(math["random"]()) > 0) then
+local _w4tlaf1wrkuc;
+local _ywv2ltkpo60e={[28]=99649992};
+local _en4a2ej8y33o,_hbi85w8r54s1=61338482,140836;
+while _en4a2ej8y33o + _hbi85w8r54s1 ~= 0 and (_en4a2ej8y33o + 37290 - 37290 == _en4a2ej8y33o) do
+if _en4a2ej8y33o + _hbi85w8r54s1 == 60129376 then
+if true then
+local _vk3s8n35x4oz=269;
+end;
+_en4a2ej8y33o,_hbi85w8r54s1=98733609,-98733609;
+elseif (_en4a2ej8y33o + _hbi85w8r54s1) % 80236487 == 61479318 then
+_w4tlaf1wrkuc=281;
+_en4a2ej8y33o,_hbi85w8r54s1=20112226,40017150;
+elseif _en4a2ej8y33o + _hbi85w8r54s1 == 67138651 then
+_en4a2ej8y33o,_hbi85w8r54s1=52283824,90909471;
+end;
+end;
+end;
+end;
+_6bkzf4x92rvt,_47rnaqd1le2b=58555423,-58555423;
+elseif (_6bkzf4x92rvt + _47rnaqd1le2b) % 135664992 == 74737745 then
+_7dk9ovaalf8n=50142;
+_6bkzf4x92rvt,_47rnaqd1le2b=99454188,-43536488;
+elseif _6bkzf4x92rvt + _47rnaqd1le2b == 53877952 then
+_6bkzf4x92rvt,_47rnaqd1le2b=80212115,4430287;
+elseif _6bkzf4x92rvt + _47rnaqd1le2b == 4899037 then
+_6bkzf4x92rvt,_47rnaqd1le2b=71330712,44788286;
+end;
+end;
+end;
+_690s3e8ff8xg,_epq1vrl7nkxk=1867704,56332305;
+elseif _690s3e8ff8xg + _epq1vrl7nkxk == 14167136 then
+_690s3e8ff8xg,_epq1vrl7nkxk=1285683,34302734;
+elseif _690s3e8ff8xg + _epq1vrl7nkxk == 65581227 then
+_6tv5vhgky8jq[_euesysk28f55]=_ENV[_jfeidnz1cv8y[_lc7v9m7h2fu3[_48b0cfo1a1cn]]];
+_690s3e8ff8xg,_epq1vrl7nkxk=197582,51378208;
+end;
+end;
+elseif _6zec03r4esex == 12 then
+local _ti1elk8euj7h={};
+local function _j0z997g5ur05(...)
+_ENV[_jfeidnz1cv8y[_lc7v9m7h2fu3[_48b0cfo1a1cn]]]=_6tv5vhgky8jq[_euesysk28f55];
+return 79302269;
+end;
+_ti1elk8euj7h[88502469]=_j0z997g5ur05;
+local function _gy37d7wu5mdp(...)
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+return 51674628;
+end;
+_ti1elk8euj7h[79302269]=_gy37d7wu5mdp;
+local function _sougpmiwt65a(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 74828861;
+end;
+_ti1elk8euj7h[51674628]=_sougpmiwt65a;
+local function _x1oja0r46jud(...)
+do
+local _non84fgpguy3=64844;
+end;
+return 23761727;
+end;
+_ti1elk8euj7h[74828861]=_x1oja0r46jud;
+local function _5xw4h3em1te9(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+return 0;
+end;
+_ti1elk8euj7h[23761727]=_5xw4h3em1te9;
+local function _snv950mw9zn6(...)
+local _vvvvkp6l77ao=42710;
+return 42581108;
+end;
+_ti1elk8euj7h[64725543]=_snv950mw9zn6;
+local _0hgl2fsizu77={[52552]=true};
+local _m43qgske5x08=88502469;
+while _m43qgske5x08 ~= 0 and (_m43qgske5x08 + 74261 - 74261 == _m43qgske5x08) do
+_m43qgske5x08=_ti1elk8euj7h[_m43qgske5x08]();
+end;
+elseif _6zec03r4esex == 13 then
+local _k6k78kyd81hf,_oxd3r51lkjz1;
+local _j5jwndd98iyv={[41]=40164180};
+local _mr6p5oye649b,_med44j649bv5=15983550,481663;
+while _mr6p5oye649b + _med44j649bv5 ~= 0 and _j5jwndd98iyv[41] do
+if _med44j649bv5 + _mr6p5oye649b == 47307564 then
+_mr6p5oye649b,_med44j649bv5=75470326,16430553;
+elseif _mr6p5oye649b + _med44j649bv5 == 13464060 then
+do
+local _qqc238lrtud1;
+local _5f7mmrfzpw3d={[40]=44450666};
+local _m3exyp2nwvt1,_ei3phcw48ty2=44768639,957671;
+while _m3exyp2nwvt1 - _ei3phcw48ty2 ~= 0 and _5f7mmrfzpw3d[40] do
+if _ei3phcw48ty2 - _m3exyp2nwvt1 == 19104290 then
+_m3exyp2nwvt1,_ei3phcw48ty2=79644804,98693776;
+elseif (_m3exyp2nwvt1 - _ei3phcw48ty2) % 116870769 == 43810968 then
+_qqc238lrtud1=56922;
+_m3exyp2nwvt1,_ei3phcw48ty2=96633411,22782077;
+elseif _m3exyp2nwvt1 - _ei3phcw48ty2 == 59669863 then
+_m3exyp2nwvt1,_ei3phcw48ty2=96587986,91759774;
+elseif _m3exyp2nwvt1 - _ei3phcw48ty2 == 73851334 then
+if #tostring(math["random"]()) > 0 then
+local _voz4ff5mwinv=544;
+else
+local _kgq1kwii9pv0=328;
+end;
+_m3exyp2nwvt1,_ei3phcw48ty2=37221482,37221482;
+elseif _m3exyp2nwvt1 - _ei3phcw48ty2 == 21295120 then
+_m3exyp2nwvt1,_ei3phcw48ty2=54415706,29768538;
+end;
+end;
+end;
+_mr6p5oye649b,_med44j649bv5=82961529,-50607250;
+elseif _mr6p5oye649b + _med44j649bv5 == 96459133 then
+_mr6p5oye649b,_med44j649bv5=73912152,35585097;
+elseif _med44j649bv5 + _mr6p5oye649b == 16465213 then
+_k6k78kyd81hf=_6tv5vhgky8jq[_euesysk28f55];
+_mr6p5oye649b,_med44j649bv5=71153767,-23218375;
+elseif (_mr6p5oye649b + _med44j649bv5) % 151259959 == 67500781 then
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_mr6p5oye649b,_med44j649bv5=69385195,-55921135;
+elseif _med44j649bv5 + _mr6p5oye649b == 65792231 then
+_6tv5vhgky8jq[_euesysk28f55]=_oxd3r51lkjz1[_k6k78kyd81hf];
+_mr6p5oye649b,_med44j649bv5=94093367,-94093367;
+elseif _med44j649bv5 + _mr6p5oye649b == 92265290 then
+_mr6p5oye649b,_med44j649bv5=29517086,94298976;
+elseif (_mr6p5oye649b + _med44j649bv5) % 90063585 == 47935392 then
+_oxd3r51lkjz1=_6tv5vhgky8jq[_euesysk28f55-1];
+_mr6p5oye649b,_med44j649bv5=85550998,-18050217;
+elseif _med44j649bv5 + _mr6p5oye649b == 32354279 then
+_euesysk28f55=_euesysk28f55 - 1;
+_mr6p5oye649b,_med44j649bv5=52212949,13579282;
+end;
+end;
+elseif _6zec03r4esex == 47 then
+local _9m1q63dcgz5b=_6tv5vhgky8jq[_euesysk28f55];
+local _iiqu082kvr20=_6tv5vhgky8jq[_euesysk28f55 - 1];
+while true do
+local _qutrbsba1umx=11347;
+break;
+end;
+local _jlggayfvof59=_6tv5vhgky8jq[_euesysk28f55 - 2];
+while true do
+local _6vahxkt1rsyg=19957;
+break;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_6tv5vhgky8jq[_euesysk28f55 - 1]=nil;
+do
+if not (#tostring(math["random"]()) > 0) and #tostring(math["random"]()) > 0 then
+local _l719mb5mcjrq;
+local _zpr9htejysqy={};
+local function _ryukm3inps6z(...)
+_l719mb5mcjrq=588;
+return 57360487;
+end;
+_zpr9htejysqy[69282901]=_ryukm3inps6z;
+local function _uo10iso15ra5(...)
+_nlyeaeie9qo5=22700;
+return 0;
+end;
+_zpr9htejysqy[57360487]=_uo10iso15ra5;
+local function _xmv2xkxgcm58(...)
+local _pdjs7ck635jg=8469;
+return 32673812;
+end;
+_zpr9htejysqy[86074079]=_xmv2xkxgcm58;
+local function _m19anugovy2v(...)
+local _cxde7mv2a6iu=9621;
+return 4217770;
+end;
+_zpr9htejysqy[27105221]=_m19anugovy2v;
+local _vjxxtcrafa1h={[51969]=true};
+local _lcqd59t5caad=69282901;
+while _lcqd59t5caad ~= 0 and (_lcqd59t5caad + 46285 - 46285 == _lcqd59t5caad) do
+_lcqd59t5caad=_zpr9htejysqy[_lcqd59t5caad]();
+end;
+end;
+end;
+_6tv5vhgky8jq[_euesysk28f55 - 2]=nil;
+_euesysk28f55=_euesysk28f55 - 3;
+_jlggayfvof59[_iiqu082kvr20]=_9m1q63dcgz5b;
+elseif _6zec03r4esex == 14 then
+local _ep4g80prsqfy={};
+local function _o60lyutdzsk2(...)
+do
+local _drl8nva24xry,_7n5bdcns2n5d;
+local _c1bo4rk5lqhy={[71]=14484189};
+local _m2yt9pr4vkob,_t0mqolvqzcse=62819267,666760;
+while _m2yt9pr4vkob - _t0mqolvqzcse ~= 0 and _c1bo4rk5lqhy[71] do
+if _m2yt9pr4vkob - _t0mqolvqzcse == 84193369 then
+_m2yt9pr4vkob,_t0mqolvqzcse=36785503,14626741;
+elseif _m2yt9pr4vkob - _t0mqolvqzcse == 62152507 then
+_drl8nva24xry=83753;
+_m2yt9pr4vkob,_t0mqolvqzcse=5300992,-43175177;
+elseif (_m2yt9pr4vkob - _t0mqolvqzcse) % 69845073 == 6783120 then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _dsitjnebtvq5=503;
+end;
+end;
+_m2yt9pr4vkob,_t0mqolvqzcse=99869751,99869751;
+elseif (_m2yt9pr4vkob - _t0mqolvqzcse) % 135274288 == 48476169 then
+_7n5bdcns2n5d=15659;
+_m2yt9pr4vkob,_t0mqolvqzcse=79369175,72586055;
+end;
+end;
+end;
+return 93648356;
+end;
+_ep4g80prsqfy[57284113]=_o60lyutdzsk2;
+local function _pv5nl3gfcwj2(...)
+_euesysk28f55=_euesysk28f55 + 1;
+return 87336066;
+end;
+_ep4g80prsqfy[93648356]=_pv5nl3gfcwj2;
+local function _3qeyl2kz20mg(...)
+_6tv5vhgky8jq[_euesysk28f55]={};
+return 0;
+end;
+_ep4g80prsqfy[87336066]=_3qeyl2kz20mg;
+local function _7s4i1zosity3(...)
+local _sdyrgc78v6jy=3108;
+return 2395416;
+end;
+_ep4g80prsqfy[47314564]=_7s4i1zosity3;
+local function _7vlp8vpemhjs(...)
+local _wok860wfmytg=81872;
+return 91498100;
+end;
+_ep4g80prsqfy[54716165]=_7vlp8vpemhjs;
+local _dmdfbo6honpa={[93935]=true};
+local _dexsrkthn6uw=57284113;
+while _dexsrkthn6uw ~= 0 and (_dexsrkthn6uw + 54921 - 54921 == _dexsrkthn6uw) do
+_dexsrkthn6uw=_ep4g80prsqfy[_dexsrkthn6uw]();
+end;
+elseif _6zec03r4esex == 34 then
+while true do
+local _zf93l64bb2oj=18491;
+break;
+end;
+do
+local _hlgzi43b6qb1;
+local _8mvvv1rtd7cn={[11]=37450712};
+local _m9ciztsek4xe,_7wfzblw3f1q6=49376909,217606;
+while _m9ciztsek4xe + _7wfzblw3f1q6 ~= 0 and (_m9ciztsek4xe + 99440 - 99440 == _m9ciztsek4xe) do
+if (_m9ciztsek4xe + _7wfzblw3f1q6) % 151068898 == 70430380 then
+if not (string["find"]("abc","a") == 1) then
+local _m9uhf0g0o2jn;
+local _v0zcgm9ri6xx={};
+local function _0snwcy9rbvyw(...)
+_m9uhf0g0o2jn=795;
+return 57485428;
+end;
+_v0zcgm9ri6xx[96392991]=_0snwcy9rbvyw;
+local function _roagaf6wnuvy(...)
+_0n022op8ca2m=39796;
+return 0;
+end;
+_v0zcgm9ri6xx[57485428]=_roagaf6wnuvy;
+local function _c6jszje6puon(...)
+local _0ubo1bd8x2zu=59321;
+return 8306362;
+end;
+_v0zcgm9ri6xx[53587481]=_c6jszje6puon;
+local _6ti4ueeutyau={[58727]=true};
+local _wiied3o0ognz=96392991;
+while _wiied3o0ognz ~= 0 and (_wiied3o0ognz + 42305 - 42305 == _wiied3o0ognz) do
+_wiied3o0ognz=_v0zcgm9ri6xx[_wiied3o0ognz]();
+end;
+end;
+_m9ciztsek4xe,_7wfzblw3f1q6=50864022,-50864022;
+elseif _m9ciztsek4xe + _7wfzblw3f1q6 == 48581312 then
+_m9ciztsek4xe,_7wfzblw3f1q6=30711616,54005664;
+elseif _m9ciztsek4xe + _7wfzblw3f1q6 == 52445195 then
+_m9ciztsek4xe,_7wfzblw3f1q6=24134232,11247360;
+elseif _m9ciztsek4xe + _7wfzblw3f1q6 == 58172303 then
+_m9ciztsek4xe,_7wfzblw3f1q6=62947800,24359391;
+elseif _m9ciztsek4xe + _7wfzblw3f1q6 == 49594515 then
+_hlgzi43b6qb1=63517;
+_m9ciztsek4xe,_7wfzblw3f1q6=10538384,59891996;
+end;
+end;
+end;
+local _rygfulw8hj02=_6tv5vhgky8jq[_euesysk28f55];
+_euesysk28f55=_euesysk28f55 - 1;
+do
+local _9kej795pxd2j;
+local _i72483ug3wzf={[76]=57717488};
+local _rlu2bo821sr5,_jch3vhmk6ndz=71843269,878388;
+while _rlu2bo821sr5 + _jch3vhmk6ndz ~= 0 and _i72483ug3wzf[76] ~= nil do
+if (_rlu2bo821sr5 + _jch3vhmk6ndz) % 71647236 == 25341370 then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _qx6gxwupgtmk=527;
+end;
+_rlu2bo821sr5,_jch3vhmk6ndz=11631000,-11631000;
+elseif _jch3vhmk6ndz + _rlu2bo821sr5 == 49875117 then
+_rlu2bo821sr5,_jch3vhmk6ndz=43023551,47565022;
+elseif _jch3vhmk6ndz + _rlu2bo821sr5 == 72721657 then
+_9kej795pxd2j=92830;
+_rlu2bo821sr5,_jch3vhmk6ndz=11198137,14143233;
+elseif _jch3vhmk6ndz + _rlu2bo821sr5 == 91357379 then
+_rlu2bo821sr5,_jch3vhmk6ndz=50287521,11305404;
+end;
+end;
+end;
+do
+local _h0hkcn6aq01v,_x14vryl4y9dx;
+local _r2ibf1d2nbtk={};
+local function _l7vhqmckg6rb(...)
+_h0hkcn6aq01v=86639;
+return 46366378;
+end;
+_r2ibf1d2nbtk[89038492]=_l7vhqmckg6rb;
+local function _g3wdhrzilhts(...)
+_x14vryl4y9dx=91086;
+return 21625821;
+end;
+_r2ibf1d2nbtk[46366378]=_g3wdhrzilhts;
+local function _v6jv5cysnif7(...)
+if not (string["find"]("abc","a") == 1) then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _0g6uy02c9250;
+local _99i050bqt069={};
+local function _emv6rj2u6p14(...)
+_0g6uy02c9250={};
+return 99628800;
+end;
+_99i050bqt069[57952556]=_emv6rj2u6p14;
+local function _gx0rvxwkz1ch(...)
+_0g6uy02c9250=30254;
+return 0;
+end;
+_99i050bqt069[99628800]=_gx0rvxwkz1ch;
+local function _mc0mlgl2karj(...)
+local _23g854rudhgb=84943;
+return 40742513;
+end;
+_99i050bqt069[43819628]=_mc0mlgl2karj;
+local function _s45dmnrekw1a(...)
+local _4lkjhitlgcdr=36483;
+return 11188626;
+end;
+_99i050bqt069[88392413]=_s45dmnrekw1a;
+local function _u603xqjppubk(...)
+local _ee9zas9ptak3=81457;
+return 82679570;
+end;
+_99i050bqt069[91132703]=_u603xqjppubk;
+local _6sryffpj4shn={[27067]=true};
+local _3owlt6c7bwps=57952556;
+while _3owlt6c7bwps ~= 0 and (_3owlt6c7bwps + 82341 - 82341 == _3owlt6c7bwps) do
+_3owlt6c7bwps=_99i050bqt069[_3owlt6c7bwps]();
+end;
+end;
+end;
+return 0;
+end;
+_r2ibf1d2nbtk[21625821]=_v6jv5cysnif7;
+local function _cktl3cxs9zg3(...)
+local _njwbzeusqq2p=35815;
+return 20321351;
+end;
+_r2ibf1d2nbtk[65457527]=_cktl3cxs9zg3;
+local function _ceqxdke3i0yu(...)
+local _sa400dpx1e9r=42389;
+return 8952255;
+end;
+_r2ibf1d2nbtk[27021018]=_ceqxdke3i0yu;
+local _9t1bf01y52b4={[4186]=true};
+local _4rp6cpcuz4i5=89038492;
+while _4rp6cpcuz4i5 ~= 0 and (_4rp6cpcuz4i5 + 94841 - 94841 == _4rp6cpcuz4i5) do
+_4rp6cpcuz4i5=_r2ibf1d2nbtk[_4rp6cpcuz4i5]();
+end;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] + _rygfulw8hj02;
+elseif _6zec03r4esex == 6 then
+while true do
+local _yj3arrfcx83r=81426;
+break;
+end;
+local _px6zkvevjme5=_6tv5vhgky8jq[_euesysk28f55];
+_euesysk28f55=_euesysk28f55 - 1;
+do
+local _nbw0wadmb4q8,_jywx29ztk6ss;
+local _nl7b3mqwkvqt={[44]=82410559};
+local _k3dza4dkgrkk,_1usje4fj1ne2=2243704,298830;
+while _k3dza4dkgrkk - _1usje4fj1ne2 ~= 0 and _nl7b3mqwkvqt[44] do
+if _k3dza4dkgrkk - _1usje4fj1ne2 == 31433278 then
+if not (#tostring(math["random"]()) > 0) then
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _lanvwaa3lhl3=347;
+end;
+end;
+_k3dza4dkgrkk,_1usje4fj1ne2=48576593,48576593;
+elseif _k3dza4dkgrkk - _1usje4fj1ne2 == 82756889 then
+_jywx29ztk6ss=87059;
+_k3dza4dkgrkk,_1usje4fj1ne2=25612802,-5820476;
+elseif (_k3dza4dkgrkk - _1usje4fj1ne2) % 56357993 == 1944874 then
+_nbw0wadmb4q8=92470;
+_k3dza4dkgrkk,_1usje4fj1ne2=10672294,-72084595;
+elseif _k3dza4dkgrkk - _1usje4fj1ne2 == 62408826 then
+_k3dza4dkgrkk,_1usje4fj1ne2=86435601,30959286;
+end;
+end;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] - _px6zkvevjme5;
+elseif _6zec03r4esex == 19 then
+while true do
+local _2r0lwov17vlb=82408;
+break;
+end;
+do
+local _5csrvjvtcdje=27512;
+end;
+local _8avvg30e56l9=_6tv5vhgky8jq[_euesysk28f55];
+do
+local _til50ea2c9ud,_tiozgu3h8w22;
+local _0i1vdd3r81yb={[10]=66400750};
+local _e1uc4lmgz0se,_7eqvaje9a41x=30737502,919603;
+while _e1uc4lmgz0se - _7eqvaje9a41x ~= 0 and _0i1vdd3r81yb[10] do
+if _e1uc4lmgz0se - _7eqvaje9a41x == 54075412 then
+_tiozgu3h8w22=33063;
+_e1uc4lmgz0se,_7eqvaje9a41x=2851776,-67827293;
+elseif _7eqvaje9a41x - _e1uc4lmgz0se == 10158724 then
+_e1uc4lmgz0se,_7eqvaje9a41x=56735634,17620691;
+elseif _7eqvaje9a41x - _e1uc4lmgz0se == 46308016 then
+_e1uc4lmgz0se,_7eqvaje9a41x=66610911,23107434;
+elseif _e1uc4lmgz0se - _7eqvaje9a41x == 70679069 then
+if not (string["find"]("abc","a") == 1) then
+if not (string["find"]("abc","a") == 1) then
+local _xddiwmucqq4a;
+local _ugkfj3bjsja7={[59]=84090512};
+local _l0671pvk9kv0,_otjbpkz9qgvq=81699301,950272;
+while _l0671pvk9kv0 + _otjbpkz9qgvq ~= 0 and (_l0671pvk9kv0 + 79582 - 79582 == _l0671pvk9kv0) do
+if _otjbpkz9qgvq + _l0671pvk9kv0 == 61122774 then
+_l0671pvk9kv0,_otjbpkz9qgvq=23031450,90698780;
+elseif _l0671pvk9kv0 + _otjbpkz9qgvq == 71636984 then
+if true then
+local _gzhnqffebpvb=801;
+end;
+_l0671pvk9kv0,_otjbpkz9qgvq=58370858,-58370858;
+elseif _otjbpkz9qgvq + _l0671pvk9kv0 == 82649573 then
+_xddiwmucqq4a=811;
+_l0671pvk9kv0,_otjbpkz9qgvq=41542763,30094221;
+end;
+end;
+end;
+end;
+_e1uc4lmgz0se,_7eqvaje9a41x=34505594,34505594;
+elseif (_e1uc4lmgz0se - _7eqvaje9a41x) % 107928284 == 29817899 then
+_til50ea2c9ud=19887;
+_e1uc4lmgz0se,_7eqvaje9a41x=64317803,10242391;
+elseif _e1uc4lmgz0se - _7eqvaje9a41x == 49575635 then
+_e1uc4lmgz0se,_7eqvaje9a41x=45913174,61727565;
+end;
+end;
+end;
+_euesysk28f55=_euesysk28f55 - 1;
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] * _8avvg30e56l9;
+elseif _6zec03r4esex == 16 then
+local _14r5fzewriwo=_6tv5vhgky8jq[_euesysk28f55];
+do
+local _q7vrdp1awhjp;
+local _gdxrds3sjj55={};
+local function _tjzj0qa5k8qe(...)
+_q7vrdp1awhjp=72547;
+return 38191389;
+end;
+_gdxrds3sjj55[63264071]=_tjzj0qa5k8qe;
+local function _0sv4u9wnauna(...)
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _wzskfuieofbi;
+local _kkwogljalwly={};
+local function _uvgsrnc2w4ak(...)
+_wzskfuieofbi=420;
+return 26643442;
+end;
+_kkwogljalwly[88408271]=_uvgsrnc2w4ak;
+local function _ck4kvhvatkp3(...)
+if true then
+local _lg16ytq0o223=41;
+end;
+return 0;
+end;
+_kkwogljalwly[26643442]=_ck4kvhvatkp3;
+local function _ukxa9rlcpi54(...)
+local _joecuquthbdn=26728;
+return 15726219;
+end;
+_kkwogljalwly[34127693]=_ukxa9rlcpi54;
+local _v1asskzy68in={[34629]=true};
+local _lty5ofcihb1j=88408271;
+while _lty5ofcihb1j ~= 0 and _v1asskzy68in[34629] do
+_lty5ofcihb1j=_kkwogljalwly[_lty5ofcihb1j]();
+end;
+end;
+return 0;
+end;
+_gdxrds3sjj55[38191389]=_0sv4u9wnauna;
+local function _3qds7346lnmo(...)
+local _9l5cpfdbnq46=30917;
+return 47307854;
+end;
+_gdxrds3sjj55[6397481]=_3qds7346lnmo;
+local function _5htrfg3pxkeu(...)
+local _lnz3uk3ygyfp=17191;
+return 47537254;
+end;
+_gdxrds3sjj55[50417664]=_5htrfg3pxkeu;
+local _l6g2c7znkg0a={[23528]=true};
+local _va2l1upistqs=63264071;
+while _va2l1upistqs ~= 0 and _l6g2c7znkg0a[23528] do
+_va2l1upistqs=_gdxrds3sjj55[_va2l1upistqs]();
+end;
+end;
+while true do
+local _1v92wroe9r3y=48359;
+break;
+end;
+_euesysk28f55=_euesysk28f55 - 1;
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] / _14r5fzewriwo;
+elseif _6zec03r4esex == 31 then
+local _66aj2hn1yysp;
+local _jfgp93w143tn={[33]=61129618};
+local _vnr4vp167wcv,_f72hiwssga3c=20959061,876171;
+while _vnr4vp167wcv - _f72hiwssga3c ~= 0 and (_vnr4vp167wcv + 42775 - 42775 == _vnr4vp167wcv) do
+if _f72hiwssga3c - _vnr4vp167wcv == 40737720 then
+_vnr4vp167wcv,_f72hiwssga3c=13839214,14493829;
+elseif _f72hiwssga3c - _vnr4vp167wcv == 47117159 then
+_vnr4vp167wcv,_f72hiwssga3c=55433878,3467827;
+elseif _vnr4vp167wcv - _f72hiwssga3c == 20082890 then
+_66aj2hn1yysp=_6tv5vhgky8jq[_euesysk28f55];
+_vnr4vp167wcv,_f72hiwssga3c=65072913,20976941;
+elseif _vnr4vp167wcv - _f72hiwssga3c == 44095972 then
+_euesysk28f55=_euesysk28f55 - 1;
+_vnr4vp167wcv,_f72hiwssga3c=40032473,-2812821;
+elseif _vnr4vp167wcv - _f72hiwssga3c == 42845294 then
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] % _66aj2hn1yysp;
+_vnr4vp167wcv,_f72hiwssga3c=32410962,32410962;
+elseif _vnr4vp167wcv - _f72hiwssga3c == 27114041 then
+_vnr4vp167wcv,_f72hiwssga3c=87684864,60421713;
+end;
+end;
+elseif _6zec03r4esex == 46 then
+local _m0b594zt5v3y;
+local _kwvau749uh06={};
+local function _9k0kvymrl79a(...)
+_m0b594zt5v3y=_6tv5vhgky8jq[_euesysk28f55];
+return 50850919;
+end;
+_kwvau749uh06[64782868]=_9k0kvymrl79a;
+local function _ggl8zbrl5fw2(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 36809611;
+end;
+_kwvau749uh06[50850919]=_ggl8zbrl5fw2;
+local function _hohp8vqd04dg(...)
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] ^ _m0b594zt5v3y;
+return 0;
+end;
+_kwvau749uh06[36809611]=_hohp8vqd04dg;
+local function _oawau9sqwhg4(...)
+local _ojrbq7drnrx6=65275;
+return 15691760;
+end;
+_kwvau749uh06[97295685]=_oawau9sqwhg4;
+local function _uyyelud8ir3g(...)
+local _boh1z8p36xu0=83551;
+return 15283927;
+end;
+_kwvau749uh06[30485093]=_uyyelud8ir3g;
+local _q6w84vp6vjmd={[92024]=true};
+local _80mvq81408j6=64782868;
+while _80mvq81408j6 ~= 0 and (_80mvq81408j6 + 35239 - 35239 == _80mvq81408j6) do
+_80mvq81408j6=_kwvau749uh06[_80mvq81408j6]();
+end;
+elseif _6zec03r4esex == 39 then
+do
+local _xe2jciat4lka;
+local _71bm9d3m01lj={};
+local function _jujjmekcyaa1(...)
+_xe2jciat4lka=62974;
+return 91493822;
+end;
+_71bm9d3m01lj[2212064]=_jujjmekcyaa1;
+local function _8uqq9b51sf67(...)
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) then
+local _gi4zfql5dbti;
+local _4ax1h6og640q={};
+local function _zvu3lg73huyi(...)
+_gi4zfql5dbti=195;
+return 94158008;
+end;
+_4ax1h6og640q[67536523]=_zvu3lg73huyi;
+local function _w1p315ntf6yh(...)
+_2nbsxv4q62y9=9404;
+return 0;
+end;
+_4ax1h6og640q[94158008]=_w1p315ntf6yh;
+local function _8sz25wnp6zz3(...)
+local _sowu21e02o3m=89820;
+return 6362010;
+end;
+_4ax1h6og640q[73948106]=_8sz25wnp6zz3;
+local function _duwdp3m5qsi8(...)
+local _utqzry7pun4l=29222;
+return 32901561;
+end;
+_4ax1h6og640q[76442524]=_duwdp3m5qsi8;
+local _8adrjkxwql6i={[73866]=true};
+local _mvqqf5qq71fa=67536523;
+while _mvqqf5qq71fa ~= 0 and _8adrjkxwql6i[73866] do
+_mvqqf5qq71fa=_4ax1h6og640q[_mvqqf5qq71fa]();
+end;
+end;
+return 0;
+end;
+_71bm9d3m01lj[91493822]=_8uqq9b51sf67;
+local function _9iiy5r2wi0lz(...)
+local _v9sl97h69jji=38900;
+return 16351924;
+end;
+_71bm9d3m01lj[65422775]=_9iiy5r2wi0lz;
+local _uftu3zi97839={[79900]=true};
+local _gsuy22n9jm4f=2212064;
+while _gsuy22n9jm4f ~= 0 and (_gsuy22n9jm4f + 17327 - 17327 == _gsuy22n9jm4f) do
+_gsuy22n9jm4f=_71bm9d3m01lj[_gsuy22n9jm4f]();
+end;
+end;
+do
+local _xmczd1tcfkzu;
+local _ntk67tmrcjzu={[52]=89197271};
+local _wns77r48yqhc,_osl9g4eijtcl=77702246,943247;
+while _wns77r48yqhc - _osl9g4eijtcl ~= 0 and _ntk67tmrcjzu[52] do
+if _wns77r48yqhc - _osl9g4eijtcl == 15828584 then
+_wns77r48yqhc,_osl9g4eijtcl=79018907,83770793;
+elseif _osl9g4eijtcl - _wns77r48yqhc == 29081549 then
+_wns77r48yqhc,_osl9g4eijtcl=74144759,22228675;
+elseif _wns77r48yqhc - _osl9g4eijtcl == 66321799 then
+_wns77r48yqhc,_osl9g4eijtcl=10638196,68648679;
+elseif (_wns77r48yqhc - _osl9g4eijtcl) % 94091869 == 76758999 then
+_xmczd1tcfkzu=87076;
+_wns77r48yqhc,_osl9g4eijtcl=8991067,-68461167;
+elseif (_wns77r48yqhc - _osl9g4eijtcl) % 173337229 == 77452234 then
+if string["find"]("abc","a") == 1 then
+local _3j7x95o1hzer=500;
+else
+local _ra5nrivzcfmp;
+local _2ggxzugld2eu={[83]=42586721};
+local _pvk4b0xts9ie,_ckw1d65fzaqw=17645327,518499;
+while _pvk4b0xts9ie + _ckw1d65fzaqw ~= 0 and _2ggxzugld2eu[83] do
+if _pvk4b0xts9ie + _ckw1d65fzaqw == 46637947 then
+_pvk4b0xts9ie,_ckw1d65fzaqw=66573036,62291069;
+elseif _pvk4b0xts9ie + _ckw1d65fzaqw == 27599637 then
+_ra5nrivzcfmp=97826;
+_pvk4b0xts9ie,_ckw1d65fzaqw=68646929,-68646929;
+elseif (_pvk4b0xts9ie + _ckw1d65fzaqw) % 27780595 == 18163826 then
+_ra5nrivzcfmp={};
+_pvk4b0xts9ie,_ckw1d65fzaqw=32309107,-4709470;
+end;
+end;
+end;
+_wns77r48yqhc,_osl9g4eijtcl=61651780,61651780;
+end;
+end;
+end;
+local _tcb0h2fu4mda=_6tv5vhgky8jq[_euesysk28f55];
+_euesysk28f55=_euesysk28f55 - 1;
+while true do
+local _8vmn5liz2lpu=72269;
+break;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55] .. _tcb0h2fu4mda;
+elseif _6zec03r4esex == 9 then
+do
+local _c3f1zetdcsu5;
+local _tr4bi3yobg50={[29]=14488671};
+local _ck8pes2eo8tx,_4y4i60y8qunn=48823564,448889;
+while _ck8pes2eo8tx - _4y4i60y8qunn ~= 0 and _tr4bi3yobg50[29] ~= nil do
+if _ck8pes2eo8tx - _4y4i60y8qunn == 42285146 then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _37h2uuukpbj7;
+local _gz1jybs0or5i={[74]=79143828};
+local _b9geap7fhbsh,_pbxo94dwdpbu=59124449,399542;
+while _b9geap7fhbsh + _pbxo94dwdpbu ~= 0 and (_b9geap7fhbsh + 80082 - 80082 == _b9geap7fhbsh) do
+if (_b9geap7fhbsh + _pbxo94dwdpbu) % 121388136 == 59523991 then
+_37h2uuukpbj7=123;
+_b9geap7fhbsh,_pbxo94dwdpbu=28383663,24946478;
+elseif _b9geap7fhbsh + _pbxo94dwdpbu == 62441822 then
+_b9geap7fhbsh,_pbxo94dwdpbu=33824452,86803081;
+elseif _pbxo94dwdpbu + _b9geap7fhbsh == 25674839 then
+_b9geap7fhbsh,_pbxo94dwdpbu=8057766,90479044;
+elseif _pbxo94dwdpbu + _b9geap7fhbsh == 53330141 then
+if true then
+local _3p9c6yhalz1i=909;
+end;
+_b9geap7fhbsh,_pbxo94dwdpbu=62645836,-62645836;
+elseif _b9geap7fhbsh + _pbxo94dwdpbu == 52450569 then
+_b9geap7fhbsh,_pbxo94dwdpbu=7770227,29198372;
+end;
+end;
+end;
+_ck8pes2eo8tx,_4y4i60y8qunn=78455176,78455176;
+elseif _ck8pes2eo8tx - _4y4i60y8qunn == 40095821 then
+_ck8pes2eo8tx,_4y4i60y8qunn=57324518,17429803;
+elseif (_ck8pes2eo8tx - _4y4i60y8qunn) % 91639871 == 48374675 then
+_c3f1zetdcsu5=13142;
+_ck8pes2eo8tx,_4y4i60y8qunn=61416685,19131539;
+elseif _ck8pes2eo8tx - _4y4i60y8qunn == 92905914 then
+_ck8pes2eo8tx,_4y4i60y8qunn=65051501,18423314;
+elseif _4y4i60y8qunn - _ck8pes2eo8tx == 75705786 then
+_ck8pes2eo8tx,_4y4i60y8qunn=78937482,80351566;
+end;
+end;
+end;
+while true do
+local _ez29mieodqyl=52769;
+break;
+end;
+local _7wun0fnipe0s=_6tv5vhgky8jq[_euesysk28f55];
+_euesysk28f55=_euesysk28f55 - 1;
+do
+if not (type(string) == "table" and type(string["byte"]) == "function") and type(string) == "table" and type(string["byte"]) == "function" then
+local _z6cw2cuh9gca=710;
+end;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] == _7wun0fnipe0s);
+elseif _6zec03r4esex == 4 then
+local _i7udfogeywbd;
+local _mjeqe09gxjaa={};
+local function _63m8vcr5x069(...)
+_i7udfogeywbd=_6tv5vhgky8jq[_euesysk28f55];
+return 88956848;
+end;
+_mjeqe09gxjaa[43265312]=_63m8vcr5x069;
+local function _fch089lq5s74(...)
+do
+local _buf4ywc2jql7;
+local _9z1ct6kkq5r4={};
+local function _8ya9o9nd26b7(...)
+_buf4ywc2jql7=88873;
+return 88629604;
+end;
+_9z1ct6kkq5r4[64263409]=_8ya9o9nd26b7;
+local function _mb8ffhmt2zbs(...)
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _ypd7en8n6gwx=443;
+else
+local _dpb4r2s10mjq;
+local _b8bb5mgn1ahh={};
+local function _i93a7nqujilx(...)
+_dpb4r2s10mjq={};
+return 50344467;
+end;
+_b8bb5mgn1ahh[46569284]=_i93a7nqujilx;
+local function _ulcv6l9cc7pn(...)
+_dpb4r2s10mjq=35857;
+return 0;
+end;
+_b8bb5mgn1ahh[50344467]=_ulcv6l9cc7pn;
+local function _pgtqwhdu9axa(...)
+local _loqd3xcku8vq=81009;
+return 7538160;
+end;
+_b8bb5mgn1ahh[79087849]=_pgtqwhdu9axa;
+local function _77l4wq85tt05(...)
+local _ldgcrnkqy69f=76605;
+return 87296444;
+end;
+_b8bb5mgn1ahh[24622289]=_77l4wq85tt05;
+local function _3e8mrnvosgtg(...)
+local _6qkdza6v5g9z=44987;
+return 6849250;
+end;
+_b8bb5mgn1ahh[22163524]=_3e8mrnvosgtg;
+local _hsag0epips87={[62612]=true};
+local _1gx5rcmuetaq=46569284;
+while _1gx5rcmuetaq ~= 0 and _hsag0epips87[62612] do
+_1gx5rcmuetaq=_b8bb5mgn1ahh[_1gx5rcmuetaq]();
+end;
+end;
+return 0;
+end;
+_9z1ct6kkq5r4[88629604]=_mb8ffhmt2zbs;
+local function _ugivu2frvbsg(...)
+local _6uo5t6lxd0l4=83325;
+return 2920204;
+end;
+_9z1ct6kkq5r4[86093080]=_ugivu2frvbsg;
+local function _wk04sgcps809(...)
+local _2jqqibd8zop7=70950;
+return 35659115;
+end;
+_9z1ct6kkq5r4[2627549]=_wk04sgcps809;
+local _a99h5xw4jfcb={[71170]=true};
+local _edw2q20zxzy3=64263409;
+while _edw2q20zxzy3 ~= 0 and (_edw2q20zxzy3 + 88929 - 88929 == _edw2q20zxzy3) do
+_edw2q20zxzy3=_9z1ct6kkq5r4[_edw2q20zxzy3]();
+end;
+end;
+return 45248303;
+end;
+_mjeqe09gxjaa[88956848]=_fch089lq5s74;
+local function _awvhneku9wg8(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 26733910;
+end;
+_mjeqe09gxjaa[45248303]=_awvhneku9wg8;
+local function _vdbzzucjttoo(...)
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] ~= _i7udfogeywbd);
+return 0;
+end;
+_mjeqe09gxjaa[26733910]=_vdbzzucjttoo;
+local function _h2x0sqhprqne(...)
+local _ljzfy01pok83=75288;
+return 47423471;
+end;
+_mjeqe09gxjaa[78150827]=_h2x0sqhprqne;
+local function _3iwro3zywi44(...)
+local _t1x92ek4ev9y=44141;
+return 8729799;
+end;
+_mjeqe09gxjaa[21620725]=_3iwro3zywi44;
+local function _go4hfdgnlk1m(...)
+local _jmi2sfkf760n=99425;
+return 69707582;
+end;
+_mjeqe09gxjaa[77092164]=_go4hfdgnlk1m;
+local _0xohooftztk7={[99923]=true};
+local _rwu08urnf6l5=43265312;
+while _rwu08urnf6l5 ~= 0 and (_rwu08urnf6l5 + 59415 - 59415 == _rwu08urnf6l5) do
+_rwu08urnf6l5=_mjeqe09gxjaa[_rwu08urnf6l5]();
+end;
+elseif _6zec03r4esex == 21 then
+local _8y60yzp8avgo=_6tv5vhgky8jq[_euesysk28f55];
+while true do
+local _atslcr7vcc9x=41136;
+break;
+end;
+_euesysk28f55=_euesysk28f55 - 1;
+do
+local _18vs9xdsuonf=20974;
+end;
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] < _8y60yzp8avgo);
+elseif _6zec03r4esex == 29 then
+local _obesd8a08fop;
+local _eeh8kx1nm62y={[97]=39222705};
+local _4laucisipizh,_zyiv9j62au1n=80562146,267481;
+while _4laucisipizh + _zyiv9j62au1n ~= 0 and (_4laucisipizh + 59660 - 59660 == _4laucisipizh) do
+if _4laucisipizh + _zyiv9j62au1n == 57895783 then
+_4laucisipizh,_zyiv9j62au1n=84269778,35859827;
+elseif (_4laucisipizh + _zyiv9j62au1n) % 70366327 == 14298255 then
+_euesysk28f55=_euesysk28f55 - 1;
+_4laucisipizh,_zyiv9j62au1n=26177845,-18280410;
+elseif _4laucisipizh + _zyiv9j62au1n == 38318476 then
+_4laucisipizh,_zyiv9j62au1n=74058838,74449399;
+elseif _zyiv9j62au1n + _4laucisipizh == 7897435 then
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] <= _obesd8a08fop);
+_4laucisipizh,_zyiv9j62au1n=97491166,-97491166;
+elseif _zyiv9j62au1n + _4laucisipizh == 27244028 then
+_4laucisipizh,_zyiv9j62au1n=11098588,44831186;
+elseif _zyiv9j62au1n + _4laucisipizh == 80829627 then
+_obesd8a08fop=_6tv5vhgky8jq[_euesysk28f55];
+_4laucisipizh,_zyiv9j62au1n=75447146,-61148891;
+end;
+end;
+elseif _6zec03r4esex == 35 then
+local _4fyqa98azcvw;
+local _yhvigo923jor={};
+local function _3ioqsa6osr67(...)
+_4fyqa98azcvw=_6tv5vhgky8jq[_euesysk28f55];
+return 58176557;
+end;
+_yhvigo923jor[46001013]=_3ioqsa6osr67;
+local function _lgfjulv6j47m(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 7429098;
+end;
+_yhvigo923jor[58176557]=_lgfjulv6j47m;
+local function _0sww45mq9lba(...)
+do
+if not (math["abs"](-1) == 1 and math["floor"](3.14) == 3) and #tostring(math["random"]()) > 0 then
+local _70tyi12vrf5r;
+local _0tcoflfda1ox={};
+local function _eynkinaorm7a(...)
+_70tyi12vrf5r={};
+return 73600525;
+end;
+_0tcoflfda1ox[85456278]=_eynkinaorm7a;
+local function _q2ce9ag6vfm0(...)
+_70tyi12vrf5r=80644;
+return 0;
+end;
+_0tcoflfda1ox[73600525]=_q2ce9ag6vfm0;
+local function _6ax42gpj9zvr(...)
+local _f4sbsvnb4sva=7981;
+return 31794311;
+end;
+_0tcoflfda1ox[88045468]=_6ax42gpj9zvr;
+local _kpmzy8zv549t={[91358]=true};
+local _el7n1ifvv1dd=85456278;
+while _el7n1ifvv1dd ~= 0 and (_el7n1ifvv1dd + 74674 - 74674 == _el7n1ifvv1dd) do
+_el7n1ifvv1dd=_0tcoflfda1ox[_el7n1ifvv1dd]();
+end;
+end;
+end;
+return 98955231;
+end;
+_yhvigo923jor[7429098]=_0sww45mq9lba;
+local function _cp92q0ilehwc(...)
+do
+local _07nfe4sf8rdv=75635;
+end;
+return 91143485;
+end;
+_yhvigo923jor[98955231]=_cp92q0ilehwc;
+local function _3x7qc7cnnw0k(...)
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] > _4fyqa98azcvw);
+return 0;
+end;
+_yhvigo923jor[91143485]=_3x7qc7cnnw0k;
+local function _l94m1vc4i6lu(...)
+local _k9iclgykjrna=8729;
+return 73388022;
+end;
+_yhvigo923jor[65922153]=_l94m1vc4i6lu;
+local function _vroq7i1woxhy(...)
+local _7lb1a9z9nkbh=29365;
+return 73014370;
+end;
+_yhvigo923jor[59303154]=_vroq7i1woxhy;
+local _d1rh7ddmfut6={[51441]=true};
+local _axivqmpu5ex4=46001013;
+while _axivqmpu5ex4 ~= 0 and _d1rh7ddmfut6[51441] do
+_axivqmpu5ex4=_yhvigo923jor[_axivqmpu5ex4]();
+end;
+elseif _6zec03r4esex == 44 then
+local _5880nk9ep7u3;
+local _7csgcl8p39mf={[27]=56964563};
+local _991r6n2mil3p,_kxqpw8i2klkm=86834414,135474;
+while _991r6n2mil3p - _kxqpw8i2klkm ~= 0 and _7csgcl8p39mf[27] do
+if _991r6n2mil3p - _kxqpw8i2klkm == 18422702 then
+_991r6n2mil3p,_kxqpw8i2klkm=76316293,17438138;
+elseif _991r6n2mil3p - _kxqpw8i2klkm == 63846631 then
+_6tv5vhgky8jq[_euesysk28f55]=(_6tv5vhgky8jq[_euesysk28f55] >= _5880nk9ep7u3);
+_991r6n2mil3p,_kxqpw8i2klkm=18308753,18308753;
+elseif _991r6n2mil3p - _kxqpw8i2klkm == 86698940 then
+_5880nk9ep7u3=_6tv5vhgky8jq[_euesysk28f55];
+_991r6n2mil3p,_kxqpw8i2klkm=69542992,24727285;
+elseif _991r6n2mil3p - _kxqpw8i2klkm == 23678814 then
+_991r6n2mil3p,_kxqpw8i2klkm=2745102,34484171;
+elseif _991r6n2mil3p - _kxqpw8i2klkm == 44815707 then
+_euesysk28f55=_euesysk28f55 - 1;
+_991r6n2mil3p,_kxqpw8i2klkm=5612593,-58234038;
+end;
+end;
+elseif _6zec03r4esex == 41 then
+_6tv5vhgky8jq[_euesysk28f55]=-_6tv5vhgky8jq[_euesysk28f55];
+elseif _6zec03r4esex == 42 then
+local _6v1p4skkh7ov={};
+local function _wzjx0qf5to0y(...)
+do
+local _wtv8nyfpi7np=54867;
+end;
+return 25767196;
+end;
+_6v1p4skkh7ov[62513539]=_wzjx0qf5to0y;
+local function _45rmlk2bu670(...)
+do
+local _nelrgc9q7fpq;
+local _57f1824w19s7={[33]=68275317};
+local _w2f970mjq6zn,_b0999sk1wjto=38450655,813683;
+while _w2f970mjq6zn + _b0999sk1wjto ~= 0 and _57f1824w19s7[33] do
+if (_w2f970mjq6zn + _b0999sk1wjto) % 78695749 == 48439320 then
+if #tostring(math["random"]()) > 0 then
+local _5tuay56fe68h=55;
+else
+local _prmp9nzydtpv;
+local _c10rwa6ze6jx={[59]=60208050};
+local _tvsuunjf3m84,_ckcnb2txf6et=28625107,272110;
+while _tvsuunjf3m84 + _ckcnb2txf6et ~= 0 and _c10rwa6ze6jx[59] ~= nil do
+if _ckcnb2txf6et + _tvsuunjf3m84 == 52465108 then
+_prmp9nzydtpv=26680;
+_tvsuunjf3m84,_ckcnb2txf6et=44491651,-44491651;
+elseif _ckcnb2txf6et + _tvsuunjf3m84 == 93668321 then
+_tvsuunjf3m84,_ckcnb2txf6et=93861897,25105436;
+elseif (_tvsuunjf3m84 + _ckcnb2txf6et) % 86878866 == 28897217 then
+_prmp9nzydtpv={};
+_tvsuunjf3m84,_ckcnb2txf6et=6222380,46242728;
+elseif _ckcnb2txf6et + _tvsuunjf3m84 == 11961344 then
+_tvsuunjf3m84,_ckcnb2txf6et=94515696,52189916;
+elseif _tvsuunjf3m84 + _ckcnb2txf6et == 13770950 then
+_tvsuunjf3m84,_ckcnb2txf6et=6012107,53980116;
+end;
+end;
+end;
+_w2f970mjq6zn,_b0999sk1wjto=30232115,-30232115;
+elseif _b0999sk1wjto + _w2f970mjq6zn == 39264338 then
+_nelrgc9q7fpq=74195;
+_w2f970mjq6zn,_b0999sk1wjto=64976766,-16537446;
+elseif _w2f970mjq6zn + _b0999sk1wjto == 32921998 then
+_w2f970mjq6zn,_b0999sk1wjto=30783092,2135947;
+end;
+end;
+end;
+return 1363596;
+end;
+_6v1p4skkh7ov[25767196]=_45rmlk2bu670;
+local function _8411zkgmqbk9(...)
+_6tv5vhgky8jq[_euesysk28f55]=not _6tv5vhgky8jq[_euesysk28f55];
+return 0;
+end;
+_6v1p4skkh7ov[1363596]=_8411zkgmqbk9;
+local function _zo5wguv0b8g4(...)
+local _ua1r0hq5nif7=47289;
+return 8460074;
+end;
+_6v1p4skkh7ov[46836863]=_zo5wguv0b8g4;
+local _qzbm9uye7pst={[87084]=true};
+local _bt1oiok09by0=62513539;
+while _bt1oiok09by0 ~= 0 and _qzbm9uye7pst[87084] do
+_bt1oiok09by0=_6v1p4skkh7ov[_bt1oiok09by0]();
+end;
+elseif _6zec03r4esex == 37 then
+local _u6vj0b4nxcu5={};
+local function _3p56ar0v0kis(...)
+do
+if not (string["find"]("abc","a") == 1) and type(string) == "table" and type(string["byte"]) == "function" then
+local _xckks9teb1k1=789;
+end;
+end;
+return 76929224;
+end;
+_u6vj0b4nxcu5[40445294]=_3p56ar0v0kis;
+local function _pu5b7puolw3i(...)
+_6tv5vhgky8jq[_euesysk28f55]=#_6tv5vhgky8jq[_euesysk28f55];
+return 0;
+end;
+_u6vj0b4nxcu5[76929224]=_pu5b7puolw3i;
+local function _na3ku9uz1quo(...)
+local _h7jlyb5j9xjo=55471;
+return 65307903;
+end;
+_u6vj0b4nxcu5[24792553]=_na3ku9uz1quo;
+local function _1ck22jvte8bz(...)
+local _qxxp3lyvlaz3=17394;
+return 6635832;
+end;
+_u6vj0b4nxcu5[59822697]=_1ck22jvte8bz;
+local _txgjwaufn158={[76536]=true};
+local _of0xdnmo5cvw=40445294;
+while _of0xdnmo5cvw ~= 0 and _txgjwaufn158[76536] do
+_of0xdnmo5cvw=_u6vj0b4nxcu5[_of0xdnmo5cvw]();
+end;
+elseif _6zec03r4esex == 1 then
+do
+local _vb1wtyo87tyd;
+local _5tllqoo871vd={[37]=14891740};
+local _4fsd10q44d0w,_fxee0qvn9k8q=41102927,306175;
+while _4fsd10q44d0w - _fxee0qvn9k8q ~= 0 and (_4fsd10q44d0w + 78717 - 78717 == _4fsd10q44d0w) do
+if _fxee0qvn9k8q - _4fsd10q44d0w == 97316918 then
+_4fsd10q44d0w,_fxee0qvn9k8q=61462189,54386726;
+elseif _fxee0qvn9k8q - _4fsd10q44d0w == 77956894 then
+_4fsd10q44d0w,_fxee0qvn9k8q=81021364,86101144;
+elseif _4fsd10q44d0w - _fxee0qvn9k8q == 73228756 then
+_4fsd10q44d0w,_fxee0qvn9k8q=46912046,25797408;
+elseif _4fsd10q44d0w - _fxee0qvn9k8q == 40796752 then
+_vb1wtyo87tyd=36476;
+_4fsd10q44d0w,_fxee0qvn9k8q=2471873,-86978810;
+elseif (_4fsd10q44d0w - _fxee0qvn9k8q) % 170586278 == 89450683 then
+if string["find"]("abc","a") == 1 then
+local _174r5bz70i3v=521;
+else
+local _i1yv8ajuefc2;
+local _51ad7dc02mw1={};
+local function _v6ex49m4ewfi(...)
+_i1yv8ajuefc2={};
+return 98751574;
+end;
+_51ad7dc02mw1[97185601]=_v6ex49m4ewfi;
+local function _ny5cqktlmys9(...)
+_i1yv8ajuefc2=43514;
+return 0;
+end;
+_51ad7dc02mw1[98751574]=_ny5cqktlmys9;
+local function _p18qtvs16ejf(...)
+local _2vvaimuk7upr=96939;
+return 35428395;
+end;
+_51ad7dc02mw1[81863677]=_p18qtvs16ejf;
+local _ifbn3e1wubhr={[95881]=true};
+local _n2jewjume2be=97185601;
+while _n2jewjume2be ~= 0 and _ifbn3e1wubhr[95881] do
+_n2jewjume2be=_51ad7dc02mw1[_n2jewjume2be]();
+end;
+end;
+_4fsd10q44d0w,_fxee0qvn9k8q=65392785,65392785;
+end;
+end;
+end;
+while true do
+local _4qyda0w7bjg7=42327;
+break;
+end;
+_st4navigdoek=_st4navigdoek + 1;
+do
+if not (#tostring(math["random"]()) > 0) and #tostring(math["random"]()) > 0 then
+local _m7548o7dwpye;
+local _6f56nwqmbzcw={};
+local function _4fz6kazm9ii4(...)
+_m7548o7dwpye=428;
+return 53361607;
+end;
+_6f56nwqmbzcw[70072306]=_4fz6kazm9ii4;
+local function _3z6pzqecaf7m(...)
+_whcn72gbuo0y=70931;
+return 0;
+end;
+_6f56nwqmbzcw[53361607]=_3z6pzqecaf7m;
+local function _a5olwliszkh0(...)
+local _mhnhd56afhma=44128;
+return 62740103;
+end;
+_6f56nwqmbzcw[56374572]=_a5olwliszkh0;
+local _8rxgkj3633s4={[89475]=true};
+local _q4g3rxhzc5a4=70072306;
+while _q4g3rxhzc5a4 ~= 0 and (_q4g3rxhzc5a4 + 74121 - 74121 == _q4g3rxhzc5a4) do
+_q4g3rxhzc5a4=_6f56nwqmbzcw[_q4g3rxhzc5a4]();
+end;
+end;
+end;
+_slkwbhk803j3[_st4navigdoek]=_euesysk28f55;
+elseif _6zec03r4esex == 17 then
+local _5u21wrwb0mlc,_weraotd9b3f5;
+local _h6mzn4jotd0o={[60]=52674363};
+local _61i9kb20bzms,_s7vsnm63es9v=54438677,907198;
+while _61i9kb20bzms + _s7vsnm63es9v ~= 0 and (_61i9kb20bzms + 50106 - 50106 == _61i9kb20bzms) do
+if _s7vsnm63es9v + _61i9kb20bzms == 40760005 then
+_61i9kb20bzms,_s7vsnm63es9v=72096240,29136653;
+elseif _61i9kb20bzms + _s7vsnm63es9v == 54465667 then
+_st4navigdoek=_st4navigdoek - 1;
+_61i9kb20bzms,_s7vsnm63es9v=4766217,26549734;
+elseif _61i9kb20bzms + _s7vsnm63es9v == 65554768 then
+while _euesysk28f55 > _weraotd9b3f5 do
+local _s201ogcieok1={[34]=50607353};
+local _6fpzl0kck7wi,_a2yeyucd1fg6=5496787,423581;
+while _6fpzl0kck7wi - _a2yeyucd1fg6 ~= 0 and _s201ogcieok1[34] do
+if _6fpzl0kck7wi - _a2yeyucd1fg6 == 98116830 then
+_euesysk28f55=_euesysk28f55 - 1;
+_6fpzl0kck7wi,_a2yeyucd1fg6=84575089,84575089;
+elseif _6fpzl0kck7wi - _a2yeyucd1fg6 == 5073206 then
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+_6fpzl0kck7wi,_a2yeyucd1fg6=3249546,-94867284;
+elseif _a2yeyucd1fg6 - _6fpzl0kck7wi == 42923338 then
+_6fpzl0kck7wi,_a2yeyucd1fg6=24913768,711077;
+end;
+end;
+end;
+_61i9kb20bzms,_s7vsnm63es9v=99574315,-99574315;
+elseif _61i9kb20bzms + _s7vsnm63es9v == 31315951 then
+_weraotd9b3f5=_5u21wrwb0mlc+_lc7v9m7h2fu3[_48b0cfo1a1cn];
+_61i9kb20bzms,_s7vsnm63es9v=51147035,38716563;
+elseif _s7vsnm63es9v + _61i9kb20bzms == 94354991 then
+do
+local _nrnk3a8qxcyc;
+local _16cffjya467w={};
+local function _6308uhsva45f(...)
+_nrnk3a8qxcyc=74759;
+return 41396194;
+end;
+_16cffjya467w[70197713]=_6308uhsva45f;
+local function _0qh11j3aog10(...)
+if type(string) == "table" and type(string["byte"]) == "function" then
+local _bheg7ibkadzg=396;
+else
+local _kjebc6wwv3kh;
+local _jn3hbj2p9vgi={[19]=44404074};
+local _2g2vx5fpaigd,_i31t685s61km=34144989,136024;
+while _2g2vx5fpaigd + _i31t685s61km ~= 0 and (_2g2vx5fpaigd + 15774 - 15774 == _2g2vx5fpaigd) do
+if _2g2vx5fpaigd + _i31t685s61km == 90175643 then
+_2g2vx5fpaigd,_i31t685s61km=76799126,33047585;
+elseif _2g2vx5fpaigd + _i31t685s61km == 34281013 then
+_kjebc6wwv3kh=158;
+_2g2vx5fpaigd,_i31t685s61km=26996283,-4725116;
+elseif _2g2vx5fpaigd + _i31t685s61km == 38839469 then
+_2g2vx5fpaigd,_i31t685s61km=39968480,10372996;
+elseif _i31t685s61km + _2g2vx5fpaigd == 13074915 then
+_2g2vx5fpaigd,_i31t685s61km=10085168,75190572;
+elseif _2g2vx5fpaigd + _i31t685s61km == 22271167 then
+if true then
+local _fo1yrdaugpsc=942;
+end;
+_2g2vx5fpaigd,_i31t685s61km=45964967,-45964967;
+end;
+end;
+end;
+return 0;
+end;
+_16cffjya467w[41396194]=_0qh11j3aog10;
+local function _b0pmnbxfqlau(...)
+local _qlllqcvyw47t=36354;
+return 61434088;
+end;
+_16cffjya467w[94841219]=_b0pmnbxfqlau;
+local _yp6k29o879yq={[83753]=true};
+local _ak0n9de9wizw=70197713;
+while _ak0n9de9wizw ~= 0 and _yp6k29o879yq[83753] do
+_ak0n9de9wizw=_16cffjya467w[_ak0n9de9wizw]();
+end;
+end;
+_61i9kb20bzms,_s7vsnm63es9v=80097342,-25631675;
+elseif _s7vsnm63es9v + _61i9kb20bzms == 28490522 then
+_61i9kb20bzms,_s7vsnm63es9v=4995137,19126919;
+elseif _s7vsnm63es9v + _61i9kb20bzms == 43273103 then
+while _euesysk28f55 < _weraotd9b3f5 do
+local _jyrh4t6gxwdb={};
+local function _5096fm34k593(...)
+_euesysk28f55=_euesysk28f55 + 1;
+return 7962249;
+end;
+_jyrh4t6gxwdb[57207656]=_5096fm34k593;
+local function _izvvogdt226j(...)
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+return 0;
+end;
+_jyrh4t6gxwdb[7962249]=_izvvogdt226j;
+local function _hczikdiv8xyo(...)
+local _xzwhvhc2yyef=35531;
+return 89845288;
+end;
+_jyrh4t6gxwdb[22317417]=_hczikdiv8xyo;
+local function _52gt3zfm6pcb(...)
+local _n88ghc600seo=28412;
+return 54604443;
+end;
+_jyrh4t6gxwdb[78748388]=_52gt3zfm6pcb;
+local _4v2hp49j088v={[97795]=true};
+local _evn5y78mqt79=57207656;
+while _evn5y78mqt79 ~= 0 and _4v2hp49j088v[97795] do
+_evn5y78mqt79=_jyrh4t6gxwdb[_evn5y78mqt79]();
+end;
+end;
+_61i9kb20bzms,_s7vsnm63es9v=40569034,24985734;
+elseif _s7vsnm63es9v + _61i9kb20bzms == 89863598 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_61i9kb20bzms,_s7vsnm63es9v=91215802,-47942699;
+elseif _61i9kb20bzms + _s7vsnm63es9v == 55345875 then
+do
+local _hswhevs2o0gc,_a8dlv6n36n9b;
+local _qp01b7falr2n={[88]=24896278};
+local _gytfgemy3ytx,_ijie2xgzj0tf=59426444,356699;
+while _gytfgemy3ytx - _ijie2xgzj0tf ~= 0 and (_gytfgemy3ytx + 11006 - 11006 == _gytfgemy3ytx) do
+if _gytfgemy3ytx - _ijie2xgzj0tf == 26864385 then
+_gytfgemy3ytx,_ijie2xgzj0tf=75198405,77383881;
+elseif _gytfgemy3ytx - _ijie2xgzj0tf == 75677637 then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+if not (type(string) == "table" and type(string["byte"]) == "function") then
+local _zhyxc1t1i5w5;
+local _ligc4wpaizyj={[2]=68152637};
+local _fl2vpaaua7bv,_af2zorjd521q=92744818,493668;
+while _fl2vpaaua7bv + _af2zorjd521q ~= 0 and (_fl2vpaaua7bv + 54189 - 54189 == _fl2vpaaua7bv) do
+if _af2zorjd521q + _fl2vpaaua7bv == 44715285 then
+_kqjg5wkcklij=39652;
+_fl2vpaaua7bv,_af2zorjd521q=53642257,-53642257;
+elseif _af2zorjd521q + _fl2vpaaua7bv == 78681426 then
+_fl2vpaaua7bv,_af2zorjd521q=63762366,54692319;
+elseif (_fl2vpaaua7bv + _af2zorjd521q) % 177067618 == 93238486 then
+_zhyxc1t1i5w5=475;
+_fl2vpaaua7bv,_af2zorjd521q=15455543,29259742;
+end;
+end;
+end;
+end;
+_gytfgemy3ytx,_ijie2xgzj0tf=53165271,53165271;
+elseif _ijie2xgzj0tf - _gytfgemy3ytx == 72827971 then
+_gytfgemy3ytx,_ijie2xgzj0tf=90300263,44098433;
+elseif (_gytfgemy3ytx - _ijie2xgzj0tf) % 99591898 == 18209911 then
+_a8dlv6n36n9b=40416;
+_gytfgemy3ytx,_ijie2xgzj0tf=93606356,17928719;
+elseif _gytfgemy3ytx - _ijie2xgzj0tf == 59069745 then
+_hswhevs2o0gc=24157;
+_gytfgemy3ytx,_ijie2xgzj0tf=98522603,80312692;
+end;
+end;
+end;
+_61i9kb20bzms,_s7vsnm63es9v=19071625,57960572;
+elseif (_61i9kb20bzms + _s7vsnm63es9v) % 91416083 == 77032197 then
+_5u21wrwb0mlc=_slkwbhk803j3[_st4navigdoek];
+_61i9kb20bzms,_s7vsnm63es9v=67018362,27336629;
+elseif _s7vsnm63es9v + _61i9kb20bzms == 62375968 then
+_61i9kb20bzms,_s7vsnm63es9v=34289139,91227119;
+end;
+end;
+elseif _6zec03r4esex == 43 then
+local _rgx19yd5w6gp,_38yjbte2zogd,_8wnyvg2tw64c,_8rv8tnsk8qyr,_g6wezqxrr7lz,_wrs34pzzf8tx;
+local _gnki2ges0v3s={};
+local function _6oezvymbq4kb(...)
+_rgx19yd5w6gp=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+return 72974877;
+end;
+_gnki2ges0v3s[77514554]=_6oezvymbq4kb;
+local function _zrqw0zf6dxau(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+return 19185435;
+end;
+_gnki2ges0v3s[72974877]=_zrqw0zf6dxau;
+local function _2d57cw7voabt(...)
+_38yjbte2zogd=_slkwbhk803j3[_st4navigdoek];
+return 89728879;
+end;
+_gnki2ges0v3s[19185435]=_2d57cw7voabt;
+local function _7zkwas4tzggr(...)
+_st4navigdoek=_st4navigdoek - 1;
+return 5879793;
+end;
+_gnki2ges0v3s[89728879]=_7zkwas4tzggr;
+local function _ez1n1n7psvi6(...)
+_8wnyvg2tw64c=_6tv5vhgky8jq[_38yjbte2zogd];
+return 40372894;
+end;
+_gnki2ges0v3s[5879793]=_ez1n1n7psvi6;
+local function _6d4s3gzm6qvx(...)
+_8rv8tnsk8qyr=_euesysk28f55-_38yjbte2zogd;
+return 41437462;
+end;
+_gnki2ges0v3s[40372894]=_6d4s3gzm6qvx;
+local function _73i6txhmu8xh(...)
+_g6wezqxrr7lz={};
+return 4174818;
+end;
+_gnki2ges0v3s[41437462]=_73i6txhmu8xh;
+local function _fldpsrswdsld(...)
+for _qp4rc5b3dlvx=1,_8rv8tnsk8qyr do
+_g6wezqxrr7lz[_qp4rc5b3dlvx]=_6tv5vhgky8jq[_38yjbte2zogd + _qp4rc5b3dlvx];
+end;
+return 8370254;
+end;
+_gnki2ges0v3s[4174818]=_fldpsrswdsld;
+local function _nmtz8r3gyl81(...)
+for _ewto3e9qlopi=_38yjbte2zogd,_euesysk28f55 do
+_6tv5vhgky8jq[_ewto3e9qlopi]=nil;
+end;
+return 58290568;
+end;
+_gnki2ges0v3s[8370254]=_nmtz8r3gyl81;
+local function _m142etz2k7lj(...)
+_euesysk28f55=_38yjbte2zogd - 1;
+return 1024658;
+end;
+_gnki2ges0v3s[58290568]=_m142etz2k7lj;
+local function _7yytv5li36dx(...)
+_wrs34pzzf8tx=table["pack"](_8wnyvg2tw64c(table["unpack"](_g6wezqxrr7lz,1,_8rv8tnsk8qyr)));
+return 42864748;
+end;
+_gnki2ges0v3s[1024658]=_7yytv5li36dx;
+local function _f7nb0ju19xi2(...)
+if _rgx19yd5w6gp == 255 then
+for _3bnxihf6vb83=1,_wrs34pzzf8tx.n do
+local _a8lqfpwacm3w={[16]=3954878};
+local _iey46p4mprgu,_r441hw18da9y=32155661,85808;
+while _iey46p4mprgu + _r441hw18da9y ~= 0 and _a8lqfpwacm3w[16] ~= nil do
+if _iey46p4mprgu + _r441hw18da9y == 26853127 then
+_6tv5vhgky8jq[_euesysk28f55]=_wrs34pzzf8tx[_3bnxihf6vb83];
+_iey46p4mprgu,_r441hw18da9y=38633113,-38633113;
+elseif _r441hw18da9y + _iey46p4mprgu == 32241469 then
+_euesysk28f55=_euesysk28f55 + 1;
+_iey46p4mprgu,_r441hw18da9y=24438169,2414958;
+elseif _r441hw18da9y + _iey46p4mprgu == 90205116 then
+_iey46p4mprgu,_r441hw18da9y=84210353,76323064;
+elseif _r441hw18da9y + _iey46p4mprgu == 45873774 then
+_iey46p4mprgu,_r441hw18da9y=77358629,44307163;
+elseif _r441hw18da9y + _iey46p4mprgu == 59630451 then
+_iey46p4mprgu,_r441hw18da9y=28839634,89534224;
+end;
 end;
 end;
 else
-local _8mj82uosjdzj={[32]=54997248};
-local _uufkjrv488e7,_f3itw6mb3l0d=12355555,538469;
-while _uufkjrv488e7+_f3itw6mb3l0d~=0 and(_uufkjrv488e7+71919-71919==_uufkjrv488e7) do
-if _f3itw6mb3l0d+_uufkjrv488e7==85390582 then
-_uufkjrv488e7,_f3itw6mb3l0d=55751230,45410189;
-elseif _f3itw6mb3l0d+_uufkjrv488e7==62252379 then
-_uufkjrv488e7,_f3itw6mb3l0d=74429616,28075966;
-elseif _f3itw6mb3l0d+_uufkjrv488e7==89977734 then
-print("FAIL: ".._oum7y3m7fqda);
-_uufkjrv488e7,_f3itw6mb3l0d=9926954,-9926954;
-elseif (_uufkjrv488e7+_f3itw6mb3l0d)%26974728==12894024 then
-_elt9bwx5jpyv=_elt9bwx5jpyv+1;
-_uufkjrv488e7,_f3itw6mb3l0d=62104339,27873395;
+for _kw9hjm9wgwtz=1,_rgx19yd5w6gp do
+local _p6ni2b44vurj={[1]=67586892};
+local _8mrggttwhkj8,_hux0rz95e6bo=32170828,255617;
+while _8mrggttwhkj8 - _hux0rz95e6bo ~= 0 and (_8mrggttwhkj8 + 37157 - 37157 == _8mrggttwhkj8) do
+if _8mrggttwhkj8 - _hux0rz95e6bo == 74079353 then
+_8mrggttwhkj8,_hux0rz95e6bo=67122489,72801978;
+elseif _8mrggttwhkj8 - _hux0rz95e6bo == 39847099 then
+_6tv5vhgky8jq[_euesysk28f55]=_wrs34pzzf8tx[_kw9hjm9wgwtz];
+_8mrggttwhkj8,_hux0rz95e6bo=52624241,52624241;
+elseif _8mrggttwhkj8 - _hux0rz95e6bo == 90785637 then
+_8mrggttwhkj8,_hux0rz95e6bo=71700735,22065840;
+elseif _8mrggttwhkj8 - _hux0rz95e6bo == 31915211 then
+_euesysk28f55=_euesysk28f55 + 1;
+_8mrggttwhkj8,_hux0rz95e6bo=25715815,-14131284;
 end;
 end;
-end;
-end;
-while true do
-local _s9870iih0klt=15806;
-break;
-end;
-_743arxqb2trm(true==true,"boolean true");
-_743arxqb2trm(false==false,"boolean false");
-do
-local _h8h1wpubb1m6,_yg1t8sljslvx;
-local _1fw3racdyd0t={};
-local function _50t627714ssh(...)
-_h8h1wpubb1m6=86384;
-return 47841881;
-end;
-_1fw3racdyd0t[31562038]=_50t627714ssh;
-local function _p6bs90df6gm0(...)
-_yg1t8sljslvx=49377;
-return 36486130;
-end;
-_1fw3racdyd0t[47841881]=_p6bs90df6gm0;
-local function _ft6lpp1v1rp7(...)
-if not(string.find("abc","a")==1) then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _racjhcz1yzom=143;
 end;
 end;
 return 0;
 end;
-_1fw3racdyd0t[36486130]=_ft6lpp1v1rp7;
-local function _u9xbwpsbzdfj(...)
-local _734vee7a03t9=32396;
-return 80576417;
+_gnki2ges0v3s[42864748]=_f7nb0ju19xi2;
+local function _z711mxa4f3nq(...)
+local _nzxju1ada1k4=7555;
+return 78451073;
 end;
-_1fw3racdyd0t[78990763]=_u9xbwpsbzdfj;
-local _pvwsufen8av6={[31667]=true};
-local _8x40vul11imi=31562038;
-while _8x40vul11imi~=0 and _pvwsufen8av6[31667] do
-_8x40vul11imi=_1fw3racdyd0t[_8x40vul11imi]();
+_gnki2ges0v3s[6278098]=_z711mxa4f3nq;
+local function _kwseqd1yq3zj(...)
+local _6a7gdn6vtuls=38364;
+return 40218654;
+end;
+_gnki2ges0v3s[22891705]=_kwseqd1yq3zj;
+local _huvfju1uswyg={[20003]=true};
+local _t79emn51w6kc=77514554;
+while _t79emn51w6kc ~= 0 and _huvfju1uswyg[20003] do
+_t79emn51w6kc=_gnki2ges0v3s[_t79emn51w6kc]();
+end;
+elseif _6zec03r4esex == 30 then
+local _a21sfkaoa48z=_slkwbhk803j3[_st4navigdoek];
+_st4navigdoek=_st4navigdoek - 1;
+local _uxz7onottnxp=_euesysk28f55 - _a21sfkaoa48z;
+local _kmadvs9ffx57={};
+for _4btgjbvj9dy7=1,_uxz7onottnxp do
+_kmadvs9ffx57[_4btgjbvj9dy7]=_6tv5vhgky8jq[_a21sfkaoa48z + _4btgjbvj9dy7];
+end;
+return table["unpack"](_kmadvs9ffx57,1,_uxz7onottnxp);
+elseif _6zec03r4esex == 23 then
+_48b0cfo1a1cn=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+elseif _6zec03r4esex == 10 then
+local _pdm5okct4rwz,_le4p7j33ezh4;
+local _3ti93ar6et9j={};
+local function _wbk2w0auiwff(...)
+_pdm5okct4rwz=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+return 90425163;
+end;
+_3ti93ar6et9j[67533556]=_wbk2w0auiwff;
+local function _eo57xrapdn0z(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+return 27123786;
+end;
+_3ti93ar6et9j[90425163]=_eo57xrapdn0z;
+local function _19ckemrthdtc(...)
+_le4p7j33ezh4=_6tv5vhgky8jq[_euesysk28f55];
+return 90941413;
+end;
+_3ti93ar6et9j[27123786]=_19ckemrthdtc;
+local function _5x1hj3fvb09y(...)
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+return 35240963;
+end;
+_3ti93ar6et9j[90941413]=_5x1hj3fvb09y;
+local function _kl1s21xbs7ld(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 77296554;
+end;
+_3ti93ar6et9j[35240963]=_kl1s21xbs7ld;
+local function _gd0c6qnjcu3t(...)
+if not _le4p7j33ezh4 then
+_48b0cfo1a1cn=_pdm5okct4rwz;
+end;
+return 0;
+end;
+_3ti93ar6et9j[77296554]=_gd0c6qnjcu3t;
+local function _oypsc4nnjlp8(...)
+local _nbhaha36rq7r=90350;
+return 97240745;
+end;
+_3ti93ar6et9j[80163741]=_oypsc4nnjlp8;
+local function _c2amdv0esa88(...)
+local _8d4o303vpxjg=50356;
+return 16055553;
+end;
+_3ti93ar6et9j[80824685]=_c2amdv0esa88;
+local _s966zktedikw={[18883]=true};
+local _3e054j0prf43=67533556;
+while _3e054j0prf43 ~= 0 and _s966zktedikw[18883] do
+_3e054j0prf43=_3ti93ar6et9j[_3e054j0prf43]();
+end;
+elseif _6zec03r4esex == 5 then
+local _ylz47mk7zfl4,_orgplwxj5lug;
+local _4fbk953k7mre={};
+local function _lvewfivupxfc(...)
+_ylz47mk7zfl4=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+return 4604080;
+end;
+_4fbk953k7mre[2714318]=_lvewfivupxfc;
+local function _nbu062kf8cq9(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+return 8775849;
+end;
+_4fbk953k7mre[4604080]=_nbu062kf8cq9;
+local function _fcfjiwbw96lc(...)
+_orgplwxj5lug=_6tv5vhgky8jq[_euesysk28f55];
+return 79534673;
+end;
+_4fbk953k7mre[8775849]=_fcfjiwbw96lc;
+local function _wu2jnu75qjy3(...)
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+return 49020446;
+end;
+_4fbk953k7mre[79534673]=_wu2jnu75qjy3;
+local function _r7wak4q3zuxr(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 28657571;
+end;
+_4fbk953k7mre[49020446]=_r7wak4q3zuxr;
+local function _gd47m3m6otzm(...)
+if _orgplwxj5lug then
+_48b0cfo1a1cn=_ylz47mk7zfl4;
+end;
+return 0;
+end;
+_4fbk953k7mre[28657571]=_gd47m3m6otzm;
+local function _icqqii2eneto(...)
+local _4o6qv6jxb4wp=58492;
+return 86622567;
+end;
+_4fbk953k7mre[75609084]=_icqqii2eneto;
+local function _wzgsw7rxbl8j(...)
+local _doenb1ed2wzl=27196;
+return 99817593;
+end;
+_4fbk953k7mre[24301686]=_wzgsw7rxbl8j;
+local function _rnc62f7qs6pi(...)
+local _b2dnvjytx8em=65579;
+return 67974104;
+end;
+_4fbk953k7mre[86302265]=_rnc62f7qs6pi;
+local _85hu0k66dmn2={[89473]=true};
+local _ns5sbel3i6ob=2714318;
+while _ns5sbel3i6ob ~= 0 and (_ns5sbel3i6ob + 39184 - 39184 == _ns5sbel3i6ob) do
+_ns5sbel3i6ob=_4fbk953k7mre[_ns5sbel3i6ob]();
+end;
+elseif _6zec03r4esex == 18 then
+local _1hpma6p8hmbw={};
+local function _vwv2jyfacod7(...)
+_6tv5vhgky8jq[_euesysk28f55]=nil;
+return 17211001;
+end;
+_1hpma6p8hmbw[13024947]=_vwv2jyfacod7;
+local function _1ztlk7kyqm2s(...)
+_euesysk28f55=_euesysk28f55 - 1;
+return 0;
+end;
+_1hpma6p8hmbw[17211001]=_1ztlk7kyqm2s;
+local function _xz0tesk9k6i0(...)
+local _sn08zrbvw3t8=90311;
+return 97839589;
+end;
+_1hpma6p8hmbw[34895539]=_xz0tesk9k6i0;
+local function _6aci6sjuv3gi(...)
+local _ep2zm350uxow=96698;
+return 93227080;
+end;
+_1hpma6p8hmbw[90030255]=_6aci6sjuv3gi;
+local _y7a1sktzvl8h={[60332]=true};
+local _yx7oxjukc9hb=13024947;
+while _yx7oxjukc9hb ~= 0 and _y7a1sktzvl8h[60332] do
+_yx7oxjukc9hb=_1hpma6p8hmbw[_yx7oxjukc9hb]();
+end;
+elseif _6zec03r4esex == 24 then
+local _gsf38w1pooxn={[66]=1634970};
+local _ahoq8748sfl8,_2u6igf8dwvrv=11823131,696544;
+while _ahoq8748sfl8 - _2u6igf8dwvrv ~= 0 and (_ahoq8748sfl8 + 59376 - 59376 == _ahoq8748sfl8) do
+if (_ahoq8748sfl8 - _2u6igf8dwvrv) % 85696320 == 80986518 then
+_6tv5vhgky8jq[_euesysk28f55]=_6tv5vhgky8jq[_euesysk28f55 - 1];
+_ahoq8748sfl8,_2u6igf8dwvrv=80576249,80576249;
+elseif (_ahoq8748sfl8 - _2u6igf8dwvrv) % 16116398 == 11126587 then
+_euesysk28f55=_euesysk28f55 + 1;
+_ahoq8748sfl8,_2u6igf8dwvrv=12327947,-68658571;
+elseif _2u6igf8dwvrv - _ahoq8748sfl8 == 69913437 then
+_ahoq8748sfl8,_2u6igf8dwvrv=50907186,61426587;
 end;
 end;
-_743arxqb2trm(not false,"not false");
-_743arxqb2trm(not not true,"double not");
-_743arxqb2trm(nil==nil,"nil equality");
-_743arxqb2trm(type(nil)=="nil","type(nil)");
-_743arxqb2trm(type(true)=="boolean","type(boolean)");
-_743arxqb2trm(type(42)=="number","type(number)");
-do
-local _7xjysgf7ex0c;
-local _74yzgesqnev4={[33]=60664839};
-local _bjn4xtlwpcmw,_8uxig4rjpv6l=40812540,37440;
-while _bjn4xtlwpcmw+_8uxig4rjpv6l~=0 and _74yzgesqnev4[33]~=nil do
-if _8uxig4rjpv6l+_bjn4xtlwpcmw==34567209 then
-_bjn4xtlwpcmw,_8uxig4rjpv6l=60730451,46113629;
-elseif _bjn4xtlwpcmw+_8uxig4rjpv6l==40849980 then
-_7xjysgf7ex0c=61630;
-_bjn4xtlwpcmw,_8uxig4rjpv6l=91203309,-80323945;
-elseif (_bjn4xtlwpcmw+_8uxig4rjpv6l)%103439387==10879364 then
-if type(string)=="table" and type(string.byte)=="function" then
-local _mphdaunht528=45;
+elseif _6zec03r4esex == 33 then
+local _no4j8p1xxpft,_of1x0fq2vg3p,_23ipg8jawsse,_ykosm59cgw05,_u78ce0u3bagn;
+local _tinpldnlmp7g={[1]=98075462};
+local _ce3bk0jw2mjl,_gk9z4wm8e2jg=57808808,530372;
+while _ce3bk0jw2mjl + _gk9z4wm8e2jg ~= 0 and _tinpldnlmp7g[1] do
+if _gk9z4wm8e2jg + _ce3bk0jw2mjl == 44707196 then
+_ykosm59cgw05=_bzddnyxf6vln[_no4j8p1xxpft+1]+0;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=85019625,-32817813;
+elseif _gk9z4wm8e2jg + _ce3bk0jw2mjl == 65118734 then
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=11167799,68168048;
+elseif _ce3bk0jw2mjl + _gk9z4wm8e2jg == 12851630 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 2;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=6870578,78668193;
+elseif _ce3bk0jw2mjl + _gk9z4wm8e2jg == 11805940 then
+_bzddnyxf6vln[_no4j8p1xxpft + 1]=_ykosm59cgw05;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=35195340,-27265880;
+elseif _gk9z4wm8e2jg + _ce3bk0jw2mjl == 7929460 then
+_bzddnyxf6vln[_no4j8p1xxpft + 2]=_u78ce0u3bagn;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=42582497,55390459;
+elseif _gk9z4wm8e2jg + _ce3bk0jw2mjl == 4669357 then
+_bzddnyxf6vln[_no4j8p1xxpft]=_23ipg8jawsse;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=41841008,-30035068;
+elseif _gk9z4wm8e2jg + _ce3bk0jw2mjl == 5126656 then
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=866495,87109050;
+elseif (_ce3bk0jw2mjl + _gk9z4wm8e2jg) % 128396973 == 58339180 then
+_no4j8p1xxpft=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=73415801,23412628;
+elseif (_ce3bk0jw2mjl + _gk9z4wm8e2jg) % 115936402 == 52201812 then
+_u78ce0u3bagn=_bzddnyxf6vln[_no4j8p1xxpft+2]+0;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=44947077,-40277720;
+elseif _gk9z4wm8e2jg + _ce3bk0jw2mjl == 96828429 then
+_of1x0fq2vg3p=_lc7v9m7h2fu3[_48b0cfo1a1cn+1];
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=57490907,-44639277;
+elseif (_ce3bk0jw2mjl + _gk9z4wm8e2jg) % 123313217 == 85538771 then
+_23ipg8jawsse=_bzddnyxf6vln[_no4j8p1xxpft]+0;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=8210666,36496530;
+elseif (_ce3bk0jw2mjl + _gk9z4wm8e2jg) % 131747417 == 97972956 then
+if (_u78ce0u3bagn > 0 and _23ipg8jawsse > _ykosm59cgw05) or (_u78ce0u3bagn <= 0 and _23ipg8jawsse < _ykosm59cgw05) then
+_48b0cfo1a1cn=_of1x0fq2vg3p;
 else
-local _y1epc5mip64v;
-local _q1gx12h3gvlg={[30]=87030601};
-local _m5ijamuayu4v,_w3j4p0roekjp=88144649,253444;
-while _m5ijamuayu4v+_w3j4p0roekjp~=0 and(_m5ijamuayu4v+25503-25503==_m5ijamuayu4v) do
-if _w3j4p0roekjp+_m5ijamuayu4v==88398093 then
-_y1epc5mip64v={};
-_m5ijamuayu4v,_w3j4p0roekjp=46207201,-40623586;
-elseif _m5ijamuayu4v+_w3j4p0roekjp==60404297 then
-_m5ijamuayu4v,_w3j4p0roekjp=19470607,73756941;
-elseif _w3j4p0roekjp+_m5ijamuayu4v==93982995 then
-_m5ijamuayu4v,_w3j4p0roekjp=97440980,78914761;
-elseif (_m5ijamuayu4v+_w3j4p0roekjp)%105349327==5583615 then
-_y1epc5mip64v=67977;
-_m5ijamuayu4v,_w3j4p0roekjp=84164428,-84164428;
+_bzddnyxf6vln[_no4j8p1xxpft + 3]=_23ipg8jawsse;
+end;
+_ce3bk0jw2mjl,_gk9z4wm8e2jg=52025746,-52025746;
 end;
 end;
+elseif _6zec03r4esex == 2 then
+local _y8mgp7qflvfa,_p7u7ybh9we1t,_asfxej39f361,_tzmvgcylz8hv,_x89a4nqscv19;
+local _g1707zsecfso={};
+local function _a83mtk3h673j(...)
+_y8mgp7qflvfa=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+return 84541742;
 end;
-_bjn4xtlwpcmw,_8uxig4rjpv6l=24358930,-24358930;
+_g1707zsecfso[83821547]=_a83mtk3h673j;
+local function _zraa1j9phq9p(...)
+_p7u7ybh9we1t=_lc7v9m7h2fu3[_48b0cfo1a1cn+1];
+return 39330857;
+end;
+_g1707zsecfso[84541742]=_zraa1j9phq9p;
+local function _snl80wu2odd3(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 2;
+return 23232690;
+end;
+_g1707zsecfso[39330857]=_snl80wu2odd3;
+local function _slvfm30wfd4d(...)
+_asfxej39f361=_bzddnyxf6vln[_y8mgp7qflvfa]+_bzddnyxf6vln[_y8mgp7qflvfa+2];
+return 29529849;
+end;
+_g1707zsecfso[23232690]=_slvfm30wfd4d;
+local function _sbvooz74ac0z(...)
+_tzmvgcylz8hv=_bzddnyxf6vln[_y8mgp7qflvfa+1];
+return 33651458;
+end;
+_g1707zsecfso[29529849]=_sbvooz74ac0z;
+local function _khr6cqfizu5n(...)
+_x89a4nqscv19=_bzddnyxf6vln[_y8mgp7qflvfa+2];
+return 35630689;
+end;
+_g1707zsecfso[33651458]=_khr6cqfizu5n;
+local function _ycsyxz3py1mj(...)
+if (_x89a4nqscv19 > 0 and _asfxej39f361 <= _tzmvgcylz8hv) or (_x89a4nqscv19 <= 0 and _asfxej39f361 >= _tzmvgcylz8hv) then
+local _p3wa6rs9x9qg={[26]=36868107};
+local _xhy08bj43u37,_uxek5an40jia=2347795,836633;
+while _xhy08bj43u37 + _uxek5an40jia ~= 0 and _p3wa6rs9x9qg[26] ~= nil do
+if _xhy08bj43u37 + _uxek5an40jia == 3184428 then
+_bzddnyxf6vln[_y8mgp7qflvfa]=_asfxej39f361;
+_xhy08bj43u37,_uxek5an40jia=85488162,-26358315;
+elseif _xhy08bj43u37 + _uxek5an40jia == 85461210 then
+_xhy08bj43u37,_uxek5an40jia=70099943,39619288;
+elseif _uxek5an40jia + _xhy08bj43u37 == 92163390 then
+_48b0cfo1a1cn=_p7u7ybh9we1t;
+_xhy08bj43u37,_uxek5an40jia=93609054,-93609054;
+elseif (_xhy08bj43u37 + _uxek5an40jia) % 147129881 == 59129847 then
+_bzddnyxf6vln[_y8mgp7qflvfa + 3]=_asfxej39f361;
+_xhy08bj43u37,_uxek5an40jia=16315476,75847914;
 end;
 end;
-end;
-_743arxqb2trm(type("hi")=="string","type(string)");
-_743arxqb2trm(type({})=="table","type(table)");
-do
-local _c8ugpevxhbbw=86513;
-end;
-do
-if not(string.find("abc","a")==1)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _h0cah4ldjtce;
-local _cxhvglxozaq6={};
-local function _jm123gh4yex5(...)
-_h0cah4ldjtce=787;
-return 84689451;
-end;
-_cxhvglxozaq6[9282081]=_jm123gh4yex5;
-local function _yl6o8bm8c87r(...)
-if true then
-local _gxdd6wyuiye4=130;
 end;
 return 0;
 end;
-_cxhvglxozaq6[84689451]=_yl6o8bm8c87r;
-local function _fpso55i88agk(...)
-local _zgovwiamib0j=719;
-return 70454502;
+_g1707zsecfso[35630689]=_ycsyxz3py1mj;
+local function _b736pjhgsrad(...)
+local _jmigf5l3mo52=44380;
+return 93199746;
 end;
-_cxhvglxozaq6[57332653]=_fpso55i88agk;
-local function _9k0c9ul42n4p(...)
-local _9xskqtpdbyqr=87049;
-return 62712244;
+_g1707zsecfso[29203996]=_b736pjhgsrad;
+local _r7l7jjvf3oyb={[36683]=true};
+local _sjzzy5c9ru42=83821547;
+while _sjzzy5c9ru42 ~= 0 and (_sjzzy5c9ru42 + 14452 - 14452 == _sjzzy5c9ru42) do
+_sjzzy5c9ru42=_g1707zsecfso[_sjzzy5c9ru42]();
 end;
-_cxhvglxozaq6[26148556]=_9k0c9ul42n4p;
-local _ivwy9fuyawtl={[10258]=true};
-local _ixe117k3cz4z=9282081;
-while _ixe117k3cz4z~=0 and _ivwy9fuyawtl[10258] do
-_ixe117k3cz4z=_cxhvglxozaq6[_ixe117k3cz4z]();
+elseif _6zec03r4esex == 8 then
+local _aoi90ztayckm,_w36b67xtojuq,_rln6i9cef3d7,_biqaoj26apnn;
+local _53shahz7g3rh={};
+local function _jewv0eiy1fbg(...)
+_aoi90ztayckm=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+return 36309921;
 end;
+_53shahz7g3rh[23579906]=_jewv0eiy1fbg;
+local function _842i7vx4zttc(...)
+_w36b67xtojuq=_lc7v9m7h2fu3[_48b0cfo1a1cn+1];
+return 44019630;
 end;
+_53shahz7g3rh[36309921]=_842i7vx4zttc;
+local function _4y5mu3zt19ub(...)
+_rln6i9cef3d7=_lc7v9m7h2fu3[_48b0cfo1a1cn+2];
+return 62053603;
 end;
-_743arxqb2trm(type(print)=="function","type(function)");
-while true do
-local _hl2i5neu5wtn=51583;
-break;
+_53shahz7g3rh[44019630]=_4y5mu3zt19ub;
+local function _s26yw62yzseq(...)
+_48b0cfo1a1cn=_48b0cfo1a1cn + 3;
+return 32936742;
 end;
-_743arxqb2trm(42==42,"integer");
-_743arxqb2trm(3.14==3.14,"float");
-_743arxqb2trm(0==0,"zero");
-do
-local _fecd2pron6hx=70597;
+_53shahz7g3rh[62053603]=_s26yw62yzseq;
+local function _5sktwexc3cgm(...)
+_biqaoj26apnn=table["pack"](_bzddnyxf6vln[_aoi90ztayckm](_bzddnyxf6vln[_aoi90ztayckm+1],_bzddnyxf6vln[_aoi90ztayckm+2]));
+return 88433878;
 end;
-_743arxqb2trm(-1==-1,"negative");
-do
-local _72542ryjnrn9,_ksn5ovitj5r9;
-local _s42vp88o4zmp={[43]=27103238};
-local _ect4mpza8jbq,_qtdhxhzum808=6851317,559233;
-while _ect4mpza8jbq+_qtdhxhzum808~=0 and _s42vp88o4zmp[43] do
-if _ect4mpza8jbq+_qtdhxhzum808==33680304 then
-_ect4mpza8jbq,_qtdhxhzum808=97661457,89919842;
-elseif _qtdhxhzum808+_ect4mpza8jbq==47093349 then
-_ect4mpza8jbq,_qtdhxhzum808=55698517,87851747;
-elseif _ect4mpza8jbq+_qtdhxhzum808==7410550 then
-_72542ryjnrn9=52958;
-_ect4mpza8jbq,_qtdhxhzum808=9397178,88854779;
-elseif _ect4mpza8jbq+_qtdhxhzum808==4250658 then
-_ect4mpza8jbq,_qtdhxhzum808=96084406,69663391;
-elseif (_ect4mpza8jbq+_qtdhxhzum808)%136488313==98251957 then
-_ksn5ovitj5r9=38100;
-_ect4mpza8jbq,_qtdhxhzum808=57028574,-3368391;
-elseif _qtdhxhzum808+_ect4mpza8jbq==53660183 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-if not(#tostring(math.random())>0) then
-local _tsystz5x966v;
-local _u1ubn6n98vrz={};
-local function _1d9rfrv120hw(...)
-_tsystz5x966v={};
-return 53391939;
+_53shahz7g3rh[32936742]=_5sktwexc3cgm;
+local function _78ye8y28vc7n(...)
+for _rpdwlnjzqyb0=1,_w36b67xtojuq do
+_bzddnyxf6vln[_aoi90ztayckm + 3 + _rpdwlnjzqyb0 - 1]=_biqaoj26apnn[_rpdwlnjzqyb0];
 end;
-_u1ubn6n98vrz[72973986]=_1d9rfrv120hw;
-local function _mlmymmcliyhh(...)
-_tsystz5x966v=20279;
-return 0;
+return 12153289;
 end;
-_u1ubn6n98vrz[53391939]=_mlmymmcliyhh;
-local function _fa3plpfx2jvh(...)
-local _fkspd2i7yg8s=67327;
-return 42209795;
-end;
-_u1ubn6n98vrz[86454171]=_fa3plpfx2jvh;
-local function _k61sj2lg6ru9(...)
-local _5q9z0t1orhbo=50857;
-return 93031834;
-end;
-_u1ubn6n98vrz[41753774]=_k61sj2lg6ru9;
-local function _nxldnqlx7yc1(...)
-local _wz7ea09zc3yq=9051;
-return 90600546;
-end;
-_u1ubn6n98vrz[31953031]=_nxldnqlx7yc1;
-local _kd255lq7q8rs={[48783]=true};
-local _bbw89l1romoi=72973986;
-while _bbw89l1romoi~=0 and _kd255lq7q8rs[48783] do
-_bbw89l1romoi=_u1ubn6n98vrz[_bbw89l1romoi]();
-end;
-end;
-end;
-_ect4mpza8jbq,_qtdhxhzum808=10725704,-10725704;
-end;
-end;
-end;
-_743arxqb2trm(1e3==1000,"scientific notation");
-do
-local _wkn0ytot4fhb;
-local _sgt5h3g4cwk5={};
-local function _wy6v1boa6tsb(...)
-_wkn0ytot4fhb=97161;
-return 50468103;
-end;
-_sgt5h3g4cwk5[93328996]=_wy6v1boa6tsb;
-local function _cowy3cdicle1(...)
-if #tostring(math.random())>0 then
-local _6uqdcrxrbpvo=605;
+_53shahz7g3rh[88433878]=_78ye8y28vc7n;
+local function _7s38g92n81ss(...)
+if _bzddnyxf6vln[_aoi90ztayckm + 3] == nil then
+_48b0cfo1a1cn=_rln6i9cef3d7;
 else
-local _3mwh1th1rvs9=477;
+_bzddnyxf6vln[_aoi90ztayckm + 2]=_bzddnyxf6vln[_aoi90ztayckm + 3];
 end;
 return 0;
 end;
-_sgt5h3g4cwk5[50468103]=_cowy3cdicle1;
-local function _bacbxf7e69xi(...)
-local _3fyx6xbxaeaq=81364;
-return 54586661;
+_53shahz7g3rh[12153289]=_7s38g92n81ss;
+local function _vfga8el2ntpl(...)
+local _8yr3qhkj69ix=92592;
+return 30975385;
 end;
-_sgt5h3g4cwk5[71133018]=_bacbxf7e69xi;
-local _541dcmsvnlti={[40576]=true};
-local _smxcywweo8ri=93328996;
-while _smxcywweo8ri~=0 and(_smxcywweo8ri+59079-59079==_smxcywweo8ri) do
-_smxcywweo8ri=_sgt5h3g4cwk5[_smxcywweo8ri]();
+_53shahz7g3rh[58734710]=_vfga8el2ntpl;
+local _0wkrp53m4nme={[80359]=true};
+local _071o2osdd35o=23579906;
+while _071o2osdd35o ~= 0 and (_071o2osdd35o + 42370 - 42370 == _071o2osdd35o) do
+_071o2osdd35o=_53shahz7g3rh[_071o2osdd35o]();
 end;
+elseif _6zec03r4esex == 11 then
+for _1ruolpev99sv=_jvaqj3602lkl+1,_sq9ukoy2pf8r do
+local _j8tfrux363fn={};
+local function _7zv63hm6tnhz(...)
+_euesysk28f55=_euesysk28f55 + 1;
+return 44764344;
 end;
-_743arxqb2trm(0xff==255,"hex literal");
-do
-local _oayhhsopb5kn=65929;
-end;
-do
-local _0syx5h8qxua7,_p3pqroyedhu9;
-local _6w80pm063xho={[82]=71041167};
-local _vo37bxyu8utx,_mm163p3map8v=29631070,774417;
-while _vo37bxyu8utx+_mm163p3map8v~=0 and(_vo37bxyu8utx+27638-27638==_vo37bxyu8utx) do
-if _mm163p3map8v+_vo37bxyu8utx==16065355 then
-_vo37bxyu8utx,_mm163p3map8v=75007348,63032816;
-elseif (_vo37bxyu8utx+_mm163p3map8v)%22233122==21917355 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _kntnclw3tko9;
-local _fd9zm5ef0qz5={};
-local function _q3pqz8ua5tz0(...)
-_kntnclw3tko9={};
-return 25073525;
-end;
-_fd9zm5ef0qz5[22593891]=_q3pqz8ua5tz0;
-local function _t9ljoe9v6hds(...)
-_kntnclw3tko9=8876;
+_j8tfrux363fn[62316455]=_7zv63hm6tnhz;
+local function _oe5pn6aersg7(...)
+_6tv5vhgky8jq[_euesysk28f55]=_88uhx0qlcj4v[_1ruolpev99sv];
 return 0;
 end;
-_fd9zm5ef0qz5[25073525]=_t9ljoe9v6hds;
-local function _v1s7yrt4l535(...)
-local _teu5kjqpz6db=36910;
-return 69527700;
+_j8tfrux363fn[44764344]=_oe5pn6aersg7;
+local function _ko10pwd3a0mk(...)
+local _ejnpe5p3ezqn=94892;
+return 81896917;
 end;
-_fd9zm5ef0qz5[8875016]=_v1s7yrt4l535;
-local function _h1gnms8qoavo(...)
-local _djs32oszip6h=83321;
-return 71203246;
+_j8tfrux363fn[63021401]=_ko10pwd3a0mk;
+local function _e20hi50iv3kt(...)
+local _p9mylanvxyqp=37025;
+return 31963296;
 end;
-_fd9zm5ef0qz5[89048966]=_h1gnms8qoavo;
-local _c0xa8ucy75s7={[17369]=true};
-local _onmq6ntxz03a=22593891;
-while _onmq6ntxz03a~=0 and(_onmq6ntxz03a+13009-13009==_onmq6ntxz03a) do
-_onmq6ntxz03a=_fd9zm5ef0qz5[_onmq6ntxz03a]();
-end;
-end;
-end;
-_vo37bxyu8utx,_mm163p3map8v=35266393,-35266393;
-elseif _vo37bxyu8utx+_mm163p3map8v==30405487 then
-_0syx5h8qxua7=93938;
-_vo37bxyu8utx,_mm163p3map8v=74739800,-14379064;
-elseif _vo37bxyu8utx+_mm163p3map8v==60360736 then
-_p3pqroyedhu9=70620;
-_vo37bxyu8utx,_mm163p3map8v=13587747,8329608;
+_j8tfrux363fn[52904229]=_e20hi50iv3kt;
+local _m7zioeo54gsd={[32980]=true};
+local _9ffe9hog2jk1=62316455;
+while _9ffe9hog2jk1 ~= 0 and _m7zioeo54gsd[32980] do
+_9ffe9hog2jk1=_j8tfrux363fn[_9ffe9hog2jk1]();
 end;
 end;
-end;
-_743arxqb2trm(0x1A==26,"hex literal uppercase");
-do
-local _738pr5ynd2pc,_x1h0160hbxy5;
-local _yqu98sg9mrxp={[39]=40446760};
-local _qok6ba1vc7h9,_cy392l8qsnb3=2831624,396140;
-while _qok6ba1vc7h9+_cy392l8qsnb3~=0 and _yqu98sg9mrxp[39]~=nil do
-if (_qok6ba1vc7h9+_cy392l8qsnb3)%150800376==60403241 then
-_x1h0160hbxy5=22701;
-_qok6ba1vc7h9,_cy392l8qsnb3=98933441,-37943628;
-elseif (_qok6ba1vc7h9+_cy392l8qsnb3)%75827887==3227764 then
-_738pr5ynd2pc=29212;
-_qok6ba1vc7h9,_cy392l8qsnb3=74972847,-14569606;
-elseif _qok6ba1vc7h9+_cy392l8qsnb3==27554641 then
-_qok6ba1vc7h9,_cy392l8qsnb3=56189633,16636017;
-elseif _qok6ba1vc7h9+_cy392l8qsnb3==42355919 then
-_qok6ba1vc7h9,_cy392l8qsnb3=57206790,75343793;
-elseif (_qok6ba1vc7h9+_cy392l8qsnb3)%145142012==60989813 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _c7j0bjdn5hqc=737;
+elseif _6zec03r4esex == 27 then
+local _1wnwtxqb4tpq={[16]=99761859};
+local _ii7f2czo3zs7,_tvatk6mrse0s=61114666,492790;
+while _ii7f2czo3zs7 - _tvatk6mrse0s ~= 0 and _1wnwtxqb4tpq[16] ~= nil do
+if _ii7f2czo3zs7 - _tvatk6mrse0s == 23563691 then
+_ii7f2czo3zs7,_tvatk6mrse0s=2545861,33183661;
+elseif (_ii7f2czo3zs7 - _tvatk6mrse0s) % 118786242 == 60621876 then
+_euesysk28f55=_euesysk28f55 + 1;
+_ii7f2czo3zs7,_tvatk6mrse0s=21145355,-16862961;
+elseif (_ii7f2czo3zs7 - _tvatk6mrse0s) % 38277632 == 38008316 then
+_6tv5vhgky8jq[_euesysk28f55]=_88uhx0qlcj4v[_jvaqj3602lkl + 1];
+_ii7f2czo3zs7,_tvatk6mrse0s=52958309,52958309;
 end;
 end;
-_qok6ba1vc7h9,_cy392l8qsnb3=42717691,-42717691;
-elseif _qok6ba1vc7h9+_cy392l8qsnb3==25850919 then
-_qok6ba1vc7h9,_cy392l8qsnb3=82764802,94604;
+elseif _6zec03r4esex == 20 then
+local _2j7b4si4ut3c,_ajhmsiwbzjnx,_fhiw4ocb92cq;
+local _z5fe2ljowe1w={[84]=33852500};
+local _wt1bh9bvdso9,_1gdrx2gk6zak=55084563,152253;
+while _wt1bh9bvdso9 + _1gdrx2gk6zak ~= 0 and (_wt1bh9bvdso9 + 90791 - 90791 == _wt1bh9bvdso9) do
+if _1gdrx2gk6zak + _wt1bh9bvdso9 == 65534364 then
+_ajhmsiwbzjnx={};
+_wt1bh9bvdso9,_1gdrx2gk6zak=22277308,60632499;
+elseif (_wt1bh9bvdso9 + _1gdrx2gk6zak) % 118677113 == 55236816 then
+_2j7b4si4ut3c=_lmqol1teyb75["p"][_lc7v9m7h2fu3[_48b0cfo1a1cn]];
+_wt1bh9bvdso9,_1gdrx2gk6zak=3624982,71828950;
+elseif (_wt1bh9bvdso9 + _1gdrx2gk6zak) % 93506988 == 71976751 then
+_6tv5vhgky8jq[_euesysk28f55]=_hup0xjr8s9wo(_2j7b4si4ut3c,_ajhmsiwbzjnx);
+_wt1bh9bvdso9,_1gdrx2gk6zak=8037941,-8037941;
+elseif _wt1bh9bvdso9 + _1gdrx2gk6zak == 43975794 then
+_euesysk28f55=_euesysk28f55 + 1;
+_wt1bh9bvdso9,_1gdrx2gk6zak=54798551,17178200;
+elseif _1gdrx2gk6zak + _wt1bh9bvdso9 == 92912187 then
+_wt1bh9bvdso9,_1gdrx2gk6zak=32484813,61695294;
+elseif _1gdrx2gk6zak + _wt1bh9bvdso9 == 75453932 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_wt1bh9bvdso9,_1gdrx2gk6zak=75476408,-9942044;
+elseif _1gdrx2gk6zak + _wt1bh9bvdso9 == 30869810 then
+for _5xvxxcnlekzh=1,#_fhiw4ocb92cq do
+local _fql7q867j4ca;
+local _pgn85ozqsj7y={};
+local function _ud9wwgnfgbe0(...)
+_fql7q867j4ca=_fhiw4ocb92cq[_5xvxxcnlekzh];
+return 24990747;
 end;
-end;
-end;
-_743arxqb2trm(0.5+0.5==1,"float addition");
-_743arxqb2trm(0.1+0.2~=0.3,"float imprecision");
-do
-local _kex60nuo283b,_ix9cm61dlunw;
-local _u708ilfd7q39={};
-local function _xk1swx7jzqf8(...)
-_kex60nuo283b=31130;
-return 29637294;
-end;
-_u708ilfd7q39[93068315]=_xk1swx7jzqf8;
-local function _flax1rc4z5xc(...)
-_ix9cm61dlunw=29581;
-return 13395585;
-end;
-_u708ilfd7q39[29637294]=_flax1rc4z5xc;
-local function _rotggrrbymvy(...)
-if not(string.find("abc","a")==1) then
-if not(string.find("abc","a")==1) then
-local _ein2vhqok43t=512;
-end;
-end;
-return 0;
-end;
-_u708ilfd7q39[13395585]=_rotggrrbymvy;
-local function _t1o59s6yo1x4(...)
-local _anssdgstj69f=59804;
-return 12076783;
-end;
-_u708ilfd7q39[46980252]=_t1o59s6yo1x4;
-local _yq4e2aorpx1j={[79591]=true};
-local _bh57ibwfnu2g=93068315;
-while _bh57ibwfnu2g~=0 and _yq4e2aorpx1j[79591] do
-_bh57ibwfnu2g=_u708ilfd7q39[_bh57ibwfnu2g]();
-end;
-end;
-_743arxqb2trm(1/2==0.5,"division");
-_743arxqb2trm(2+3==5,"addition");
-_743arxqb2trm(10-4==6,"subtraction");
-_743arxqb2trm(3*7==21,"multiplication");
-while true do
-local _069iliqglbzf=47529;
-break;
-end;
-_743arxqb2trm(15/3==5,"division");
-do
-local _1elkv9pctxrs;
-local _i17uzg23k4n3={[42]=32188004};
-local _i2vezhflxjfg,_d8wo62c0vv6c=22312992,685062;
-while _i2vezhflxjfg+_d8wo62c0vv6c~=0 and(_i2vezhflxjfg+30181-30181==_i2vezhflxjfg) do
-if (_i2vezhflxjfg+_d8wo62c0vv6c)%66220191==22998054 then
-_1elkv9pctxrs=88878;
-_i2vezhflxjfg,_d8wo62c0vv6c=89331615,-22629910;
-elseif _i2vezhflxjfg+_d8wo62c0vv6c==66701705 then
-if type(string)=="table" and type(string.byte)=="function" then
-local _lgc0uk6z3em1=393;
+_pgn85ozqsj7y[57418849]=_ud9wwgnfgbe0;
+local function _cdbisw58z93z(...)
+if _fql7q867j4ca["l"] ~= nil then
+_ajhmsiwbzjnx[_5xvxxcnlekzh]=_5iaamxsaioy3[_fql7q867j4ca["l"]];
 else
-local _l5sp1blfay2p;
-local _5c95v9u37225={[1]=12745693};
-local _x0xf6yv2znoq,_plfdcqmsbqvt=80707570,113330;
-while _x0xf6yv2znoq+_plfdcqmsbqvt~=0 and _5c95v9u37225[1] do
-if _x0xf6yv2znoq+_plfdcqmsbqvt==39084672 then
-_x0xf6yv2znoq,_plfdcqmsbqvt=89996883,33612162;
-elseif _x0xf6yv2znoq+_plfdcqmsbqvt==97571543 then
-if true then
-local _nl87n5kypb1z=902;
-end;
-_x0xf6yv2znoq,_plfdcqmsbqvt=58334819,-58334819;
-elseif _x0xf6yv2znoq+_plfdcqmsbqvt==32712308 then
-_x0xf6yv2znoq,_plfdcqmsbqvt=14535980,17661618;
-elseif (_x0xf6yv2znoq+_plfdcqmsbqvt)%98503486==80820900 then
-_l5sp1blfay2p=738;
-_x0xf6yv2znoq,_plfdcqmsbqvt=60092113,37479430;
-elseif _x0xf6yv2znoq+_plfdcqmsbqvt==91016569 then
-_x0xf6yv2znoq,_plfdcqmsbqvt=54806496,54055601;
-end;
-end;
-end;
-_i2vezhflxjfg,_d8wo62c0vv6c=44133115,-44133115;
-elseif _d8wo62c0vv6c+_i2vezhflxjfg==63649830 then
-_i2vezhflxjfg,_d8wo62c0vv6c=91971831,19504792;
-elseif _i2vezhflxjfg+_d8wo62c0vv6c==19466249 then
-_i2vezhflxjfg,_d8wo62c0vv6c=13213250,83350819;
-end;
-end;
-end;
-_743arxqb2trm(17%5==2,"modulo");
-_743arxqb2trm(2^10==1024,"exponentiation");
-_743arxqb2trm(-(3)==-3,"unary minus");
-do
-local _pmf3uzgoz9uq=36189;
-end;
-do
-local _ovlf45z4mwnb;
-local _jncdkiwvqs1u={[92]=68374377};
-local _i9npm0k5rxjs,_85bpwdl87inp=45529468,838166;
-while _i9npm0k5rxjs+_85bpwdl87inp~=0 and _jncdkiwvqs1u[92]~=nil do
-if _85bpwdl87inp+_i9npm0k5rxjs==46367634 then
-_ovlf45z4mwnb=30427;
-_i9npm0k5rxjs,_85bpwdl87inp=69034476,28440590;
-elseif _85bpwdl87inp+_i9npm0k5rxjs==97475066 then
-if math.abs(-1)==1 and math.floor(3.14)==3 then
-local _pdp17kbnuwgk=974;
-else
-local _z04lui6lh647=780;
-end;
-_i9npm0k5rxjs,_85bpwdl87inp=42584468,-42584468;
-elseif _i9npm0k5rxjs+_85bpwdl87inp==11457391 then
-_i9npm0k5rxjs,_85bpwdl87inp=59589130,87821693;
-end;
-end;
-end;
-_743arxqb2trm(5==5,"equal");
-do
-if not(string.find("abc","a")==1)and#tostring(math.random())>0 then
-local _z96t3nd0ahzw;
-local _d0rax79dwamx={[44]=52666097};
-local _22ruc0tzfl6v,_mrglj7p44a26=63575850,369354;
-while _22ruc0tzfl6v+_mrglj7p44a26~=0 and _d0rax79dwamx[44] do
-if (_22ruc0tzfl6v+_mrglj7p44a26)%73556348==57489260 then
-if true then
-local _uwqkhnsbvf0q=445;
-end;
-_22ruc0tzfl6v,_mrglj7p44a26=58435060,-58435060;
-elseif _mrglj7p44a26+_22ruc0tzfl6v==27359146 then
-_22ruc0tzfl6v,_mrglj7p44a26=24242032,80571746;
-elseif _mrglj7p44a26+_22ruc0tzfl6v==2824163 then
-_22ruc0tzfl6v,_mrglj7p44a26=71943708,15033002;
-elseif (_22ruc0tzfl6v+_mrglj7p44a26)%81029551==63945204 then
-_z96t3nd0ahzw=982;
-_22ruc0tzfl6v,_mrglj7p44a26=78048272,-20559012;
-elseif _22ruc0tzfl6v+_mrglj7p44a26==85521033 then
-_22ruc0tzfl6v,_mrglj7p44a26=99324463,63185320;
-end;
-end;
-end;
-end;
-_743arxqb2trm(5~=6,"not equal");
-_743arxqb2trm(5<10,"less than");
-do
-if not(type(string)=="table" and type(string.byte)=="function")and type(string)=="table" and type(string.byte)=="function" then
-local _qvva6m7jno86;
-local _cg2bfwsk5o47={};
-local function _1cl6uyr69zbs(...)
-_qvva6m7jno86=257;
-return 37325393;
-end;
-_cg2bfwsk5o47[28564231]=_1cl6uyr69zbs;
-local function _kjvadcrlspeb(...)
-if true then
-local _36zx4esmd1bx=99;
+_ajhmsiwbzjnx[_5xvxxcnlekzh]=_uii55iskj0at[_fql7q867j4ca["u"]];
 end;
 return 0;
 end;
-_cg2bfwsk5o47[37325393]=_kjvadcrlspeb;
-local function _h3wkrjcnm4gm(...)
-local _ku7axfyn7klk=23725;
-return 90962745;
+_pgn85ozqsj7y[24990747]=_cdbisw58z93z;
+local function _p2wc8hbp9mw2(...)
+local _rhdvm4b0fms9=47231;
+return 73007023;
 end;
-_cg2bfwsk5o47[37840233]=_h3wkrjcnm4gm;
-local function _fbp1t4xfo4lb(...)
-local _3j8dl35t074q=79592;
-return 14469451;
+_pgn85ozqsj7y[1536040]=_p2wc8hbp9mw2;
+local function _rjxjr5efv24u(...)
+local _81ccs2lu0gfc=51658;
+return 7094892;
 end;
-_cg2bfwsk5o47[90873722]=_fbp1t4xfo4lb;
-local function _4lrneahv24zh(...)
-local _sn5x8g18yavn=81050;
-return 93301798;
+_pgn85ozqsj7y[9334839]=_rjxjr5efv24u;
+local function _4udb3j0q9v1i(...)
+local _trw2mbm235vj=54561;
+return 56282997;
 end;
-_cg2bfwsk5o47[7824024]=_4lrneahv24zh;
-local _ta83gpdx58i6={[10034]=true};
-local _stir2d1xxbyn=28564231;
-while _stir2d1xxbyn~=0 and _ta83gpdx58i6[10034] do
-_stir2d1xxbyn=_cg2bfwsk5o47[_stir2d1xxbyn]();
-end;
-end;
-end;
-do
-if not(#tostring(math.random())>0)and type(string)=="table" and type(string.byte)=="function" then
-local _0wfcvuzqtx18;
-local _uhlj7bzmor0t={};
-local function _wir72xziokyu(...)
-_0wfcvuzqtx18=908;
-return 2702994;
-end;
-_uhlj7bzmor0t[93991686]=_wir72xziokyu;
-local function _abe5qe5j6032(...)
-_5rooivrnn9ij=4335;
-return 0;
-end;
-_uhlj7bzmor0t[2702994]=_abe5qe5j6032;
-local function _9fbblsqju88q(...)
-local _vbjkkmygbpvw=99546;
-return 50327690;
-end;
-_uhlj7bzmor0t[30898787]=_9fbblsqju88q;
-local function _6rq3lysxmyds(...)
-local _f5r3ect1kymp=55390;
-return 85858069;
-end;
-_uhlj7bzmor0t[95899224]=_6rq3lysxmyds;
-local _pc33etbe0m63={[35452]=true};
-local _1kjilnuiekwf=93991686;
-while _1kjilnuiekwf~=0 and(_1kjilnuiekwf+79149-79149==_1kjilnuiekwf) do
-_1kjilnuiekwf=_uhlj7bzmor0t[_1kjilnuiekwf]();
+_pgn85ozqsj7y[3595304]=_4udb3j0q9v1i;
+local _5gi4nl717oqt={[6546]=true};
+local _x3qiyy399nxx=57418849;
+while _x3qiyy399nxx ~= 0 and (_x3qiyy399nxx + 24029 - 24029 == _x3qiyy399nxx) do
+_x3qiyy399nxx=_pgn85ozqsj7y[_x3qiyy399nxx]();
 end;
 end;
-end;
-_743arxqb2trm(10>5,"greater than");
-_743arxqb2trm(5<=5,"less equal");
-_743arxqb2trm(5>=5,"greater equal");
-_743arxqb2trm(true and true,"and true");
-_743arxqb2trm(not(true and false),"and false");
-do
-local _1r2rgab4dudf=27957;
-end;
-_743arxqb2trm(true or false,"or true");
-_743arxqb2trm(not(false or false),"or false");
-do
-if not(string.find("abc","a")==1)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _v692f9gz99fj;
-local _xh711iea655f={};
-local function _pry9ytwk78bq(...)
-_v692f9gz99fj=488;
-return 71198866;
-end;
-_xh711iea655f[18893750]=_pry9ytwk78bq;
-local function _dwjo0sat867f(...)
-_irkmtezjcc22=63315;
-return 0;
-end;
-_xh711iea655f[71198866]=_dwjo0sat867f;
-local function _26174wwqgr9b(...)
-local _3zm1hiye6bmz=60928;
-return 98434429;
-end;
-_xh711iea655f[55188426]=_26174wwqgr9b;
-local function _euum8v1lcda2(...)
-local _d6wjd2hwaebk=23990;
-return 36234115;
-end;
-_xh711iea655f[37158198]=_euum8v1lcda2;
-local function _v3ucqg73vp6x(...)
-local _skpcrr5mr6zu=34911;
-return 70649644;
-end;
-_xh711iea655f[25768328]=_v3ucqg73vp6x;
-local _o1ijhe5o0wr2={[6393]=true};
-local _ftnp2yqu3i5f=18893750;
-while _ftnp2yqu3i5f~=0 and _o1ijhe5o0wr2[6393] do
-_ftnp2yqu3i5f=_xh711iea655f[_ftnp2yqu3i5f]();
+_wt1bh9bvdso9,_1gdrx2gk6zak=23391297,20584497;
+elseif _1gdrx2gk6zak + _wt1bh9bvdso9 == 82909807 then
+_fhiw4ocb92cq=_2j7b4si4ut3c["up"];
+_wt1bh9bvdso9,_1gdrx2gk6zak=25500134,5369676;
 end;
 end;
+elseif _6zec03r4esex == 36 then
+local _5gwgrn6s4s8t,_0p9gzpkudy5f,_ygyhspewjrkq;
+local _047f92w40507={[59]=21739588};
+local _lq424gn81la2,_ri5vsp9er8sy=17917429,222820;
+while _lq424gn81la2 + _ri5vsp9er8sy ~= 0 and _047f92w40507[59] ~= nil do
+if (_lq424gn81la2 + _ri5vsp9er8sy) % 160956309 == 74789103 then
+for _lygr4ww4rdwx=1,_euesysk28f55-_0p9gzpkudy5f do
+_ygyhspewjrkq[_5gwgrn6s4s8t + _lygr4ww4rdwx - 1]=_6tv5vhgky8jq[_0p9gzpkudy5f + _lygr4ww4rdwx];
 end;
-_743arxqb2trm("a" and "b"=="b","and returns last");
-do
-local _e2eiyueflad1,_ggpeo04pvbo2;
-local _rxdqszd5cc3k={[36]=47201230};
-local _wn3t395fq1pd,_1ckp7qzp7foz=59543705,147861;
-while _wn3t395fq1pd+_1ckp7qzp7foz~=0 and(_wn3t395fq1pd+65266-65266==_wn3t395fq1pd) do
-if _1ckp7qzp7foz+_wn3t395fq1pd==32273231 then
-_wn3t395fq1pd,_1ckp7qzp7foz=45346458,98506539;
-elseif _wn3t395fq1pd+_1ckp7qzp7foz==57576646 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _gk8re6a6v5ov;
-local _3brn3lpc59r6={};
-local function _i8qry3sjplrr(...)
-_gk8re6a6v5ov=998;
-return 16792955;
+_lq424gn81la2,_ri5vsp9er8sy=64754325,-53658216;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 16842172 then
+_st4navigdoek=_st4navigdoek - 1;
+_lq424gn81la2,_ri5vsp9er8sy=85025391,-54525849;
+elseif (_lq424gn81la2 + _ri5vsp9er8sy) % 51995404 == 18140249 then
+_5gwgrn6s4s8t=_lc7v9m7h2fu3[_48b0cfo1a1cn];
+_lq424gn81la2,_ri5vsp9er8sy=41880813,26137294;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 82404384 then
+_lq424gn81la2,_ri5vsp9er8sy=79362955,27925652;
+elseif _ri5vsp9er8sy + _lq424gn81la2 == 30499542 then
+_ygyhspewjrkq=_6tv5vhgky8jq[_0p9gzpkudy5f];
+_lq424gn81la2,_ri5vsp9er8sy=77065476,-2276373;
+elseif _ri5vsp9er8sy + _lq424gn81la2 == 73578994 then
+_0p9gzpkudy5f=_slkwbhk803j3[_st4navigdoek];
+_lq424gn81la2,_ri5vsp9er8sy=57976854,-41134682;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 2889654 then
+_lq424gn81la2,_ri5vsp9er8sy=16315932,97166064;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 85102102 then
+_lq424gn81la2,_ri5vsp9er8sy=61932442,724671;
+elseif _ri5vsp9er8sy + _lq424gn81la2 == 60513503 then
+_euesysk28f55=_0p9gzpkudy5f - 1;
+_lq424gn81la2,_ri5vsp9er8sy=2600347,-2600347;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 11096109 then
+for _tr5ria15nhvv=_0p9gzpkudy5f,_euesysk28f55 do
+_6tv5vhgky8jq[_tr5ria15nhvv]=nil;
 end;
-_3brn3lpc59r6[40632066]=_i8qry3sjplrr;
-local function _xpozfs8bmg74(...)
-if true then
-local _qfemot372sd8=378;
-end;
-return 0;
-end;
-_3brn3lpc59r6[16792955]=_xpozfs8bmg74;
-local function _no5h5xstogkf(...)
-local _3rsu2ar2fgwi=71585;
-return 48203895;
-end;
-_3brn3lpc59r6[18610266]=_no5h5xstogkf;
-local _ilkfw08zi7b1={[37215]=true};
-local _lebho0mwmk3n=40632066;
-while _lebho0mwmk3n~=0 and _ilkfw08zi7b1[37215] do
-_lebho0mwmk3n=_3brn3lpc59r6[_lebho0mwmk3n]();
+_lq424gn81la2,_ri5vsp9er8sy=1244108,59269395;
+elseif _lq424gn81la2 + _ri5vsp9er8sy == 68018107 then
+_48b0cfo1a1cn=_48b0cfo1a1cn + 1;
+_lq424gn81la2,_ri5vsp9er8sy=48926377,24652617;
 end;
 end;
-end;
-_wn3t395fq1pd,_1ckp7qzp7foz=11557464,-11557464;
-elseif _wn3t395fq1pd+_1ckp7qzp7foz==53177143 then
-_wn3t395fq1pd,_1ckp7qzp7foz=26030556,87096379;
-elseif _1ckp7qzp7foz+_wn3t395fq1pd==10961227 then
-_ggpeo04pvbo2=79412;
-_wn3t395fq1pd,_1ckp7qzp7foz=19543713,38032933;
-elseif _wn3t395fq1pd+_1ckp7qzp7foz==59691566 then
-_e2eiyueflad1=43540;
-_wn3t395fq1pd,_1ckp7qzp7foz=71903484,-60942257;
-elseif _wn3t395fq1pd+_1ckp7qzp7foz==41188425 then
-_wn3t395fq1pd,_1ckp7qzp7foz=98265240,94056416;
 end;
 end;
 end;
 do
-local _kjax0ovdiytj=58810;
+if not (type(string) == "table" and type(string["byte"]) == "function") and type(string) == "table" and type(string["byte"]) == "function" then
+local _uvtrababb7db=319;
 end;
-_743arxqb2trm(false or "c"=="c","or returns fallback");
-while true do
-local _zcyi2nbbx4gn=75408;
-break;
 end;
-_743arxqb2trm(nil or "d"=="d","nil or default");
-_743arxqb2trm(#"hello"==5,"string length (double quotes)");
-_743arxqb2trm(#'hello'==5,"string length (single quotes)");
-local _1kthfi0n1x93="Hello";
-do
-if not(#tostring(math.random())>0)and#tostring(math.random())>0 then
-local _20gqofxpjnfc;
-local _zkf5aft43zva={[17]=16258454};
-local _n8i8qymyrkw0,_r240pm8wgm8p=46272090,606406;
-while _n8i8qymyrkw0+_r240pm8wgm8p~=0 and(_n8i8qymyrkw0+60161-60161==_n8i8qymyrkw0) do
-if (_n8i8qymyrkw0+_r240pm8wgm8p)%92264334==46878496 then
-_20gqofxpjnfc=410;
-_n8i8qymyrkw0,_r240pm8wgm8p=44047826,-39589446;
-elseif _n8i8qymyrkw0+_r240pm8wgm8p==4458380 then
-if true then
-local _r3u4atgb8drn=636;
+return _u661n2xlfxnx;
 end;
-_n8i8qymyrkw0,_r240pm8wgm8p=5389187,-5389187;
-elseif _r240pm8wgm8p+_n8i8qymyrkw0==15870095 then
-_n8i8qymyrkw0,_r240pm8wgm8p=55593573,14631299;
+local function _p73sqmf599ye(_aumm2bch2axw,_59x0nic9q3qs)
+print(_aumm2bch2axw and ("PASS " .. _59x0nic9q3qs) or ("FAIL " .. _59x0nic9q3qs));
 end;
-end;
-end;
-end;
-local _i8bbnwiy53vx="World";
-do
-local _js2jwowb3oaf,_8kw1tse1wg80;
-local _1jf8w42bphg2={};
-local function _r4mm3fna42cx(...)
-_js2jwowb3oaf=20507;
-return 63215170;
-end;
-_1jf8w42bphg2[2413148]=_r4mm3fna42cx;
-local function _gg8h1rvgxuxr(...)
-_8kw1tse1wg80=45305;
-return 84452066;
-end;
-_1jf8w42bphg2[63215170]=_gg8h1rvgxuxr;
-local function _e1rett6c83ys(...)
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _gm78m3abam09;
-local _9btd38whkmz0={};
-local function _hcw8e9al16zc(...)
-_gm78m3abam09={};
-return 96072638;
-end;
-_9btd38whkmz0[89060297]=_hcw8e9al16zc;
-local function _85fp6nmybhik(...)
-_gm78m3abam09=49285;
-return 0;
-end;
-_9btd38whkmz0[96072638]=_85fp6nmybhik;
-local function _t1iw9ygml698(...)
-local _0490em5taj7p=45215;
-return 63039326;
-end;
-_9btd38whkmz0[8123745]=_t1iw9ygml698;
-local function _04yuthqiowyi(...)
-local _f6bhy4lacn2l=22437;
-return 71293815;
-end;
-_9btd38whkmz0[11125601]=_04yuthqiowyi;
-local _qla6utvsvw9i={[96176]=true};
-local _s8ahknvmfam0=89060297;
-while _s8ahknvmfam0~=0 and(_s8ahknvmfam0+30184-30184==_s8ahknvmfam0) do
-_s8ahknvmfam0=_9btd38whkmz0[_s8ahknvmfam0]();
-end;
-end;
-end;
-return 0;
-end;
-_1jf8w42bphg2[84452066]=_e1rett6c83ys;
-local function _vff6pfh71p3n(...)
-local _kt7db35xqmpn=28775;
-return 86784167;
-end;
-_1jf8w42bphg2[53385707]=_vff6pfh71p3n;
-local _ip8tcod0tbpb={[43847]=true};
-local _i770e8dmk3t0=2413148;
-while _i770e8dmk3t0~=0 and(_i770e8dmk3t0+65071-65071==_i770e8dmk3t0) do
-_i770e8dmk3t0=_1jf8w42bphg2[_i770e8dmk3t0]();
-end;
-end;
-_743arxqb2trm(_1kthfi0n1x93.." ".._i8bbnwiy53vx=="Hello World","concatenation");
-_743arxqb2trm(("  trim  "):match("^%s*(.-)%s*$")=="trim","string match");
-while true do
-local _cl8o80lqsj43=77967;
-break;
-end;
-_743arxqb2trm(("abc"):upper()=="ABC","string.upper");
-_743arxqb2trm(("ABC"):lower()=="abc","string.lower");
-_743arxqb2trm(("a,b,c"):find(",")==2,"string.find");
-do
-local _o1xfjnobmv5s=79266;
-end;
-_743arxqb2trm(("hello"):sub(1,2)=="he","string.sub");
-while true do
-local _r2urooimn02j=73921;
-break;
-end;
-_743arxqb2trm(("  a  "):match("^%s*(.-)%s*$")=="a","string.match with captures");
-do
-local _ylaos42lodh4=42124;
-end;
-_743arxqb2trm(tostring(123)=="123","tostring");
-do
-local _gswq896g3q7j;
-local _yb8rnxecs8nr={};
-local function _y554z0l6wkqn(...)
-_gswq896g3q7j=45175;
-return 30749301;
-end;
-_yb8rnxecs8nr[57497415]=_y554z0l6wkqn;
-local function _o8no6bbau3oo(...)
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _sl0wl5zwueqe;
-local _h9oylg5tczxl={[86]=82427721};
-local _da39m5tzy682,_09rlnu9m81iw=40351148,825937;
-while _da39m5tzy682+_09rlnu9m81iw~=0 and(_da39m5tzy682+39329-39329==_da39m5tzy682) do
-if _da39m5tzy682+_09rlnu9m81iw==64815875 then
-_da39m5tzy682,_09rlnu9m81iw=78712424,70990727;
-elseif _09rlnu9m81iw+_da39m5tzy682==55894964 then
-_da39m5tzy682,_09rlnu9m81iw=28152908,5889945;
-elseif _da39m5tzy682+_09rlnu9m81iw==41177085 then
-_sl0wl5zwueqe=709;
-_da39m5tzy682,_09rlnu9m81iw=84950186,10410213;
-elseif (_da39m5tzy682+_09rlnu9m81iw)%119840083==95360399 then
-_ru2iqp2n8uym=25837;
-_da39m5tzy682,_09rlnu9m81iw=28805820,-28805820;
-end;
-end;
-end;
-return 0;
-end;
-_yb8rnxecs8nr[30749301]=_o8no6bbau3oo;
-local function _gt85963csxco(...)
-local _2oh0mpbcw5lw=48708;
-return 62982686;
-end;
-_yb8rnxecs8nr[40331478]=_gt85963csxco;
-local _xvebodfs4lo6={[90398]=true};
-local _ufoku69fevwe=57497415;
-while _ufoku69fevwe~=0 and _xvebodfs4lo6[90398] do
-_ufoku69fevwe=_yb8rnxecs8nr[_ufoku69fevwe]();
-end;
-end;
-do
-local _547zwkqdds1b=44962;
-end;
-local _ihznz49m77ge=1;
-_743arxqb2trm(_ihznz49m77ge==1,"local variable");
-do
-local _frrfws01t95j=76405;
-end;
-do
-while true do
-local _z1p8admtxgol=10221;
-break;
-end;
-local _r3x07emcz1nn=2;
-_743arxqb2trm(_r3x07emcz1nn==2,"local shadowing inner");
-end;
-do
-local _reephmb9euhr,_wlbr3xftt7q1;
-local _nzbju4ngxt5i={[70]=94587647};
-local _2oo324ipmkss,_9s71yigk7p1e=27488633,170257;
-while _2oo324ipmkss-_9s71yigk7p1e~=0 and(_2oo324ipmkss+54465-54465==_2oo324ipmkss) do
-if _2oo324ipmkss-_9s71yigk7p1e==79255366 then
-_2oo324ipmkss,_9s71yigk7p1e=78626988,23181444;
-elseif _9s71yigk7p1e-_2oo324ipmkss==30825465 then
-_2oo324ipmkss,_9s71yigk7p1e=68072256,58557220;
-elseif (_2oo324ipmkss-_9s71yigk7p1e)%5126152==2328299 then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-if not(#tostring(math.random())>0) then
-local _gp3cfs2ecmg2;
-local _c0ydgek8ugc8={};
-local function _26npodpetszz(...)
-_gp3cfs2ecmg2=791;
-return 40122779;
-end;
-_c0ydgek8ugc8[83502041]=_26npodpetszz;
-local function _62fx7ctp7zmo(...)
-if true then
-local _fq25rzepzn4p=227;
-end;
-return 0;
-end;
-_c0ydgek8ugc8[40122779]=_62fx7ctp7zmo;
-local function _jz8k69d0ekph(...)
-local _cgleu8mvuj7h=42806;
-return 4862732;
-end;
-_c0ydgek8ugc8[33556795]=_jz8k69d0ekph;
-local _8x00rl5137lf={[78839]=true};
-local _3k1jkmcib584=83502041;
-while _3k1jkmcib584~=0 and _8x00rl5137lf[78839] do
-_3k1jkmcib584=_c0ydgek8ugc8[_3k1jkmcib584]();
-end;
-end;
-end;
-_2oo324ipmkss,_9s71yigk7p1e=19915619,19915619;
-elseif (_2oo324ipmkss-_9s71yigk7p1e)%43775570==29181478 then
-_wlbr3xftt7q1=31475;
-_2oo324ipmkss,_9s71yigk7p1e=90885448,88557149;
-elseif (_2oo324ipmkss-_9s71yigk7p1e)%92367757==27318376 then
-_reephmb9euhr=97654;
-_2oo324ipmkss,_9s71yigk7p1e=26705763,-2475715;
-end;
-end;
-end;
-do
-local _ei789k2m04sh;
-local _q5ra3i9bg0vw={[88]=94447285};
-local _yfj3zajgx2o0,_ro3jlqbf00re=62838736,678420;
-while _yfj3zajgx2o0-_ro3jlqbf00re~=0 and _q5ra3i9bg0vw[88]~=nil do
-if (_yfj3zajgx2o0-_ro3jlqbf00re)%119257030==63701939 then
-if not(#tostring(math.random())>0) then
-local _yqw9ze9txg13;
-local _t17vgfvvjr1y={};
-local function _26w6mqnwfe5p(...)
-_yqw9ze9txg13={};
-return 95414548;
-end;
-_t17vgfvvjr1y[20480539]=_26w6mqnwfe5p;
-local function _31gztre53xnf(...)
-_yqw9ze9txg13=88966;
-return 0;
-end;
-_t17vgfvvjr1y[95414548]=_31gztre53xnf;
-local function _87y3kiiruxow(...)
-local _ia7fwwt5n056=67814;
-return 93004215;
-end;
-_t17vgfvvjr1y[27085697]=_87y3kiiruxow;
-local function _pe0lz231u6b5(...)
-local _vx4hzg0mg0o4=60826;
-return 9983771;
-end;
-_t17vgfvvjr1y[40437204]=_pe0lz231u6b5;
-local function _qzn9s526rgg3(...)
-local _js4wrp5mjf1t=83569;
-return 99135374;
-end;
-_t17vgfvvjr1y[63639493]=_qzn9s526rgg3;
-local _w2tum9kkg1zp={[94806]=true};
-local _mb2hrg89xsgr=20480539;
-while _mb2hrg89xsgr~=0 and _w2tum9kkg1zp[94806] do
-_mb2hrg89xsgr=_t17vgfvvjr1y[_mb2hrg89xsgr]();
-end;
-end;
-_yfj3zajgx2o0,_ro3jlqbf00re=86487361,86487361;
-elseif _yfj3zajgx2o0-_ro3jlqbf00re==97091310 then
-_yfj3zajgx2o0,_ro3jlqbf00re=65104113,24666013;
-elseif _yfj3zajgx2o0-_ro3jlqbf00re==62160316 then
-_ei789k2m04sh=66734;
-_yfj3zajgx2o0,_ro3jlqbf00re=83402133,19700194;
-elseif _yfj3zajgx2o0-_ro3jlqbf00re==48181280 then
-_yfj3zajgx2o0,_ro3jlqbf00re=42476233,21365616;
-end;
-end;
-end;
-_743arxqb2trm(_ihznz49m77ge==1,"local shadowing outer restored");
-do
-local _aronmn5bz1s3;
-local _7x9zuv74jf5z={[65]=59006496};
-local _wvfgzoxoqohd,_r2vqr4bvzn0c=36000253,200302;
-while _wvfgzoxoqohd+_r2vqr4bvzn0c~=0 and _7x9zuv74jf5z[65]~=nil do
-if _wvfgzoxoqohd+_r2vqr4bvzn0c==20893611 then
-if string.find("abc","a")==1 then
-local _gmc2ly7r3bm7=672;
-else
-local _buczbcobrifb;
-local _n4ysw8czsgoy={[2]=25907849};
-local _73pe99ic1x92,_1l8bh96lakjn=29836830,25155;
-while _73pe99ic1x92+_1l8bh96lakjn~=0 and(_73pe99ic1x92+10365-10365==_73pe99ic1x92) do
-if _1l8bh96lakjn+_73pe99ic1x92==44691894 then
-_73pe99ic1x92,_1l8bh96lakjn=72262086,31307065;
-elseif _1l8bh96lakjn+_73pe99ic1x92==12039584 then
-_3962nig30wr7=23939;
-_73pe99ic1x92,_1l8bh96lakjn=44988649,-44988649;
-elseif _1l8bh96lakjn+_73pe99ic1x92==29861985 then
-_buczbcobrifb=270;
-_73pe99ic1x92,_1l8bh96lakjn=28053755,-16014171;
-end;
-end;
-end;
-_wvfgzoxoqohd,_r2vqr4bvzn0c=47374475,-47374475;
-elseif _wvfgzoxoqohd+_r2vqr4bvzn0c==33616513 then
-_wvfgzoxoqohd,_r2vqr4bvzn0c=21813604,91393146;
-elseif _wvfgzoxoqohd+_r2vqr4bvzn0c==55377562 then
-_wvfgzoxoqohd,_r2vqr4bvzn0c=68262893,34339403;
-elseif _wvfgzoxoqohd+_r2vqr4bvzn0c==73838769 then
-_wvfgzoxoqohd,_r2vqr4bvzn0c=72823641,84866588;
-elseif (_wvfgzoxoqohd+_r2vqr4bvzn0c)%51376977==36200555 then
-_aronmn5bz1s3=43260;
-_wvfgzoxoqohd,_r2vqr4bvzn0c=18046086,2847525;
-end;
-end;
-end;
-local _5c9i5hsmxzf9,_2jhmafe9m30b=10,20;
-_743arxqb2trm(_5c9i5hsmxzf9==10 and _2jhmafe9m30b==20,"multiple assignment");
-_5c9i5hsmxzf9,_2jhmafe9m30b=_2jhmafe9m30b,_5c9i5hsmxzf9;
-_743arxqb2trm(_5c9i5hsmxzf9==20 and _2jhmafe9m30b==10,"swap");
-do
-local _e2fwyz6lple8;
-local _ufyfu4hhd2xp={};
-local function _31ykla21jah2(...)
-_e2fwyz6lple8=63065;
-return 84358704;
-end;
-_ufyfu4hhd2xp[21944772]=_31ykla21jah2;
-local function _inkbu05ya0o2(...)
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _s3tadjrw4a50;
-local _gxxzczpksp2a={};
-local function _a1xlja5of10u(...)
-_s3tadjrw4a50={};
-return 70224127;
-end;
-_gxxzczpksp2a[2479370]=_a1xlja5of10u;
-local function _6iq8h1oot0lj(...)
-_s3tadjrw4a50=13648;
-return 0;
-end;
-_gxxzczpksp2a[70224127]=_6iq8h1oot0lj;
-local function _i97r1stx939n(...)
-local _ybbkua5jp25v=56174;
-return 97516667;
-end;
-_gxxzczpksp2a[28530447]=_i97r1stx939n;
-local function _z0gimvfvzecl(...)
-local _bx4e7ttbinux=30006;
-return 57218054;
-end;
-_gxxzczpksp2a[65009546]=_z0gimvfvzecl;
-local function _d7ynuhth1acf(...)
-local _7majshylfqc1=50095;
-return 53119806;
-end;
-_gxxzczpksp2a[88924874]=_d7ynuhth1acf;
-local _sv703ko7tnth={[75243]=true};
-local _krlvvv2surij=2479370;
-while _krlvvv2surij~=0 and _sv703ko7tnth[75243] do
-_krlvvv2surij=_gxxzczpksp2a[_krlvvv2surij]();
-end;
-end;
-return 0;
-end;
-_ufyfu4hhd2xp[84358704]=_inkbu05ya0o2;
-local function _cyzovoiputvi(...)
-local _2m65i36uag7s=1375;
-return 54354233;
-end;
-_ufyfu4hhd2xp[22699413]=_cyzovoiputvi;
-local function _dc4x8ecrkrhm(...)
-local _275acrkkqg2z=39193;
-return 23951944;
-end;
-_ufyfu4hhd2xp[34826974]=_dc4x8ecrkrhm;
-local _alepymbnh61t={[26891]=true};
-local _qf6nvkxwk5o1=21944772;
-while _qf6nvkxwk5o1~=0 and(_qf6nvkxwk5o1+40758-40758==_qf6nvkxwk5o1) do
-_qf6nvkxwk5o1=_ufyfu4hhd2xp[_qf6nvkxwk5o1]();
-end;
-end;
-local _03ckimzlkt45;
-do
-if not(#tostring(math.random())>0)and type(string)=="table" and type(string.byte)=="function" then
-local _zqek7kcwgs73;
-local _tublvp83pdmo={};
-local function _oy8r3h40s38h(...)
-_zqek7kcwgs73=449;
-return 67129846;
-end;
-_tublvp83pdmo[77441497]=_oy8r3h40s38h;
-local function _w8myq62y5ded(...)
-if true then
-local _c9t0q4u8ofyd=709;
-end;
-return 0;
-end;
-_tublvp83pdmo[67129846]=_w8myq62y5ded;
-local function _6cb01s06fjop(...)
-local _sbi8pc6iqx6k=68727;
-return 37976108;
-end;
-_tublvp83pdmo[71313238]=_6cb01s06fjop;
-local function _8qfjj9ar61dy(...)
-local _ozqmayzy5m14=68372;
-return 32763732;
-end;
-_tublvp83pdmo[47596334]=_8qfjj9ar61dy;
-local function _kyyq9bvlecfs(...)
-local _0c6o85kqeo4j=13629;
-return 86754633;
-end;
-_tublvp83pdmo[40696416]=_kyyq9bvlecfs;
-local _rvkcvuch2nq1={[5275]=true};
-local _iejyq85mcqfj=77441497;
-while _iejyq85mcqfj~=0 and _rvkcvuch2nq1[5275] do
-_iejyq85mcqfj=_tublvp83pdmo[_iejyq85mcqfj]();
-end;
-end;
-end;
-if false then
-_03ckimzlkt45="wrong";
-elseif false then
-local _1tdu3s38qij9={};
-local function _1h8ks1a7dn2c(...)
-do
-local _bdynpntz4jb7;
-local _pomld9mje8e2={};
-local function _yqr460re79u5(...)
-_bdynpntz4jb7=32283;
-return 68678456;
-end;
-_pomld9mje8e2[63080184]=_yqr460re79u5;
-local function _tedxba51zwcz(...)
-if #tostring(math.random())>0 then
-local _rh6ziqgfeq71=3;
-else
-local _t61j9qznwgvr;
-local _ey7oq3eudt81={[11]=27317690};
-local _21ycrp3ub4nt,_tmakh6ng0n53=75734180,102378;
-while _21ycrp3ub4nt-_tmakh6ng0n53~=0 and _ey7oq3eudt81[11]~=nil do
-if (_21ycrp3ub4nt-_tmakh6ng0n53)%76350830==59079752 then
-if true then
-local _6f1xyszynlo1=916;
-end;
-_21ycrp3ub4nt,_tmakh6ng0n53=41533786,41533786;
-elseif _21ycrp3ub4nt-_tmakh6ng0n53==6628133 then
-_21ycrp3ub4nt,_tmakh6ng0n53=26251530,15050674;
-elseif (_21ycrp3ub4nt-_tmakh6ng0n53)%161498523==75631802 then
-_t61j9qznwgvr=108;
-_21ycrp3ub4nt,_tmakh6ng0n53=96729770,37650018;
-elseif _21ycrp3ub4nt-_tmakh6ng0n53==42418379 then
-_21ycrp3ub4nt,_tmakh6ng0n53=60558361,91736797;
-elseif _21ycrp3ub4nt-_tmakh6ng0n53==78418235 then
-_21ycrp3ub4nt,_tmakh6ng0n53=1989375,37615175;
-end;
-end;
-end;
-return 0;
-end;
-_pomld9mje8e2[68678456]=_tedxba51zwcz;
-local function _3cfxllpeqose(...)
-local _d5yzb1ttygwj=40811;
-return 18619798;
-end;
-_pomld9mje8e2[30734091]=_3cfxllpeqose;
-local function _gmt31zb4h3hn(...)
-local _94xsif231dvg=12046;
-return 84355103;
-end;
-_pomld9mje8e2[20147914]=_gmt31zb4h3hn;
-local _mk6etsoxuj7n={[95611]=true};
-local _xus8229qcujc=63080184;
-while _xus8229qcujc~=0 and(_xus8229qcujc+38721-38721==_xus8229qcujc) do
-_xus8229qcujc=_pomld9mje8e2[_xus8229qcujc]();
-end;
-end;
-return 21042165;
-end;
-_1tdu3s38qij9[98573226]=_1h8ks1a7dn2c;
-local function _c6ft117c5tln(...)
-do
-if not(#tostring(math.random())>0)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _1earp481mjzv;
-local _p416kcc2hsor={[78]=12301820};
-local _oisf8m0ln0p4,_hubtwusryivi=41169803,601354;
-while _oisf8m0ln0p4-_hubtwusryivi~=0 and _p416kcc2hsor[78]~=nil do
-if (_oisf8m0ln0p4-_hubtwusryivi)%112171973==55048153 then
-if true then
-local _slzj6yhpxsr5=576;
-end;
-_oisf8m0ln0p4,_hubtwusryivi=32216084,32216084;
-elseif (_oisf8m0ln0p4-_hubtwusryivi)%104596902==40568449 then
-_1earp481mjzv=605;
-_oisf8m0ln0p4,_hubtwusryivi=1578824,-53469329;
-elseif _oisf8m0ln0p4-_hubtwusryivi==43388295 then
-_oisf8m0ln0p4,_hubtwusryivi=10155363,6013474;
-elseif _hubtwusryivi-_oisf8m0ln0p4==30807075 then
-_oisf8m0ln0p4,_hubtwusryivi=13840087,8044909;
-end;
-end;
-end;
-end;
-return 23331644;
-end;
-_1tdu3s38qij9[21042165]=_c6ft117c5tln;
-local function _f62ihne5n3ur(...)
-_03ckimzlkt45="also wrong";
-return 0;
-end;
-_1tdu3s38qij9[23331644]=_f62ihne5n3ur;
-local function _8nmhnkqyogge(...)
-local _hnqa3uibhtie=89664;
-return 47409222;
-end;
-_1tdu3s38qij9[10993408]=_8nmhnkqyogge;
-local function _sguww00gc3fe(...)
-local _0rsz9obu9s41=41662;
-return 51206581;
-end;
-_1tdu3s38qij9[19245692]=_sguww00gc3fe;
-local function _vl7ss1nnn3a5(...)
-local _wnoo02f5ci8m=83560;
-return 87408149;
-end;
-_1tdu3s38qij9[47208074]=_vl7ss1nnn3a5;
-local _ebosnc9tega8={[87746]=true};
-local _m13ocsr1edfn=98573226;
-while _m13ocsr1edfn~=0 and(_m13ocsr1edfn+69533-69533==_m13ocsr1edfn) do
-_m13ocsr1edfn=_1tdu3s38qij9[_m13ocsr1edfn]();
-end;
-else
-_03ckimzlkt45="correct";
-end;
-_743arxqb2trm(_03ckimzlkt45=="correct","if-elseif-else");
-if true then
-_03ckimzlkt45="taken";
-end;
-do
-local _tpenp86zmgvu,_0f0alm11uwt5;
-local _f18dy4l024a9={[50]=75152552};
-local _qjhkbi0sn5vd,_6m7xib20ummg=40303264,789352;
-while _qjhkbi0sn5vd+_6m7xib20ummg~=0 and(_qjhkbi0sn5vd+17106-17106==_qjhkbi0sn5vd) do
-if (_qjhkbi0sn5vd+_6m7xib20ummg)%62469256==51150313 then
-if not(#tostring(math.random())>0) then
-if not(#tostring(math.random())>0) then
-local _ipzwpwlrn68o;
-local _i62v1kb62lmw={[48]=87546359};
-local _2rraw2eoqc2c,_ilgzstov1j08=24044287,547795;
-while _2rraw2eoqc2c-_ilgzstov1j08~=0 and _i62v1kb62lmw[48]~=nil do
-if (_2rraw2eoqc2c-_ilgzstov1j08)%24036372==23496492 then
-_ipzwpwlrn68o=656;
-_2rraw2eoqc2c,_ilgzstov1j08=62783774,-14978009;
-elseif _2rraw2eoqc2c-_ilgzstov1j08==77761783 then
-if true then
-local _i7s8hmgtnp2b=964;
-end;
-_2rraw2eoqc2c,_ilgzstov1j08=16928342,16928342;
-elseif _ilgzstov1j08-_2rraw2eoqc2c==45924933 then
-_2rraw2eoqc2c,_ilgzstov1j08=96077384,10513479;
-end;
-end;
-end;
-end;
-_qjhkbi0sn5vd,_6m7xib20ummg=73936844,-73936844;
-elseif (_qjhkbi0sn5vd+_6m7xib20ummg)%81431735==64628161 then
-_0f0alm11uwt5=96883;
-_qjhkbi0sn5vd,_6m7xib20ummg=45255578,5894735;
-elseif _qjhkbi0sn5vd+_6m7xib20ummg==10479972 then
-_qjhkbi0sn5vd,_6m7xib20ummg=46438643,33844388;
-elseif _6m7xib20ummg+_qjhkbi0sn5vd==87645940 then
-_qjhkbi0sn5vd,_6m7xib20ummg=10942744,10957701;
-elseif _6m7xib20ummg+_qjhkbi0sn5vd==41092616 then
-_tpenp86zmgvu=45626;
-_qjhkbi0sn5vd,_6m7xib20ummg=27742075,36886086;
-end;
-end;
-end;
-_743arxqb2trm(_03ckimzlkt45=="taken","if true");
-do
-if not(math.abs(-1)==1 and math.floor(3.14)==3)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _bsl3ix1c2ohc=902;
-end;
-end;
-local _przhpzfl5zyn;
-if true then
-local _ccj28o0msrek={[40]=16224888};
-local _vdbchmpydfrd,_f8uzte0vu2dw=13163988,408902;
-while _vdbchmpydfrd+_f8uzte0vu2dw~=0 and _ccj28o0msrek[40] do
-if _f8uzte0vu2dw+_vdbchmpydfrd==33201668 then
-if false then
-_przhpzfl5zyn="bad";
-else
-_przhpzfl5zyn="good";
-end;
-_vdbchmpydfrd,_f8uzte0vu2dw=52918850,-52918850;
-elseif _f8uzte0vu2dw+_vdbchmpydfrd==13572890 then
-do
-local _f98b7t7dftz5,_x7ub3zqwpltl;
-local _7mhimoocs4r3={};
-local function _tiu0gd53qce9(...)
-_f98b7t7dftz5=41794;
-return 97947427;
-end;
-_7mhimoocs4r3[99402832]=_tiu0gd53qce9;
-local function _5wf38syy3xmn(...)
-_x7ub3zqwpltl=67383;
-return 69349087;
-end;
-_7mhimoocs4r3[97947427]=_5wf38syy3xmn;
-local function _oznot4sd57nd(...)
-if not(#tostring(math.random())>0) then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _p84kyehrs61x;
-local _3r1ocumn18i7={[2]=90319743};
-local _63eel87p148l,_z00law2j7hr2=30730804,363202;
-while _63eel87p148l+_z00law2j7hr2~=0 and _3r1ocumn18i7[2] do
-if _63eel87p148l+_z00law2j7hr2==31094006 then
-_p84kyehrs61x={};
-_63eel87p148l,_z00law2j7hr2=96510559,-2901269;
-elseif (_63eel87p148l+_z00law2j7hr2)%170432231==93609290 then
-_p84kyehrs61x=36008;
-_63eel87p148l,_z00law2j7hr2=7326305,-7326305;
-elseif _63eel87p148l+_z00law2j7hr2==13534292 then
-_63eel87p148l,_z00law2j7hr2=40550929,50999953;
-end;
-end;
-end;
-end;
-return 0;
-end;
-_7mhimoocs4r3[69349087]=_oznot4sd57nd;
-local function _8xnfa6v96m2p(...)
-local _gma0o29kgrxm=27740;
-return 85077969;
-end;
-_7mhimoocs4r3[61469864]=_8xnfa6v96m2p;
-local function _w3a5xf5ykk63(...)
-local _g2fg9ybhsf2v=48387;
-return 85627657;
-end;
-_7mhimoocs4r3[78636640]=_w3a5xf5ykk63;
-local function _4s74u3ikj213(...)
-local _38171gd9en3w=78086;
-return 53958595;
-end;
-_7mhimoocs4r3[39352667]=_4s74u3ikj213;
-local _2m1f8fhnh6cs={[33312]=true};
-local _81eaa479b33h=99402832;
-while _81eaa479b33h~=0 and(_81eaa479b33h+42095-42095==_81eaa479b33h) do
-_81eaa479b33h=_7mhimoocs4r3[_81eaa479b33h]();
-end;
-end;
-_vdbchmpydfrd,_f8uzte0vu2dw=94463060,-61261392;
-elseif _f8uzte0vu2dw+_vdbchmpydfrd==90800989 then
-_vdbchmpydfrd,_f8uzte0vu2dw=66081872,28876260;
-end;
-end;
-end;
-_743arxqb2trm(_przhpzfl5zyn=="good","nested if");
-while true do
-local _5tgluu1lvpc4=51442;
-break;
-end;
-local _ev3aoyj0vcrq=0;
-while _ev3aoyj0vcrq<3 do
-local _zyvdd76fjz95={};
-local function _e1w9dguyjc8q(...)
-do
-local _erndhhq1scx5;
-local _cxd2q9dn4hgm={[13]=22714605};
-local _gsgnhr6qplc7,_lo501qepftje=24405485,120562;
-while _gsgnhr6qplc7-_lo501qepftje~=0 and _cxd2q9dn4hgm[13] do
-if _lo501qepftje-_gsgnhr6qplc7==48021640 then
-_gsgnhr6qplc7,_lo501qepftje=66967251,84969201;
-elseif _gsgnhr6qplc7-_lo501qepftje==71872635 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _avu18u6p7qxr;
-local _kqwvp5o85pen={[44]=12372430};
-local _vhru76rn0jmc,_az3eq7tgipet=75504353,367822;
-while _vhru76rn0jmc-_az3eq7tgipet~=0 and _kqwvp5o85pen[44]~=nil do
-if _az3eq7tgipet-_vhru76rn0jmc==56633039 then
-_vhru76rn0jmc,_az3eq7tgipet=73706723,31852707;
-elseif _vhru76rn0jmc-_az3eq7tgipet==32693867 then
-_vhru76rn0jmc,_az3eq7tgipet=20620500,32306887;
-elseif (_vhru76rn0jmc-_az3eq7tgipet)%141447043==75136531 then
-_avu18u6p7qxr={};
-_vhru76rn0jmc,_az3eq7tgipet=59820890,58008631;
-elseif (_vhru76rn0jmc-_az3eq7tgipet)%33063999==1812259 then
-_avu18u6p7qxr=46131;
-_vhru76rn0jmc,_az3eq7tgipet=71719821,71719821;
-end;
-end;
-end;
-_gsgnhr6qplc7,_lo501qepftje=1427952,1427952;
-elseif _gsgnhr6qplc7-_lo501qepftje==24284923 then
-_erndhhq1scx5=61337;
-_gsgnhr6qplc7,_lo501qepftje=8682765,-63189870;
-end;
-end;
-end;
-return 8915438;
-end;
-_zyvdd76fjz95[61566795]=_e1w9dguyjc8q;
-local function _h5so0rk9hqqx(...)
-_ev3aoyj0vcrq=_ev3aoyj0vcrq+1;
-return 0;
-end;
-_zyvdd76fjz95[8915438]=_h5so0rk9hqqx;
-local function _it3rb6bv0o3o(...)
-local _h0yog47qhnuh=2318;
-return 2932418;
-end;
-_zyvdd76fjz95[92843323]=_it3rb6bv0o3o;
-local _d3wfavygfbga={[23574]=true};
-local _q5awqfbve9m7=61566795;
-while _q5awqfbve9m7~=0 and _d3wfavygfbga[23574] do
-_q5awqfbve9m7=_zyvdd76fjz95[_q5awqfbve9m7]();
-end;
-end;
-_743arxqb2trm(_ev3aoyj0vcrq==3,"while loop");
-local _3aakij6g1u7j=0;
-while true do
-while true do
-local _zcg9leqvxh0p=50945;
-break;
-end;
-do
-local _4mjwild50vdm=42999;
-end;
-_3aakij6g1u7j=_3aakij6g1u7j+1;
-if _3aakij6g1u7j>=3 then
-break;
-end;
-end;
-_743arxqb2trm(_3aakij6g1u7j==3,"while with break");
-while true do
-local _ji0ptyc0khex=2442;
-break;
-end;
-local _sh2novl29821=0;
-repeat
-_sh2novl29821=_sh2novl29821+1;
-until _sh2novl29821==3;
-_743arxqb2trm(_sh2novl29821==3,"repeat until");
-local _hjfcsikhf3xs=0;
-do
-local _xzqjpye152y9,_87luylstg4ye;
-local _g90txft5yobi={[10]=97539628};
-local _12xzvbpn0p6t,_ecokmh3ovrnw=12406001,144045;
-while _12xzvbpn0p6t+_ecokmh3ovrnw~=0 and _g90txft5yobi[10]~=nil do
-if _ecokmh3ovrnw+_12xzvbpn0p6t==92046971 then
-_87luylstg4ye=50577;
-_12xzvbpn0p6t,_ecokmh3ovrnw=39746793,52848961;
-elseif _ecokmh3ovrnw+_12xzvbpn0p6t==12550046 then
-_xzqjpye152y9=44179;
-_12xzvbpn0p6t,_ecokmh3ovrnw=78646471,13400500;
-elseif _12xzvbpn0p6t+_ecokmh3ovrnw==24032124 then
-_12xzvbpn0p6t,_ecokmh3ovrnw=79209937,41582609;
-elseif _ecokmh3ovrnw+_12xzvbpn0p6t==48992662 then
-_12xzvbpn0p6t,_ecokmh3ovrnw=21208501,937617;
-elseif _ecokmh3ovrnw+_12xzvbpn0p6t==92595754 then
-if not(string.find("abc","a")==1) then
-if not(string.find("abc","a")==1) then
-local _5f32qw3r3iqe=658;
-end;
-end;
-_12xzvbpn0p6t,_ecokmh3ovrnw=7221799,-7221799;
-elseif _12xzvbpn0p6t+_ecokmh3ovrnw==42931610 then
-_12xzvbpn0p6t,_ecokmh3ovrnw=77377298,25710619;
-end;
-end;
-end;
-for _ij9shxjtb8bc=1,5 do
-local _srn5lx4hnoqy={};
-local function _mxdd2w65zslq(...)
-do
-if not(#tostring(math.random())>0)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _oij5rbqz0wx8;
-local _r3uezac8lokf={[32]=8150570};
-local _a98n5hu6mutu,_i68hufqkkwkk=86988463,403693;
-while _a98n5hu6mutu-_i68hufqkkwkk~=0 and _r3uezac8lokf[32] do
-if _a98n5hu6mutu-_i68hufqkkwkk==14256361 then
-_a98n5hu6mutu,_i68hufqkkwkk=37866938,57988484;
-elseif (_a98n5hu6mutu-_i68hufqkkwkk)%117163109==86584770 then
-_oij5rbqz0wx8=137;
-_a98n5hu6mutu,_i68hufqkkwkk=59066536,-11165723;
-elseif _i68hufqkkwkk-_a98n5hu6mutu==97739409 then
-_a98n5hu6mutu,_i68hufqkkwkk=38947364,77046838;
-elseif _a98n5hu6mutu-_i68hufqkkwkk==70232259 then
-_in70d4zll77f=15380;
-_a98n5hu6mutu,_i68hufqkkwkk=55360132,55360132;
-end;
-end;
-end;
-end;
-return 41673240;
-end;
-_srn5lx4hnoqy[72686195]=_mxdd2w65zslq;
-local function _g0ihfp3yp81a(...)
-_hjfcsikhf3xs=_hjfcsikhf3xs+_ij9shxjtb8bc;
-return 0;
-end;
-_srn5lx4hnoqy[41673240]=_g0ihfp3yp81a;
-local function _sij29lqafwvm(...)
-local _9m3xlj2w2au4=86170;
-return 63811503;
-end;
-_srn5lx4hnoqy[80434211]=_sij29lqafwvm;
-local _fdpcord69mx9={[98460]=true};
-local _o833dgunoagj=72686195;
-while _o833dgunoagj~=0 and(_o833dgunoagj+99523-99523==_o833dgunoagj) do
-_o833dgunoagj=_srn5lx4hnoqy[_o833dgunoagj]();
-end;
-end;
-_743arxqb2trm(_hjfcsikhf3xs==15,"numeric for 1..5");
-while true do
-local _t65llik84jow=74067;
-break;
-end;
-_hjfcsikhf3xs=0;
-do
-local _9qiyojdsvymr=64926;
-end;
-while true do
-local _c8ze78w5jymk=97245;
-break;
-end;
-for _7rvvt1ayhh8j=1,10,2 do
-local _514h9slknye9={};
-local function _so1cet9chvuc(...)
-do
-local _ueorctlgpgj0=82987;
-end;
-return 25979901;
-end;
-_514h9slknye9[80744891]=_so1cet9chvuc;
-local function _4z5ehxug9ctj(...)
-_hjfcsikhf3xs=_hjfcsikhf3xs+_7rvvt1ayhh8j;
-return 0;
-end;
-_514h9slknye9[25979901]=_4z5ehxug9ctj;
-local function _myo8uxuyful9(...)
-local _bz20hgsb3vwn=47656;
-return 69059921;
-end;
-_514h9slknye9[13037525]=_myo8uxuyful9;
-local _58k69qm4v37x={[90491]=true};
-local _q4410ogsb584=80744891;
-while _q4410ogsb584~=0 and _58k69qm4v37x[90491] do
-_q4410ogsb584=_514h9slknye9[_q4410ogsb584]();
-end;
-end;
-do
-if not(#tostring(math.random())>0)and#tostring(math.random())>0 then
-local _y1ab382qt1vz;
-local _gkxip6ww9po7={[62]=231874};
-local _2jzqxlfwbhfw,_rolhnho0x5p1=60107509,467013;
-while _2jzqxlfwbhfw+_rolhnho0x5p1~=0 and(_2jzqxlfwbhfw+42477-42477==_2jzqxlfwbhfw) do
-if _rolhnho0x5p1+_2jzqxlfwbhfw==5644968 then
-_2jzqxlfwbhfw,_rolhnho0x5p1=89033688,45453439;
-elseif _rolhnho0x5p1+_2jzqxlfwbhfw==93553758 then
-_2jzqxlfwbhfw,_rolhnho0x5p1=58083410,66016361;
-elseif _2jzqxlfwbhfw+_rolhnho0x5p1==75091638 then
-_y1ab382qt1vz=66789;
-_2jzqxlfwbhfw,_rolhnho0x5p1=75059634,-75059634;
-elseif _2jzqxlfwbhfw+_rolhnho0x5p1==60574522 then
-_y1ab382qt1vz={};
-_2jzqxlfwbhfw,_rolhnho0x5p1=91965565,-16873927;
-end;
-end;
-end;
-end;
-_743arxqb2trm(_hjfcsikhf3xs==25,"numeric for step 2");
-local _3vnnqmhobt5p=0;
-for _xqh5vfic9tw7=1,100 do
-_3vnnqmhobt5p=_3vnnqmhobt5p+1;
-if _xqh5vfic9tw7==5 then
-do
-if not(math.abs(-1)==1 and math.floor(3.14)==3)and#tostring(math.random())>0 then
-local _2ri6zgrfleow;
-local _qo6kzvj0vnhr={[3]=54217039};
-local _17qkn5ok6gmc,_alv5cy3bdt10=83939056,236782;
-while _17qkn5ok6gmc-_alv5cy3bdt10~=0 and _qo6kzvj0vnhr[3]~=nil do
-if _17qkn5ok6gmc-_alv5cy3bdt10==83702274 then
-_2ri6zgrfleow=9;
-_17qkn5ok6gmc,_alv5cy3bdt10=94703192,36605338;
-elseif _17qkn5ok6gmc-_alv5cy3bdt10==88160125 then
-_17qkn5ok6gmc,_alv5cy3bdt10=92918101,50165643;
-elseif _alv5cy3bdt10-_17qkn5ok6gmc==61129340 then
-_17qkn5ok6gmc,_alv5cy3bdt10=90655341,48288480;
-elseif _17qkn5ok6gmc-_alv5cy3bdt10==76667207 then
-_17qkn5ok6gmc,_alv5cy3bdt10=81143520,60880002;
-elseif (_17qkn5ok6gmc-_alv5cy3bdt10)%135443344==58097854 then
-if true then
-local _d8qecorctc19=427;
-end;
-_17qkn5ok6gmc,_alv5cy3bdt10=28424724,28424724;
-end;
-end;
-end;
-end;
-break;
-end;
-end;
-while true do
-local _ybzr4psknawa=42779;
-break;
-end;
-do
-local _i3juvsl6ay1a;
-local _hornm9pq3jmt={[47]=63375878};
-local _w2h3pnh3noiy,_5rw3ocvo18qi=93835275,137085;
-while _w2h3pnh3noiy+_5rw3ocvo18qi~=0 and _hornm9pq3jmt[47] do
-if (_w2h3pnh3noiy+_5rw3ocvo18qi)%106731903==60815195 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _8ksxgocrpk1r;
-local _mm98ak32z0k8={[73]=37051680};
-local _w5hjr0x3d15l,_t0yt1hpc8zlu=7730840,802365;
-while _w5hjr0x3d15l-_t0yt1hpc8zlu~=0 and _mm98ak32z0k8[73] do
-if _w5hjr0x3d15l-_t0yt1hpc8zlu==5681967 then
-_w5hjr0x3d15l,_t0yt1hpc8zlu=43756908,19897831;
-elseif _w5hjr0x3d15l-_t0yt1hpc8zlu==95759745 then
-if true then
-local _il1dj7g07g9u=835;
-end;
-_w5hjr0x3d15l,_t0yt1hpc8zlu=48413106,48413106;
-elseif _w5hjr0x3d15l-_t0yt1hpc8zlu==6928475 then
-_8ksxgocrpk1r=724;
-_w5hjr0x3d15l,_t0yt1hpc8zlu=54889853,-40869892;
-end;
-end;
-end;
-_w2h3pnh3noiy,_5rw3ocvo18qi=34862420,-34862420;
-elseif _5rw3ocvo18qi+_w2h3pnh3noiy==98717729 then
-_w2h3pnh3noiy,_5rw3ocvo18qi=51921736,58834512;
-elseif _w2h3pnh3noiy+_5rw3ocvo18qi==93972360 then
-_i3juvsl6ay1a=16837;
-_w2h3pnh3noiy,_5rw3ocvo18qi=12824118,47991077;
-end;
-end;
-end;
-_743arxqb2trm(_3vnnqmhobt5p==5,"for with break");
-local _gy6hpnqf1k3n={"a","b","c"};
-local _i9za52r9rvn0={};
-do
-if not(math.abs(-1)==1 and math.floor(3.14)==3)and string.find("abc","a")==1 then
-local _qft1fka7i2aq=679;
-end;
-end;
-do
-if not(type(string)=="table" and type(string.byte)=="function")and type(string)=="table" and type(string.byte)=="function" then
-local _p6t468jw3ffk;
-local _egb080cqqm20={};
-local function _b8zz7irf0a9q(...)
-_p6t468jw3ffk=73;
-return 12076530;
-end;
-_egb080cqqm20[62282707]=_b8zz7irf0a9q;
-local function _t4tje7nm1ks2(...)
-if true then
-local _0ea3fgtx8des=299;
-end;
-return 0;
-end;
-_egb080cqqm20[12076530]=_t4tje7nm1ks2;
-local function _rpvnwggkeqav(...)
-local _wsqnbc3at49m=25853;
-return 13432553;
-end;
-_egb080cqqm20[12031808]=_rpvnwggkeqav;
-local function _3wrf4a8o1yhz(...)
-local _apezllx1lqrp=99047;
-return 17010380;
-end;
-_egb080cqqm20[59431984]=_3wrf4a8o1yhz;
-local _zcj2nosxwsou={[74331]=true};
-local _0whw72q010l0=62282707;
-while _0whw72q010l0~=0 and(_0whw72q010l0+50564-50564==_0whw72q010l0) do
-_0whw72q010l0=_egb080cqqm20[_0whw72q010l0]();
-end;
-end;
-end;
-for _m1jl8blnm0dy in ipairs(_gy6hpnqf1k3n) do
-while true do
-local _mo3nbkhbiv69=63866;
-break;
-end;
-do
-local _xluvxc5ht9y3,_o6g7hkxtxcpi;
-local _irzdcs2uossv={[39]=22931733};
-local _cyouzubm67ij,_4sn0urn7zx2y=13618989,417982;
-while _cyouzubm67ij-_4sn0urn7zx2y~=0 and _irzdcs2uossv[39] do
-if _4sn0urn7zx2y-_cyouzubm67ij==60257072 then
-_cyouzubm67ij,_4sn0urn7zx2y=25869750,76878977;
-elseif (_cyouzubm67ij-_4sn0urn7zx2y)%108512601==88641541 then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-if not(#tostring(math.random())>0) then
-local _xg09e3bs2vqw;
-local _wddon41lvm03={[88]=54190438};
-local _1b3yxf1azsp1,_n7edfgoz8yfk=36486530,825195;
-while _1b3yxf1azsp1+_n7edfgoz8yfk~=0 and _wddon41lvm03[88] do
-if _1b3yxf1azsp1+_n7edfgoz8yfk==24917351 then
-_1b3yxf1azsp1,_n7edfgoz8yfk=25972378,39039427;
-elseif _n7edfgoz8yfk+_1b3yxf1azsp1==22933439 then
-_xg09e3bs2vqw=81495;
-_1b3yxf1azsp1,_n7edfgoz8yfk=48910244,-48910244;
-elseif _n7edfgoz8yfk+_1b3yxf1azsp1==37311725 then
-_xg09e3bs2vqw={};
-_1b3yxf1azsp1,_n7edfgoz8yfk=34539081,-11605642;
-elseif _1b3yxf1azsp1+_n7edfgoz8yfk==43758947 then
-_1b3yxf1azsp1,_n7edfgoz8yfk=65084170,69540336;
-elseif _n7edfgoz8yfk+_1b3yxf1azsp1==80571766 then
-_1b3yxf1azsp1,_n7edfgoz8yfk=82138685,62945068;
-end;
-end;
-end;
-end;
-_cyouzubm67ij,_4sn0urn7zx2y=32070525,32070525;
-elseif _cyouzubm67ij-_4sn0urn7zx2y==96758692 then
-_o6g7hkxtxcpi=19932;
-_cyouzubm67ij,_4sn0urn7zx2y=66687690,-21953851;
-elseif _cyouzubm67ij-_4sn0urn7zx2y==21605529 then
-_cyouzubm67ij,_4sn0urn7zx2y=45591999,97398034;
-elseif (_cyouzubm67ij-_4sn0urn7zx2y)%52107125==13201007 then
-_xluvxc5ht9y3=76283;
-_cyouzubm67ij,_4sn0urn7zx2y=20493434,-76265258;
-end;
-end;
-end;
-_i9za52r9rvn0[#_i9za52r9rvn0+1]=_m1jl8blnm0dy;
-end;
-_743arxqb2trm(_i9za52r9rvn0[1]==1 and _i9za52r9rvn0[2]==2 and _i9za52r9rvn0[3]==3,"ipairs");
-do
-local _npyjyzvpscx2,_2m2d835p9tu1;
-local _k2k3gnfn0l71={[12]=20386144};
-local _x4n1cs5a9c17,_f9kdmjvomsfk=22473341,726058;
-while _x4n1cs5a9c17+_f9kdmjvomsfk~=0 and _k2k3gnfn0l71[12] do
-if _f9kdmjvomsfk+_x4n1cs5a9c17==63967338 then
-_x4n1cs5a9c17,_f9kdmjvomsfk=33313280,26611377;
-elseif _x4n1cs5a9c17+_f9kdmjvomsfk==22128242 then
-_2m2d835p9tu1=94832;
-_x4n1cs5a9c17,_f9kdmjvomsfk=42305574,52828589;
-elseif _x4n1cs5a9c17+_f9kdmjvomsfk==95134163 then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _9rqng4nnqvwg=461;
-end;
-end;
-_x4n1cs5a9c17,_f9kdmjvomsfk=26545569,-26545569;
-elseif (_x4n1cs5a9c17+_f9kdmjvomsfk)%39519976==23199399 then
-_npyjyzvpscx2=56361;
-_x4n1cs5a9c17,_f9kdmjvomsfk=74331171,-52202929;
-elseif _x4n1cs5a9c17+_f9kdmjvomsfk==80672966 then
-_x4n1cs5a9c17,_f9kdmjvomsfk=60931930,46440473;
-elseif _x4n1cs5a9c17+_f9kdmjvomsfk==43330909 then
-_x4n1cs5a9c17,_f9kdmjvomsfk=51431756,91374011;
-end;
-end;
-end;
-do
-if not(math.abs(-1)==1 and math.floor(3.14)==3)and#tostring(math.random())>0 then
-local _o8qsuwx2hadd;
-local _t676an7e7di1={[32]=28277874};
-local _koozmn6jys24,_3dd1udsxy3hd=22943212,40617;
-while _koozmn6jys24-_3dd1udsxy3hd~=0 and _t676an7e7di1[32]~=nil do
-if _3dd1udsxy3hd-_koozmn6jys24==31349677 then
-_koozmn6jys24,_3dd1udsxy3hd=95661620,77278527;
-elseif _3dd1udsxy3hd-_koozmn6jys24==85405523 then
-_koozmn6jys24,_3dd1udsxy3hd=72528447,51439602;
-elseif _koozmn6jys24-_3dd1udsxy3hd==22902595 then
-_o8qsuwx2hadd={};
-_koozmn6jys24,_3dd1udsxy3hd=39227760,-11489477;
-elseif _3dd1udsxy3hd-_koozmn6jys24==74403637 then
-_koozmn6jys24,_3dd1udsxy3hd=97612037,54310281;
-elseif _koozmn6jys24-_3dd1udsxy3hd==50717237 then
-_o8qsuwx2hadd=12788;
-_koozmn6jys24,_3dd1udsxy3hd=2648580,2648580;
-end;
-end;
-end;
-end;
-local _nq26eaya2sh2={["x"]=1,["y"]=2};
-do
-local _zpq8r5amunyw=20290;
-end;
-local _hikky2qzh2ag={};
-do
-local _21sa25ca21dc,_igsqsifdp1uz;
-local _q1q2fqlg67yk={};
-local function _a8qowhffiapn(...)
-_21sa25ca21dc=94353;
-return 63052584;
-end;
-_q1q2fqlg67yk[25265434]=_a8qowhffiapn;
-local function _hqdhmyzhuizw(...)
-_igsqsifdp1uz=74319;
-return 10332662;
-end;
-_q1q2fqlg67yk[63052584]=_hqdhmyzhuizw;
-local function _li97u1uz8j0t(...)
-if not(type(string)=="table" and type(string.byte)=="function") then
-if not(#tostring(math.random())>0) then
-local _0lga9mi8h77u;
-local _enoxtjaewob5={};
-local function _u8iv9yk3mb1l(...)
-_0lga9mi8h77u={};
-return 43575789;
-end;
-_enoxtjaewob5[20306766]=_u8iv9yk3mb1l;
-local function _l5wsijwy4nph(...)
-_0lga9mi8h77u=36930;
-return 0;
-end;
-_enoxtjaewob5[43575789]=_l5wsijwy4nph;
-local function _5q0od91tvqyf(...)
-local _e9zymyu9hk1g=1663;
-return 44568634;
-end;
-_enoxtjaewob5[55416674]=_5q0od91tvqyf;
-local function _buhw8yxz56x4(...)
-local _fbopoagkjo26=6664;
-return 28105768;
-end;
-_enoxtjaewob5[88388120]=_buhw8yxz56x4;
-local _qkol1yktp714={[48803]=true};
-local _qckqie4t0zn8=20306766;
-while _qckqie4t0zn8~=0 and(_qckqie4t0zn8+14496-14496==_qckqie4t0zn8) do
-_qckqie4t0zn8=_enoxtjaewob5[_qckqie4t0zn8]();
-end;
-end;
-end;
-return 0;
-end;
-_q1q2fqlg67yk[10332662]=_li97u1uz8j0t;
-local function _532vzmfhzgvh(...)
-local _jfqahxrf0g7e=19276;
-return 5990001;
-end;
-_q1q2fqlg67yk[14168076]=_532vzmfhzgvh;
-local function _53yn1yy4au0c(...)
-local _hbbic0ux0z80=67891;
-return 71038045;
-end;
-_q1q2fqlg67yk[99309226]=_53yn1yy4au0c;
-local _y85sbjrqya6b={[1686]=true};
-local _0rootqdyv7hu=25265434;
-while _0rootqdyv7hu~=0 and _y85sbjrqya6b[1686] do
-_0rootqdyv7hu=_q1q2fqlg67yk[_0rootqdyv7hu]();
-end;
-end;
-for _ngz4inmk2xrm,_nsfp6aqkfw5a in pairs(_nq26eaya2sh2) do
-local _8hjusqyh4fa2={[57]=48295404};
-local _0yw5qnftasqp,_nv0yll3txnuj=91868100,430757;
-while _0yw5qnftasqp+_nv0yll3txnuj~=0 and(_0yw5qnftasqp+66505-66505==_0yw5qnftasqp) do
-if _nv0yll3txnuj+_0yw5qnftasqp==46507446 then
-_0yw5qnftasqp,_nv0yll3txnuj=62649411,18493223;
-elseif _0yw5qnftasqp+_nv0yll3txnuj==92298857 then
-do
-local _qri45teo5u5j;
-local _hh5bea8rqnl6={[29]=34033197};
-local _i66oleiq0eyd,_qcn0futz6l33=5863430,416082;
-while _i66oleiq0eyd+_qcn0futz6l33~=0 and _hh5bea8rqnl6[29] do
-if _i66oleiq0eyd+_qcn0futz6l33==6279512 then
-_qri45teo5u5j=25862;
-_i66oleiq0eyd,_qcn0futz6l33=78172983,-77076419;
-elseif _qcn0futz6l33+_i66oleiq0eyd==1096564 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _ljq4nj0zpc19;
-local _qysxn8fvducv={};
-local function _y3fbgyumugpk(...)
-_ljq4nj0zpc19={};
-return 66881163;
-end;
-_qysxn8fvducv[31953829]=_y3fbgyumugpk;
-local function _xsw0zwqpdpo6(...)
-_ljq4nj0zpc19=27354;
-return 0;
-end;
-_qysxn8fvducv[66881163]=_xsw0zwqpdpo6;
-local function _donkqx5hfwag(...)
-local _vk9n1n8o1ocj=33587;
-return 31096049;
-end;
-_qysxn8fvducv[23913150]=_donkqx5hfwag;
-local _zhqajt1u4t6h={[69467]=true};
-local _qeeffr06lwah=31953829;
-while _qeeffr06lwah~=0 and _zhqajt1u4t6h[69467] do
-_qeeffr06lwah=_qysxn8fvducv[_qeeffr06lwah]();
-end;
-end;
-_i66oleiq0eyd,_qcn0futz6l33=91273920,-91273920;
-elseif _i66oleiq0eyd+_qcn0futz6l33==39198887 then
-_i66oleiq0eyd,_qcn0futz6l33=82531828,79367733;
-end;
-end;
-end;
-_0yw5qnftasqp,_nv0yll3txnuj=25925264,21174160;
-elseif _nv0yll3txnuj+_0yw5qnftasqp==47099424 then
-_hikky2qzh2ag[_ngz4inmk2xrm]=_nsfp6aqkfw5a;
-_0yw5qnftasqp,_nv0yll3txnuj=63411505,-63411505;
-end;
-end;
-end;
-_743arxqb2trm(_hikky2qzh2ag["x"]==1 and _hikky2qzh2ag["y"]==2,"pairs");
-local _tstq9n9iv5tv={};
-do
-local _flomeweag7li;
-local _1zmodb4yjek6={};
-local function _dfc9ylq8pwi9(...)
-_flomeweag7li=53917;
-return 53876741;
-end;
-_1zmodb4yjek6[53062183]=_dfc9ylq8pwi9;
-local function _5w1q47m7sn8a(...)
-if type(string)=="table" and type(string.byte)=="function" then
-local _5cgjly58lja2=391;
-else
-local _ral3h8grihva;
-local _37xvi2cug6r0={};
-local function _iqb4hz5jj2eh(...)
-_ral3h8grihva={};
-return 40856457;
-end;
-_37xvi2cug6r0[1729810]=_iqb4hz5jj2eh;
-local function _hoqjgnug5d33(...)
-_ral3h8grihva=47865;
-return 0;
-end;
-_37xvi2cug6r0[40856457]=_hoqjgnug5d33;
-local function _0twuc8k1l30x(...)
-local _6lly3zniewh4=53170;
-return 11155798;
-end;
-_37xvi2cug6r0[45779574]=_0twuc8k1l30x;
-local _evtlpf88et8e={[85371]=true};
-local _3xga9wly19k9=1729810;
-while _3xga9wly19k9~=0 and _evtlpf88et8e[85371] do
-_3xga9wly19k9=_37xvi2cug6r0[_3xga9wly19k9]();
-end;
-end;
-return 0;
-end;
-_1zmodb4yjek6[53876741]=_5w1q47m7sn8a;
-local function _dd2n9c92r4ly(...)
-local _h6yi756rdjdh=16885;
-return 94654660;
-end;
-_1zmodb4yjek6[19893164]=_dd2n9c92r4ly;
-local function _s56t0ah3gzur(...)
-local _tp0lrwwlp3pi=95150;
-return 12278741;
-end;
-_1zmodb4yjek6[71937112]=_s56t0ah3gzur;
-local _5h0hc48twddp={[61088]=true};
-local _8piw9ad7e2lb=53062183;
-while _8piw9ad7e2lb~=0 and(_8piw9ad7e2lb+54056-54056==_8piw9ad7e2lb) do
-_8piw9ad7e2lb=_1zmodb4yjek6[_8piw9ad7e2lb]();
-end;
-end;
-_743arxqb2trm(_tstq9n9iv5tv[1]==nil,"empty table index");
-_tstq9n9iv5tv[1]=10;
-_tstq9n9iv5tv[2]=20;
-_743arxqb2trm(_tstq9n9iv5tv[1]==10 and _tstq9n9iv5tv[2]==20,"table assignment");
-do
-local _w6wrdngt6mh2,_tbv6jvp1ap86;
-local _sf0kni1v6gv5={};
-local function _kqwe9w7ooy0y(...)
-_w6wrdngt6mh2=43135;
-return 95383121;
-end;
-_sf0kni1v6gv5[89391963]=_kqwe9w7ooy0y;
-local function _pdhuypt79iau(...)
-_tbv6jvp1ap86=57969;
-return 58645743;
-end;
-_sf0kni1v6gv5[95383121]=_pdhuypt79iau;
-local function _3ocdz0yw3mpj(...)
-if not(#tostring(math.random())>0) then
-if not(#tostring(math.random())>0) then
-local _d0xklex0y9ve;
-local _4gag7712xelw={};
-local function _0rsbf5uk5i6g(...)
-_d0xklex0y9ve=815;
-return 7506771;
-end;
-_4gag7712xelw[37683760]=_0rsbf5uk5i6g;
-local function _n8el07ykdy8g(...)
-_dwbu31yzjdj7=14063;
-return 0;
-end;
-_4gag7712xelw[7506771]=_n8el07ykdy8g;
-local function _282qwfs34z42(...)
-local _cxte94g9m2c2=65361;
-return 66526328;
-end;
-_4gag7712xelw[92143318]=_282qwfs34z42;
-local function _mj1er0w1va17(...)
-local _58h9ta2f44ol=91319;
-return 26857847;
-end;
-_4gag7712xelw[13631810]=_mj1er0w1va17;
-local _q79pieo53ei9={[84198]=true};
-local _0ja4jfy307jy=37683760;
-while _0ja4jfy307jy~=0 and _q79pieo53ei9[84198] do
-_0ja4jfy307jy=_4gag7712xelw[_0ja4jfy307jy]();
-end;
-end;
-end;
-return 0;
-end;
-_sf0kni1v6gv5[58645743]=_3ocdz0yw3mpj;
-local function _5wet3w2glhp6(...)
-local _w5con94i828t=96615;
-return 59314655;
-end;
-_sf0kni1v6gv5[64842862]=_5wet3w2glhp6;
-local _kpw2rytk63k2={[14707]=true};
-local _wby1v01iuyyu=89391963;
-while _wby1v01iuyyu~=0 and(_wby1v01iuyyu+81424-81424==_wby1v01iuyyu) do
-_wby1v01iuyyu=_sf0kni1v6gv5[_wby1v01iuyyu]();
-end;
-end;
-local _uv3cfr4rp2yk={1,2,3,4,5};
-_743arxqb2trm(#_uv3cfr4rp2yk==5,"table length");
-local _ruyuskrt8wij={["a"]=1,["b"]=2};
-_743arxqb2trm(_ruyuskrt8wij["a"]==1 and _ruyuskrt8wij["b"]==2,"table map syntax");
-_743arxqb2trm(_ruyuskrt8wij["a"]==1,"table bracket index");
-do
-local _dqlbghvv7e3h;
-local _j359cj2s6jv3={};
-local function _b7496l5hd3gv(...)
-_dqlbghvv7e3h=13965;
-return 84652679;
-end;
-_j359cj2s6jv3[38323937]=_b7496l5hd3gv;
-local function _wc7lg08yajog(...)
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _c0sx731oj44j;
-local _y6ncxftwmr5t={};
-local function _aommimc18z4v(...)
-_c0sx731oj44j={};
-return 4724771;
-end;
-_y6ncxftwmr5t[97307415]=_aommimc18z4v;
-local function _q66gmxb2lw1s(...)
-_c0sx731oj44j=14714;
-return 0;
-end;
-_y6ncxftwmr5t[4724771]=_q66gmxb2lw1s;
-local function _j13popraylgy(...)
-local _celz0gv0js2d=17005;
-return 73226615;
-end;
-_y6ncxftwmr5t[50650095]=_j13popraylgy;
-local function _9m8y1f2471su(...)
-local _qjf9xmj7h5dj=61630;
-return 17501942;
-end;
-_y6ncxftwmr5t[54736022]=_9m8y1f2471su;
-local _41d8e425c19i={[35126]=true};
-local _gts8k8x9vyaq=97307415;
-while _gts8k8x9vyaq~=0 and _41d8e425c19i[35126] do
-_gts8k8x9vyaq=_y6ncxftwmr5t[_gts8k8x9vyaq]();
-end;
-end;
-return 0;
-end;
-_j359cj2s6jv3[84652679]=_wc7lg08yajog;
-local function _7qcaz8zdz4k2(...)
-local _n3ewkfizihiy=81319;
-return 38969728;
-end;
-_j359cj2s6jv3[59959651]=_7qcaz8zdz4k2;
-local function _0r88sxjna92y(...)
-local _l1vjp9udvosu=97480;
-return 78721322;
-end;
-_j359cj2s6jv3[71859098]=_0r88sxjna92y;
-local _51ly5lh3ubd9={[87572]=true};
-local _w4mh11eob4zd=38323937;
-while _w4mh11eob4zd~=0 and _51ly5lh3ubd9[87572] do
-_w4mh11eob4zd=_j359cj2s6jv3[_w4mh11eob4zd]();
-end;
-end;
-local _g5bzgkxwqn5n={[1]="one",[2]="two"};
-_743arxqb2trm(_g5bzgkxwqn5n[2]=="two","table computed key");
-local _x080bya8zd09={1,2,nil,4};
-while true do
-local _fdea9cr4tf49=14695;
-break;
-end;
-_743arxqb2trm(#_x080bya8zd09==4 or#_x080bya8zd09==2,"table with holes (unspecified behavior)");
-local _6d6o0p4pqv9f={1,2,3};
-_6d6o0p4pqv9f[#_6d6o0p4pqv9f+1]=4;
-_743arxqb2trm(#_6d6o0p4pqv9f==4,"table append");
-local _myad26rjg23y={};
-for _v4k0hf5qj4f2=1,100 do
-_myad26rjg23y[_v4k0hf5qj4f2]=_v4k0hf5qj4f2;
-end;
-_743arxqb2trm(#_myad26rjg23y==100,"large sequential table");
-local _s6ep9wysnouu={{["a"]={["b"]="deep"}}};
-_743arxqb2trm(_s6ep9wysnouu[1]["a"]["b"]=="deep","nested table access");
-local _5cxrfir3d8sj={[true]="bool",[42]="num",["k"]="str"};
-_743arxqb2trm(_5cxrfir3d8sj[true]=="bool","table boolean key");
-_743arxqb2trm(_5cxrfir3d8sj[42]=="num","table number key");
-_743arxqb2trm(_5cxrfir3d8sj["k"]=="str","table string key");
-function add(_fdmop5gj4ir0,_fagdxg88xjz1)
-do
-local _ibiimhfl1mdm=20303;
-end;
-return _fdmop5gj4ir0+_fagdxg88xjz1;
-end;
-_743arxqb2trm(add(3,4)==7,"global function");
-local function sub(_k9ncrb97ktc9,_18irc7f0o79p)
-return _k9ncrb97ktc9-_18irc7f0o79p;
-end;
-_743arxqb2trm(sub(10,3)==7,"local function");
-local function _yhr2rbs5690b()
-return 1,2,3;
-end;
-local _wk5sj92qr3uh,_8wg00v6f04p1,_75qli6tw60hc=_yhr2rbs5690b();
-_743arxqb2trm(_wk5sj92qr3uh==1 and _8wg00v6f04p1==2 and _75qli6tw60hc==3,"multiple returns");
-local function _vyr59rflvck3(_aen67aryeun6)
-do
-local _4e0ggdo8djur;
-local _iwgszwskhp2x={[78]=71571178};
-local _h5zmpcvzb0ng,_z5svluod2c0a=51639291,959011;
-while _h5zmpcvzb0ng+_z5svluod2c0a~=0 and _iwgszwskhp2x[78] do
-if _z5svluod2c0a+_h5zmpcvzb0ng==53610252 then
-_h5zmpcvzb0ng,_z5svluod2c0a=52283750,56562694;
-elseif _h5zmpcvzb0ng+_z5svluod2c0a==52598302 then
-_4e0ggdo8djur=79430;
-_h5zmpcvzb0ng,_z5svluod2c0a=50811708,30483584;
-elseif _h5zmpcvzb0ng+_z5svluod2c0a==81295292 then
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _b4zw9xj6zpva;
-local _c5q5mndwdw9k={};
-local function _adl2x43nvdpo(...)
-_b4zw9xj6zpva=274;
-return 5484232;
-end;
-_c5q5mndwdw9k[14096879]=_adl2x43nvdpo;
-local function _35tzvwhnw8kd(...)
-if true then
-local _trv0vwbi57g5=334;
-end;
-return 0;
-end;
-_c5q5mndwdw9k[5484232]=_35tzvwhnw8kd;
-local function _f4no4wldsjmh(...)
-local _wqplvnj5r2ar=99623;
-return 21740893;
-end;
-_c5q5mndwdw9k[82653659]=_f4no4wldsjmh;
-local function _grk1s8x14lib(...)
-local _p6m29e1iuvus=37333;
-return 8132394;
-end;
-_c5q5mndwdw9k[50182241]=_grk1s8x14lib;
-local function _x8kvxntajfha(...)
-local _dim8mptemoj3=166;
-return 16924248;
-end;
-_c5q5mndwdw9k[71750995]=_x8kvxntajfha;
-local _r6qc7fayh2mv={[9012]=true};
-local _gz6et1vz6afa=14096879;
-while _gz6et1vz6afa~=0 and _r6qc7fayh2mv[9012] do
-_gz6et1vz6afa=_c5q5mndwdw9k[_gz6et1vz6afa]();
-end;
-end;
-_h5zmpcvzb0ng,_z5svluod2c0a=42898312,-42898312;
-elseif _h5zmpcvzb0ng+_z5svluod2c0a==99046276 then
-_h5zmpcvzb0ng,_z5svluod2c0a=31050156,71787221;
-end;
-end;
-end;
-if _aen67aryeun6<0 then
-return -1;
-end;
-while true do
-local _tzrxgntkw69m=30742;
-break;
-end;
-do
-local _npo800nuito6;
-local _45q2lrv9axjj={[22]=50315056};
-local _0ivtui2a7u6h,_gikq85amze9p=6414707,198137;
-while _0ivtui2a7u6h-_gikq85amze9p~=0 and _45q2lrv9axjj[22] do
-if _0ivtui2a7u6h-_gikq85amze9p==6216570 then
-_npo800nuito6=83879;
-_0ivtui2a7u6h,_gikq85amze9p=66027942,-17680198;
-elseif _gikq85amze9p-_0ivtui2a7u6h==42273196 then
-_0ivtui2a7u6h,_gikq85amze9p=58642617,43168546;
-elseif (_0ivtui2a7u6h-_gikq85amze9p)%135599139==83708140 then
-if not(math.abs(-1)==1 and math.floor(3.14)==3) then
-local _6k0z3nj8akzr;
-local _f1i4llc5l9of={};
-local function _aiz7d3lymd03(...)
-_6k0z3nj8akzr=777;
-return 41385187;
-end;
-_f1i4llc5l9of[74550541]=_aiz7d3lymd03;
-local function _tq47qa87kf6x(...)
-_ihnr18xfe9ow=44488;
-return 0;
-end;
-_f1i4llc5l9of[41385187]=_tq47qa87kf6x;
-local function _7q48x4gvuzom(...)
-local _5b94n33rj086=614;
-return 23260551;
-end;
-_f1i4llc5l9of[81721654]=_7q48x4gvuzom;
-local function _8h5dt80bqtky(...)
-local _cxpzzt78pc9j=58477;
-return 6165111;
-end;
-_f1i4llc5l9of[23130155]=_8h5dt80bqtky;
-local _tq91h2owl0ae={[20693]=true};
-local _6k0r7b0qir1a=74550541;
-while _6k0r7b0qir1a~=0 and(_6k0r7b0qir1a+28564-28564==_6k0r7b0qir1a) do
-_6k0r7b0qir1a=_f1i4llc5l9of[_6k0r7b0qir1a]();
-end;
-end;
-_0ivtui2a7u6h,_gikq85amze9p=3942896,3942896;
-end;
-end;
-end;
-return _aen67aryeun6;
-end;
-_743arxqb2trm(_vyr59rflvck3(-5)==-1,"early return");
-_743arxqb2trm(_vyr59rflvck3(5)==5,"normal return after early");
-local function _rzgccxmvc00n(...)
-do
-local _6m7deefvvb75,_52plcda0bn4j;
-local _kw8cv61ofq0o={};
-local function _ciagajnu2fxd(...)
-_6m7deefvvb75=60486;
-return 5713731;
-end;
-_kw8cv61ofq0o[48091810]=_ciagajnu2fxd;
-local function _s45hg3pho6n3(...)
-_52plcda0bn4j=74179;
-return 54326485;
-end;
-_kw8cv61ofq0o[5713731]=_s45hg3pho6n3;
-local function _cbpiw83p23kp(...)
-if not(#tostring(math.random())>0) then
-if not(#tostring(math.random())>0) then
-local _a7uj2nrwuyk3;
-local _cklx9uasf11p={};
-local function _a1c1ebo2da7k(...)
-_a7uj2nrwuyk3={};
-return 52266401;
-end;
-_cklx9uasf11p[79701399]=_a1c1ebo2da7k;
-local function _3m0iqdzg380t(...)
-_a7uj2nrwuyk3=75208;
-return 0;
-end;
-_cklx9uasf11p[52266401]=_3m0iqdzg380t;
-local function _dbod5ulzjil0(...)
-local _kc79xt46bi50=73683;
-return 7080346;
-end;
-_cklx9uasf11p[94214855]=_dbod5ulzjil0;
-local function _p560z1fmxq0e(...)
-local _388pahz3g95r=57924;
-return 92562003;
-end;
-_cklx9uasf11p[17604388]=_p560z1fmxq0e;
-local _xga9en2hrf9y={[29119]=true};
-local _navas5mvycsi=79701399;
-while _navas5mvycsi~=0 and _xga9en2hrf9y[29119] do
-_navas5mvycsi=_cklx9uasf11p[_navas5mvycsi]();
-end;
-end;
-end;
-return 0;
-end;
-_kw8cv61ofq0o[54326485]=_cbpiw83p23kp;
-local function _o9ukfeem3vy1(...)
-local _vfp2vmve513w=88019;
-return 82466305;
-end;
-_kw8cv61ofq0o[84479887]=_o9ukfeem3vy1;
-local function _umudtaro3u1k(...)
-local _vxl2a6rvpp0b=81989;
-return 97748929;
-end;
-_kw8cv61ofq0o[27795518]=_umudtaro3u1k;
-local _tp0yg69um0q3={[34106]=true};
-local _gan3svtbex53=48091810;
-while _gan3svtbex53~=0 and _tp0yg69um0q3[34106] do
-_gan3svtbex53=_kw8cv61ofq0o[_gan3svtbex53]();
-end;
-end;
-do
-if not(#tostring(math.random())>0)and math.abs(-1)==1 and math.floor(3.14)==3 then
-local _2v79ydmh5tay=267;
-end;
-end;
-local _j1fqtrwprj5q={...};
-do
-local _ln9bad7ikjd0;
-local _q94819ge2nuj={};
-local function _snvyzrd80a8s(...)
-_ln9bad7ikjd0=97256;
-return 78053063;
-end;
-_q94819ge2nuj[23786718]=_snvyzrd80a8s;
-local function _9jhezkpvwr5r(...)
-if #tostring(math.random())>0 then
-local _aqy2ht0anr7e=932;
-else
-local _taecys2arsfi;
-local _3yabbu0tznj5={[96]=58356873};
-local _44hepxz2m7v7,_1jeginyvrdmi=73233926,750074;
-while _44hepxz2m7v7+_1jeginyvrdmi~=0 and _3yabbu0tznj5[96] do
-if _1jeginyvrdmi+_44hepxz2m7v7==73984000 then
-_taecys2arsfi={};
-_44hepxz2m7v7,_1jeginyvrdmi=310587,6736393;
-elseif _1jeginyvrdmi+_44hepxz2m7v7==76770159 then
-_44hepxz2m7v7,_1jeginyvrdmi=28900723,44104808;
-elseif _44hepxz2m7v7+_1jeginyvrdmi==7046980 then
-_taecys2arsfi=46520;
-_44hepxz2m7v7,_1jeginyvrdmi=55593945,-55593945;
-elseif _44hepxz2m7v7+_1jeginyvrdmi==86378664 then
-_44hepxz2m7v7,_1jeginyvrdmi=54261929,67848771;
-elseif _1jeginyvrdmi+_44hepxz2m7v7==72748593 then
-_44hepxz2m7v7,_1jeginyvrdmi=76241833,95226624;
-end;
-end;
-end;
-return 0;
-end;
-_q94819ge2nuj[78053063]=_9jhezkpvwr5r;
-local function _a4qgfamhubol(...)
-local _aq57xvajhvpq=11884;
-return 46785964;
-end;
-_q94819ge2nuj[93795082]=_a4qgfamhubol;
-local function _xbwnye8f8gmp(...)
-local _h0cmt8lntkwp=99040;
-return 12557120;
-end;
-_q94819ge2nuj[7077401]=_xbwnye8f8gmp;
-local _fksspiqia6f7={[2937]=true};
-local _g8ozuvq3k7oi=23786718;
-while _g8ozuvq3k7oi~=0 and _fksspiqia6f7[2937] do
-_g8ozuvq3k7oi=_q94819ge2nuj[_g8ozuvq3k7oi]();
-end;
-end;
-return #_j1fqtrwprj5q;
-end;
-_743arxqb2trm(_rzgccxmvc00n(1,2,3)==3,"varargs count");
-_743arxqb2trm(_rzgccxmvc00n()==0,"varargs empty");
-local _z34dk9fj1o58=function(_wk5sj92qr3uh)return _wk5sj92qr3uh*2 end;
-_743arxqb2trm(_z34dk9fj1o58(5)==10,"anonymous function");
-local function _cj6aanybzdhz()
-local _llrtnxtkk7n4=0;
-return function()_llrtnxtkk7n4=_llrtnxtkk7n4+1 return _llrtnxtkk7n4 end;
-end;
-local _7n0bagbprkx3=_cj6aanybzdhz();
-_743arxqb2trm(_7n0bagbprkx3()==1,"closure first call");
-_743arxqb2trm(_7n0bagbprkx3()==2,"closure second call");
-_743arxqb2trm(_7n0bagbprkx3()==3,"closure third call");
-local function _lw0dxr834hwh(_t9dtj0p4ckd6)
-do
-local _wyhrrkbm1258=21462;
-end;
-if _t9dtj0p4ckd6<=1 then
-return 1;
-end;
-do
-local _5twvby7pf80n=96680;
-end;
-while true do
-local _cp0xbtekqqi4=36366;
-break;
-end;
-return _t9dtj0p4ckd6*_lw0dxr834hwh(_t9dtj0p4ckd6-1);
-end;
-_743arxqb2trm(_lw0dxr834hwh(5)==120,"recursion");
-local function _kc0ik49abgj3(_z8x9y7q2t8y6,_qxq3o6f0m5uy)
-if _z8x9y7q2t8y6==0 then
-return _qxq3o6f0m5uy;
-end;
-do
-local _jwcnndmt8fb0;
-local _phvvmdcd4gmo={};
-local function _6cdkhsfs7s1n(...)
-_jwcnndmt8fb0=91993;
-return 71650434;
-end;
-_phvvmdcd4gmo[27177290]=_6cdkhsfs7s1n;
-local function _qjz5whtzzsxo(...)
-if not(type(string)=="table" and type(string.byte)=="function") then
-local _o8ktd3ayjapf=903;
-end;
-return 0;
-end;
-_phvvmdcd4gmo[71650434]=_qjz5whtzzsxo;
-local function _2ayrh6cinrci(...)
-local _6ysw46293pip=92731;
-return 90335881;
-end;
-_phvvmdcd4gmo[71963039]=_2ayrh6cinrci;
-local _s7mp7b6dda05={[68324]=true};
-local _1k9jzja8bpyn=27177290;
-while _1k9jzja8bpyn~=0 and(_1k9jzja8bpyn+28968-28968==_1k9jzja8bpyn) do
-_1k9jzja8bpyn=_phvvmdcd4gmo[_1k9jzja8bpyn]();
-end;
-end;
-return _kc0ik49abgj3(_z8x9y7q2t8y6-1,_qxq3o6f0m5uy*_z8x9y7q2t8y6);
-end;
-_743arxqb2trm(_kc0ik49abgj3(5,1)==120,"tail recursion");
-local _iz73drtrhwl9={["value"]=42};
-function _iz73drtrhwl9:get()
-do
-local _3unqnu80n9s1;
-local _ebsudllpx2yo={};
-local function _tga2hpjm68qx(...)
-_3unqnu80n9s1=36758;
-return 48615461;
-end;
-_ebsudllpx2yo[47787595]=_tga2hpjm68qx;
-local function _30s0648nkc7v(...)
-if type(string)=="table" and type(string.byte)=="function" then
-local _1slk2v82od9l=896;
-else
-local _jsz0akrp4y3i=408;
-end;
-return 0;
-end;
-_ebsudllpx2yo[48615461]=_30s0648nkc7v;
-local function _s1ix6w2gnzlr(...)
-local _4odz2ogfxopb=60481;
-return 1271141;
-end;
-_ebsudllpx2yo[71706054]=_s1ix6w2gnzlr;
-local function _r7yw3tm99ixe(...)
-local _mqbyjqy4gl47=47329;
-return 96742295;
-end;
-_ebsudllpx2yo[92360145]=_r7yw3tm99ixe;
-local _nksa2w780trx={[76988]=true};
-local _g8k3z1xjxdx5=47787595;
-while _g8k3z1xjxdx5~=0 and _nksa2w780trx[76988] do
-_g8k3z1xjxdx5=_ebsudllpx2yo[_g8k3z1xjxdx5]();
-end;
-end;
-return self["value"];
-end;
-_743arxqb2trm(_iz73drtrhwl9:get()==42,"method call colon syntax");
-_743arxqb2trm(_iz73drtrhwl9["get"](_iz73drtrhwl9)==42,"method call dot syntax");
-local _ushsvqrk9v7k,_0f01fe3w53yq=pcall(function()error("test error")end);
-_743arxqb2trm(not _ushsvqrk9v7k,"pcall catches error");
-_743arxqb2trm(tostring(_0f01fe3w53yq):find("test error")~=nil,"pcall error message");
-local _w1elfyn07bvu,_ne3toxsmg9t7=pcall(function()return "success" end);
-_743arxqb2trm(_w1elfyn07bvu and _ne3toxsmg9t7=="success","pcall success");
-local _9ravdldrwhy2=0;
-do
-goto skip;
-_9ravdldrwhy2=100;
-::skip::;
-_9ravdldrwhy2=200;
-end;
-_743arxqb2trm(_9ravdldrwhy2==200,"goto forward");
-local _av1reaf6722x=0;
-do
-::loop::;
-_av1reaf6722x=_av1reaf6722x+1;
-if _av1reaf6722x<3 then
-goto loop;
-end;
-end;
-_743arxqb2trm(_av1reaf6722x==3,"goto backward (loop)");
-_743arxqb2trm(10+"20"==30,"string to number coercion");
-_743arxqb2trm(10 .. 20=="1020","number to string coercion");
-_743arxqb2trm("hello".. 42=="hello42","concat number to string");
-local _cp04zgx7n6v9=0;
-local function _7hyl6kdpuda8()
-do
-local _ooki0n3pczbd;
-local _396360ccrlra={[59]=11549071};
-local _0io7f99u9www,_p4lsbgvgckxp=28374384,852911;
-while _0io7f99u9www+_p4lsbgvgckxp~=0 and _396360ccrlra[59] do
-if _p4lsbgvgckxp+_0io7f99u9www==94129847 then
-_0io7f99u9www,_p4lsbgvgckxp=39516565,56175093;
-elseif _0io7f99u9www+_p4lsbgvgckxp==2205060 then
-if #tostring(math.random())>0 then
-local _tu0e8egohggh=781;
-else
-local _io3rpwy5ctn0;
-local _aw6peg3xqvqu={[60]=39422230};
-local _96oks2ludafa,_e5hn910ufh4y=77687717,578715;
-while _96oks2ludafa-_e5hn910ufh4y~=0 and _aw6peg3xqvqu[60]~=nil do
-if (_96oks2ludafa-_e5hn910ufh4y)%130336019==79810603 then
-if true then
-local _kx2fvheu1z8b=625;
-end;
-_96oks2ludafa,_e5hn910ufh4y=68801180,68801180;
-elseif (_96oks2ludafa-_e5hn910ufh4y)%119293406==77109002 then
-_io3rpwy5ctn0=405;
-_96oks2ludafa,_e5hn910ufh4y=52725492,-27085111;
-elseif _e5hn910ufh4y-_96oks2ludafa==84455657 then
-_96oks2ludafa,_e5hn910ufh4y=73108835,11437952;
-elseif _e5hn910ufh4y-_96oks2ludafa==57866767 then
-_96oks2ludafa,_e5hn910ufh4y=62872625,75280615;
-elseif _e5hn910ufh4y-_96oks2ludafa==46756899 then
-_96oks2ludafa,_e5hn910ufh4y=14239154,17214745;
-end;
-end;
-end;
-_0io7f99u9www,_p4lsbgvgckxp=13914392,-13914392;
-elseif _p4lsbgvgckxp+_0io7f99u9www==29227295 then
-_ooki0n3pczbd=53589;
-_0io7f99u9www,_p4lsbgvgckxp=63798627,-61593567;
-end;
-end;
-end;
-_cp04zgx7n6v9=_cp04zgx7n6v9+1;
-return true;
-end;
-local _fpyo3gg5y4la=false and _7hyl6kdpuda8();
-_743arxqb2trm(_cp04zgx7n6v9==0,"short-circuit and (left false)");
-_fpyo3gg5y4la=true or _7hyl6kdpuda8();
-_743arxqb2trm(_cp04zgx7n6v9==0,"short-circuit or (left true)");
-_fpyo3gg5y4la=true and _7hyl6kdpuda8();
-_743arxqb2trm(_cp04zgx7n6v9==1,"short-circuit and evaluates right when needed");
-_743arxqb2trm(#""==0,"empty string length");
-_743arxqb2trm(#"a"==1,"single char string length");
-_743arxqb2trm(#"\000"==1,"null byte string length");
-_743arxqb2trm(#"hello world"==11,"multi char string length");
-_743arxqb2trm((1+2)*(3+4)==21,"nested arithmetic with parens");
-_743arxqb2trm(2^3^2==512,"exponentiation associativity (right)");
-_743arxqb2trm(not(false or false)==true,"complex boolean");
-_743arxqb2trm(1<2 and 2<3 and 3<4,"chained comparisons");
-local _063b4wbzc2lc={3,1,4,1,5,9};
-table["sort"](_063b4wbzc2lc);
-_743arxqb2trm(_063b4wbzc2lc[1]==1 and _063b4wbzc2lc[#_063b4wbzc2lc]==9,"table.sort");
-local _g40toxalamsk=table["concat"]({"a","b","c"},",");
-_743arxqb2trm(_g40toxalamsk=="a,b,c","table.concat");
-local _em243wuaevn6={10,20,30};
-table["insert"](_em243wuaevn6,40);
-_743arxqb2trm(_em243wuaevn6[4]==40,"table.insert");
-table["remove"](_em243wuaevn6,1);
-_743arxqb2trm(_em243wuaevn6[1]==20 and#_em243wuaevn6==3,"table.remove");
-_743arxqb2trm(math["abs"](-5)==5,"math.abs");
-_743arxqb2trm(math["floor"](3.9)==3,"math.floor");
-_743arxqb2trm(math["ceil"](3.1)==4,"math.ceil");
-_743arxqb2trm(math["max"](1,5,3)==5,"math.max");
-_743arxqb2trm(math["min"](1,5,3)==1,"math.min");
-_743arxqb2trm(math["sqrt"](9)==3,"math.sqrt");
-_743arxqb2trm(math["sin"](0)==0,"math.sin");
-_743arxqb2trm(math["cos"](0)==1,"math.cos");
-local _999ozpp7ctum={["a"]=1,["b"]=2};
-_999ozpp7ctum["c"]=_999ozpp7ctum["a"]+_999ozpp7ctum["b"];
-_743arxqb2trm(_999ozpp7ctum["c"]==3,"self-referencing table");
-local _w37hs2qrokef={};
-local _bk5wlya44vic=_w37hs2qrokef;
-for _5j4t25v736fe=1,20 do
-local _kfrgn52fsvff={[75]=83872810};
-local _2fdac481wanc,_rb27eadcaw7n=73193102,855887;
-while _2fdac481wanc-_rb27eadcaw7n~=0 and _kfrgn52fsvff[75]~=nil do
-if _2fdac481wanc-_rb27eadcaw7n==32279075 then
-_bk5wlya44vic=_bk5wlya44vic["child"];
-_2fdac481wanc,_rb27eadcaw7n=84847242,84847242;
-elseif _2fdac481wanc-_rb27eadcaw7n==46502684 then
-_2fdac481wanc,_rb27eadcaw7n=68503007,24068781;
-elseif (_2fdac481wanc-_rb27eadcaw7n)%95835627==72337215 then
-_bk5wlya44vic["child"]={};
-_2fdac481wanc,_rb27eadcaw7n=73441295,41162220;
-end;
-end;
-end;
-_bk5wlya44vic["value"]="found";
-_bk5wlya44vic=_w37hs2qrokef;
-for _5y48kr5c6097=1,20 do
-_bk5wlya44vic=_bk5wlya44vic["child"];
-end;
-_743arxqb2trm(_bk5wlya44vic["value"]=="found","deep table nesting (20 levels)");
-local _9ljbf6mszi14="";
-for _rxuwcpkjot72=1,3 do
-for _fewf46uhatw8=1,3 do
-if _rxuwcpkjot72==2 and _fewf46uhatw8==2 then
-break;
-end;
-_9ljbf6mszi14=_9ljbf6mszi14.._rxuwcpkjot72.._fewf46uhatw8.." ";
-end;
-if _rxuwcpkjot72==2 then
-break;
-end;
-end;
-_743arxqb2trm(_9ljbf6mszi14=="11 12 13 21 ","nested loops with break");
-_743arxqb2trm("\n"~="a","newline escape");
-_743arxqb2trm("\t"=="\t","tab escape");
-_743arxqb2trm("\\"=="\\","backslash escape");
-_743arxqb2trm("\""=='"',"double quote escape");
-_743arxqb2trm("'"=="'","single quote");
-_743arxqb2trm("\101"=="e","decimal escape");
-_743arxqb2trm(string["char"](0x45)=="E","hex via string.char");
-_743arxqb2trm(("hello\nworld"):find("\n")~=nil,"newline in string");
-_743arxqb2trm((0 and "zero is truthy")=="zero is truthy","0 is truthy");
-_743arxqb2trm(("" and "empty string is truthy")=="empty string is truthy","empty string is truthy");
-_743arxqb2trm((nil or "nil is falsy")=="nil is falsy","nil is falsy");
-_743arxqb2trm((false or "false is falsy")=="false is falsy","false is falsy");
-local _huhyh0y70dt2={1,2,3,4,5};
-local _cwg9a1kodigz=0;
-for _3jluv9doz28t,_2ov3bbbvfzu6 in ipairs(_huhyh0y70dt2) do
-_cwg9a1kodigz=_cwg9a1kodigz+_2ov3bbbvfzu6;
-end;
-_743arxqb2trm(_cwg9a1kodigz==15,"ipairs sum");
-_743arxqb2trm(select("#",1,2,3)==3,"select #");
-_743arxqb2trm(select(2,"a","b","c")=="b","select index");
-_743arxqb2trm(("hello"):rep(0)=="","string.rep 0");
-_743arxqb2trm(("ab"):rep(3)=="ababab","string.rep 3");
-_743arxqb2trm(("hello"):byte(1)==104,"string.byte");
-_743arxqb2trm(string["char"](104,101,108,108,111)=="hello","string.char");
-_743arxqb2trm(("  hello  "):match("^%s*(.-)%s*$")=="hello","string.trim via match");
-print("────────────────────────────");
-print("Tests: "..(_xhrdzu0cnp65+_elt9bwx5jpyv).." | PASS: ".._xhrdzu0cnp65.." | FAIL: ".._elt9bwx5jpyv);
-if _elt9bwx5jpyv>0 then
-error("Some tests FAILED");
-end;
+vm_skip=_hup0xjr8s9wo({np=1,va=0,code={1,7,1,17,1,38,1,15,1,7,2,40,0,26,0,40,1,7,2,40,2,33,0,58,38,2,45,3,15,2,26,2,7,3,31,7,1,9,10,45,23,55,23,45,1,26,1,26,2,34,17,1,15,1,2,0,25,1,26,1,30,1,30},k={0,1,2},p={},up={}});
+vm_back=_hup0xjr8s9wo({np=0,va=0,code={1,7,1,7,1,17,2,38,0,38,1,15,1,15,0,1,26,0,7,2,34,17,1,15,0,1,26,1,26,0,34,17,1,15,1,26,0,7,3,21,10,47,23,16,23,47,1,26,1,30,1,30},k={0,1,5},p={},up={}});
+vm_fwd=_hup0xjr8s9wo({np=1,va=0,code={26,0,7,1,21,10,12,23,16,23,12,1,7,2,30,1,7,3,30,1,30},k={0,"�m6","�g\""},p={},up={}});
+_p73sqmf599ye(vm_skip(6) == 9,"goto continue (odds 1+3+5)");
+_p73sqmf599ye(vm_back() == 15,"backward goto loop");
+_p73sqmf599ye(vm_fwd(-1) == "neg" and vm_fwd(1) == "pos","forward goto");

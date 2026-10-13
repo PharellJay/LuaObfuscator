@@ -97,6 +97,17 @@ function ProcessOutsideStrings(code, fn)
     return table.concat(result)
 end
 
+-- FNV-1a-style 32-bit checksum. Used both at build time (here) and, as emitted
+-- Lua below, at load time — they must stay byte-for-byte equivalent.
+local function tamperChecksum(s)
+    local h = 2166136261
+    for i = 1, #s do
+        h = h ~ string.byte(s, i)
+        h = (h * 16777619) % 4294967296
+    end
+    return h
+end
+
 function AddAntiTamper(code)
     local banner, core = code:match("^(%-%-%[%[.-%]%])(.*)$")
     if not banner then return code end
@@ -115,10 +126,25 @@ function AddAntiTamper(code)
         table.insert(chunks, "string.char(" .. table.concat(part, ",") .. ")")
     end
 
-    -- Environment validation + load-based critical section
-    local t = GenerateRandomName(6)
-    return banner .. "do local " .. t .. "=type if " .. t .. "(string)~=\"table\" or " .. t .. "(string.byte)~=\"function\" or " .. t .. "(math.floor)~=\"function\" or " .. t .. "(load)~=\"function\"then return end end;" ..
-        "load(table.concat({" .. table.concat(chunks, ",") .. "}))()"
+    local expected = tamperChecksum(core)
+
+    local t = GenerateRandomName(6)  -- type
+    local s = GenerateRandomName(6)  -- reconstructed payload
+    local h = GenerateRandomName(6)  -- running hash
+    local j = GenerateRandomName(6)  -- loop index
+
+    -- Environment validation, then an integrity self-check: recompute the
+    -- checksum of the reconstructed payload and bail out silently if it does not
+    -- match the build-time value, so beautifying or editing the payload breaks it.
+    return banner ..
+        "do local " .. t .. "=type if " .. t .. "(string)~=\"table\" or " .. t .. "(string.byte)~=\"function\" or " ..
+        t .. "(math.floor)~=\"function\" or " .. t .. "(load)~=\"function\"then return end end;" ..
+        "local " .. s .. "=table.concat({" .. table.concat(chunks, ",") .. "});" ..
+        "local " .. h .. "=2166136261;for " .. j .. "=1,#" .. s .. " do " ..
+        h .. "=" .. h .. " ~ string.byte(" .. s .. "," .. j .. ");" ..
+        h .. "=(" .. h .. "*16777619)%4294967296 end;" ..
+        "if " .. h .. "~=" .. expected .. " then return end;" ..
+        "load(" .. s .. ")()"
 end
 
 function GenerateRandomName(len)

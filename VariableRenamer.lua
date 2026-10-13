@@ -205,7 +205,11 @@ local function walkAndRename(node, scopeStack)
 
     elseif t == "WhileStatement" then
         renameTokens(node.condition and node.condition.tokens, scopeStack)
+        -- the loop body is its own block scope (locals must not leak out)
+        local wScope = newScope()
+        table.insert(scopeStack, wScope)
         walkAndRename(node.body, scopeStack)
+        table.remove(scopeStack)
 
     elseif t == "ForStatement" then
         -- for control variable creates new scope
@@ -232,16 +236,29 @@ local function walkAndRename(node, scopeStack)
         table.remove(scopeStack)
 
     elseif t == "RepeatStatement" then
+        -- body and the `until` condition share one block scope (the condition
+        -- can reference locals declared in the body)
+        local rScope = newScope()
+        table.insert(scopeStack, rScope)
         walkAndRename(node.body, scopeStack)
         renameTokens(node.condition and node.condition.tokens, scopeStack)
+        table.remove(scopeStack)
 
     elseif t == "IfStatement" then
+        -- each clause body (and the else body) is its own block scope, so a
+        -- local declared in one clause does not leak into siblings or outward
         for _, clause in ipairs(node.clauses) do
             renameTokens(clause.condition and clause.condition.tokens, scopeStack)
+            local cScope = newScope()
+            table.insert(scopeStack, cScope)
             walkAndRename(clause.body, scopeStack)
+            table.remove(scopeStack)
         end
         if node.elseBody then
+            local eScope = newScope()
+            table.insert(scopeStack, eScope)
             walkAndRename(node.elseBody, scopeStack)
+            table.remove(scopeStack)
         end
 
     elseif t == "FunctionStatement" then

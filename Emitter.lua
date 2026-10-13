@@ -13,6 +13,10 @@ local function joinTokens(tokens)
                 table.insert(parts, " ")
             elseif prev.type == "SYMBOL" and prev.value == ".." and t.type == "NUMBER" then
                 table.insert(parts, " ")
+            elseif prev.value and t.value and prev.value:sub(-1) == "-" and t.value:sub(1, 1) == "-" then
+                -- prevent two adjacent '-' from merging into '--' (a comment),
+                -- e.g. unary minus of a negative: `- -5` must not become `--5`.
+                table.insert(parts, " ")
             end
         end
         table.insert(parts, t.value)
@@ -22,10 +26,17 @@ end
 
 local function emitExpr(expr)
     if not expr then return "" end
-    if expr.type == "Expression" then
-        return joinTokens(expr.tokens)
+    local toks = (expr.type == "Expression") and expr.tokens or expr
+    -- Opt-in: emit through the real expression IR (ExprAST) instead of just
+    -- re-joining tokens. Used to validate the IR against the test harness; the
+    -- token path remains the default so behavior is unchanged when the flag is off.
+    if USE_EXPR_AST and type(toks) == "table" then
+        local nodes = BuildExprList(toks)
+        local parts = {}
+        for _, n in ipairs(nodes) do parts[#parts + 1] = EmitExprAST(n) end
+        return table.concat(parts, ",")
     end
-    return joinTokens(expr)
+    return joinTokens(toks)
 end
 
 local function emitExprList(list)
@@ -58,6 +69,9 @@ function Emit(node)
 
     if t == "Chunk" then
         return Emit(node.body)
+
+    elseif t == "RawStatement" then
+        return node.code
 
     elseif t == "GenericStatement" then
         return joinTokens(node.tokens)

@@ -12,6 +12,8 @@ function Obfuscate(code)
     local tokens = Tokenize(obfuscatedCode)
     print("[*] Parsing...")
     local ast = Parse(tokens)
+    print("[*] Virtualizing functions...")
+    ast.body = VirtualizeAST(ast.body)
     print("[*] Injecting dead code...")
     ast.body = InjectDeadCode(ast.body)
     print("[*] Renaming variables (pass 1)...")
@@ -22,7 +24,7 @@ function Obfuscate(code)
     RenameVariablesInAST(ast)
     print("[*] Emitting...")
     obfuscatedCode = Emit(ast)
-    do local f = io.open("Output\\after_emit.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
+    do local f = io.open("Output/after_emit.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
     print("[*] Obfuscating integers...")
     obfuscatedCode = ObfuscateAllIntegers(obfuscatedCode)
     print("[*] Obfuscating strings...")
@@ -31,7 +33,7 @@ function Obfuscate(code)
     obfuscatedCode = SplitStrings(obfuscatedCode)
     print("[*] Creating constant pool...")
     obfuscatedCode = CreateConstantPool(obfuscatedCode)
-    do local f = io.open("Output\\preminify.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
+    do local f = io.open("Output/preminify.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
     print("[*] Minifying...")
     obfuscatedCode = Minify(obfuscatedCode)
     obfuscatedCode = [=[
@@ -43,7 +45,7 @@ function Obfuscate(code)
 ██████╔╝███████╗██║  ██║██████╔╝███████╗   ██║   ███████╗
 ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝   ╚═╝   ╚══════╝
 
-Deadeye Obfuscator | Advanced Lua Obfuscation | https://store.deadeyeac.com
+Deadeye Obfuscator | Advanced Lua Obfuscation | https://github.com/PharellJay
 ]]
 ]=] .. obfuscatedCode
 
@@ -52,19 +54,24 @@ Deadeye Obfuscator | Advanced Lua Obfuscation | https://store.deadeyeac.com
     return obfuscatedCode
 end
 
-local status, inputCode = pcall(ReadFile, "Input\\" .. InputPath)
+-- The block below is the command-line driver. It is skipped when another
+-- script (e.g. the test harness) loads this file only to reuse Obfuscate(),
+-- by setting SUPPRESS_MAIN_DRIVER before the load.
+if not SUPPRESS_MAIN_DRIVER then
+    local status, inputCode = pcall(ReadFile, "Input/" .. InputPath)
 
-if status then
-    print("[+] Starting obfuscation...")
+    if status then
+        print("[+] Starting obfuscation...")
 
-    local result = Obfuscate(inputCode)
+        local result = Obfuscate(inputCode)
 
-    local outFile = io.open("Output\\" .. OutputPath, "w")
-    if outFile then
-        outFile:write(result)
-        outFile:close()
-        print("[+] Obfuscated file saved: " .. "Output\\" .. OutputPath)
+        local outFile = io.open("Output/" .. OutputPath, "w")
+        if outFile then
+            outFile:write(result)
+            outFile:close()
+            print("[+] Obfuscated file saved: " .. "Output/" .. OutputPath)
+        end
+    else
+        print("[-] Error: " .. inputCode)
     end
-else
-    print("[-] Error: " .. inputCode)
 end

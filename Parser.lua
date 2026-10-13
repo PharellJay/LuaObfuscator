@@ -33,15 +33,22 @@ local function expect(tType, value)
 end
 
 -- Precedence table: higher number = higher precedence
+-- Precedence low→high, matching Lua 5.3+. Only relative order matters here (the
+-- flat-token path re-emits verbatim); bitwise ops sit between comparisons and
+-- concatenation. ExprAST.lua mirrors this table for the precedence-aware printer.
 local PREC = {
     ["or"] = 1,
     ["and"] = 2,
     ["=="] = 3; ["~="] = 3; ["<"] = 3; [">"] = 3; ["<="] = 3; [">="] = 3;
-    [".."] = 4;
-    ["+"] = 5; ["-"] = 5;
-    ["*"] = 6; ["/"] = 6; ["%"] = 6;
-    ["not"] = 7; ["#"] = 7; -- unary
-    ["^"] = 8;
+    ["|"] = 4;
+    ["~"] = 5;  -- binary bitwise xor (unary ~ handled in parsePrefix)
+    ["&"] = 6;
+    ["<<"] = 7; [">>"] = 7;
+    [".."] = 8;
+    ["+"] = 9; ["-"] = 9;
+    ["*"] = 10; ["/"] = 10; ["%"] = 10; ["//"] = 10;
+    ["not"] = 11; ["#"] = 11; -- unary
+    ["^"] = 12;
 }
 
 local function getPrec(tok)
@@ -194,8 +201,8 @@ function parsePrefix()
         return { advance() }
     end
 
-    -- Unary minus / length operator
-    if tok.type == "SYMBOL" and (tok.value == "-" or tok.value == "#") then
+    -- Unary minus / length / bitwise-not operator
+    if tok.type == "SYMBOL" and (tok.value == "-" or tok.value == "#" or tok.value == "~") then
         advance()
         local right = parseExpr(PREC[tok.value])
         local result = { tok }
@@ -690,22 +697,22 @@ local function parseLocal()
         return parseFunction(true)
     end
 
-    -- Parse variable names until = or end
+    -- Parse the variable list: Name (',' Name)*  (Lua grammar). Only continue
+    -- past the first name when the next token is a comma, so a bare `local a`
+    -- immediately followed by another statement (e.g. `b = 1`) is NOT swallowed.
     local varTokens = {}
-    while not is_eof() do
-        local t = peek()
-        if t.type == "SYMBOL" and t.value == "=" then break end
-        if t.type == "SYMBOL" and t.value == ";" then break end
-        if t.type == "KEYWORD" then
-            local v = t.value
-            if v == "end" or v == "else" or v == "elseif" or v == "until" or
-               v == "while" or v == "for" or v == "if" or v == "repeat" or
-               v == "do" or v == "function" or v == "return" or v == "break" or
-               v == "local" then
+    local first = peek()
+    if first and first.type == "IDENTIFIER" then
+        table.insert(varTokens, advance())
+        while peek() and peek().type == "SYMBOL" and peek().value == "," do
+            table.insert(varTokens, advance()) -- the comma
+            local nm = peek()
+            if nm and nm.type == "IDENTIFIER" then
+                table.insert(varTokens, advance())
+            else
                 break
             end
         end
-        table.insert(varTokens, advance())
     end
 
     if accept("SYMBOL", "=") then

@@ -46,6 +46,28 @@ function HoistVariables(statements)
                 end
                 table.insert(newStatements, { type = "GenericStatement", tokens = assignTokens })
             end
+        elseif stmt.type == "FunctionStatement" and stmt.isLocal then
+            -- `local function f(...) ... end` binds f in the enclosing block, so f must
+            -- stay visible to sibling statements once they are split into separate
+            -- dispatch scopes. Hoist the name and re-emit the definition as a plain
+            -- assignment `function f(...) ... end` targeting the hoisted local. This is
+            -- exactly how Lua itself desugars `local function` (local f; f = function...),
+            -- so recursive references to f keep working.
+            local name
+            for _, tok in ipairs(stmt.head or {}) do
+                if tok.type == "IDENTIFIER" then name = tok.value; break end
+            end
+            if name then
+                table.insert(hoisted, name)
+                table.insert(newStatements, {
+                    type = "FunctionStatement",
+                    isLocal = false,
+                    head = stmt.head,
+                    body = stmt.body,
+                })
+            else
+                table.insert(newStatements, stmt)
+            end
         else
             table.insert(newStatements, stmt)
         end

@@ -101,7 +101,7 @@ function Tokenize(code)
             if threeChars == "..." then
                 table.insert(tokens, { type = "SYMBOL", value = threeChars })
                 pos = pos + 3
-            elseif twoChars == "==" or twoChars == "~=" or twoChars == "<=" or twoChars == ">=" or twoChars == ".." or twoChars == "::" then
+            elseif twoChars == "==" or twoChars == "~=" or twoChars == "<=" or twoChars == ">=" or twoChars == ".." or twoChars == "::" or twoChars == "<<" or twoChars == ">>" or twoChars == "//" then
                 table.insert(tokens, { type = "SYMBOL", value = twoChars })
                 pos = pos + 2
             else

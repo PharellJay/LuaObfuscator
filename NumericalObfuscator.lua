@@ -73,10 +73,37 @@ local function NumLoadString(num)
     return string.format("(load(string.char(%s))())", table.concat(bytes, ","))
 end
 
+-- Mixed boolean-arithmetic: encode `num` using an algebraic identity over native
+-- Lua 5.3+ bitwise operators, so the constant never appears literally. The output
+-- is final Lua (this is a text pass), so it may use `~ & |` directly.
+--   a + b == (a | b) + (a & b)        and        a + b == (a ~ b) + 2*(a & b)
+-- with a random split a, b = a, num-a (a in [0, num], so both are non-negative).
+local function NumMBA(num)
+    if num < 0 or num ~= math.floor(num) then return nil end
+    local a = math.random(0, num)
+    local b = num - a
+    if math.random(0, 1) == 0 then
+        return string.format("((0x%x|0x%x)+(0x%x&0x%x))", a, b, a, b)
+    else
+        return string.format("((0x%x~0x%x)+2*(0x%x&0x%x))", a, b, a, b)
+    end
+end
+
+-- Double-XOR identity: (enc ~ K) == num, where enc = num ~ K is computed now.
+-- Hides `num` behind two unrelated-looking constants.
+local function NumXorId(num)
+    if num < 0 or num ~= math.floor(num) then return nil end
+    local key = math.random(1, 0xFFFFFFF)
+    local enc = num ~ key
+    return string.format("(0x%x~0x%x)", enc, key)
+end
+
 local intStrategies = {
     { name = "xor",        fn = NumXor },
     { name = "multiChain", fn = NumMultiChain },
     { name = "loadString", fn = NumLoadString },
+    { name = "mba",        fn = NumMBA },
+    { name = "xorId",      fn = NumXorId },
 }
 
 function ObfuscateAllIntegers(fullCode)
