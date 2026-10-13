@@ -44,6 +44,7 @@ local FIXTURES = {
     "test/fixtures/cff_return.lua",
     "test/fixtures/cff_nested_return.lua",
     "test/fixtures/cff_internal_break.lua",
+    "test/fixtures/cff_escaping_break.lua",
     "test/fixtures/vm_repeat.lua",
     "test/fixtures/vm_massign.lua",
     "test/fixtures/vm_goto.lua",

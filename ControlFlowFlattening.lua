@@ -428,20 +428,39 @@ local function makeRetSig(valuesExpr, retName)
     return { type = "GenericStatement", tokens = toks }
 end
 
-local function rewriteReturnsInList(stmts, retName)
+-- An escaping `break` (one targeting a loop that encloses the flattened block)
+-- becomes `return <brkName>`; the dispatch loop sees the sentinel, sets a flag,
+-- and a `break` after the dispatch loop then exits the real enclosing loop.
+local function makeBrkSig(brkName)
+    return { type = "GenericStatement", tokens = {
+        { type = "KEYWORD", value = "return" },
+        { type = "IDENTIFIER", value = brkName },
+    } }
+end
+
+-- Rewrite nested returns (always, when retName set) and escaping breaks (when
+-- brkName set and not inside a loop internal to the statement). `insideLoop`
+-- tracks whether a while/for/repeat has been entered within the statement, so
+-- internal breaks are left as real `break`. Never descends into nested functions.
+local function rewriteControlFlow(stmts, retName, brkName, insideLoop)
     for i, s in ipairs(stmts) do
         if s.type == "ReturnStatement" then
-            stmts[i] = makeRetSig(s.values, retName)
+            if retName then stmts[i] = makeRetSig(s.values, retName) end
+        elseif s.type == "BreakStatement" then
+            if brkName and not insideLoop then stmts[i] = makeBrkSig(brkName) end
         elseif s.type == "FunctionStatement" then
-            -- do not descend: an inner function's returns are its own
+            -- do not descend: an inner function's returns/breaks are its own
         else
-            if s.body then rewriteReturnsInList(s.body, retName) end
+            local nl = insideLoop
+                or s.type == "WhileStatement" or s.type == "ForStatement"
+                or s.type == "ForInStatement" or s.type == "RepeatStatement"
+            if s.body then rewriteControlFlow(s.body, retName, brkName, nl) end
             if s.clauses then
                 for _, c in ipairs(s.clauses) do
-                    if c.body then rewriteReturnsInList(c.body, retName) end
+                    if c.body then rewriteControlFlow(c.body, retName, brkName, nl) end
                 end
             end
-            if s.elseBody then rewriteReturnsInList(s.elseBody, retName) end
+            if s.elseBody then rewriteControlFlow(s.elseBody, retName, brkName, nl) end
         end
     end
 end
@@ -449,15 +468,16 @@ end
 -- ============================================================
 --  PATTERN 2: Function dispatch table
 -- ============================================================
--- retName (optional): when set, nested returns in cleanStatements are rewritten
--- to the RETSIG protocol and the dispatch loop checks for the sentinel. When nil,
--- behavior is exactly as before (no return handling).
-local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
+-- retName/brkName (optional): when set, nested returns / escaping breaks in
+-- cleanStatements are rewritten to the RET/BRK sentinel protocol and the dispatch
+-- loop checks for them. When both nil, behavior is exactly as before.
+local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName, brkName)
     local dispatchVar = randomName()
     local stateVar = randomName()
     local guardVar = randomName()
+    local brkFlag = brkName and randomName() or nil
 
-    if retName then rewriteReturnsInList(cleanStatements, retName) end
+    if retName or brkName then rewriteControlFlow(cleanStatements, retName, brkName, false) end
 
     local stateIDs = {}
     local stateIDSet = {}
@@ -485,6 +505,19 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
         })
     end
 
+    -- BRKSIG sentinel + a flag set when an escaping break fires; after the
+    -- dispatch loop, `if brkFlag then break end` exits the real enclosing loop.
+    if brkName then
+        table.insert(finalBody, { type = "GenericStatement", tokens = {
+            { type = "KEYWORD", value = "local" }, { type = "IDENTIFIER", value = brkName },
+            { type = "SYMBOL", value = "=" }, { type = "SYMBOL", value = "{" }, { type = "SYMBOL", value = "}" },
+        } })
+        table.insert(finalBody, { type = "GenericStatement", tokens = {
+            { type = "KEYWORD", value = "local" }, { type = "IDENTIFIER", value = brkFlag },
+            { type = "SYMBOL", value = "=" }, { type = "KEYWORD", value = "false" },
+        } })
+    end
+
     if #hoisted > 0 then
         local hoistTokens = { { type = "KEYWORD", value = "local" } }
         for i, name in ipairs(hoisted) do
@@ -509,53 +542,23 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
         local funcName = randomName()
         local currentID = stateIDs[i]
         local stmts = GetStateBody(stmt)
-        local nextID
-        if IsTerminalStatement(stmt) then
-            nextID = 0
-        else
-            nextID = stateIDs[i + 1]
-        end
+        -- A statement is "terminal" if it already ends the state function at top
+        -- level (a rewritten direct break/return is now `return <sentinel>`). For
+        -- those we must NOT append another `return <nextID>` (two returns in a row
+        -- is invalid Lua) and the next state is irrelevant.
+        local terminal = IsTerminalStatement(stmt)
+        local nextID = terminal and 0 or stateIDs[i + 1]
 
         local funcBody = {}
-        if stmt.type == "ReturnStatement" then
-            -- Replace a return statement with the dispatch return
-            -- (original return would make the dispatch return unreachable)
-            if nextID ~= 0 then
-                table.insert(funcBody, {
-                    type = "GenericStatement",
-                    tokens = {
-                        { type = "KEYWORD", value = "return" },
-                        { type = "NUMBER", value = tostring(nextID) },
-                    }
-                })
-            else
-                table.insert(funcBody, {
-                    type = "GenericStatement",
-                    tokens = {
-                        { type = "KEYWORD", value = "return" },
-                        { type = "NUMBER", value = "0" },
-                    }
-                })
-            end
-        else
-            for _, s in ipairs(stmts) do table.insert(funcBody, s) end
-            if nextID ~= 0 then
-                table.insert(funcBody, {
-                    type = "GenericStatement",
-                    tokens = {
-                        { type = "KEYWORD", value = "return" },
-                        { type = "NUMBER", value = tostring(nextID) },
-                    }
-                })
-            else
-                table.insert(funcBody, {
-                    type = "GenericStatement",
-                    tokens = {
-                        { type = "KEYWORD", value = "return" },
-                        { type = "NUMBER", value = "0" },
-                    }
-                })
-            end
+        for _, s in ipairs(stmts) do table.insert(funcBody, s) end
+        if not terminal then
+            table.insert(funcBody, {
+                type = "GenericStatement",
+                tokens = {
+                    { type = "KEYWORD", value = "return" },
+                    { type = "NUMBER", value = tostring(nextID) },
+                }
+            })
         end
 
         table.insert(finalBody, {
@@ -690,8 +693,9 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
     end
 
     local loopBody
-    if retName then
-        -- local _a,_b = D[s]() ; if _a == retName then return table.unpack(_b,1,_b.n) end ; s = _a
+    if retName or brkName then
+        -- local a,b = D[s]() ; [if a==retName then return table.unpack(b,1,b.n) end]
+        -- [if a==brkName then brkFlag=true break end] ; s = a
         local av = randomName()
         local bv = randomName()
         loopBody = {
@@ -703,7 +707,9 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
                 { type = "IDENTIFIER", value = stateVar }, { type = "SYMBOL", value = "]" },
                 { type = "SYMBOL", value = "(" }, { type = "SYMBOL", value = ")" },
             } },
-            { type = "IfStatement", clauses = { {
+        }
+        if retName then
+            table.insert(loopBody, { type = "IfStatement", clauses = { {
                 condition = { type = "Expression", tokens = {
                     { type = "IDENTIFIER", value = av }, { type = "SYMBOL", value = "==" }, { type = "IDENTIFIER", value = retName },
                 } },
@@ -716,11 +722,24 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
                     { type = "IDENTIFIER", value = bv }, { type = "SYMBOL", value = "." }, { type = "IDENTIFIER", value = "n" },
                     { type = "SYMBOL", value = ")" },
                 } } },
-            } } },
-            { type = "GenericStatement", tokens = {
-                { type = "IDENTIFIER", value = stateVar }, { type = "SYMBOL", value = "=" }, { type = "IDENTIFIER", value = av },
-            } },
-        }
+            } } })
+        end
+        if brkName then
+            table.insert(loopBody, { type = "IfStatement", clauses = { {
+                condition = { type = "Expression", tokens = {
+                    { type = "IDENTIFIER", value = av }, { type = "SYMBOL", value = "==" }, { type = "IDENTIFIER", value = brkName },
+                } },
+                body = {
+                    { type = "GenericStatement", tokens = {
+                        { type = "IDENTIFIER", value = brkFlag }, { type = "SYMBOL", value = "=" }, { type = "KEYWORD", value = "true" },
+                    } },
+                    { type = "BreakStatement" },
+                },
+            } } })
+        end
+        table.insert(loopBody, { type = "GenericStatement", tokens = {
+            { type = "IDENTIFIER", value = stateVar }, { type = "SYMBOL", value = "=" }, { type = "IDENTIFIER", value = av },
+        } })
     else
         loopBody = {
             {
@@ -744,6 +763,14 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
         condition = whileCond,
         body = loopBody,
     })
+
+    -- After the dispatch loop, an escaping break re-breaks the real enclosing loop.
+    if brkName then
+        table.insert(finalBody, { type = "IfStatement", clauses = { {
+            condition = { type = "Expression", tokens = { { type = "IDENTIFIER", value = brkFlag } } },
+            body = { { type = "BreakStatement" } },
+        } } })
+    end
 
     return finalBody
 end
@@ -852,20 +879,23 @@ function FlattenBlock(statements)
 
     local toFlatten = {}
     local needRet = false
+    local needBrk = false
     for i = 1, flattenTo do
         local s = statements[i]
-        if hasGotoLabel(s) or hasEscapingBreak(s, false) or stmtHasVararg(s) then return statements end
+        if hasGotoLabel(s) or stmtHasVararg(s) then return statements end
         if hasReturn(s) then needRet = true end
+        if hasEscapingBreak(s, false) then needBrk = true end
         toFlatten[i] = s
     end
 
     local hoisted, cleanStatements = HoistVariables(toFlatten)
 
     local finalBody
-    if needRet then
-        -- nested returns present: only the function-dispatch variant implements
-        -- the RETSIG protocol, so force it with a fresh sentinel name.
-        finalBody = FlattenBlockFunctionDispatch(cleanStatements, hoisted, randomName())
+    if needRet or needBrk then
+        -- nested returns / escaping breaks present: only the function-dispatch
+        -- variant implements the sentinel protocol, so force it with fresh names.
+        finalBody = FlattenBlockFunctionDispatch(cleanStatements, hoisted,
+            needRet and randomName() or nil, needBrk and randomName() or nil)
     elseif math.random() < 0.5 then
         finalBody = FlattenBlockWhileIf(cleanStatements, hoisted)
     else
