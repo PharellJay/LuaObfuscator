@@ -404,12 +404,60 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
 end
 
 -- ============================================================
+--  Nested-return rewriting (C1b-1)
+-- ============================================================
+-- A nested `return E` inside a statement that is moved into a dispatch state
+-- function would return from that state function, not the enclosing function.
+-- Rewrite each such return to `return <retName>, table.pack(E)`; the dispatch
+-- loop recognizes the sentinel and performs the real return. Returns inside a
+-- nested function definition are left alone (they belong to that function).
+local function makeRetSig(valuesExpr, retName)
+    local toks = {
+        { type = "KEYWORD", value = "return" },
+        { type = "IDENTIFIER", value = retName },
+        { type = "SYMBOL", value = "," },
+        { type = "IDENTIFIER", value = "table" },
+        { type = "SYMBOL", value = "." },
+        { type = "IDENTIFIER", value = "pack" },
+        { type = "SYMBOL", value = "(" },
+    }
+    if valuesExpr and valuesExpr.tokens then
+        for _, t in ipairs(valuesExpr.tokens) do table.insert(toks, t) end
+    end
+    table.insert(toks, { type = "SYMBOL", value = ")" })
+    return { type = "GenericStatement", tokens = toks }
+end
+
+local function rewriteReturnsInList(stmts, retName)
+    for i, s in ipairs(stmts) do
+        if s.type == "ReturnStatement" then
+            stmts[i] = makeRetSig(s.values, retName)
+        elseif s.type == "FunctionStatement" then
+            -- do not descend: an inner function's returns are its own
+        else
+            if s.body then rewriteReturnsInList(s.body, retName) end
+            if s.clauses then
+                for _, c in ipairs(s.clauses) do
+                    if c.body then rewriteReturnsInList(c.body, retName) end
+                end
+            end
+            if s.elseBody then rewriteReturnsInList(s.elseBody, retName) end
+        end
+    end
+end
+
+-- ============================================================
 --  PATTERN 2: Function dispatch table
 -- ============================================================
-local function FlattenBlockFunctionDispatch(cleanStatements, hoisted)
+-- retName (optional): when set, nested returns in cleanStatements are rewritten
+-- to the RETSIG protocol and the dispatch loop checks for the sentinel. When nil,
+-- behavior is exactly as before (no return handling).
+local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName)
     local dispatchVar = randomName()
     local stateVar = randomName()
     local guardVar = randomName()
+
+    if retName then rewriteReturnsInList(cleanStatements, retName) end
 
     local stateIDs = {}
     local stateIDSet = {}
@@ -422,6 +470,20 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted)
     stateIDSet[0] = true
 
     local finalBody = {}
+
+    -- RETSIG sentinel: a fresh table so a numeric next-state can never equal it.
+    if retName then
+        table.insert(finalBody, {
+            type = "GenericStatement",
+            tokens = {
+                { type = "KEYWORD", value = "local" },
+                { type = "IDENTIFIER", value = retName },
+                { type = "SYMBOL", value = "=" },
+                { type = "SYMBOL", value = "{" },
+                { type = "SYMBOL", value = "}" },
+            }
+        })
+    end
 
     if #hoisted > 0 then
         local hoistTokens = { { type = "KEYWORD", value = "local" } }
@@ -627,10 +689,40 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted)
         }
     end
 
-    table.insert(finalBody, {
-        type = "WhileStatement",
-        condition = whileCond,
-        body = {
+    local loopBody
+    if retName then
+        -- local _a,_b = D[s]() ; if _a == retName then return table.unpack(_b,1,_b.n) end ; s = _a
+        local av = randomName()
+        local bv = randomName()
+        loopBody = {
+            { type = "GenericStatement", tokens = {
+                { type = "KEYWORD", value = "local" },
+                { type = "IDENTIFIER", value = av }, { type = "SYMBOL", value = "," }, { type = "IDENTIFIER", value = bv },
+                { type = "SYMBOL", value = "=" },
+                { type = "IDENTIFIER", value = dispatchVar }, { type = "SYMBOL", value = "[" },
+                { type = "IDENTIFIER", value = stateVar }, { type = "SYMBOL", value = "]" },
+                { type = "SYMBOL", value = "(" }, { type = "SYMBOL", value = ")" },
+            } },
+            { type = "IfStatement", clauses = { {
+                condition = { type = "Expression", tokens = {
+                    { type = "IDENTIFIER", value = av }, { type = "SYMBOL", value = "==" }, { type = "IDENTIFIER", value = retName },
+                } },
+                body = { { type = "GenericStatement", tokens = {
+                    { type = "KEYWORD", value = "return" },
+                    { type = "IDENTIFIER", value = "table" }, { type = "SYMBOL", value = "." }, { type = "IDENTIFIER", value = "unpack" },
+                    { type = "SYMBOL", value = "(" },
+                    { type = "IDENTIFIER", value = bv }, { type = "SYMBOL", value = "," }, { type = "NUMBER", value = "1" },
+                    { type = "SYMBOL", value = "," },
+                    { type = "IDENTIFIER", value = bv }, { type = "SYMBOL", value = "." }, { type = "IDENTIFIER", value = "n" },
+                    { type = "SYMBOL", value = ")" },
+                } } },
+            } } },
+            { type = "GenericStatement", tokens = {
+                { type = "IDENTIFIER", value = stateVar }, { type = "SYMBOL", value = "=" }, { type = "IDENTIFIER", value = av },
+            } },
+        }
+    else
+        loopBody = {
             {
                 type = "GenericStatement",
                 tokens = {
@@ -645,6 +737,12 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted)
                 }
             },
         }
+    end
+
+    table.insert(finalBody, {
+        type = "WhileStatement",
+        condition = whileCond,
+        body = loopBody,
     })
 
     return finalBody
@@ -656,43 +754,125 @@ end
 function FlattenBlock(statements)
     if #statements < 2 then return statements end
 
-    -- Check if any statement contains a break, goto, or label (directly or nested in if/else)
-    -- Break/goto/label cannot be safely moved outside their context by flattening
-    local function containsUnsafe(stmt)
-        if stmt.type == "BreakStatement" or stmt.type == "GotoStatement" or stmt.type == "LabelStatement" or stmt.type == "ReturnStatement" then return true end
+    -- Generic recursive predicate over a statement's own sub-blocks. Does NOT
+    -- descend into nested FunctionStatement bodies — their break/goto/return
+    -- belong to that inner function, not to the block being flattened.
+    local function anyStmt(stmt, pred)
+        if pred(stmt) then return true end
+        if stmt.type == "FunctionStatement" then return false end
         if stmt.body then
-            for _, s in ipairs(stmt.body) do
-                if containsUnsafe(s) then return true end
-            end
+            for _, s in ipairs(stmt.body) do if anyStmt(s, pred) then return true end end
         end
         if stmt.clauses then
             for _, c in ipairs(stmt.clauses) do
-                if c.body then
-                    for _, s in ipairs(c.body) do
-                        if containsUnsafe(s) then return true end
-                    end
-                end
+                if c.body then for _, s in ipairs(c.body) do if anyStmt(s, pred) then return true end end end
             end
         end
         if stmt.elseBody then
-            for _, s in ipairs(stmt.elseBody) do
-                if containsUnsafe(s) then return true end
+            for _, s in ipairs(stmt.elseBody) do if anyStmt(s, pred) then return true end end
+        end
+        return false
+    end
+    -- goto/label always bail (C1b-3 territory).
+    local function hasGotoLabel(stmt)
+        return anyStmt(stmt, function(s)
+            return s.type == "GotoStatement" or s.type == "LabelStatement"
+        end)
+    end
+    -- A `break` enclosed by a loop WITHIN this statement is internal — it stays
+    -- inside its dispatch state function and works unchanged (C1b-2). Only an
+    -- "escaping" break (targeting a loop that encloses the flattened block) is
+    -- unsafe; we still bail on those (C1b-3). Nested functions aren't descended.
+    local function hasEscapingBreak(stmt, insideLoop)
+        if stmt.type == "BreakStatement" then return not insideLoop end
+        if stmt.type == "FunctionStatement" then return false end
+        local nowLoop = insideLoop
+            or stmt.type == "WhileStatement" or stmt.type == "ForStatement"
+            or stmt.type == "ForInStatement" or stmt.type == "RepeatStatement"
+        if stmt.body then
+            for _, s in ipairs(stmt.body) do if hasEscapingBreak(s, nowLoop) then return true end end
+        end
+        if stmt.clauses then
+            for _, c in ipairs(stmt.clauses) do
+                if c.body then for _, s in ipairs(c.body) do if hasEscapingBreak(s, nowLoop) then return true end end end
             end
+        end
+        if stmt.elseBody then
+            for _, s in ipairs(stmt.elseBody) do if hasEscapingBreak(s, nowLoop) then return true end end
+        end
+        return false
+    end
+    -- a nested return is now supported via the RETSIG protocol (C1b-1).
+    local function hasReturn(stmt)
+        return anyStmt(stmt, function(s) return s.type == "ReturnStatement" end)
+    end
+
+    -- Flattening moves statements into dispatch state functions `function _s(...)`,
+    -- so a vararg `...` referring to the ENCLOSING function would be rebound to the
+    -- (empty) wrapper's varargs. Conservatively bail if any statement uses `...`
+    -- (this over-bails on `...` inside nested function literals, which is safe).
+    local function toksVararg(toks)
+        if not toks then return false end
+        for _, t in ipairs(toks) do
+            if t.type == "SYMBOL" and t.value == "..." then return true end
+        end
+        return false
+    end
+    local function stmtHasVararg(stmt)
+        if toksVararg(stmt.tokens) or toksVararg(stmt.head) then return true end
+        for _, fld in ipairs({ "vars", "values", "condition", "exps", "call" }) do
+            if stmt[fld] and stmt[fld].tokens and toksVararg(stmt[fld].tokens) then return true end
+        end
+        if stmt.body then
+            for _, s in ipairs(stmt.body) do if stmtHasVararg(s) then return true end end
+        end
+        if stmt.clauses then
+            for _, c in ipairs(stmt.clauses) do
+                if c.condition and c.condition.tokens and toksVararg(c.condition.tokens) then return true end
+                if c.body then for _, s in ipairs(c.body) do if stmtHasVararg(s) then return true end end end
+            end
+        end
+        if stmt.elseBody then
+            for _, s in ipairs(stmt.elseBody) do if stmtHasVararg(s) then return true end end
         end
         return false
     end
 
-    for _, stmt in ipairs(statements) do
-        if containsUnsafe(stmt) then return statements end
+    -- Lua guarantees a `return` is the LAST statement of its block, so split off a
+    -- trailing return and flatten only the statements before it; the return is
+    -- re-appended after the dispatch loop and executes in the enclosing function
+    -- unchanged. This needs no return-propagation protocol in the state machine.
+    local tail = nil
+    local flattenTo = #statements
+    if statements[#statements].type == "ReturnStatement" then
+        tail = statements[#statements]
+        flattenTo = #statements - 1
+    end
+    if flattenTo < 2 then return statements end
+
+    local toFlatten = {}
+    local needRet = false
+    for i = 1, flattenTo do
+        local s = statements[i]
+        if hasGotoLabel(s) or hasEscapingBreak(s, false) or stmtHasVararg(s) then return statements end
+        if hasReturn(s) then needRet = true end
+        toFlatten[i] = s
     end
 
-    local hoisted, cleanStatements = HoistVariables(statements)
+    local hoisted, cleanStatements = HoistVariables(toFlatten)
 
-    if math.random() < 0.5 then
-        return FlattenBlockWhileIf(cleanStatements, hoisted)
+    local finalBody
+    if needRet then
+        -- nested returns present: only the function-dispatch variant implements
+        -- the RETSIG protocol, so force it with a fresh sentinel name.
+        finalBody = FlattenBlockFunctionDispatch(cleanStatements, hoisted, randomName())
+    elseif math.random() < 0.5 then
+        finalBody = FlattenBlockWhileIf(cleanStatements, hoisted)
     else
-        return FlattenBlockFunctionDispatch(cleanStatements, hoisted)
+        finalBody = FlattenBlockFunctionDispatch(cleanStatements, hoisted)
     end
+    if tail then finalBody[#finalBody + 1] = tail end
+    return finalBody
 end
 
 function FlattenAST(statements)
