@@ -35,6 +35,12 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
 - **Real control-flow flattening.** Function bodies are lowered into dispatch
   state machines, including bodies that contain `return`s and `break`s.
 - **Pure Lua, no dependencies.** Entire implementation and output are plain Lua.
+- **Browser UI (optional).** A zero-install web front-end runs the *entire*
+  obfuscator client-side (via [Fengari](https://fengari.io/), Lua 5.3 compiled to
+  JS) — pick a preset, toggle passes, drag the tuning sliders, drop in files,
+  watch a live progress bar and build log, and download the result. The output is
+  the same native Lua; nothing is uploaded. Self-host locally or deploy as a
+  static site. See [Web UI](#web-ui-run-it-in-your-browser).
 - **Everything still runs.** A round-trip test harness proves the obfuscated
   output behaves identically to the source across a broad fixture suite (also in
   a stress mode that virtualizes every function).
@@ -42,6 +48,8 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
 ## Requirements
 
 - **Lua 5.3+** (uses 5.3 integer/bitwise operators). Lua 5.4 works as well.
+- *For the browser UI only:* **Python 3** (for the bundled dev server) and any
+  modern browser. The core obfuscator itself needs nothing but Lua.
 
 ## Usage
 
@@ -62,6 +70,49 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
 The obfuscated file is written to `Output/<OutputPath>`. Intermediate stages
 (`Output/after_emit.lua`, `Output/preminify.lua`) are also dumped to make
 debugging a pass easier.
+
+## Web UI (run it in your browser)
+
+Prefer not to edit `Config.lua` by hand? The project ships a static web front-end
+in `web/` that runs the **real** obfuscator entirely in your browser via
+[Fengari](https://fengari.io/) (Lua 5.3 compiled to JavaScript), inside a Web
+Worker. Nothing is uploaded — obfuscation happens client-side — and the output is
+the same ordinary native Lua 5.3+ that `lua Main.lua` produces.
+
+It exposes every setting interactively: the `max`/`fast` presets, per-pass
+toggles, the virtualization options (`VirtualizePrefix`, `VirtualizeAll`,
+`VMLightweight`), tuning sliders (variable-name length, dead-code probability,
+junk-pool ratio), save / load / export of named presets, a live **estimated
+output cost** meter, a streaming progress bar plus the full build log, multi-file
+input (file picker or drag-and-drop), and one-click download. Each build uses a
+fresh random seed automatically.
+
+### Self-host on localhost
+
+The page must be served over **HTTP** — opening `index.html` directly via
+`file://` won't work, because it fetches the Lua modules and loads Fengari from a
+CDN. A tiny zero-dependency dev server is included:
+
+```sh
+python3 web/serve.py          # serves http://localhost:8000
+python3 web/serve.py 8080     # pick another port
+```
+
+`serve.py` serves the `web/` directory and maps `/modules/*.lua` to the repo-root
+`.lua` sources, so the local URL layout matches a real deployment. Open the
+printed URL, drop in a `.lua` file (or use `Input/testinput.lua`), choose a
+preset, and click **Obfuscate** — the result previews on the page and downloads
+as a normal `.lua` file.
+
+> Fengari interprets Lua in JavaScript, so a heavy build (e.g. `VirtualizeAll` on
+> a large file) takes longer than native `lua`; the Web Worker keeps the UI
+> responsive and the progress bar shows where it's at. The produced file is
+> byte-for-byte the kind of output the CLI makes.
+
+To publish it as a shareable static site (e.g. GitHub Pages), see
+[`web/README.md`](web/README.md): a GitHub Actions workflow
+(`.github/workflows/pages.yml`) assembles the app together with the `.lua` sources
+and deploys it.
 
 ## Virtualization (the VM)
 
@@ -223,6 +274,8 @@ run_tests.lua         -- round-trip correctness harness
 test/fixtures/        -- harness inputs
 Input/                -- source files to obfuscate
 Output/               -- results + intermediate dumps (after_emit, preminify)
+web/                   -- browser front-end (static site + serve.py dev server; runs the obfuscator via Fengari)
+.github/workflows/     -- GitHub Pages deploy for the web UI
 ```
 
 ## License

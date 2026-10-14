@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deadeye Obfuscator</title>
+<meta name="description" content="Browser front-end for the Deadeye Lua obfuscator — runs the real tool client-side via Fengari." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">◎</span>
+    <div>
+      <h1>Deadeye<span class="brand-dim"> Obfuscator</span></h1>
+      <p class="tagline">Lua obfuscation with a bytecode VM — running entirely in your browser.</p>
+    </div>
+  </div>
+  <div class="status" id="status" data-state="loading"><span class="dot"></span><span id="statusText">Loading engine…</span></div>
+</header>
+
+<main class="layout">
+  <!-- ======================= CONFIG ======================= -->
+  <section class="panel config" aria-label="Obfuscation settings">
+    <div class="panel-head"><h2>Settings</h2></div>
+
+    <div class="field cost">
+      <label>Estimated output cost <span class="cost-label" id="costLabel">Moderate</span></label>
+      <div class="cost-track" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Estimated output cost" id="costTrack">
+        <div class="cost-marker" id="costMarker"></div>
+      </div>
+      <p class="hint">Rough runtime &amp; size overhead of the <em>obfuscated output</em>. Higher = stronger protection but slower, larger output.</p>
+    </div>
+
+    <div class="fields">
+    <div class="field">
+      <label for="preset">Preset</label>
+      <div class="row">
+        <select id="preset">
+          <option value="max">max — maximum strength</option>
+          <option value="fast">fast — weaker but much faster output</option>
+          <option value="custom">custom</option>
+        </select>
+      </div>
+      <p class="hint">A preset seeds the pass toggles below. Changing any toggle switches to <em>custom</em>.</p>
+    </div>
+
+    <fieldset class="field">
+      <legend>Passes</legend>
+      <div class="toggles" id="passes"><!-- populated by app.js --></div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>Virtualization (bytecode VM)</legend>
+      <div class="row">
+        <label class="inline" for="virtualizePrefix">Prefix</label>
+        <input type="text" id="virtualizePrefix" value="vm_" size="8" spellcheck="false" />
+        <span class="hint inline">functions whose name starts with this compile to the VM</span>
+      </div>
+      <label class="switch"><input type="checkbox" id="virtualizeAll" /><span>Virtualize ALL eligible functions (prefix ignored)</span></label>
+      <label class="switch"><input type="checkbox" id="vmLightweight" /><span>VM lightweight — skip dead-code &amp; flattening on the interpreter (much faster output; only the interpreter is slightly easier to fingerprint)</span></label>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>Tuning</legend>
+      <div class="slider" data-for="variableLength">
+        <label for="variableLength">Variable name length <output id="variableLengthOut">12</output></label>
+        <input type="range" id="variableLength" min="4" max="32" step="1" value="12" />
+      </div>
+      <div class="slider" data-for="deadCodeProbability">
+        <label for="deadCodeProbability">Dead-code inject probability <output id="deadCodeProbabilityOut">0.45</output></label>
+        <input type="range" id="deadCodeProbability" min="0" max="1" step="0.01" value="0.45" />
+      </div>
+      <div class="slider" data-for="junkPoolMin">
+        <label for="junkPoolMin">Junk pool ratio — min <output id="junkPoolMinOut">50</output>%</label>
+        <input type="range" id="junkPoolMin" min="0" max="100" step="1" value="50" />
+      </div>
+      <div class="slider" data-for="junkPoolMax">
+        <label for="junkPoolMax">Junk pool ratio — max <output id="junkPoolMaxOut">100</output>%</label>
+        <input type="range" id="junkPoolMax" min="0" max="100" step="1" value="100" />
+      </div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>Named presets</legend>
+      <div class="row">
+        <select id="savedPresets"><option value="">— saved presets —</option></select>
+        <button type="button" class="btn ghost" id="presetLoad">Load</button>
+        <button type="button" class="btn ghost danger" id="presetDelete">Delete</button>
+      </div>
+      <div class="row">
+        <input type="text" id="presetName" placeholder="preset name" spellcheck="false" />
+        <button type="button" class="btn" id="presetSave">Save current</button>
+      </div>
+      <div class="row">
+        <button type="button" class="btn ghost" id="presetExport">Export .json</button>
+        <button type="button" class="btn ghost" id="presetImport">Import .json</button>
+        <input type="file" id="presetImportFile" accept="application/json,.json" hidden />
+      </div>
+    </fieldset>
+    </div><!-- .fields -->
+  </section>
+
+  <!-- ======================= WORK ======================= -->
+  <section class="panel work" aria-label="Input and output">
+    <div class="panel-head"><h2>Obfuscate</h2></div>
+
+    <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Choose or drop Lua files">
+      <p><strong>Drop .lua files here</strong> or</p>
+      <div class="row center">
+        <button type="button" class="btn" id="pickFiles">Choose file(s)…</button>
+        <input type="file" id="fileInput" accept=".lua,text/plain" multiple hidden />
+      </div>
+      <details class="paste">
+        <summary>…or paste code</summary>
+        <textarea id="pasteArea" rows="6" spellcheck="false" placeholder="-- paste Lua here"></textarea>
+        <button type="button" class="btn ghost" id="pasteAdd">Add pasted code</button>
+      </details>
+    </div>
+
+    <ul class="filelist" id="filelist" aria-live="polite"></ul>
+
+    <div class="actions">
+      <button type="button" class="btn primary" id="runBtn" disabled>Obfuscate</button>
+      <button type="button" class="btn ghost" id="clearBtn">Clear all</button>
+      <span class="spinner" id="spinner" hidden aria-hidden="true"></span>
+    </div>
+
+    <div class="progress" id="progress" hidden>
+      <div class="progress-row">
+        <span class="progress-stage" id="progressStage">Starting…</span>
+        <span class="progress-pct" id="progressPct">0%</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <details class="log" id="logBox">
+      <summary>Build log</summary>
+      <pre id="log" aria-live="polite"></pre>
+    </details>
+
+    <div id="results" class="results"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Runs the real <a href="https://github.com/PharellJay" rel="noopener">Deadeye</a> Lua obfuscator in-browser via <a href="https://fengari.io/" rel="noopener">Fengari</a>. Output is ordinary native Lua 5.3+.</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
