@@ -26,6 +26,13 @@ if os.getenv("VIRTUALIZE_ALL") == "1" then
     print("[harness] VIRTUALIZE_ALL enabled: virtualizing all eligible functions")
 end
 
+-- Opt-in: exempt the spliced VM interpreter from dead-code/flattening.
+if os.getenv("VM_LIGHTWEIGHT") == "1" then
+    Config = Config or {}
+    Config.VMLightweight = true
+    print("[harness] VM_LIGHTWEIGHT enabled: interpreter skips dead-code/flatten")
+end
+
 -- Opt-in: validate a strength preset ("fast"/"max") across the whole suite.
 if os.getenv("PRESET") then
     Config = Config or {}

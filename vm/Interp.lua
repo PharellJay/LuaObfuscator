@@ -35,44 +35,22 @@ function GenerateInterpreter(vmName, perm, seed)
         assert(VM_OP[name], "unknown opcode " .. name)
         return opAlias[name]
     end
-    -- Build the dispatch body. Using a long if/elseif chain keyed on the opcode.
-    -- Hot opcodes come first; the rare ones (cell/upvalue access, used only by
-    -- closures, and the bitwise operators) are placed last so common operations
-    -- fall through fewer comparisons. The textual branch order is independent of
-    -- the per-build opcode permutation, so this only affects dispatch speed.
-    -- NOTE: the template string below must contain no `--` comments — they can
-    -- survive into the emitted/minified output and comment out real code.
-    -- Defined as a global (not a local) so that if control-flow flattening later
-    -- relocates this definition into a dispatch sub-closure, the virtualized
-    -- function assignments in sibling blocks can still reach it. The dispatcher
-    -- preserves execution order, so the global is assigned before any use.
-    local src = ([==[
-function %VMNAME%(proto, upvals)
-  if not proto.dec then
-    local kk = proto.k
-    for ci = 1, #kk do
-      if type(kk[ci]) == "string" then
-        local s = kk[ci]; local k = %SEED% % 256; local t = {}
-        for j = 1, #s do k = (k * 31 + 7) % 256; t[j] = string.char(string.byte(s, j) ~ k) end
-        local dec = table.concat(t)
-        if dec:sub(1, 1) == "\1" then kk[ci] = tonumber(dec:sub(2)) else kk[ci] = dec:sub(2) end
-      end
-    end
-    proto.dec = true
-  end
-  %ALIASDECL%
-  local function %RUN%(...)
-    local args = table.pack(...)
-    local nargs = args.n
-    local S, top = {}, 0
-    local marks, mtop = {}, 0
-    local slots = {}
-    local cells = {}
-    local code, K, np = proto.code, proto.k, proto.np
-    for i = 1, np do cells[i - 1] = { args[i] } end
-    local pc = 1
-    while true do
-      local o = code[pc]; pc = pc + 1
+
+    -- The dispatch is a long if/elseif chain keyed on the opcode. Rather than
+    -- hard-code the branch ORDER in the template, the chain is defined once below
+    -- and then RE-ORDERED per build, so a devirtualizer can no longer fingerprint
+    -- the interpreter by its fixed sequence of handlers. The order is
+    -- correctness-irrelevant (every branch tests `o == <alias>`) and independent
+    -- of the per-build opcode permutation. Two tiers preserve the "common opcodes
+    -- first" speed win: HOT ops are shuffled among themselves at the front, while
+    -- the rare COLD ops (closure cell/upvalue access and the bitwise operators)
+    -- are shuffled among themselves at the back so common operations still fall
+    -- through fewer comparisons.
+    -- NOTE: the chain template must contain no `--` comments — they can survive
+    -- into the emitted/minified output and comment out real code.
+    -- %VMNAME% is the only placeholder used inside a branch body (CLOSURE); it is
+    -- resolved together with the %OPCODE% placeholders when the chain is rebuilt.
+    local dispatchTemplate = [===[
       if o == %PUSHK% then top = top + 1; S[top] = K[code[pc]]; pc = pc + 1
       elseif o == %PUSHNIL% then top = top + 1; S[top] = nil
       elseif o == %PUSHBOOL% then top = top + 1; S[top] = (code[pc] ~= 0); pc = pc + 1
@@ -173,7 +151,92 @@ function %VMNAME%(proto, upvals)
       elseif o == %SHR% then local b = S[top]; top = top - 1; S[top] = S[top] >> b
       elseif o == %IDIV% then local b = S[top]; top = top - 1; S[top] = S[top] // b
       elseif o == %BNOT% then S[top] = ~S[top]
+      end]===]
+
+    -- Opcodes that are rare in typical code (closures/upvalues and bitwise ops);
+    -- kept at the back of the chain so common operations compare against fewer.
+    local COLD = {
+        NEWCELL = true, GETCELL = true, SETCELL = true, GETUPVAL = true,
+        SETUPVAL = true, BOR = true, BXOR = true, BAND = true, SHL = true,
+        SHR = true, IDIV = true, BNOT = true,
+    }
+    local function shuffle(t)
+        for i = #t, 2, -1 do
+            local j = math.random(1, i)
+            t[i], t[j] = t[j], t[i]
+        end
+    end
+
+    -- Normalize so every branch starts with `elseif o ==` (easy to locate), drop
+    -- the trailing `end`, and append a sentinel branch so the last real branch
+    -- has a following header to slice its body against.
+    local chain = dispatchTemplate:gsub("^(%s*)if o ==", "%1elseif o ==")
+    chain = chain:gsub("%s*\n%s*end%s*$", "")
+    chain = chain .. "\n      elseif o == %SENTINEL_END% then "
+
+    local heads = {}
+    for hstart, name, bstart in chain:gmatch("()elseif o == %%([%u_][%w_]*)%% then()") do
+        heads[#heads + 1] = { name = name, hstart = hstart, bstart = bstart }
+    end
+
+    local hot, cold = {}, {}
+    for i = 1, #heads - 1 do -- the last head is the sentinel
+        local body = chain:sub(heads[i].bstart, heads[i + 1].hstart - 1):gsub("%s*$", "")
+        local it = { name = heads[i].name, body = body }
+        if COLD[it.name] then cold[#cold + 1] = it else hot[#hot + 1] = it end
+    end
+    shuffle(hot)
+    shuffle(cold)
+
+    local order = {}
+    for _, it in ipairs(hot) do order[#order + 1] = it end
+    for _, it in ipairs(cold) do order[#order + 1] = it end
+
+    local parts = {}
+    for i, it in ipairs(order) do
+        parts[#parts + 1] = ((i == 1) and "      if" or "      elseif") ..
+            " o == %" .. it.name .. "% then" .. it.body
+    end
+    local dispatch = table.concat(parts, "\n") .. "\n      end"
+    -- Resolve the opcode (and the lone %VMNAME%) placeholders now, since the
+    -- outer gsub below does not rescan the text it substitutes for %DISPATCH%.
+    dispatch = dispatch:gsub("%%([%u_][%w_]*)%%", function(nm)
+        if nm == "VMNAME" then return vmName end
+        return op(nm)
+    end)
+
+    -- Defined as a global (not a local) so that if control-flow flattening later
+    -- relocates this definition into a dispatch sub-closure, the virtualized
+    -- function assignments in sibling blocks can still reach it. The dispatcher
+    -- preserves execution order, so the global is assigned before any use.
+    local src = ([==[
+function %VMNAME%(proto, upvals)
+  if not proto.dec then
+    local kk = proto.k
+    for ci = 1, #kk do
+      if type(kk[ci]) == "string" then
+        local s = kk[ci]; local k = %SEED% % 256; local t = {}
+        for j = 1, #s do k = (k * 31 + 7) % 256; t[j] = string.char(string.byte(s, j) ~ k) end
+        local dec = table.concat(t)
+        if dec:sub(1, 1) == "\1" then kk[ci] = tonumber(dec:sub(2)) else kk[ci] = dec:sub(2) end
       end
+    end
+    proto.dec = true
+  end
+  %ALIASDECL%
+  local function %RUN%(...)
+    local args = table.pack(...)
+    local nargs = args.n
+    local S, top = {}, 0
+    local marks, mtop = {}, 0
+    local slots = {}
+    local cells = {}
+    local code, K, np = proto.code, proto.k, proto.np
+    for i = 1, np do cells[i - 1] = { args[i] } end
+    local pc = 1
+    while true do
+      local o = code[pc]; pc = pc + 1
+      %DISPATCH%
     end
   end
   return %RUN%
@@ -183,6 +246,7 @@ end
         if name == "RUN" then return runName end
         if name == "SEED" then return tostring(seed or 0) end
         if name == "ALIASDECL" then return aliasDecl end
+        if name == "DISPATCH" then return dispatch end
         return op(name)
     end)
     return src

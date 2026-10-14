@@ -374,7 +374,16 @@ function InjectDeadCode(statements)
         end
     end
 
+    local lightweightVM = Config and Config.VMLightweight
+
     for _, stmt in ipairs(statements) do
+        -- In VM-lightweight mode, leave the spliced interpreter untouched: no
+        -- dead code around it and no descent into its body.
+        if lightweightVM and stmt.vmInterp then
+            table.insert(result, stmt)
+            goto continue
+        end
+
         if not hasUnsafe and deadLocalCount < MAX_DEAD_LOCALS_PER_FUNCTION and math.random() < INJECT_PROBABILITY then
             local pattern = deadPatterns[math.random(1, #deadPatterns)]
             local blocks = pattern()
@@ -418,6 +427,7 @@ function InjectDeadCode(statements)
         end
 
         table.insert(result, stmt)
+        ::continue::
     end
 
     return result

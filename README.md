@@ -27,10 +27,11 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
   varargs, multiple returns, methods, nested functions, **closures with shared
   upvalues**, and coroutines — with graceful native fallback for anything it
   can't safely compile.
-- **Per-build hardening.** The VM's opcode numbering is permuted and its constants
-  — **both strings and numbers** — are encrypted with a fresh key on every build,
-  so two builds of the same input differ and generic devirtualizers can't rely on
-  fixed opcodes or read literals out of the blob.
+- **Per-build hardening.** The VM's opcode numbering is permuted, its constants
+  — **both strings and numbers** — are encrypted with a fresh key, and the
+  interpreter's dispatch handlers are **emitted in a randomized order** on every
+  build, so two builds of the same input differ and generic devirtualizers can't
+  rely on fixed opcodes, a fixed handler layout, or read literals out of the blob.
 - **Real control-flow flattening.** Function bodies are lowered into dispatch
   state machines, including bodies that contain `return`s and `break`s.
 - **Pure Lua, no dependencies.** Entire implementation and output are plain Lua.
@@ -138,6 +139,7 @@ All knobs live in `Config.lua`:
 | `RandomSeed` | `nil` | Set a number to force a fixed seed for reproducible output. |
 | `Config.VirtualizePrefix` | `"vm_"` | Name prefix selecting top-level functions to virtualize; `nil`/`""` disables prefix-based selection. |
 | `Config.VirtualizeAll` | `false` | When `true`, virtualize **every** eligible top-level function (prefix ignored); ineligible functions safely stay native. Maximum coverage, higher runtime cost. |
+| `Config.VMLightweight` | `false` | When `true`, exempt the spliced VM interpreter from dead-code injection and control-flow flattening (renaming and the text passes still apply to it). Large speedup and much smaller output for virtualized code, with **no change to how your own code is obfuscated**; only the interpreter becomes slightly easier to pattern-match (opcodes still permuted, constants still encrypted per build). |
 | `Config.Preset` | `"max"` | Strength preset that seeds `Config.Passes`: `"max"` (every pass on, strongest, slowest) or `"fast"` (performance mode — see below). |
 | `Config.Passes.*` | from preset | Per-pass on/off switches (CommentRemoval, DeadCode, Rename, Flatten, NumberObf, StringObf, StringSplit, ConstantPool, Minify, AntiTamper). Seeded from `Config.Preset`; override any individual pass after the preset line. |
 
@@ -157,12 +159,24 @@ worth protecting, not for hot loops. Two presets trade strength against speed:
   mark with `VirtualizePrefix`. Markedly faster output that is weaker overall
   but still VM-protects your sensitive functions.
 
+- **`Config.VMLightweight = true` (with any preset):** keep every pass on for
+  **your** code, but stop injecting dead code into and flattening the VM
+  *interpreter* itself. The interpreter is the same generated code every build
+  and is the dominant runtime cost of virtualization, so skipping those two
+  passes on it is a large speedup and a much smaller output file while your own
+  logic stays exactly as obfuscated. The only tradeoff is that the interpreter
+  becomes a little easier to fingerprint — but its opcode numbering is still
+  permuted and its constants still encrypted on every build. A good middle
+  ground between `"max"` and `"fast"` when you virtualize heavily.
+
 **Best practice for speed without losing protection:** keep the default `"max"`
 preset but virtualize *selectively* — give only your license checks, key
 routines, and anti-cheat logic the `vm_` prefix, and leave hot paths native.
-That concentrates the expensive VM where it matters. (The interpreter itself is
-tuned so the per-build number-obfuscation pass no longer rewrites its hot-path
-constants — a large speedup over naive virtualization with no loss of strength.)
+That concentrates the expensive VM where it matters. Pair it with
+`Config.VMLightweight = true` to drop the interpreter's own overhead without
+touching how your code is obfuscated. (The interpreter is also tuned so the
+per-build number-obfuscation pass no longer rewrites its hot-path constants — a
+large speedup over naive virtualization with no loss of strength.)
 
 ## Testing
 

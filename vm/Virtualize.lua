@@ -132,6 +132,11 @@ function VirtualizeAST(body)
         local ok, interpAst = pcall(function() return Parse(Tokenize(interpSrc)) end)
         if ok and interpAst and interpAst.body and #interpAst.body > 0 then
             for i = #interpAst.body, 1, -1 do
+                -- Tag the interpreter's top-level statement(s) so that, when
+                -- Config.VMLightweight is set, dead-code injection and
+                -- control-flow flattening can skip the interpreter's internals
+                -- (the dominant runtime cost) without affecting user code.
+                interpAst.body[i].vmInterp = true
                 table.insert(newBody, 1, interpAst.body[i])
             end
         else

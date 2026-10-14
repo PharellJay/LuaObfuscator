@@ -906,8 +906,14 @@ function FlattenBlock(statements)
 end
 
 function FlattenAST(statements)
+    local lightweightVM = Config and Config.VMLightweight
     for _, stmt in ipairs(statements) do
         local t = stmt.type
+        -- In VM-lightweight mode, do not flatten the spliced interpreter's
+        -- internals (the dominant runtime cost); user code is unaffected.
+        if lightweightVM and stmt.vmInterp then
+            goto continue
+        end
         if t == "WhileStatement" then
             stmt.body = FlattenAST(stmt.body)
         elseif t == "ForStatement" then
@@ -928,6 +934,7 @@ function FlattenAST(statements)
         elseif t == "DoStatement" then
             stmt.body = FlattenAST(stmt.body)
         end
+        ::continue::
     end
 
     return FlattenBlock(statements)
