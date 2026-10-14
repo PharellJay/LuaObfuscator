@@ -169,6 +169,14 @@ worth protecting, not for hot loops. Two presets trade strength against speed:
   permuted and its constants still encrypted on every build. A good middle
   ground between `"max"` and `"fast"` when you virtualize heavily.
 
+Separately, string obfuscation is **decode-once**: each distinct string literal
+is encoded a single time into a chunk-level pool that is built when the program
+loads, and every use becomes a cheap table access. A string used inside a hot
+loop is therefore decoded once at startup rather than re-decoded on every
+iteration — a large speedup with no change to the encoding or its strength.
+(Number obfuscation needs no such treatment: its expressions are constant
+folded by Lua at compile time, so they cost nothing per evaluation.)
+
 **Best practice for speed without losing protection:** keep the default `"max"`
 preset but virtualize *selectively* — give only your license checks, key
 routines, and anti-cheat logic the `vm_` prefix, and leave hot paths native.

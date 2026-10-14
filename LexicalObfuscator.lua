@@ -45,6 +45,30 @@ function ObfuscateAllStrings(fullCode)
     local segments = SplitCodeSegments(fullCode)
     local result = {}
 
+    -- Decode-once pool. Each distinct string literal is encoded ONCE into this
+    -- chunk-level table, which is evaluated a single time when it is declared at
+    -- load; every use site becomes a cheap `POOL[idx]` table access instead of
+    -- the inline decode expression. This matters enormously for strings that
+    -- appear inside loops: previously the self-contained decode IIFE was emitted
+    -- verbatim at each use and re-ran (closure build + per-byte XOR) on every
+    -- iteration. The encoding itself is unchanged, so obfuscation strength is the
+    -- same — only the evaluation count drops from per-use to once. Safe to hoist
+    -- because every decode expression is self-contained (its only inputs are
+    -- literal constants, no captured locals).
+    local poolName = GenerateRandomName(VariableLength or 12)
+    local pool = {}        -- list of decode expressions (pool entries)
+    local poolIndex = {}   -- original literal text -> pool slot (dedup)
+
+    local function intern(originalText, expr)
+        local idx = poolIndex[originalText]
+        if not idx then
+            pool[#pool + 1] = expr
+            idx = #pool
+            poolIndex[originalText] = idx
+        end
+        return poolName .. "[" .. idx .. "]"
+    end
+
     for _, seg in ipairs(segments) do
         if seg.isString then
             local text = seg.text
@@ -61,7 +85,7 @@ function ObfuscateAllStrings(fullCode)
                         table.insert(bytes, actualStr:byte(i))
                     end
                     local strategy = strategies[math.random(1, #strategies)]
-                    table.insert(result, strategy.fn(bytes))
+                    table.insert(result, intern(text, strategy.fn(bytes)))
                 end
 
             else
@@ -75,7 +99,7 @@ function ObfuscateAllStrings(fullCode)
                             table.insert(bytes, content:byte(i))
                         end
                         local strategy = strategies[math.random(1, #strategies)]
-                        table.insert(result, strategy.fn(bytes))
+                        table.insert(result, intern(text, strategy.fn(bytes)))
                     end
                 else
                     table.insert(result, text)
@@ -86,5 +110,12 @@ function ObfuscateAllStrings(fullCode)
         end
     end
 
-    return table.concat(result)
+    local body = table.concat(result)
+    if #pool == 0 then return body end
+
+    -- Declare the pool as the very first statement so it is in scope (as a chunk
+    -- local / upvalue) for every use below, including inside the VM interpreter
+    -- function and nested closures.
+    local poolDef = "local " .. poolName .. "={" .. table.concat(pool, ",") .. "};"
+    return poolDef .. body
 end
