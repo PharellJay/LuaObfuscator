@@ -108,43 +108,94 @@ local function tamperChecksum(s)
     return h
 end
 
+-- Emit `core` as a single double-quoted Lua string literal using `\ddd` decimal
+-- escapes for every byte. The lexer decodes this into the final string constant
+-- at parse time, so the payload needs no runtime reconstruction (unlike the old
+-- table.concat({string.char(...)}) form, which built it with many calls + a
+-- concat on every startup). Handles arbitrary bytes, including NUL and newlines.
+local function byteStringLiteral(core)
+    local buf = {}
+    for i = 1, #core do
+        local b = string.byte(core, i)
+        -- Printable ASCII (except " and \) goes in literally — 1 byte instead of
+        -- a 4-char \ddd escape — so random ciphertext stays compact and parses
+        -- fast. Everything else uses a fixed-width \ddd escape (always 3 digits,
+        -- so a following literal digit can never extend it).
+        if b >= 32 and b <= 126 and b ~= 34 and b ~= 92 then
+            buf[i] = string.char(b)
+        else
+            buf[i] = string.format("\\%03d", b)
+        end
+    end
+    return '"' .. table.concat(buf) .. '"'
+end
+
+-- Keystream cipher used at build time; the emitted Lua below must stay
+-- byte-for-byte equivalent. 32-bit LCG state seeded by the key; each byte is
+-- XORed with bits 16..23 of the advanced state. XOR makes decrypt == encrypt.
+local function atRand32()
+    return (math.random(0, 65535) << 16) | math.random(0, 65535)
+end
+
+-- Express a 32-bit value as `(a ~ b ~ c)` with random a,b so the stored key
+-- material is not a recognizable magic number in the output.
+local function atSplitXor(v)
+    local a = atRand32()
+    local b = atRand32()
+    local c = (v ~ a ~ b) % 4294967296
+    return string.format("(%d ~ %d ~ %d)", a, b, c)
+end
+
+local function atCipher(s, key)
+    local state = key % 4294967296
+    local out = {}
+    for i = 1, #s do
+        state = (state * 1103515245 + 12345) % 4294967296
+        local kb = (state >> 16) & 255
+        out[i] = string.char(string.byte(s, i) ~ kb)
+    end
+    return table.concat(out)
+end
+
 function AddAntiTamper(code)
     local banner, core = code:match("^(%-%-%[%[.-%]%])(.*)$")
     if not banner then return code end
 
-    -- Encode core as chunks of string.char (Lua register limit: ~200 args max)
-    local CHUNK = 150
-    local chunks = {}
-    local i = 1
-    while i <= #core do
-        local part = {}
-        for _ = 1, CHUNK do
-            if i > #core then break end
-            table.insert(part, string.byte(core, i))
-            i = i + 1
-        end
-        table.insert(chunks, "string.char(" .. table.concat(part, ",") .. ")")
-    end
-
-    local expected = tamperChecksum(core)
+    -- Bind the integrity check to execution: the payload is encrypted, and the
+    -- key is recovered ONLY from the checksum of the (unmodified) ciphertext.
+    --   Kp = K XOR hash(ciphertext)   is stored;   K = Kp XOR hash(ciphertext).
+    -- Editing the payload changes its hash -> wrong key -> decrypt yields garbage
+    -- -> load() fails. The check cannot be stripped: its output IS the key.
+    local K      = (math.random(0, 65535) << 16) | math.random(0, 65535)
+    local cipher = atCipher(core, K)
+    local hC     = tamperChecksum(cipher)
+    local Kp     = K ~ hC
+    local lit    = byteStringLiteral(cipher)
 
     local t = GenerateRandomName(6)  -- type
-    local s = GenerateRandomName(6)  -- reconstructed payload
+    local s = GenerateRandomName(6)  -- ciphertext payload
     local h = GenerateRandomName(6)  -- running hash
-    local j = GenerateRandomName(6)  -- loop index
+    local j = GenerateRandomName(6)  -- hash loop index
+    local k = GenerateRandomName(6)  -- recovered key
+    local st = GenerateRandomName(6) -- keystream state
+    local c = GenerateRandomName(6)  -- per-byte char (gsub)
+    local p = GenerateRandomName(6)  -- decrypted plaintext
 
-    -- Environment validation, then an integrity self-check: recompute the
-    -- checksum of the reconstructed payload and bail out silently if it does not
-    -- match the build-time value, so beautifying or editing the payload breaks it.
+    -- Environment validation, then: hash the ciphertext, recover the key from the
+    -- hash, decrypt (gsub = one C-level pass, no per-byte table building), run.
     return banner ..
         "do local " .. t .. "=type if " .. t .. "(string)~=\"table\" or " .. t .. "(string.byte)~=\"function\" or " ..
         t .. "(math.floor)~=\"function\" or " .. t .. "(load)~=\"function\"then return end end;" ..
-        "local " .. s .. "=table.concat({" .. table.concat(chunks, ",") .. "});" ..
+        "local " .. s .. "=" .. lit .. ";" ..
         "local " .. h .. "=2166136261;for " .. j .. "=1,#" .. s .. " do " ..
         h .. "=" .. h .. " ~ string.byte(" .. s .. "," .. j .. ");" ..
         h .. "=(" .. h .. "*16777619)%4294967296 end;" ..
-        "if " .. h .. "~=" .. expected .. " then return end;" ..
-        "load(" .. s .. ")()"
+        "local " .. k .. "=(" .. atSplitXor(Kp) .. " ~ " .. h .. ")%4294967296;" ..
+        "local " .. st .. "=" .. k .. ";" ..
+        "local " .. p .. "=" .. s .. ":gsub(\".\",function(" .. c .. ")" ..
+        st .. "=(" .. st .. "*1103515245+12345)%4294967296;" ..
+        "return string.char(string.byte(" .. c .. ") ~ ((" .. st .. ">>16)&255))end);" ..
+        "load(" .. p .. ")()"
 end
 
 function GenerateRandomName(len)

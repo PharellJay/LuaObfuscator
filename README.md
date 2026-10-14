@@ -116,7 +116,7 @@ Beyond the VM, each pass is a standalone module. They run in a fixed pipeline
 | String splitting | `StringSplitter.lua` | Breaks literals into concatenated fragments on escape-safe boundaries. |
 | Constant pooling | `ConstantPooling.lua` | Collects constants into a shuffled pool table padded with junk, rewriting references through it. |
 | Minification | `Minify.lua` | Collapses whitespace and tightens operators into a single line. |
-| Anti-tamper | `Utils.lua` | Environment check + integrity checksum, then loads the body via `load(string.char(...))`; editing the payload breaks it. |
+| Anti-tamper | `Utils.lua` | Environment check, then an integrity-bound loader: the payload is encrypted and its decryption key is derived from a checksum of the ciphertext, so editing any byte (or stripping the check) yields the wrong key and the payload fails to load. The key material is stored split, not as a plaintext constant. One-time cost at startup; no runtime overhead. |
 
 An expression IR (`ExprAST.lua`) reconstructs a real tree from the parser's token
 lists; it backs the VM compiler and a precedence-aware emitter.
