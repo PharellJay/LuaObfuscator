@@ -84,6 +84,7 @@ local FIXTURES = {
     -- Edge/regression fixtures (added during the 2026-10 hardening audit).
     "test/fixtures/edge_funclit_return.lua",   -- §1a CFF terminal-statement miscount
     "test/fixtures/edge_nested_vararg.lua",    -- §1e CFF vararg over-bail (coverage)
+    "test/fixtures/cff_vararg_closure.lua",    -- CFF wider-flatten: nested vararg closures
     "test/fixtures/edge_hexfloat.lua",         -- §2 hex float literals (Lua 5.3+)
     "test/fixtures/edge_strings.lua",          -- §1c tricky string literals
     "test/fixtures/edge_vm_special.lua",       -- §1d VM non-finite/special constants
