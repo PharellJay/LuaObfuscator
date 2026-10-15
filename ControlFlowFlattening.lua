@@ -863,6 +863,13 @@ function FlattenBlock(statements)
     -- so a vararg `...` referring to the ENCLOSING function would be rebound to the
     -- (empty) wrapper's varargs. Conservatively bail if any statement uses `...`
     -- (this over-bails on `...` inside nested function literals, which is safe).
+    --
+    -- NOTE (2026-10-15): a function-nesting-aware version that only bailed on an
+    -- *escaping* `...` (to flatten blocks containing nested vararg closures) was
+    -- tried and REVERTED — enabling flattening of blocks that contain nested
+    -- function literals exposed pre-existing latent CFF miscompiles (e.g.
+    -- cff_nested_return, vm_localfn) unrelated to varargs. The conservative
+    -- over-bail here is correct; widening it needs those CFF bugs fixed first.
     local function toksVararg(toks)
         if not toks then return false end
         for _, t in ipairs(toks) do

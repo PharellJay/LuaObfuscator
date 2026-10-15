@@ -204,6 +204,20 @@ local function atSplitXor(v)
     return string.format("(%.0f ~ %.0f ~ %.0f)", a, b, c)
 end
 
+-- Emit an integer value as `(A+B)` so a recognizable magic constant (FNV/LCG
+-- primes, 2^32, etc.) is not a greppable literal in the anti-tamper loader. B is a
+-- small positive offset, A=value-B. Printed with %.0f so a value >= 2^31 (which has
+-- no integer subtype on a 32-bit-integer host like Fengari) still prints its exact
+-- digits; the user's 64-bit Lua reads `(A+B)` back as the exact integer. Build-time
+-- math is untouched (this only rewrites the emitted TEXT), so it is Fengari-safe:
+-- no native bitwise, no math.random over a >=2^31 bound, no 2^32 literal arithmetic.
+local function atSplitAdd(v)
+    local b = math.random(1, 100000)
+    if v <= b then b = 1 end
+    local a = v - b
+    return string.format("(%.0f+%.0f)", a, b)
+end
+
 local function atCipher(s, key)
     local state = key % 4294967296
     local out = {}
@@ -238,22 +252,36 @@ function AddAntiTamper(code)
     local st = GenerateRandomName(6) -- keystream state
     local c = GenerateRandomName(6)  -- per-byte char (gsub)
     local p = GenerateRandomName(6)  -- decrypted plaintext
+    local L = GenerateRandomName(6)  -- the `load` reference, fetched indirectly
 
-    -- Environment validation, then: hash the ciphertext, recover the key from the
-    -- hash, decrypt (gsub = one C-level pass, no per-byte table building), run.
+    local A = atSplitAdd
+
+    -- The loader runs LAST (after every pass) and is therefore not obfuscated by
+    -- the pipeline, so it is hardened by hand here:
+    --   * the FNV-1a / LCG magic constants (2166136261, 16777619, 1103515245,
+    --     12345) and the 2^32 modulus are emitted as split `(A+B)` arithmetic, so
+    --     the hash/cipher primitives are not fingerprintable by a constant grep;
+    --   * the byte-extract is written arithmetically (`//65536 %256`) instead of
+    --     `>>16 &255`, hiding the bitslice signature;
+    --   * `load` is fetched via `_G[<chars>]` so there is no literal `load(` sink to
+    --     grep for or strip in one edit (the env check validates the fetched ref).
+    -- This is tamper-EVIDENCE hardening, not secrecy: a determined attacker who
+    -- executes the loader can still recover the plaintext. It raises the bar on
+    -- casual/automated/one-shot-LLM deobfuscation, which is the realistic goal.
     return banner ..
+        "local " .. L .. "=_G[string.char(" .. A(108) .. "," .. A(111) .. "," .. A(97) .. "," .. A(100) .. ")];" ..
         "do local " .. t .. "=type if " .. t .. "(string)~=\"table\" or " .. t .. "(string.byte)~=\"function\" or " ..
-        t .. "(math.floor)~=\"function\" or " .. t .. "(load)~=\"function\"then return end end;" ..
+        t .. "(math.floor)~=\"function\" or " .. t .. "(" .. L .. ")~=\"function\"then return end end;" ..
         "local " .. s .. "=" .. lit .. ";" ..
-        "local " .. h .. "=2166136261;for " .. j .. "=1,#" .. s .. " do " ..
+        "local " .. h .. "=" .. A(2166136261) .. ";for " .. j .. "=1,#" .. s .. " do " ..
         h .. "=" .. h .. " ~ string.byte(" .. s .. "," .. j .. ");" ..
-        h .. "=(" .. h .. "*16777619)%4294967296 end;" ..
-        "local " .. k .. "=(" .. atSplitXor(Kp) .. " ~ " .. h .. ")%4294967296;" ..
+        h .. "=(" .. h .. "*" .. A(16777619) .. ")%" .. A(4294967296) .. " end;" ..
+        "local " .. k .. "=(" .. atSplitXor(Kp) .. " ~ " .. h .. ")%" .. A(4294967296) .. ";" ..
         "local " .. st .. "=" .. k .. ";" ..
         "local " .. p .. "=" .. s .. ":gsub(\".\",function(" .. c .. ")" ..
-        st .. "=(" .. st .. "*1103515245+12345)%4294967296;" ..
-        "return string.char(string.byte(" .. c .. ") ~ ((" .. st .. ">>16)&255))end);" ..
-        "load(" .. p .. ")()"
+        st .. "=(" .. st .. "*" .. A(1103515245) .. "+" .. A(12345) .. ")%" .. A(4294967296) .. ";" ..
+        "return string.char(string.byte(" .. c .. ") ~ ((" .. st .. "//" .. A(65536) .. ")%" .. A(256) .. "))end);" ..
+        L .. "(" .. p .. ")()"
 end
 
 function GenerateRandomName(len)
