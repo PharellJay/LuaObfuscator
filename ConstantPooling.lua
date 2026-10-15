@@ -223,7 +223,12 @@ function CreateConstantPool(fullCode)
     fullCode:gsub('"(.-)"', function(str)
         AddToPool('"' .. str .. '"')
     end)
-    fullCode:gsub("([^%w_])(0x%x+)", function(before, hex)
+    -- A trailing `.`/`p`/`P` means this `0x…` is actually a hex FLOAT (0x1p4,
+    -- 0x1.8, 0xA.8); the `%x+` only grabbed its integer part, so pooling it would
+    -- split the literal. Skip those. (An empty trailing capture is the normal
+    -- hex-int case; a single `.` of a `..` concat is also safely skipped.)
+    fullCode:gsub("([^%w_])(0x%x+)([pP.]?)", function(before, hex, trail)
+        if trail == "p" or trail == "P" or trail == "." then return end
         local hexBody = hex:match("^0[xX]([0-9a-fA-F]+)$")
         if hexBody then
             local sigHex = hexBody:match("^0*(.+)$")
@@ -318,10 +323,11 @@ function CreateConstantPool(fullCode)
     end)
 
     -- Replace all hex literals in code with pool accesses
-    result = result:gsub("([^%w_])(0x%x+)", function(before, hex)
+    result = result:gsub("([^%w_])(0x%x+)([pP.]?)", function(before, hex, trail)
+        if trail == "p" or trail == "P" or trail == "." then return before .. hex .. trail end
         local oldIdx = constantMap[hex]
         if not oldIdx or not remap[oldIdx] then return before .. hex end
-        return before .. currentPoolName .. "[" .. remap[oldIdx] .. "]"
+        return before .. currentPoolName .. "[" .. remap[oldIdx] .. "]" .. trail
     end)
 
     -- Assemble final output:

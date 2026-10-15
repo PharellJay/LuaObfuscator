@@ -86,12 +86,10 @@ function GenerateInterpreter(vmName, perm, seed)
         local nres = code[pc]; pc = pc + 1
         local base = marks[mtop]; mtop = mtop - 1
         local fn = S[base]
-        local nargs = top - base
-        local a = {}
-        for i = 1, nargs do a[i] = S[base + i] end
-        for i = base, top do S[i] = nil end
+        local hi = top
+        local r = table.pack(fn(table.unpack(S, base + 1, hi)))
+        for i = base, hi do S[i] = nil end
         top = base - 1
-        local r = table.pack(fn(table.unpack(a, 1, nargs)))
         if nres == 255 then
           for i = 1, r.n do top = top + 1; S[top] = r[i] end
         else
@@ -99,10 +97,7 @@ function GenerateInterpreter(vmName, perm, seed)
         end
       elseif o == %RET% then
         local base = marks[mtop]; mtop = mtop - 1
-        local n = top - base
-        local r = {}
-        for i = 1, n do r[i] = S[base + i] end
-        return table.unpack(r, 1, n)
+        return table.unpack(S, base + 1, top)
       elseif o == %JMP% then pc = code[pc]
       elseif o == %JMPIFFALSE% then local t = code[pc]; pc = pc + 1; local c = S[top]; S[top] = nil; top = top - 1; if not c then pc = t end
       elseif o == %JMPIFTRUE% then local t = code[pc]; pc = pc + 1; local c = S[top]; S[top] = nil; top = top - 1; if c then pc = t end

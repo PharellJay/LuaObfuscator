@@ -18,11 +18,14 @@ Config.VirtualizeAll = false --When true, virtualize EVERY eligible top-level fu
 -- dead-code injection and control-flow flattening (variable renaming + the text
 -- passes still apply to it). The interpreter is the dominant runtime cost in
 -- "max" mode, and those two passes applied to it are the bulk of that cost, so
--- this makes virtualized output run much faster WITHOUT weakening the
--- obfuscation of your own code at all. Tradeoff: only the interpreter itself
--- becomes a little easier to pattern-match (its opcodes are still per-build
--- permuted and its constants encrypted). Default false (full strength).
-Config.VMLightweight = false
+-- this makes virtualized output run much faster (benchmarked ~70x on a VM-heavy
+-- loop) and the output far smaller, WITHOUT weakening the obfuscation of your own
+-- code at all. Tradeoff: only the interpreter itself becomes a little easier to
+-- pattern-match (its opcodes are still per-build permuted and its constants
+-- encrypted). Default true: the speed/size win is large and your code's strength
+-- is untouched; set to false to also flatten/junk the interpreter for maximum
+-- (if slow and bulky) opacity of the VM engine itself.
+Config.VMLightweight = true
 
 -- Obfuscation strength preset. Picks a base set of passes:
 --   "max"  — maximum strength (every pass on). Highest runtime cost. (default)

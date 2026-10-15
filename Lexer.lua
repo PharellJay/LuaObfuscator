@@ -42,7 +42,15 @@ function Tokenize(code)
             })
             pos = pos + #value
         elseif char:match("%d") or (char == "." and code:sub(pos + 1, pos + 1):match("%d")) then
-            local hexValue = code:match("^0[xX]%x+", pos)
+            -- Hexadecimal numbers, including hex FLOATS (Lua 5.2+): an optional
+            -- hex fraction and/or a binary exponent `p`/`P` with a DECIMAL exponent,
+            -- e.g. 0x1p4, 0x1.8p-2, 0xA.8, 0x.8, 0x1. — matched most-specific first.
+            local hexValue =
+                   code:match("^0[xX]%x*%.%x*[pP][%+%-]?%d+", pos) -- frac + exponent
+                or code:match("^0[xX]%x+[pP][%+%-]?%d+", pos)      -- integer part + exponent
+                or code:match("^0[xX]%x+%.%x*", pos)               -- 0x1. / 0x1.8
+                or code:match("^0[xX]%.%x+", pos)                  -- 0x.8
+                or code:match("^0[xX]%x+", pos)                    -- plain hex integer
             if hexValue then
                 table.insert(tokens, { type = "NUMBER", value = hexValue })
                 pos = pos + #hexValue

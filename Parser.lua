@@ -701,14 +701,35 @@ local function parseLocal()
     -- past the first name when the next token is a comma, so a bare `local a`
     -- immediately followed by another statement (e.g. `b = 1`) is NOT swallowed.
     local varTokens = {}
+    -- Optionally consume a Lua 5.4 attribute `<const>` / `<close>` that follows a
+    -- name, and attach it to that name token as `.attrib` (NOT as separate stream
+    -- tokens). This way variable renaming and the text passes leave it untouched,
+    -- and the emitter re-attaches `<attrib>` after the (possibly renamed) name.
+    local function consumeAttrib(nameTok)
+        if peek() and peek().type == "SYMBOL" and peek().value == "<" then
+            advance() -- '<'
+            local a = peek()
+            if a and a.type == "IDENTIFIER" then
+                advance()
+                nameTok.attrib = a.value
+            end
+            if peek() and peek().type == "SYMBOL" and peek().value == ">" then
+                advance() -- '>'
+            end
+        end
+    end
     local first = peek()
     if first and first.type == "IDENTIFIER" then
-        table.insert(varTokens, advance())
+        local nt = advance()
+        consumeAttrib(nt)
+        table.insert(varTokens, nt)
         while peek() and peek().type == "SYMBOL" and peek().value == "," do
             table.insert(varTokens, advance()) -- the comma
             local nm = peek()
             if nm and nm.type == "IDENTIFIER" then
-                table.insert(varTokens, advance())
+                local nt2 = advance()
+                consumeAttrib(nt2)
+                table.insert(varTokens, nt2)
             else
                 break
             end

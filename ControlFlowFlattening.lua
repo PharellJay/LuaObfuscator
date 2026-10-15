@@ -11,6 +11,21 @@ function HoistVariables(statements)
     local hoisted = {}
     local newStatements = {}
 
+    -- A Lua 5.4 `<const>`/`<close>` attribute is only valid on a `local`
+    -- declaration. Hoisting rewrites a `local x <const> = v` into a plain
+    -- assignment `x = v` (the name is separately declared in the hoisted `local`),
+    -- so the attribute must be dropped from the assignment's name token or it
+    -- emits the illegal `x <const> = v`. (`<close>` never reaches here: a block
+    -- declaring one bails out of flattening entirely; `<const>` is only a
+    -- compile-time check, so dropping it is behavior-preserving.)
+    local function stripAttrib(tok)
+        if tok.attrib == nil then return tok end
+        local c = {}
+        for k, v in pairs(tok) do c[k] = v end
+        c.attrib = nil
+        return c
+    end
+
     for _, stmt in ipairs(statements) do
         if stmt.type == "GenericStatement" then
             if stmt.tokens[1] and stmt.tokens[1].value == "local" then
@@ -18,7 +33,7 @@ function HoistVariables(statements)
                 table.insert(hoisted, varName)
                 local assignmentTokens = {}
                 for i = 2, #stmt.tokens do
-                    table.insert(assignmentTokens, stmt.tokens[i])
+                    table.insert(assignmentTokens, stripAttrib(stmt.tokens[i]))
                 end
                 table.insert(newStatements, { type = "GenericStatement", tokens = assignmentTokens })
             else
@@ -38,7 +53,7 @@ function HoistVariables(statements)
                 local assignTokens = {}
                 -- vars + = + values
                 for _, tok in ipairs((stmt.vars and stmt.vars.tokens) or {}) do
-                    table.insert(assignTokens, tok)
+                    table.insert(assignTokens, stripAttrib(tok))
                 end
                 table.insert(assignTokens, { type = "SYMBOL", value = "=" })
                 for _, tok in ipairs((stmt.values and stmt.values.tokens) or {}) do
@@ -101,10 +116,20 @@ local function IsTerminalStatement(stmt)
         return true
     end
     if stmt.type == "GenericStatement" then
+        -- A `return`/`break` is only *terminal* for this statement when it sits at
+        -- the statement's top level. Any `return`/`break` nested inside a function
+        -- literal (or other block) on the RHS belongs to that inner block, not to
+        -- the flattened block, so we must track nesting depth correctly.
+        --
+        -- Every construct that is closed by `end` must open a level: `function`,
+        -- `if`, and `do` — and `do` is exactly the token that opens `for`/`while`
+        -- bodies too (`for … do … end`, `while … do … end`), so `for`/`while`
+        -- themselves must NOT be counted or the depth would never rebalance.
+        -- `repeat … until` has no `end`, so it is not counted either.
         local depth = 0
         for _, tok in ipairs(stmt.tokens) do
             if tok.type == "KEYWORD" then
-                if tok.value == "function" then
+                if tok.value == "function" or tok.value == "if" or tok.value == "do" then
                     depth = depth + 1
                 elseif tok.value == "end" then
                     depth = depth - 1
@@ -877,12 +902,32 @@ function FlattenBlock(statements)
     end
     if flattenTo < 2 then return statements end
 
+    -- A `<close>` (to-be-closed) local must keep its exact lexical scope so its
+    -- `__close` metamethod fires at the right block exit. Flattening relocates
+    -- declarations into dispatch state functions, which would change that timing,
+    -- so bail if a statement in THIS block declares one. (A `<close>` nested in a
+    -- sub-block is handled by the recursive FlattenAST/FlattenBlock on that block,
+    -- and `<const>` is only a compile-time check, so it is safe to hoist.)
+    local function declaresClose(stmt)
+        local function toksHaveClose(toks)
+            if not toks then return false end
+            for _, t in ipairs(toks) do if t.attrib == "close" then return true end end
+            return false
+        end
+        if stmt.type == "LocalStatement" then
+            return stmt.vars and toksHaveClose(stmt.vars.tokens)
+        elseif stmt.type == "GenericStatement" then
+            return toksHaveClose(stmt.tokens)
+        end
+        return false
+    end
+
     local toFlatten = {}
     local needRet = false
     local needBrk = false
     for i = 1, flattenTo do
         local s = statements[i]
-        if hasGotoLabel(s) or stmtHasVararg(s) then return statements end
+        if hasGotoLabel(s) or stmtHasVararg(s) or declaresClose(s) then return statements end
         if hasReturn(s) then needRet = true end
         if hasEscapingBreak(s, false) then needBrk = true end
         toFlatten[i] = s

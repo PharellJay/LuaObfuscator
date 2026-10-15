@@ -82,6 +82,19 @@ function ObfuscateAllIntegers(fullCode)
         local numbers = {}
         local counter = 0
 
+        -- Protect hex FLOAT literals (0x1.8p-2, 0x1p4, 0xA.8, 0x.8) from the hex
+        -- integer matcher below, which would otherwise grab the `0x1` out of
+        -- `0x1.8p1` and corrupt it. Kept as-is (\3), like scientific notation.
+        local function keepHexFloat(before, hf)
+            counter = counter + 1
+            numbers[counter] = hf
+            return before .. "\1" .. counter .. "\3"
+        end
+        segment = segment:gsub("([^%w_])(0[xX]%x*%.%x*[pP][%+%-]?%d+)", keepHexFloat)
+        segment = segment:gsub("([^%w_])(0[xX]%x+[pP][%+%-]?%d+)", keepHexFloat)
+        segment = segment:gsub("([^%w_])(0[xX]%x+%.%x*)", keepHexFloat)
+        segment = segment:gsub("([^%w_])(0[xX]%.%x+)", keepHexFloat)
+
         -- Must NOT match inside _0x... variable names (used by DeadCodeInjector)
         segment = segment:gsub("([^%w_])(0[xX][0-9a-fA-F]+)", function(before, hex)
             counter = counter + 1
@@ -171,6 +184,15 @@ function ObfuscateNumber(n)
     local num = tonumber(n)
     if not num then return n end
 
+    -- A float LITERAL must stay a float even when its value is integral. Lua 5.3+
+    -- distinguishes integers from floats (math.type, tostring/print formatting,
+    -- bitwise-operator validity, string.format("%d")), so turning the literal
+    -- `3.0` into an integer `3` is a behavior change. Decide float-ness from the
+    -- literal TEXT (a '.' or an exponent marker), not from `num % 1`, because
+    -- `3.0 % 1 == 0`. Integral-valued floats are obfuscated as an integer
+    -- expression coerced back to float with `+ 0.0` (value-preserving).
+    local isFloatLiteral = n:find("[%.eEpP]") ~= nil
+
     if num % 1 ~= 0 then
         local m = tostring(num):match("%.(%d+)")
         if not m then return n end
@@ -183,6 +205,9 @@ function ObfuscateNumber(n)
         else
             return "(" .. NumHex(numerator + extra) .. "-" .. NumHex(extra) .. ")/" .. NumHex(multiplier)
         end
+    elseif isFloatLiteral then
+        local intVal = math.tointeger(num) or math.floor(num)
+        return "(" .. ObfuscateInteger(intVal) .. "+0.0)"
     else
         return ObfuscateInteger(num)
     end

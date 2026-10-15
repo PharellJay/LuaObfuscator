@@ -81,6 +81,20 @@ local FIXTURES = {
     "test/fixtures/vm_repeat.lua",
     "test/fixtures/vm_massign.lua",
     "test/fixtures/vm_goto.lua",
+    -- Edge/regression fixtures (added during the 2026-10 hardening audit).
+    "test/fixtures/edge_funclit_return.lua",   -- §1a CFF terminal-statement miscount
+    "test/fixtures/edge_nested_vararg.lua",    -- §1e CFF vararg over-bail (coverage)
+    "test/fixtures/edge_hexfloat.lua",         -- §2 hex float literals (Lua 5.3+)
+    "test/fixtures/edge_strings.lua",          -- §1c tricky string literals
+    "test/fixtures/edge_vm_special.lua",       -- §1d VM non-finite/special constants
+}
+
+-- 5.4-only fixtures: use syntax (<const>/<close>) that a 5.3 interpreter cannot
+-- even parse, so their baseline must run under a Lua 5.4 binary. Set LUA_BIN_54 to
+-- enable; otherwise they are skipped.
+local FIXTURES_54 = {
+    "test/fixtures/attrib_const.lua",
+    "test/fixtures/attrib_close.lua",
 }
 
 local TMP = os.getenv("TMPDIR") or "/tmp"
@@ -102,9 +116,10 @@ end
 -- Run a Lua script as a child process, capturing combined stdout/stderr and
 -- the exit status. Shells out so the obfuscated file is executed exactly as a
 -- user would run it (fresh interpreter state, no shared globals).
-local function runScript(path)
+local function runScript(path, bin)
+    bin = bin or LUA_BIN
     local outPath = TMP .. "/deadeye_run_" .. tostring(math.random(1, 1e9)) .. ".out"
-    local cmd = string.format('%q %q > %q 2>&1', LUA_BIN, path, outPath)
+    local cmd = string.format('%q %q > %q 2>&1', bin, path, outPath)
     local ok, kind, code = os.execute(cmd)
     local out = readFile(outPath) or ""
     os.remove(outPath)
@@ -120,64 +135,110 @@ end
 
 math.randomseed(os.time())
 
-local passed, failed = 0, {}
+-- Multi-seed fuzz: when FUZZ=N is set, each fixture is obfuscated under N pinned
+-- seeds (1..N) and must pass under EVERY one. The per-build RNG drives opcode
+-- permutation, CFF pattern/predicate choice and junk counts, so a single seed can
+-- hide a probabilistic bug; the fuzz loop makes those deterministic & reproducible.
+local NSEEDS = tonumber(os.getenv("FUZZ") or "")
+-- Optional Lua 5.4 interpreter for the 5.4-only fixtures (attributes).
+local LUA_BIN_54 = os.getenv("LUA_BIN_54")
 
-for _, fixture in ipairs(FIXTURES) do
-    io.write(("%-34s "):format(fixture))
-    local src = readFile(fixture)
-    if not src then
-        io.write("SKIP (not found)\n")
-    else
-        -- 1. Baseline: run the original.
-        local origOut, origStatus = runScript(fixture)
+local passed, failed, skipped = 0, {}, 0
 
-        -- 2. Obfuscate (in-process reuse of the real pipeline).
-        local ok, obf = pcall(Obfuscate, src)
-        if not ok then
-            io.write("FAIL (obfuscation error)\n       " .. tostring(obf) .. "\n")
-            failed[#failed + 1] = fixture
+-- Run Obfuscate with the pipeline's progress prints silenced (so a fuzz run of
+-- hundreds of builds stays readable).
+local function obfQuiet(src)
+    local real = print
+    _G.print = function() end
+    local ok, res = pcall(Obfuscate, src)
+    _G.print = real
+    return ok, res
+end
+
+local function diffReport(origOut, obfOut)
+    local function lines(s)
+        local t = {}
+        for x in (s .. "\n"):gmatch("(.-)\n") do t[#t + 1] = x end
+        return t
+    end
+    local ol, bl = lines(origOut), lines(obfOut)
+    io.write("       --- first differing line ---\n")
+    for i = 1, math.max(#ol, #bl) do
+        if ol[i] ~= bl[i] then
+            io.write("       orig[" .. i .. "]: " .. tostring(ol[i]) .. "\n")
+            io.write("       obf [" .. i .. "]: " .. tostring(bl[i]) .. "\n")
+            break
+        end
+    end
+    io.write(("       (orig=%d bytes, obf=%d bytes)\n"):format(#origOut, #obfOut))
+end
+
+-- Obfuscate `src` under one pinned seed (or ambient config when seed is nil), run
+-- the output under `bin`, and compare to the baseline. Returns ok, msg, oo, bo.
+local function checkOne(src, origOut, origStatus, bin, seed, tag)
+    if seed ~= nil then
+        Config = Config or {}
+        Config.RandomSeed = seed
+    end
+    local ok, obf = obfQuiet(src)
+    if not ok then return false, "obfuscation error: " .. tostring(obf) end
+    local obfPath = TMP .. "/deadeye_obf_" .. tag .. ".lua"
+    writeFile(obfPath, obf)
+    local obfOut, obfStatus = runScript(obfPath, bin)
+    if obfOut == origOut and obfStatus == origStatus then
+        os.remove(obfPath)
+        return true
+    end
+    os.rename(obfPath, obfPath .. ".kept")
+    local parts = {}
+    if obfStatus ~= origStatus then
+        parts[#parts + 1] = ("exit orig=%s obf=%s"):format(tostring(origStatus), tostring(obfStatus))
+    end
+    parts[#parts + 1] = "kept " .. obfPath .. ".kept"
+    return false, table.concat(parts, " | "), origOut, obfOut
+end
+
+local function runSuite(fixtures, bin, binName)
+    for _, fixture in ipairs(fixtures) do
+        io.write(("%-38s "):format(fixture))
+        local src = readFile(fixture)
+        if not src then
+            io.write("SKIP (not found)\n"); skipped = skipped + 1
+        elseif not bin then
+            io.write("SKIP (set " .. binName .. ")\n"); skipped = skipped + 1
         else
-            local obfPath = TMP .. "/deadeye_obf_" ..
-                fixture:gsub("[^%w]", "_") .. ".lua"
-            writeFile(obfPath, obf)
-
-            -- 3. Run the obfuscated output and compare.
-            local obfOut, obfStatus = runScript(obfPath)
-            if obfOut == origOut and obfStatus == origStatus then
-                io.write("PASS\n")
+            local origOut, origStatus = runScript(fixture, bin)
+            local seeds
+            if NSEEDS then
+                seeds = {}
+                for i = 1, NSEEDS do seeds[i] = i end
+            else
+                seeds = { false } -- sentinel: single run with ambient (random) seed
+            end
+            local firstFail
+            for _, seed in ipairs(seeds) do
+                local sv = (seed ~= false) and seed or nil
+                local tag = fixture:gsub("[^%w]", "_") .. "_" .. tostring(sv)
+                local ok, msg, oo, bo = checkOne(src, origOut, origStatus, bin, sv, tag)
+                if not ok then firstFail = { seed = sv, msg = msg, oo = oo, bo = bo }; break end
+            end
+            if not firstFail then
+                io.write(NSEEDS and ("PASS (" .. NSEEDS .. " seeds)\n") or "PASS\n")
                 passed = passed + 1
             else
-                io.write("FAIL (behavior differs)\n")
-                if obfStatus ~= origStatus then
-                    io.write(("       exit: orig=%s obf=%s\n"):format(
-                        tostring(origStatus), tostring(obfStatus)))
-                end
-                if obfOut ~= origOut then
-                    local function lines(s)
-                        local t = {}
-                        for x in (s .. "\n"):gmatch("(.-)\n") do t[#t + 1] = x end
-                        return t
-                    end
-                    local ol, bl = lines(origOut), lines(obfOut)
-                    io.write("       --- first differing line ---\n")
-                    for i = 1, math.max(#ol, #bl) do
-                        if ol[i] ~= bl[i] then
-                            io.write("       orig[" .. i .. "]: " .. tostring(ol[i]) .. "\n")
-                            io.write("       obf [" .. i .. "]: " .. tostring(bl[i]) .. "\n")
-                            break
-                        end
-                    end
-                    io.write(("       (orig=%d bytes, obf=%d bytes)\n"):format(#origOut, #obfOut))
-                end
-                os.rename(obfPath, obfPath .. ".kept") -- keep failing output for inspection
-                io.write("       kept obfuscated output: " .. obfPath .. ".kept\n")
+                io.write("FAIL" .. (firstFail.seed and (" (seed " .. firstFail.seed .. ")") or "") .. "\n")
+                io.write("       " .. tostring(firstFail.msg) .. "\n")
+                if firstFail.oo then diffReport(firstFail.oo, firstFail.bo) end
                 failed[#failed + 1] = fixture
             end
         end
     end
 end
 
-print(("\n%d passed, %d failed, %d total"):format(passed, #failed, #FIXTURES))
+runSuite(FIXTURES, LUA_BIN, "lua")
+runSuite(FIXTURES_54, LUA_BIN_54, "LUA_BIN_54")
+
+print(("\n%d passed, %d failed, %d skipped"):format(passed, #failed, skipped))
 if #failed > 0 then
     print("FAILED: " .. table.concat(failed, ", "))
     os.exit(1)

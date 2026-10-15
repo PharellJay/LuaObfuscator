@@ -47,7 +47,9 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
 
 ## Requirements
 
-- **Lua 5.3+** (uses 5.3 integer/bitwise operators). Lua 5.4 works as well.
+- **Lua 5.3+** (uses 5.3 integer/bitwise operators). Lua 5.4 works as well — the
+  front end also accepts 5.4-only input syntax: the `<const>`/`<close>` local
+  attributes and hexadecimal float literals (`0x1p4`, `0x1.8p-2`).
 - *For the browser UI only:* **Python 3** (for the bundled dev server) and any
   modern browser. The core obfuscator itself needs nothing but Lua.
 
@@ -164,7 +166,7 @@ Beyond the VM, each pass is a standalone module. They run in a fixed pipeline
 | Variable renaming | `VariableRenamer.lua` | Scope-aware renaming of locals to random `_xxxx` names; runs twice. |
 | Control-flow flattening | `ControlFlowFlattening.lua` | Lowers statement blocks into dispatch state machines (handles `return`/`break` via a sentinel protocol). |
 | Integer obfuscation | `NumericalObfuscator.lua` | Replaces numeric literals with hex, XOR closures, multiply/add chains, `load`-based expressions, and mixed-boolean-arithmetic identities. |
-| String obfuscation | `LexicalObfuscator.lua` | Encodes string literals as self-decoding XOR closures. |
+| String obfuscation | `LexicalObfuscator.lua` | Encodes string literals as self-decoding XOR closures, decoded once into a chunk-level pool. Each decode is also bound to a per-build seed computed by a runtime loop (not a literal), so no single decode expression can be constant-folded in isolation — an automated/LLM deobfuscator must evaluate the shared seed to recover any string. |
 | String splitting | `StringSplitter.lua` | Breaks literals into concatenated fragments on escape-safe boundaries. |
 | Constant pooling | `ConstantPooling.lua` | Collects constants into a shuffled pool table padded with junk, rewriting references through it. |
 | Minification | `Minify.lua` | Collapses whitespace and tightens operators into a single line. |
@@ -190,7 +192,7 @@ All knobs live in `Config.lua`:
 | `RandomSeed` | `nil` | Set a number to force a fixed seed for reproducible output. |
 | `Config.VirtualizePrefix` | `"vm_"` | Name prefix selecting top-level functions to virtualize; `nil`/`""` disables prefix-based selection. |
 | `Config.VirtualizeAll` | `false` | When `true`, virtualize **every** eligible top-level function (prefix ignored); ineligible functions safely stay native. Maximum coverage, higher runtime cost. |
-| `Config.VMLightweight` | `false` | When `true`, exempt the spliced VM interpreter from dead-code injection and control-flow flattening (renaming and the text passes still apply to it). Large speedup and much smaller output for virtualized code, with **no change to how your own code is obfuscated**; only the interpreter becomes slightly easier to pattern-match (opcodes still permuted, constants still encrypted per build). |
+| `Config.VMLightweight` | `true` | Exempt the spliced VM interpreter from dead-code injection and control-flow flattening (renaming and the text passes still apply to it). Large speedup (~70× on a VM-heavy loop) and much smaller output for virtualized code, with **no change to how your own code is obfuscated**; only the interpreter becomes slightly easier to pattern-match (opcodes still permuted, constants still encrypted per build). Default `true`; set `false` to also flatten/junk the engine itself. |
 | `Config.Preset` | `"max"` | Strength preset that seeds `Config.Passes`: `"max"` (every pass on, strongest, slowest) or `"fast"` (performance mode — see below). |
 | `Config.Passes.*` | from preset | Per-pass on/off switches (CommentRemoval, DeadCode, Rename, Flatten, NumberObf, StringObf, StringSplit, ConstantPool, Minify, AntiTamper). Seeded from `Config.Preset`; override any individual pass after the preset line. |
 
@@ -253,10 +255,27 @@ USE_EXPR_AST=1 lua run_tests.lua
 VIRTUALIZE_ALL=1 lua run_tests.lua
 # validate a strength preset across the suite:
 PRESET=fast lua run_tests.lua
+# multi-seed fuzz: obfuscate each fixture under N pinned seeds (catches
+# probabilistic bugs in the per-build-randomized passes):
+FUZZ=20 lua run_tests.lua
+# validate Lua 5.4-only fixtures (<const>/<close>) against a 5.4 interpreter:
+LUA_BIN_54=/path/to/lua5.4 lua run_tests.lua
 ```
 
 Fixtures live in `test/fixtures/` and cover closures, varargs, metatables,
-coroutines, `goto`, bitwise ops, control-flow edge cases, and the VM feature set.
+coroutines, `goto`, bitwise ops, control-flow edge cases, the VM feature set, and
+targeted regression cases (hex floats, 5.4 attributes, tricky string literals,
+function-literal returns inside flattened blocks).
+
+A separate harness, `security_check.lua`, asserts the output's security
+properties rather than behavior: that a known plaintext/numeric secret never
+survives in the output, that the program still produces it at runtime, and that
+flipping bytes in the anti-tamper payload breaks execution (the secret never
+leaks from a tampered file).
+
+```sh
+lua security_check.lua
+```
 
 ## Project layout
 

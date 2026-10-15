@@ -2,6 +2,17 @@ local function isWordToken(t)
     return t.type == "IDENTIFIER" or t.type == "KEYWORD" or t.type == "NUMBER" or t.type == "STRING"
 end
 
+-- Two adjacent tokens whose boundary characters would fuse into a longer token
+-- must be separated by a space. The key is (last char of the left token) ..
+-- (first char of the right token); every entry here is a real multi-character
+-- Lua token that must not be formed by accident: `--` (comment), the compound
+-- operators, `..`/`...`, `::` (label), and `[[` (long-string open).
+local MERGE_PAIRS = {
+    ["--"] = true, ["=="] = true, ["~="] = true, ["<="] = true, [">="] = true,
+    ["<<"] = true, [">>"] = true, ["//"] = true, [".."] = true, ["::"] = true,
+    ["[["] = true,
+}
+
 local function joinTokens(tokens)
     local parts = {}
     for i, t in ipairs(tokens) do
@@ -13,13 +24,21 @@ local function joinTokens(tokens)
                 table.insert(parts, " ")
             elseif prev.type == "SYMBOL" and prev.value == ".." and t.type == "NUMBER" then
                 table.insert(parts, " ")
-            elseif prev.value and t.value and prev.value:sub(-1) == "-" and t.value:sub(1, 1) == "-" then
-                -- prevent two adjacent '-' from merging into '--' (a comment),
-                -- e.g. unary minus of a negative: `- -5` must not become `--5`.
+            elseif prev.value and t.value and #prev.value > 0 and #t.value > 0
+                and MERGE_PAIRS[prev.value:sub(-1) .. t.value:sub(1, 1)] then
+                -- e.g. `- -5` must not become `--5`; `<` `=` must not become `<=`.
                 table.insert(parts, " ")
             end
         end
         table.insert(parts, t.value)
+        -- A Lua 5.4 `<const>`/`<close>` attribute rides on the name token (set by
+        -- the parser) so renaming leaves it intact; re-attach it here, padded with
+        -- spaces so the trailing `>` can't fuse with a following `=` (`>=`) and the
+        -- leading `<` can't fuse with the name. Only local-declaration name tokens
+        -- ever carry `.attrib`, so this is safe globally.
+        if t.attrib then
+            table.insert(parts, " <" .. t.attrib .. "> ")
+        end
     end
     return table.concat(parts)
 end
@@ -87,7 +106,10 @@ function Emit(node)
         return "break"
 
     elseif t == "LocalStatement" then
-        local vars = emitExpr(node.vars)
+        -- A local var list is always simple names (plus optional 5.4 <attrib>s),
+        -- never sub-expressions, so join it directly. This also keeps the attribute
+        -- intact under USE_EXPR_AST (the ExprAST path does not model `.attrib`).
+        local vars = joinTokens((node.vars and node.vars.tokens) or {})
         if node.values then
             return "local " .. vars .. "=" .. emitExpr(node.values)
         end
