@@ -194,16 +194,27 @@ function ObfuscateNumber(n)
     local isFloatLiteral = n:find("[%.eEpP]") ~= nil
 
     if num % 1 ~= 0 then
-        local m = tostring(num):match("%.(%d+)")
-        if not m then return n end
-        local multiplier = 10 ^ #m
-        local numerator = num * multiplier
-        local frac = "(" .. NumHex(numerator) .. "/" .. NumHex(multiplier) .. ")"
+        -- Fractional float. Build an EXACT numerator/denominator from the literal
+        -- TEXT (plain `A.B` decimal). The old code did `num * 10^#digits`, which
+        -- can land on a non-integral float and make string.format("%x", ...) throw
+        -- ("number has no integer representation"); it was also unguarded. Here we
+        -- only emit the obfuscated form when it reconstructs the value bit-exactly,
+        -- otherwise we leave the literal untouched. (Hex/scientific floats never
+        -- reach this function — they are preserved earlier in the pipeline.)
+        local intPart, fracPart = n:match("^(%d*)%.(%d+)$")
+        if not fracPart then return n end
+        local numerator = tonumber((intPart ~= "" and intPart or "0") .. fracPart)
+        local denom = tonumber("1" .. string.rep("0", #fracPart))
+        if not (numerator and denom
+                and math.type(numerator) == "integer" and math.type(denom) == "integer"
+                and numerator / denom == num) then
+            return n
+        end
         local extra = math.random(1, 999)
         if math.random(0, 1) == 0 then
-            return frac
+            return "(" .. ObfuscateInteger(numerator) .. "/" .. NumHex(denom) .. ")"
         else
-            return "(" .. NumHex(numerator + extra) .. "-" .. NumHex(extra) .. ")/" .. NumHex(multiplier)
+            return "((" .. NumHex(numerator + extra) .. "-" .. NumHex(extra) .. ")/" .. NumHex(denom) .. ")"
         end
     elseif isFloatLiteral then
         local intVal = math.tointeger(num) or math.floor(num)

@@ -176,13 +176,17 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
 
     local stateIDs = {}
     local stateIDSet = {}
+    -- Per-build terminal sentinel. Was always 0 — a fixed "end of machine" marker
+    -- a reverser could key on. Now a random value, reserved so no real/junk state
+    -- ID can collide with it.
+    local sentinel = randomStateID(stateIDSet)
+    stateIDSet[sentinel] = true
     for i = 1, #cleanStatements do
         local id = randomStateID(stateIDSet)
         stateIDs[i] = id
         stateIDSet[id] = true
     end
-    stateIDs[#cleanStatements + 1] = 0
-    stateIDSet[0] = true
+    stateIDs[#cleanStatements + 1] = sentinel
 
     local seed = math.random(1, 999999)
 
@@ -192,7 +196,7 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
         local currentID = stateIDs[i]
         local nextID
         if IsTerminalStatement(stmt) then
-            nextID = 0
+            nextID = sentinel
         else
             nextID = stateIDs[i + 1]
         end
@@ -369,7 +373,7 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
                 { type = "SYMBOL", value = opSym },
                 { type = "IDENTIFIER", value = s2Var },
                 { type = "SYMBOL", value = "~=" },
-                { type = "NUMBER", value = "0" },
+                { type = "NUMBER", value = tostring(sentinel) },
                 { type = "KEYWORD", value = "and" },
                 { type = "IDENTIFIER", value = guardVar },
                 { type = "SYMBOL", value = "[" },
@@ -387,7 +391,7 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
                 { type = "SYMBOL", value = opSym },
                 { type = "IDENTIFIER", value = s2Var },
                 { type = "SYMBOL", value = "~=" },
-                { type = "NUMBER", value = "0" },
+                { type = "NUMBER", value = tostring(sentinel) },
                 { type = "KEYWORD", value = "and" },
                 { type = "SYMBOL", value = "(" },
                 { type = "IDENTIFIER", value = s1Var },
@@ -407,7 +411,7 @@ local function FlattenBlockWhileIf(cleanStatements, hoisted)
                 { type = "SYMBOL", value = opSym },
                 { type = "IDENTIFIER", value = s2Var },
                 { type = "SYMBOL", value = "~=" },
-                { type = "NUMBER", value = "0" },
+                { type = "NUMBER", value = tostring(sentinel) },
                 { type = "KEYWORD", value = "and" },
                 { type = "IDENTIFIER", value = guardVar },
                 { type = "SYMBOL", value = "[" },
@@ -506,13 +510,17 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName, b
 
     local stateIDs = {}
     local stateIDSet = {}
+    -- Per-build terminal sentinel. Was always 0 — a fixed "end of machine" marker
+    -- a reverser could key on. Now a random value, reserved so no real/junk state
+    -- ID can collide with it.
+    local sentinel = randomStateID(stateIDSet)
+    stateIDSet[sentinel] = true
     for i = 1, #cleanStatements do
         local id = randomStateID(stateIDSet)
         stateIDs[i] = id
         stateIDSet[id] = true
     end
-    stateIDs[#cleanStatements + 1] = 0
-    stateIDSet[0] = true
+    stateIDs[#cleanStatements + 1] = sentinel
 
     local finalBody = {}
 
@@ -572,7 +580,7 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName, b
         -- those we must NOT append another `return <nextID>` (two returns in a row
         -- is invalid Lua) and the next state is irrelevant.
         local terminal = IsTerminalStatement(stmt)
-        local nextID = terminal and 0 or stateIDs[i + 1]
+        local nextID = terminal and sentinel or stateIDs[i + 1]
 
         local funcBody = {}
         for _, s in ipairs(stmts) do table.insert(funcBody, s) end
@@ -688,7 +696,7 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName, b
             tokens = {
                 { type = "IDENTIFIER", value = stateVar },
                 { type = "SYMBOL", value = "~=" },
-                { type = "NUMBER", value = "0" },
+                { type = "NUMBER", value = tostring(sentinel) },
                 { type = "KEYWORD", value = "and" },
                 { type = "IDENTIFIER", value = guardVar },
                 { type = "SYMBOL", value = "[" },
@@ -702,7 +710,7 @@ local function FlattenBlockFunctionDispatch(cleanStatements, hoisted, retName, b
             tokens = {
                 { type = "IDENTIFIER", value = stateVar },
                 { type = "SYMBOL", value = "~=" },
-                { type = "NUMBER", value = "0" },
+                { type = "NUMBER", value = tostring(sentinel) },
                 { type = "KEYWORD", value = "and" },
                 { type = "SYMBOL", value = "(" },
                 { type = "IDENTIFIER", value = stateVar },

@@ -41,6 +41,52 @@ function ToXor(bytes, seedVal, seedVar)
     return src
 end
 
+-- Variant B: a helper-free ADDITIVE cipher with a running position term. No `x`
+-- xor function at all, so its body looks nothing like ToXor; a devirtualizer
+-- can't match one decoder template across the whole program. Uses only `+ - %`
+-- (all values kept in [0,255] by the %256), so it is exact on 64-bit Lua AND
+-- 32-bit Fengari. The chunk seed is still mixed in, so it is not independently
+-- constant-foldable either.
+function ToAdd(bytes, seedVal, seedVar)
+    seedVal = seedVal or 0
+    seedVar = seedVar or "0"
+    local key = math.random(1, 255)
+    local enc = {}
+    for i, b in ipairs(bytes) do
+        enc[i] = (b + seedVal + key + i * 7) % 256
+    end
+    local src = '(function(k'
+    for i = 1, #bytes do src = src .. ',e' .. i end
+    src = src .. ')return string.char('
+    local terms = {}
+    for i = 1, #bytes do
+        terms[i] = '(e' .. i .. '-k-' .. seedVar .. '-' .. (i * 7) .. ')%256'
+    end
+    src = src .. table.concat(terms, ',') .. ')end)(' .. key .. ',' .. table.concat(enc, ',') .. ')'
+    return src
+end
+
+-- Variant C: same XOR scheme as ToXor, but the plaintext is assembled through a
+-- table + table.concat instead of a single multi-argument string.char call, so
+-- the decoder's shape differs again.
+function ToXorTable(bytes, seedVal, seedVar)
+    seedVal = seedVal or 0
+    seedVar = seedVar or "0"
+    local key = math.random(100000, 999999999)
+    local enc = {}
+    for _, b in ipairs(bytes) do
+        table.insert(enc, xor((b + seedVal) % 256, key))
+    end
+    local src = '(function(k'
+    for i = 1, #bytes do src = src .. ',e' .. i end
+    src = src .. ')local function x(a,b)local r,p=0,1 while a>0 or b>0 do if a%2~=b%2 then r=r+p end a=math.floor(a/2)b=math.floor(b/2)p=p*2 end return r end local t={}'
+    for i = 1, #bytes do
+        src = src .. 't[' .. i .. ']=string.char((x(e' .. i .. ',k)-' .. seedVar .. ')%256)'
+    end
+    src = src .. ' return table.concat(t)end)(' .. key .. ',' .. table.concat(enc, ',') .. ')'
+    return src
+end
+
 local function EmptyString()
     if math.random(0, 1) == 1 then
         return '""'
@@ -49,8 +95,12 @@ local function EmptyString()
     end
 end
 
+-- Several structurally distinct decoders; one is picked per string at random so
+-- no single template matches every obfuscated literal in the output.
 local strategies = {
-    { name = "xor", fn = ToXor },
+    { name = "xor",      fn = ToXor },
+    { name = "add",      fn = ToAdd },
+    { name = "xortable", fn = ToXorTable },
 }
 
 function ObfuscateAllStrings(fullCode)
@@ -111,7 +161,23 @@ function ObfuscateAllStrings(fullCode)
                 end
 
             else
-                local content = text:match("%[=*%[(.-)%]=*%]")
+                -- Level-aware long-string extraction. The old lazy regex
+                -- `%[=*%[(.-)%]=*%]` stopped at the first `]]` and ignored the
+                -- `=` level, truncating any long string whose body contains `]]`
+                -- (e.g. `[==[has ]] inside]==]`). `text` is exactly one long
+                -- string literal, so slice off the opener/closer by their level.
+                local eq = text:match("^%[(=*)%[")
+                local content = nil
+                if eq then
+                    local n = #eq
+                    content = text:sub(n + 3, #text - (n + 2))
+                    -- Lua strips a single newline immediately after the opener.
+                    if content:sub(1, 2) == "\r\n" or content:sub(1, 2) == "\n\r" then
+                        content = content:sub(3)
+                    elseif content:sub(1, 1) == "\n" or content:sub(1, 1) == "\r" then
+                        content = content:sub(2)
+                    end
+                end
                 if content then
                     if #content == 0 then
                         table.insert(result, EmptyString())

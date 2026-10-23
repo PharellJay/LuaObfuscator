@@ -423,6 +423,11 @@ local function isCallBalanced(toks)
     return false
 end
 
+-- Forward declaration: splitAtCommas (below) references copyTokens, whose
+-- definition follows it. Without this `local`, those references would resolve to
+-- a nil global instead of the local function.
+local copyTokens
+
 local function splitAtCommas(toks)
     local parts = {}
     local start = 1
@@ -461,7 +466,7 @@ local function splitAtCommas(toks)
     return parts
 end
 
-local function copyTokens(arr, s, e)
+function copyTokens(arr, s, e)
     local res = {}
     for i = s, e or #arr do
         table.insert(res, arr[i])

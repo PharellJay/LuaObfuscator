@@ -144,21 +144,42 @@ local function walkAndRename(node, scopeStack)
         -- Handle `local` declarations inside GenericStatement tokens
         local tokens = node.tokens
         if tokens and #tokens >= 2 and tokens[1].type == "KEYWORD" and tokens[1].value == "local" then
-            local skipLocal = false
-            -- Check for `local function`
+            -- `local function` (name already hoisted in the block pre-scan)?
+            local isLocalFunction = false
             for i = 2, #tokens do
                 if tokens[i].type == "KEYWORD" and tokens[i].value == "function" then
-                    skipLocal = true
+                    isLocalFunction = true
                     break
                 end
-                if tokens[i].type == "IDENTIFIER" then
-                    addToScopeForce(scopeStack[#scopeStack], tokens[i].value)
-                end
-                if tokens[i].type == "SYMBOL" and tokens[i].value == "=" then
-                    break
-                end
+                if tokens[i].type == "IDENTIFIER" then break end
             end
-            renameTokens(tokens, scopeStack)
+            if isLocalFunction then
+                renameTokens(tokens, scopeStack)
+            else
+                -- The initializer (RHS of `=`) is evaluated in the ENCLOSING
+                -- scope, BEFORE the new locals are declared. Rename it first so
+                -- `local x = x or 5` reads the outer x, not the new binding.
+                local eqIdx = nil
+                for i = 2, #tokens do
+                    if tokens[i].type == "SYMBOL" and tokens[i].value == "=" then eqIdx = i; break end
+                end
+                local upto = eqIdx and (eqIdx - 1) or #tokens
+                if eqIdx then
+                    local rhs = {}
+                    for i = eqIdx + 1, #tokens do rhs[#rhs + 1] = tokens[i] end
+                    renameTokens(rhs, scopeStack)
+                end
+                -- Now declare the new local names (LHS identifiers)...
+                for i = 2, upto do
+                    if tokens[i].type == "IDENTIFIER" then
+                        addToScopeForce(scopeStack[#scopeStack], tokens[i].value)
+                    end
+                end
+                -- ...and rename the LHS with the new bindings in scope.
+                local lhs = {}
+                for i = 2, upto do lhs[#lhs + 1] = tokens[i] end
+                renameTokens(lhs, scopeStack)
+            end
         else
             renameTokens(tokens, scopeStack)
         end
@@ -172,15 +193,18 @@ local function walkAndRename(node, scopeStack)
         -- nothing to rename
 
     elseif t == "LocalStatement" then
+        -- The initializer is evaluated in the ENCLOSING scope, before the new
+        -- locals are declared, so rename it FIRST (old bindings still visible),
+        -- then add the new bindings and rename the declared names.
+        if node.values and node.values.tokens then
+            renameTokens(node.values.tokens, scopeStack)
+        end
         local names = collectLocalNames(node)
         for _, name in ipairs(names) do
             addToScopeForce(scopeStack[#scopeStack], name)
         end
         if node.vars and node.vars.tokens then
             renameTokens(node.vars.tokens, scopeStack)
-        end
-        if node.values and node.values.tokens then
-            renameTokens(node.values.tokens, scopeStack)
         end
 
     elseif t == "AssignmentStatement" then
@@ -212,18 +236,37 @@ local function walkAndRename(node, scopeStack)
         table.remove(scopeStack)
 
     elseif t == "ForStatement" then
-        -- for control variable creates new scope
+        -- Numeric-for head: `<var> = <start>, <limit> [, <step>]`. The bound
+        -- expressions are evaluated in the ENCLOSING scope; only the control
+        -- variable belongs to the fresh loop scope. Rename the bounds first.
+        local head = node.head or {}
+        local eqIdx = nil
+        for i = 1, #head do
+            if head[i].type == "SYMBOL" and head[i].value == "=" then eqIdx = i; break end
+        end
+        if eqIdx then
+            local bounds = {}
+            for i = eqIdx + 1, #head do bounds[#bounds + 1] = head[i] end
+            renameTokens(bounds, scopeStack)
+        end
         local fScope = newScope()
         table.insert(scopeStack, fScope)
         local forVarNames = collectForVarNames(node.head)
         for _, name in ipairs(forVarNames) do
             addToScope(fScope, name)
         end
-        renameTokens(node.head, scopeStack)
+        -- Rename only the control variable (bounds already renamed above).
+        local ctrl = {}
+        local upto = eqIdx and (eqIdx - 1) or #head
+        for i = 1, upto do ctrl[#ctrl + 1] = head[i] end
+        renameTokens(ctrl, scopeStack)
         walkAndRename(node.body, scopeStack)
         table.remove(scopeStack)
 
     elseif t == "ForInStatement" then
+        -- The iterator explist (`in <exps>`) is evaluated in the ENCLOSING
+        -- scope, so rename it before the loop variables are declared.
+        renameTokens(node.exps and node.exps.tokens, scopeStack)
         local fiScope = newScope()
         table.insert(scopeStack, fiScope)
         local forInVarNames = collectForInVarNames(node.vars)
@@ -231,7 +274,6 @@ local function walkAndRename(node, scopeStack)
             addToScope(fiScope, name)
         end
         renameTokens(node.vars and node.vars.tokens, scopeStack)
-        renameTokens(node.exps and node.exps.tokens, scopeStack)
         walkAndRename(node.body, scopeStack)
         table.remove(scopeStack)
 

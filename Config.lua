@@ -13,6 +13,11 @@ RandomSeed = nil --Optional: set a number to force a fixed seed (for reproducibi
 Config = Config or {}
 Config.VirtualizePrefix = "vm_" --Top-level functions whose name starts with this are compiled to the bytecode VM (set to nil/"" to disable)
 Config.VirtualizeAll = false --When true, virtualize EVERY eligible top-level function (prefix ignored). Maximum coverage; ineligible functions safely stay native.
+Config.VirtualizeNames = nil --Optional allow-list of exact function names to virtualize WITHOUT renaming them to the prefix, e.g. {"checkLicense","validate"}. Array or set; nil/empty disables.
+
+Config.Debug = false --When true, Main.lua also writes intermediate build artifacts (Output/after_emit.lua, Output/preminify.lua). Off by default: those are near-plaintext/partly-obfuscated snapshots you don't want left on disk.
+
+Config.CamouflageNames = true --When true (default), obfuscated identifiers use randomized length + mixed case with no fixed `_` prefix, so they don't all match one `_[a-z0-9]{N}` regex a deobfuscator could use to spot them. Set false for the old fixed-shape names.
 
 -- When true, the VM interpreter that is spliced into the output is exempted from
 -- dead-code injection and control-flow flattening (variable renaming + the text

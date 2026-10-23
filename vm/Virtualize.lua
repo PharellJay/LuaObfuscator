@@ -58,8 +58,19 @@ end
 function VirtualizeAST(body)
     local prefix = Config and Config.VirtualizePrefix or VirtualizePrefix
     local all = Config and Config.VirtualizeAll
-    -- Nothing to do unless we have a prefix to match or all-mode is on.
-    if not all and (not prefix or prefix == "") then return body end
+    -- Optional exact-name allow-list: virtualize these functions by their (last
+    -- field) name without requiring the `vm_` prefix rename. Config.VirtualizeNames
+    -- may be an array {"foo","bar"} or a set {foo=true}.
+    local names = {}
+    local hasNames = false
+    if Config and Config.VirtualizeNames then
+        for k, v in pairs(Config.VirtualizeNames) do
+            if type(k) == "number" then names[v] = true else names[k] = v end
+            hasNames = true
+        end
+    end
+    -- Nothing to do unless we have a prefix/name to match or all-mode is on.
+    if not all and not hasNames and (not prefix or prefix == "") then return body end
 
     -- names declared `local` at the chunk's top level; a dotted/colon function
     -- whose base object is one of these can't be safely virtualized (the renamer
@@ -87,8 +98,11 @@ function VirtualizeAST(body)
         local h = stmt.type == "FunctionStatement" and analyzeHead(stmt.head) or nil
         local eligible = h
             and CanCompileFunction(stmt)
-            -- all-mode virtualizes every eligible function; otherwise match the prefix
-            and (all or (prefix and prefix ~= "" and h.name:sub(1, #prefix) == prefix))
+            -- all-mode virtualizes every eligible function; otherwise match the
+            -- prefix or the exact-name allow-list
+            and (all
+                or (prefix and prefix ~= "" and h.name:sub(1, #prefix) == prefix)
+                or names[h.name])
             -- dotted/colon only when the base object is a global (not a chunk local)
             and (not h.isDotted or not chunkLocals[h.base])
             -- must not reference a chunk-level local (the VM would read it as a

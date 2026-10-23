@@ -1,4 +1,23 @@
 function Minify(fullCode)
+    -- Protect STRING LITERALS from the token-unaware whitespace stripping below.
+    -- Minify works on raw text (collapsing newlines, stripping spaces around
+    -- operators), which would otherwise mangle the CONTENTS of string literals:
+    -- print("a  ==  b") -> print("a==b"), and a newline inside a [[long]] string
+    -- -> a space. Swap each literal for a whitespace-free control-char
+    -- placeholder, minify, then restore the literal verbatim.
+    local segments = SplitCodeSegments(fullCode)
+    local strings = {}
+    local buf = {}
+    for _, seg in ipairs(segments) do
+        if seg.isString then
+            strings[#strings + 1] = seg.text
+            buf[#buf + 1] = "\4" .. #strings .. "\4"
+        else
+            buf[#buf + 1] = seg.text
+        end
+    end
+    fullCode = table.concat(buf)
+
     -- Protect Lua 5.4 local attributes from the token-unaware whitespace stripping
     -- below (which would fuse the attribute's closing `>` with a following `=` into
     -- a `>=` operator). The emitter writes attributes uniquely as ` <const> ` /
@@ -29,6 +48,9 @@ function Minify(fullCode)
 
     -- Restore protected 5.4 attributes, re-spaced so `>` cannot fuse with a `=`.
     result = result:gsub("\1\1(%w+)\1\1", " <%1> ")
+
+    -- Restore string literals verbatim.
+    result = result:gsub("\4(%d+)\4", function(i) return strings[tonumber(i)] end)
 
     return result:gsub("^%s+", ""):gsub("%s+$", "")
 end

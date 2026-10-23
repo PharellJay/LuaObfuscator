@@ -88,6 +88,12 @@ local FIXTURES = {
     "test/fixtures/edge_hexfloat.lua",         -- §2 hex float literals (Lua 5.3+)
     "test/fixtures/edge_strings.lua",          -- §1c tricky string literals
     "test/fixtures/edge_vm_special.lua",       -- §1d VM non-finite/special constants
+    -- Correctness regression fixtures (2026-10-21 audit).
+    "test/fixtures/rename_self_init.lua",       -- renamer: local x = <expr with x>
+    "test/fixtures/rename_for_bounds.lua",      -- renamer: for bounds/iterator in outer scope
+    "test/fixtures/comment_leveled.lua",        -- leveled --[==[ ]==] comments
+    "test/fixtures/longstr_bracket.lua",        -- leveled long string containing ]]
+    "test/fixtures/float_precision.lua",        -- high-precision fractional literals
 }
 
 -- 5.4-only fixtures: use syntax (<const>/<close>) that a 5.3 interpreter cannot

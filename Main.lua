@@ -36,7 +36,7 @@ function Obfuscate(code)
     end
     print("[*] Emitting...")
     obfuscatedCode = Emit(ast)
-    do local f = io.open("Output/after_emit.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
+    if Config and Config.Debug then do local f = io.open("Output/after_emit.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end end
     if on("NumberObf") then
         print("[*] Obfuscating integers...")
         obfuscatedCode = ObfuscateAllIntegers(obfuscatedCode)
@@ -53,7 +53,7 @@ function Obfuscate(code)
         print("[*] Creating constant pool...")
         obfuscatedCode = CreateConstantPool(obfuscatedCode)
     end
-    do local f = io.open("Output/preminify.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end
+    if Config and Config.Debug then do local f = io.open("Output/preminify.lua", "w"); if f then f:write(obfuscatedCode); f:close() end end end
     if on("Minify") then
         print("[*] Minifying...")
         obfuscatedCode = Minify(obfuscatedCode)
@@ -82,20 +82,45 @@ end
 -- script (e.g. the test harness) loads this file only to reuse Obfuscate(),
 -- by setting SUPPRESS_MAIN_DRIVER before the load.
 if not SUPPRESS_MAIN_DRIVER then
-    local status, inputCode = pcall(ReadFile, "Input/" .. InputPath)
+    -- Command-line arguments (optional; fall back to Config's InputPath/OutputPath):
+    --   lua Main.lua [input] [output]
+    -- `input`/`output` are resolved relative to Input/ and Output/ respectively,
+    -- matching the Config defaults, unless they contain a path separator.
+    local args = _G.arg or {}
+    if args[1] == "-h" or args[1] == "--help" then
+        print("Deadeye Lua obfuscator")
+        print("Usage: lua Main.lua [input] [output]")
+        print("  input   source file under Input/ (default: Config InputPath = " .. tostring(InputPath) .. ")")
+        print("  output  result file under Output/ (default: Config OutputPath = " .. tostring(OutputPath) .. ")")
+        print("Edit Config.lua for passes, presets, virtualization and tuning.")
+        return
+    end
+
+    local function resolve(dir, p)
+        if p:find("[/\\]") then return p end -- an explicit path: use as-is
+        return dir .. p
+    end
+    local inPath  = args[1] and resolve("Input/", args[1])  or ("Input/"  .. InputPath)
+    local outPath = args[2] and resolve("Output/", args[2]) or ("Output/" .. OutputPath)
+
+    local status, inputCode = pcall(ReadFile, inPath)
 
     if status then
         print("[+] Starting obfuscation...")
 
         local result = Obfuscate(inputCode)
 
-        local outFile = io.open("Output/" .. OutputPath, "w")
+        local outFile = io.open(outPath, "w")
         if outFile then
             outFile:write(result)
             outFile:close()
-            print("[+] Obfuscated file saved: " .. "Output/" .. OutputPath)
+            print("[+] Obfuscated file saved: " .. outPath)
+        else
+            print("[-] Error: could not open '" .. outPath .. "' for writing (does the Output/ directory exist?)")
+            os.exit(1)
         end
     else
-        print("[-] Error: " .. inputCode)
+        print("[-] Error: " .. tostring(inputCode))
+        os.exit(1)
     end
 end

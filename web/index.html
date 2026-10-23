@@ -16,7 +16,10 @@
       <p class="tagline">Lua obfuscation with a bytecode VM — running entirely in your browser.</p>
     </div>
   </div>
-  <div class="status" id="status" data-state="loading"><span class="dot"></span><span id="statusText">Loading engine…</span></div>
+  <div class="topbar-right">
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light / dark theme" title="Toggle light / dark theme">🌓</button>
+    <div class="status" id="status" data-state="loading"><span class="dot"></span><span id="statusText">Loading engine…</span></div>
+  </div>
 </header>
 
 <main class="layout">
@@ -109,6 +112,7 @@
       <p><strong>Drop .lua files here</strong> or</p>
       <div class="row center">
         <button type="button" class="btn" id="pickFiles">Choose file(s)…</button>
+        <button type="button" class="btn ghost" id="loadExample">Load example</button>
         <input type="file" id="fileInput" accept=".lua,text/plain" multiple hidden />
       </div>
       <details class="paste">
@@ -122,6 +126,8 @@
 
     <div class="actions">
       <button type="button" class="btn primary" id="runBtn" disabled>Obfuscate</button>
+      <button type="button" class="btn ghost danger" id="cancelBtn" hidden>Cancel</button>
+      <button type="button" class="btn ghost" id="retryBtn" hidden>Retry engine</button>
       <button type="button" class="btn ghost" id="clearBtn">Clear all</button>
       <span class="spinner" id="spinner" hidden aria-hidden="true"></span>
     </div>
@@ -141,7 +147,7 @@
       <pre id="log" aria-live="polite"></pre>
     </details>
 
-    <div id="results" class="results"></div>
+    <div id="results" class="results" aria-live="polite"></div>
   </section>
 </main>
 

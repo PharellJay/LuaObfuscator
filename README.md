@@ -66,12 +66,19 @@ with no external dependencies. The obfuscated output is likewise plain Lua (5.3+
 3. Run from the project root:
 
    ```sh
-   lua Main.lua
+   lua Main.lua                      # uses Config's InputPath / OutputPath
+   lua Main.lua myscript.lua         # input under Input/, output -> Output/<default>
+   lua Main.lua myscript.lua out.lua # explicit input and output names
+   lua Main.lua --help               # usage
    ```
 
-The obfuscated file is written to `Output/<OutputPath>`. Intermediate stages
-(`Output/after_emit.lua`, `Output/preminify.lua`) are also dumped to make
-debugging a pass easier.
+   Positional arguments override `InputPath`/`OutputPath`; a value containing a
+   path separator is used as-is instead of being resolved under `Input/`/`Output/`.
+
+The obfuscated file is written to `Output/<OutputPath>`. Set `Config.Debug = true`
+to also dump the intermediate stages (`Output/after_emit.lua`,
+`Output/preminify.lua`) when debugging a pass; they are off by default because
+they are near-plaintext snapshots.
 
 ## Web UI (run it in your browser)
 
@@ -192,6 +199,9 @@ All knobs live in `Config.lua`:
 | `RandomSeed` | `nil` | Set a number to force a fixed seed for reproducible output. |
 | `Config.VirtualizePrefix` | `"vm_"` | Name prefix selecting top-level functions to virtualize; `nil`/`""` disables prefix-based selection. |
 | `Config.VirtualizeAll` | `false` | When `true`, virtualize **every** eligible top-level function (prefix ignored); ineligible functions safely stay native. Maximum coverage, higher runtime cost. |
+| `Config.VirtualizeNames` | `nil` | Optional allow-list of exact function names to virtualize **without** renaming them to the prefix, e.g. `{"checkLicense","validate"}` (array or set). |
+| `Config.CamouflageNames` | `true` | Generated identifiers use randomized length + mixed case with no fixed `_` prefix, so they don't all match one `_[a-z0-9]{N}` regex a deobfuscator could use to spot obfuscated names. Set `false` for the old fixed-shape names. |
+| `Config.Debug` | `false` | When `true`, also writes intermediate build artifacts (`Output/after_emit.lua`, `Output/preminify.lua`). Off by default — those are near-plaintext/partly-obfuscated snapshots. |
 | `Config.VMLightweight` | `true` | Exempt the spliced VM interpreter from dead-code injection and control-flow flattening (renaming and the text passes still apply to it). Large speedup (~70× on a VM-heavy loop) and much smaller output for virtualized code, with **no change to how your own code is obfuscated**; only the interpreter becomes slightly easier to pattern-match (opcodes still permuted, constants still encrypted per build). Default `true`; set `false` to also flatten/junk the engine itself. |
 | `Config.Preset` | `"max"` | Strength preset that seeds `Config.Passes`: `"max"` (every pass on, strongest, slowest) or `"fast"` (performance mode — see below). |
 | `Config.Passes.*` | from preset | Per-pass on/off switches (CommentRemoval, DeadCode, Rename, Flatten, NumberObf, StringObf, StringSplit, ConstantPool, Minify, AntiTamper). Seeded from `Config.Preset`; override any individual pass after the preset line. |

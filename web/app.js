@@ -24,7 +24,11 @@ function defaultConfig() {
     passes: { ...BUILTIN_PRESETS.max },
     virtualizePrefix: "vm_",
     virtualizeAll: false,
-    vmLightweight: false,
+    // Matches the CLI default (Config.lua): the interpreter skips dead-code /
+    // flattening — much faster, smaller output, with your own code's strength
+    // unchanged. Previously defaulted off here, so the web "max" build was
+    // needlessly far slower and larger than the documented default.
+    vmLightweight: true,
     variableLength: 12,
     deadCodeProbability: 0.45,
     junkPoolMin: 50,
@@ -36,7 +40,7 @@ let fileSeq = 0;
 
 /* ---------- tiny DOM helpers ---------- */
 const $ = (id) => document.getElementById(id);
-const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+const el = (tag, cls, txt) => { const e = document.createElement(tag); if (tag === "button") e.type = "button"; if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
 const fmtBytes = (n) => n < 1024 ? n + " B" : n < 1048576 ? (n/1024).toFixed(1) + " KB" : (n/1048576).toFixed(2) + " MB";
 
 /* ---------- build pass toggles ---------- */
@@ -124,6 +128,7 @@ function applyConfig(cfg) {
   $("junkPoolMax").value = state.config.junkPoolMax; $("junkPoolMaxOut").textContent = state.config.junkPoolMax;
   syncPassToggles();
   updateCostMeter();
+  persistConfig();
 }
 
 /* ---------- estimated output cost ---------- */
@@ -230,6 +235,55 @@ dz.addEventListener("drop", (e) => { if (e.dataTransfer && e.dataTransfer.files.
 dz.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("pickFiles").click(); } });
 $("clearBtn").addEventListener("click", () => { state.files = []; renderFileList(); $("results").innerHTML = ""; $("log").textContent = ""; if (!running) showProgress(false); updateRunEnabled(); });
 
+/* ---------- example input ---------- */
+const EXAMPLE_LUA = `-- Example input for the Deadeye obfuscator.
+local function fib(n)
+  if n < 2 then return n end
+  return fib(n - 1) + fib(n - 2)
+end
+
+-- A vm_-prefixed function is compiled to the bytecode VM.
+local function vm_secret(key)
+  local msg = "access " .. (key == 1337 and "granted" or "denied")
+  return msg
+end
+
+for i = 0, 10 do
+  io.write(fib(i), " ")
+end
+print()
+print(vm_secret(1337))
+`;
+$("loadExample").addEventListener("click", () => {
+  addFile("example.lua", new TextEncoder().encode(EXAMPLE_LUA).buffer);
+});
+
+/* ---------- theme (manual light/dark override) ---------- */
+const LS_THEME = "deadeye.theme";
+function currentTheme() {
+  const attr = document.documentElement.getAttribute("data-theme");
+  if (attr) return attr;
+  return (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
+}
+function applyTheme(t) {
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else document.documentElement.removeAttribute("data-theme");
+}
+(function initTheme() {
+  let t = null; try { t = localStorage.getItem(LS_THEME); } catch {}
+  if (t) applyTheme(t);
+})();
+$("themeToggle").addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try { localStorage.setItem(LS_THEME, next); } catch {}
+});
+
+/* ---------- persist the working config across reloads ---------- */
+const LS_CONFIG = "deadeye.config";
+function persistConfig() { try { localStorage.setItem(LS_CONFIG, JSON.stringify(snapshot())); } catch {} }
+function loadPersistedConfig() { try { const s = localStorage.getItem(LS_CONFIG); return s ? JSON.parse(s) : null; } catch { return null; } }
+
 /* ---------- worker orchestration ---------- */
 let worker = null, workerReady = false, running = false;
 let runSeq = 0, queue = [], pending = null;
@@ -237,7 +291,30 @@ let totalFiles = 0, fileIndex = 0, curSteps = 1, curStep = 0;
 
 function setStatus(stateName, text) { const s = $("status"); s.dataset.state = stateName; $("statusText").textContent = text; }
 function log(line) { const p = $("log"); p.textContent += line + "\n"; p.scrollTop = p.scrollHeight; }
-function updateRunEnabled() { $("runBtn").disabled = !(workerReady && state.files.length && !running); }
+function updateRunEnabled() {
+  $("runBtn").disabled = !(workerReady && state.files.length && !running);
+  $("cancelBtn").hidden = !running;
+  $("clearBtn").disabled = running; // clearing mid-run would desync the result area
+}
+
+// Tear the worker down and start a fresh one. Used for cancel (a run is
+// synchronous inside the worker, so terminate() is the only way to stop it) and
+// for crash recovery. Resets all run state so the UI never gets stuck.
+function recoverWorker(statusText) {
+  try { if (worker) worker.terminate(); } catch {}
+  workerReady = false; running = false; queue = []; pending = null;
+  $("spinner").hidden = true; showProgress(false);
+  $("retryBtn").hidden = true;
+  setStatus("loading", statusText || "Restarting engine…");
+  updateRunEnabled();
+  initWorker();
+}
+$("cancelBtn").addEventListener("click", () => {
+  if (!running) return;
+  log("\n[cancelled by user]");
+  recoverWorker("Cancelled — restarting engine…");
+});
+$("retryBtn").addEventListener("click", () => recoverWorker("Retrying engine…"));
 
 // Number of "[*] …" stage lines the worker will print for this config. Mirrors
 // the pipeline in Main.lua: Tokenizing, Parsing, Virtualizing and Emitting are
@@ -282,12 +359,24 @@ function initWorker() {
     }
     if (m.type === "result") { onResult(m); return; }
     if (m.type === "error") {
-      if (m.fatal) { setStatus("error", "Engine failed to load"); log("FATAL: " + m.message); return; }
+      if (m.fatal) {
+        workerReady = false; running = false;
+        setStatus("error", "Engine failed to load");
+        log("FATAL: " + m.message);
+        $("retryBtn").hidden = false; $("spinner").hidden = true; showProgress(false);
+        updateRunEnabled();
+        return;
+      }
       setProgress(curSteps, curSteps, "failed");
       renderResult({ name: m.name, error: m.message }); next();
     }
   };
-  worker.onerror = (e) => { setStatus("error", "Worker error"); log("Worker error: " + (e.message || e)); };
+  worker.onerror = (e) => {
+    // The worker crashed (e.g. OOM on a huge input). Don't leave the UI stuck:
+    // report, then rebuild the engine from scratch.
+    log("Worker crashed: " + ((e && e.message) || e));
+    recoverWorker("Engine crashed — restarting…");
+  };
   worker.postMessage({ type: "init", moduleBase: "modules/" });
 }
 
@@ -380,11 +469,15 @@ async function saveBytes(name, bytes) {
 /* ---------- boot ---------- */
 buildPassToggles();
 refreshSavedDropdown();
-// Any change to a Settings control re-estimates the output cost. Delegated so it
-// also covers the pass checkboxes created at runtime; runs after each control's
-// own handler has updated state.config (target-phase listeners fire before this
-// bubbling one).
-document.querySelector(".config").addEventListener("input", updateCostMeter);
-document.querySelector(".config").addEventListener("change", updateCostMeter);
+// Restore the last-used working config (not just named presets) across reloads.
+const persisted = loadPersistedConfig();
+if (persisted) applyConfig(persisted);
+// Any change to a Settings control re-estimates the output cost and persists the
+// working config. Delegated so it also covers the pass checkboxes created at
+// runtime; runs after each control's own handler has updated state.config
+// (target-phase listeners fire before this bubbling one).
+function onConfigChanged() { updateCostMeter(); persistConfig(); }
+document.querySelector(".config").addEventListener("input", onConfigChanged);
+document.querySelector(".config").addEventListener("change", onConfigChanged);
 updateCostMeter();
 initWorker();

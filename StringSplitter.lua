@@ -4,6 +4,7 @@ local function scanEscape(content, i)
         return i + 4
     elseif nxt == 'u' then
         local close = content:find('}', i + 2)
+        if not close then return i + 2 end
         return close + 1
     elseif nxt:match('%d') then
         local j = i + 2
@@ -71,7 +72,9 @@ function SplitStrings(fullCode)
                 if splitAt then
                     local left = content:sub(1, splitAt)
                     local right = content:sub(splitAt + 1)
-                    local replacement = '"' .. left .. '".."' .. right .. '"'
+                    -- Re-wrap with the ORIGINAL quote style. Forcing double quotes
+                    -- corrupts a single-quoted literal that contains `"`.
+                    local replacement = quote .. left .. quote .. ".." .. quote .. right .. quote
                     local idx = strStart - 1
                     while idx >= 1 and fullCode:sub(idx, idx):match('%s') do idx = idx - 1 end
                     if idx >= 1 and fullCode:sub(idx, idx) == '#' then

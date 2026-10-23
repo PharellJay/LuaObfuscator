@@ -285,6 +285,35 @@ function AddAntiTamper(code)
 end
 
 function GenerateRandomName(len)
+    len = len or 12
+    -- Camouflaged names (default). The legacy generator always emitted
+    -- `_` followed by exactly `len` lowercase/digit chars, so EVERY obfuscated
+    -- identifier in the whole program matched one regex (`_[a-z0-9]{len}`) — a
+    -- deobfuscator could separate obfuscated names from genuine ones in a single
+    -- pass. Camouflaged names have a randomized length and mixed case with no
+    -- forced `_` prefix, so they blend with hand-written identifiers. At least one
+    -- digit is always included, which guarantees the name can never equal a Lua
+    -- keyword (every keyword is lowercase letters only). Set
+    -- Config.CamouflageNames=false for the old fixed-shape names.
+    if not (Config and Config.CamouflageNames == false) then
+        local letters  = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        local firstSet = letters .. "_"
+        local restSet  = letters .. "0123456789_"
+        local digits   = "0123456789"
+        local n = math.max(8, len + math.random(-2, 6))
+        local chars = {}
+        local fr = math.random(1, #firstSet)
+        chars[1] = firstSet:sub(fr, fr)
+        for i = 2, n do
+            local r = math.random(1, #restSet)
+            chars[i] = restSet:sub(r, r)
+        end
+        local dpos = math.random(2, n)
+        local dr = math.random(1, #digits)
+        chars[dpos] = digits:sub(dr, dr)
+        return table.concat(chars)
+    end
+
     local charset = "abcdefghijklmnopqrstuvwxyz0123456789"
     local name = "_"
     for i = 1, len do
