@@ -24,7 +24,7 @@ jobs:
       - name: Assemble static site
         run: |
           mkdir -p site/modules/vm
-          cp web/index.html web/app.js web/worker.js web/modules.js web/styles.css site/
+          cp web/index.html web/app.js web/worker.js web/modules.js web/styles.css web/robots.txt web/sitemap.xml site/
           cp *.lua site/modules/
           cp vm/*.lua site/modules/vm/
           echo "luaobfuscator.pharelljay.me" > site/CNAME
