@@ -1,5 +1,19 @@
 "use strict";
-/* Deadeye Obfuscator — UI controller. Talks to web/worker.js (Fengari). */
+/* Lua Obfuscator — UI controller. Talks to web/worker.js (Fengari). */
+
+/* ---------- storage keys ---------- */
+// Settings used to be saved under "deadeye.*". Move them to the new keys once,
+// so returning visitors keep their presets, config and theme.
+(function migrateStorageKeys() {
+  try {
+    for (const name of ["presets", "theme", "config"]) {
+      const oldKey = `deadeye.${name}`, newKey = `luaobfuscator.${name}`;
+      const old = localStorage.getItem(oldKey);
+      if (old !== null && localStorage.getItem(newKey) === null) localStorage.setItem(newKey, old);
+      localStorage.removeItem(oldKey);
+    }
+  } catch {}
+})();
 
 /* ---------- presets & config ---------- */
 const PASS_META = [
@@ -105,7 +119,7 @@ $("junkPoolMax").addEventListener("input", () => {
 });
 
 /* ---------- named presets (localStorage + import/export) ---------- */
-const LS_KEY = "deadeye.presets";
+const LS_KEY = "luaobfuscator.presets";
 function loadSaved() { try { return JSON.parse(localStorage.getItem(LS_KEY) || "{}"); } catch { return {}; } }
 function storeSaved(obj) { try { localStorage.setItem(LS_KEY, JSON.stringify(obj)); } catch {} }
 function refreshSavedDropdown() {
@@ -187,7 +201,7 @@ $("presetDelete").addEventListener("click", () => {
 });
 $("presetExport").addEventListener("click", () => {
   const blob = new Blob([JSON.stringify(snapshot(), null, 2)], { type: "application/json" });
-  triggerDownload("deadeye-preset.json", blob);
+  triggerDownload("lua-obfuscator-preset.json", blob);
 });
 $("presetImport").addEventListener("click", () => $("presetImportFile").click());
 $("presetImportFile").addEventListener("change", async (e) => {
@@ -236,7 +250,7 @@ dz.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") 
 $("clearBtn").addEventListener("click", () => { state.files = []; renderFileList(); $("results").innerHTML = ""; $("log").textContent = ""; if (!running) showProgress(false); updateRunEnabled(); });
 
 /* ---------- example input ---------- */
-const EXAMPLE_LUA = `-- Example input for the Deadeye obfuscator.
+const EXAMPLE_LUA = `-- Example input for the Lua Obfuscator.
 local function fib(n)
   if n < 2 then return n end
   return fib(n - 1) + fib(n - 2)
@@ -259,7 +273,7 @@ $("loadExample").addEventListener("click", () => {
 });
 
 /* ---------- theme (manual light/dark override) ---------- */
-const LS_THEME = "deadeye.theme";
+const LS_THEME = "luaobfuscator.theme";
 function currentTheme() {
   const attr = document.documentElement.getAttribute("data-theme");
   if (attr) return attr;
@@ -280,7 +294,7 @@ $("themeToggle").addEventListener("click", () => {
 });
 
 /* ---------- persist the working config across reloads ---------- */
-const LS_CONFIG = "deadeye.config";
+const LS_CONFIG = "luaobfuscator.config";
 function persistConfig() { try { localStorage.setItem(LS_CONFIG, JSON.stringify(snapshot())); } catch {} }
 function loadPersistedConfig() { try { const s = localStorage.getItem(LS_CONFIG); return s ? JSON.parse(s) : null; } catch { return null; } }
 

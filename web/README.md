@@ -1,6 +1,6 @@
-# Deadeye Obfuscator — Web UI
+# Lua Obfuscator — Web UI
 
-A static, zero-backend front-end for the Deadeye Lua obfuscator. It runs the
+A static, zero-backend front-end for the Lua obfuscator. It runs the
 **real** obfuscator (the repo's `.lua` sources) in your browser via
 [Fengari](https://fengari.io/) (Lua 5.3 compiled to JS), inside a Web Worker.
 

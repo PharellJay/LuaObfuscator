@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local dev server for the Deadeye Obfuscator web app.
+"""Local dev server for the Lua Obfuscator web app.
 
 Serves web/ as the document root, and maps /modules/<Name>.lua (and
 /modules/vm/<Name>.lua) to the real .lua sources at the repo root, so the
@@ -35,5 +35,5 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
-    print(f"Deadeye web UI: http://localhost:{port}/  (modules -> {REPO_DIR})")
+    print(f"Lua Obfuscator web UI: http://localhost:{port}/  (modules -> {REPO_DIR})")
     http.server.ThreadingHTTPServer(("", port), Handler).serve_forever()

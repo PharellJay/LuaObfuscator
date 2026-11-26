@@ -1,4 +1,4 @@
-/* Deadeye Obfuscator — Web Worker.
+/* Lua Obfuscator — Web Worker.
  * Runs the REAL Lua obfuscator in-browser via Fengari (Lua 5.3 in JS).
  * The output is ordinary native Lua — Fengari is only the machine that runs
  * the obfuscation step. See web/README.md.

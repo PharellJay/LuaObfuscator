@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://luaobfuscator.pharelljay.me/privacy.html" />
 <link rel="stylesheet" href="styles.css" />
 <!-- Same light/dark choice as the tool (set with its theme toggle) -->
-<script>try { const t = localStorage.getItem("deadeye.theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch {}</script>
+<script>try { const t = localStorage.getItem("luaobfuscator.theme") || localStorage.getItem("deadeye.theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch {}</script>
 </head>
 <body class="legal-page">
 <header class="topbar">
@@ -54,9 +54,9 @@
     <h3>5. Storage in your browser</h3>
     <p>So that your settings are still there the next time you open the tool, the following is saved in your browser's local storage:</p>
     <ul>
-      <li><code>deadeye.config</code>: your current settings (preset, passes and tuning values)</li>
-      <li><code>deadeye.presets</code>: the named presets you save yourself</li>
-      <li><code>deadeye.theme</code>: whether you chose the light or dark theme</li>
+      <li><code>luaobfuscator.config</code>: your current settings (preset, passes and tuning values)</li>
+      <li><code>luaobfuscator.presets</code>: the named presets you save yourself</li>
+      <li><code>luaobfuscator.theme</code>: whether you chose the light or dark theme</li>
     </ul>
     <p>This data stays on your device and is not transmitted to me or to anyone else. You can delete it at any time in your browser settings. The legal basis is § 25 (2) No. 2 TDDDG, as storing these settings is necessary to provide the features you use.</p>
   </section>

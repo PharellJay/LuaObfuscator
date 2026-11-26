@@ -1,8 +1,8 @@
-# Deadeye Obfuscator
+# Lua Obfuscator
 
 **A Lua obfuscator with a bytecode virtual machine — written entirely in Lua.**
 
-Deadeye's headline protection is **VM-based virtualization**: it compiles your
+Its headline protection is **VM-based virtualization**: it compiles your
 functions into a custom, per-build-randomized bytecode and runs them under a
 hand-written interpreter emitted into the output. The original logic of a
 virtualized function no longer exists as code — it becomes opaque data executed
