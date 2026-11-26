@@ -1,4 +1,4 @@
--- Security-assertion harness for the Deadeye obfuscator.
+-- Security-assertion harness for the Lua Obfuscator.
 --
 -- Unlike run_tests.lua (which proves behavior parity), this script checks the
 -- SECURITY properties of the output:
@@ -29,7 +29,7 @@ local EXPECT = SECRET_STR .. ":" .. SECRET_NUM .. "\n"
 
 local function writeFile(p, d) local f = assert(io.open(p, "wb")); f:write(d); f:close() end
 local function run(path)
-    local out = TMP .. "/deadeye_sec_" .. math.random(1, 1e9) .. ".out"
+    local out = TMP .. "/luaobf_sec_" .. math.random(1, 1e9) .. ".out"
     os.execute(string.format('%q %q > %q 2>&1', LUA_BIN, path, out))
     local f = io.open(out, "rb"); local r = f and f:read("*a") or ""; if f then f:close() end
     os.remove(out)
@@ -62,7 +62,7 @@ for seed = 1, 6 do
         not output:find(SECRET_NUM, 1, true))
 
     -- 2. Untampered output still produces the secret.
-    local okPath = TMP .. "/deadeye_sec_ok_" .. seed .. ".lua"
+    local okPath = TMP .. "/luaobf_sec_ok_" .. seed .. ".lua"
     writeFile(okPath, output)
     local okRun = run(okPath)
     assertion("seed " .. seed .. ": runs correctly", okRun == EXPECT,
@@ -80,7 +80,7 @@ for seed = 1, 6 do
         -- flip to a different, still-printable byte so we test logic, not just a parse break
         local nb = (b == 65) and 66 or 65
         local mutated = output:sub(1, i - 1) .. string.char(nb) .. output:sub(i + 1)
-        local tp = TMP .. "/deadeye_sec_tamper_" .. seed .. ".lua"
+        local tp = TMP .. "/luaobf_sec_tamper_" .. seed .. ".lua"
         writeFile(tp, mutated)
         local r = run(tp)
         os.remove(tp)

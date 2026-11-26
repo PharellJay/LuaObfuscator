@@ -1,4 +1,4 @@
--- Round-trip correctness harness for the Deadeye obfuscator.
+-- Round-trip correctness harness for the Lua Obfuscator.
 --
 -- For every fixture it: runs the original under Lua, obfuscates the source,
 -- runs the obfuscated output, and compares stdout + exit status. A fixture
@@ -125,7 +125,7 @@ end
 -- user would run it (fresh interpreter state, no shared globals).
 local function runScript(path, bin)
     bin = bin or LUA_BIN
-    local outPath = TMP .. "/deadeye_run_" .. tostring(math.random(1, 1e9)) .. ".out"
+    local outPath = TMP .. "/luaobf_run_" .. tostring(math.random(1, 1e9)) .. ".out"
     local cmd = string.format('%q %q > %q 2>&1', bin, path, outPath)
     local ok, kind, code = os.execute(cmd)
     local out = readFile(outPath) or ""
@@ -189,7 +189,7 @@ local function checkOne(src, origOut, origStatus, bin, seed, tag)
     end
     local ok, obf = obfQuiet(src)
     if not ok then return false, "obfuscation error: " .. tostring(obf) end
-    local obfPath = TMP .. "/deadeye_obf_" .. tag .. ".lua"
+    local obfPath = TMP .. "/luaobf_obf_" .. tag .. ".lua"
     writeFile(obfPath, obf)
     local obfOut, obfStatus = runScript(obfPath, bin)
     if obfOut == origOut and obfStatus == origStatus then

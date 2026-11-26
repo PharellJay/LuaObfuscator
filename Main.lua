@@ -82,7 +82,7 @@ if not SUPPRESS_MAIN_DRIVER then
     -- matching the Config defaults, unless they contain a path separator.
     local args = _G.arg or {}
     if args[1] == "-h" or args[1] == "--help" then
-        print("Deadeye Lua obfuscator")
+        print("Lua Obfuscator")
         print("Usage: lua Main.lua [input] [output]")
         print("  input   source file under Input/ (default: Config InputPath = " .. tostring(InputPath) .. ")")
         print("  output  result file under Output/ (default: Config OutputPath = " .. tostring(OutputPath) .. ")")
