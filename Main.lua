@@ -59,16 +59,10 @@ function Obfuscate(code)
         obfuscatedCode = Minify(obfuscatedCode)
     end
     obfuscatedCode = [=[
---[[
-██████╗ ███████╗ █████╗ ██████╗ ███████╗██╗   ██╗███████╗
-██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝╚██╗ ██╔╝██╔════╝
-██║  ██║█████╗  ███████║██║  ██║█████╗   ╚████╔╝ █████╗
-██║  ██║██╔══╝  ██╔══██║██║  ██║██╔══╝    ╚██╔╝  ██╔══╝
-██████╔╝███████╗██║  ██║██████╔╝███████╗   ██║   ███████╗
-╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝   ╚═╝   ╚══════╝
-
-Deadeye Obfuscator | Advanced Lua Obfuscation | https://github.com/PharellJay
-]]
+--[[ This code is protected by PharellJay's Lua Obfuscator.
+     Try it:  https://luaobfuscator.pharelljay.me
+     Source:  https://github.com/PharellJay/LuaObfuscator
+     Author:  https://pharelljay.me ]]
 ]=] .. obfuscatedCode
 
     if on("AntiTamper") then
