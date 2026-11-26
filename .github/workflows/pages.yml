@@ -1,0 +1,42 @@
+name: Deploy web UI to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", "*.lua", "vm/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble static site
+        run: |
+          mkdir -p site/modules/vm
+          cp web/index.html web/app.js web/worker.js web/modules.js web/styles.css site/
+          cp *.lua site/modules/
+          cp vm/*.lua site/modules/vm/
+          echo "luaobfuscator.pharelljay.me" > site/CNAME
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
